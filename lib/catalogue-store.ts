@@ -15,9 +15,9 @@ export async function saveSupplierCatalogue(slug:string,offers:SupplierOffer[],m
  const runs=await sql`INSERT INTO supplier_sync_runs(supplier_id,status,offer_count,metadata) VALUES(${supplierId},'running',0,${JSON.stringify(metadata)}::jsonb) RETURNING id`
  const runId=runs[0].id
  const payload=JSON.stringify(offers.map(o=>({
-  supplierProductId:String(o.supplierProductId),supplierSku:o.supplierSku||'',product:o.product,rawTitle:o.rawTitle||'',brand:o.brand||'',size:o.size||'',
-  caseQty:o.caseQty||1,casePrice:o.casePrice||0,unitCost:o.unitCost||0,ean:o.ean||'',stockQty:o.stockQty??null,expiry:o.expiry||'',status:o.status||'IN STOCK',
-  url:o.url||'',source:o.source||'',sourcePage:o.sourcePage??null,tags:o.tags||[]
+  supplier_product_id:String(o.supplierProductId),supplier_sku:o.supplierSku||'',product:o.product,raw_title:o.rawTitle||'',brand:o.brand||'',size:o.size||'',
+  case_qty:o.caseQty||1,case_price:o.casePrice||0,unit_cost:o.unitCost||0,ean:o.ean||'',stock_qty:o.stockQty??null,expiry:o.expiry||'',status:o.status||'IN STOCK',
+  product_url:o.url||'',source:o.source||'',source_page:o.sourcePage??null,tags:o.tags||[]
  })))
  try{
   await sql`INSERT INTO supplier_offers
