@@ -1,0 +1,14 @@
+import { NextResponse } from 'next/server'
+import { saveSupplierCatalogue } from '../../../../lib/catalogue-store'
+export const runtime='nodejs';export const dynamic='force-dynamic'
+const BASE='https://americancandyndrinks.co.uk'
+const H={'User-Agent':'Mozilla/5.0 (compatible; FlipLead/1.0)','Accept':'text/html'}
+const clean=(s:string)=>s.replace(/<[^>]+>/g,' ').replace(/&amp;/g,'&').replace(/&#8211;|&ndash;/g,'-').replace(/&#8217;|&rsquo;/g,"'").replace(/&quot;/g,'"').replace(/\s+/g,' ').trim()
+const size=(s:string)=>{const a=[...s.matchAll(/(\d+(?:\.\d+)?)\s*(g|kg|ml|l|oz|fl\.?\s*oz)\b/gi)];return a.length?a[a.length-1][1]+a[a.length-1][2].replace(/\s+/g,''):''}
+const qty=(s:string)=>{for(const p of [/pack\s*(?:of)?\s*(\d+)/i,/case\s*(?:of)?\s*(\d+)/i,/(\d+)\s*(?:ct|count|cans?|bottles?|boxes?|pcs|x)\b/i,/\bx\s*(\d+)\b/i]){const m=s.match(p);if(m)return +m[1]}return 1}
+export async function GET(){try{const offers:any[]=[];let page=1
+ while(page<=120){const url=page===1?BASE+'/shop/':BASE+'/shop/page/'+page+'/';const r=await fetch(url,{cache:'no-store',headers:H});if(r.status===404)break;if(!r.ok)throw new Error('American Candy N Drinks returned '+r.status);const html=await r.text();const cards=[...html.matchAll(/<li[^>]*class="[^"]*product[^"]*"[^>]*>([\s\S]*?)<\/li>/gi)];if(!cards.length)break
+ for(const m of cards){const x=m[1],link=(x.match(/href="([^"]+)"[^>]*class="[^"]*woocommerce-LoopProduct-link/i)||x.match(/href="([^"]+)"/i)||[])[1]||'';const title=clean((x.match(/<h2[^>]*>([\s\S]*?)<\/h2>/i)||[])[1]||'');const prices=[...x.matchAll(/<bdi>\s*<span[^>]*>£<\/span>\s*([\d,.]+)/gi)].map(z=>Number(z[1].replace(',','')));const price=prices.length?prices[prices.length-1]:0;if(!title||!price)continue;const id=(x.match(/add-to-cart=(\d+)/i)||x.match(/data-product_id="(\d+)"/i)||[])[1]||link||title;const q=qty(title);offers.push({supplierProductId:String(id),product:title,rawTitle:title,size:size(title),caseQty:q,casePrice:price,unitCost:price/q,status:'IN STOCK',url:link,source:'American Candy N Drinks public shop',sourcePage:page})}
+ if(!/next page-numbers|class="next/i.test(html))break;page++}
+ const unique=[...new Map(offers.map(x=>[x.supplierProductId,x])).values()];if(unique.length<20)throw new Error('American Candy N Drinks returned only '+unique.length+' offers; saved catalogue kept');await saveSupplierCatalogue('american-candy-n-drinks',unique,{cataloguePages:page,method:'WooCommerce public shop'});return NextResponse.json({ok:true,supplier:'American Candy N Drinks',cataloguePages:page,inStock:unique.length,offers:unique})
+ }catch(e:any){return NextResponse.json({ok:false,error:e?.message||'American Candy N Drinks sync failed'},{status:500})}}
