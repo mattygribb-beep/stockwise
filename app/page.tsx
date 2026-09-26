@@ -12,7 +12,7 @@ export default function Page(){
  const defaults={roi:30,profit:2,margin:15,totalProfit:25,maxCapital:500,firstCapital:250,firstUnits:24}
  const [rules,setRules]=useState(defaults)
  const [budget,setBudget]=useState(2000)
- const [a,setA]=useState({product:'Anker USB-C Hub 7-in-1',ean:'0194644020347',supplier:'Liquidation World',sku:'ANK-HUB-7',marketplace:'Amazon UK',buy:12,sell:29.99,fees:4.5,fulfilment:3.49,pack:0.5,other:0,delivery:0,qty:24,moq:1,packSize:1,source:'Manual Estimate'})
+ const [a,setA]=useState({product:'',ean:'',supplier:'',sku:'',marketplace:'Amazon UK',buy:0,sell:0,fees:0,fulfilment:0,pack:0,other:0,delivery:0,qty:0,moq:1,packSize:1,source:'Manual Estimate'})
  const calc=useMemo(()=>{const landed=a.buy+(a.delivery/a.qty),profit=a.sell-landed-a.fees-a.fulfilment-a.pack-a.other,roi=landed?profit/landed*100:0,margin=a.sell?profit/a.sell*100:0,capital=a.buy*a.qty+a.delivery;return{landed,profit,roi,margin,capital,revenue:a.sell*a.qty,totalProfit:profit*a.qty}},[a])
  const seen=rows.find(r=>r.ean===a.ean); const totalProfit=calc.profit*a.qty; const hard=calc.roi>=rules.roi&&calc.profit>=rules.profit&&calc.margin>=rules.margin&&totalProfit>=rules.totalProfit&&calc.capital<=rules.maxCapital
  const exposure=calc.capital<=rules.firstCapital&&a.qty<=rules.firstUnits
@@ -85,7 +85,7 @@ function AnalysisWorkspace({a,setA,calc,rules,budget,active,rows,decision,seen,s
  const checks=[['ROI',calc.roi,rules.roi,'%',true],['Profit / unit',calc.profit,rules.profit,'£',true],['Margin',calc.margin,rules.margin,'%',true],['Total profit',calc.totalProfit,rules.totalProfit,'£',true],['Capital',calc.capital,rules.maxCapital,'£',false]] as const
  const confidence=a.source==='Previous Actual Sale'?'HISTORICAL ACTUAL':a.source==='Marketplace Research'?'VERIFIED':a.source==='Supplier RRP'?'LOW CONFIDENCE':'UNVERIFIED'
  const set=(k:string,v:any)=>setA({...a,[k]:v})
- return <><Title k="BUYING" t="New Analysis" p="Understand the economics, exposure and confidence before you commit capital."/>
+ return <><div className="analysisTitleRow"><Title k="BUYING" t="New Analysis" p="Understand the economics, exposure and confidence before you commit capital."/><button className="reset" onClick={()=>setA({product:'',ean:'',supplier:'',sku:'',marketplace:'Amazon UK',buy:0,sell:0,fees:0,fulfilment:0,pack:0,other:0,delivery:0,qty:0,moq:1,packSize:1,source:'Manual Estimate'})}>Clear all</button></div>
  <div className="analysisV2">
   <div className="analysisForm">
    <FormSection n="01" title="Product" text="Identify the product and connect it to Flip Lead Memory.">
