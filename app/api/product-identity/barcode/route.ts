@@ -9,7 +9,9 @@ export async function GET(req:Request){
  try{
   const r=await fetch('https://api.upcitemdb.com/prod/trial/lookup?upc='+encodeURIComponent(ean),{headers:{Accept:'application/json'},cache:'no-store'})
   const d=await r.json().catch(()=>null)
-  if(!r.ok||!d?.items?.length)return NextResponse.json({ok:false,error:r.status===404?'No barcode match found.':'Barcode lookup unavailable ('+r.status+').'},{status:r.status===404?404:502})
+  if(!r.ok)return NextResponse.json({ok:false,error:d?.message||('Barcode lookup unavailable ('+r.status+').')},{status:r.status===404?404:502})
+  if(d?.code&&d.code!=='OK')return NextResponse.json({ok:false,error:d.message||('Barcode lookup returned '+d.code+'.')},{status:502})
+  if(!Array.isArray(d?.items)||d.items.length===0)return NextResponse.json({ok:false,error:'No barcode match found in UPCitemdb for '+ean+'. The EAN can still be verified from the product packaging or another source.'},{status:404})
   const x=d.items[0], titleScore=overlap(supplierTitle,x.title||''), brandMatch=!!supplierBrand&&!!x.brand&&supplierBrand.toLowerCase()===x.brand.toLowerCase()
   const sizeToken=(supplierSize||'').toLowerCase().replace(/\s/g,''); const lookupText=((x.title||'')+' '+(x.size||'')+' '+(x.weight||'')).toLowerCase().replace(/\s/g,''); const sizeMatch=!!sizeToken&&lookupText.includes(sizeToken)
   const barcodeMatch=[x.ean,x.upc,x.gtin].filter(Boolean).some((v:string)=>v===ean||v.replace(/^0+/,'')===ean.replace(/^0+/,''))
