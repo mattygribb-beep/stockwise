@@ -13,21 +13,21 @@
 
 .catalogueActions{display:flex;gap:8px;align-items:center}.catalogueActions .primary,.catalogueActions .reset{display:flex;align-items:center;gap:6px;margin:0}.syncError{display:flex;gap:9px;align-items:flex-start;padding:11px 13px;margin:-3px 0 14px;border:1px solid #efc6c0;background:#fff4f2;border-radius:9px;color:#8d352e}.syncError div{display:flex;flex-direction:column;gap:2px}.syncError b{font-size:10px}.syncError span{font-size:9px}.catalogueSection .overviewSectionHead p{font-size:9px;color:var(--muted);margin:4px 0 0}.catalogueTable td>b{font-size:9px}
 
-/* Premium Stockwise theme refinements */
+/* Flip Lead brand refinements */
 body{background:var(--paper);color:var(--ink)}
 .metric,section{background:var(--surface);box-shadow:0 1px 2px rgba(10,18,32,.025)}
-.primary{background:var(--navy);box-shadow:0 1px 2px rgba(10,18,32,.12)}
-.primary:hover{background:#111c2e}
+.primary{background:#1E66F5;color:#fff;box-shadow:0 4px 12px rgba(30,102,245,.20)}
+.primary:hover{background:#1857D6}
 .title small,.overviewSectionHead small,.sectionHead small{color:var(--emerald)}
 input,select,.reset,.secondaryAction,.supplierMore{background:var(--surface)}
-aside{background:linear-gradient(180deg,#08111f 0%,#0d1727 100%)}
-.brand>b{background:#d7e7e1;color:#0a1220}
-nav button:hover,nav button.active{background:#152238}
-nav button.active svg{color:#78a99a}
-header i{background:#EAF1FF;color:var(--emerald)}
-.catalogueToolbar,.profile,.decisionPanel,.insight,.supplierSummary>div{background:#0a1424}
-.stockPill,.verifiedLabel{background:#EAF1FF;color:var(--emerald)}
-.catalogueDetail,.supplierDetail{border-left-color:#3f806d}
-.miniBar i,.budgetBar i,.impactBar i{background:#3f806d}
+aside{background:linear-gradient(180deg,#0B1320 0%,#101D30 100%)}
+.brand>b{background:#1E66F5;color:#fff;box-shadow:0 6px 18px rgba(30,102,245,.28)}
+nav button:hover,nav button.active{background:#162A46}
+nav button.active svg{color:#1E66F5}
+header i{background:#EAF1FF;color:#1E66F5}
+.catalogueToolbar,.profile,.decisionPanel,.insight,.supplierSummary>div{background:#0B1320}
+.stockPill,.verifiedLabel{background:#E8F8F1;color:#0D6B54}
+.catalogueDetail,.supplierDetail{border-left-color:#1E66F5}
+.miniBar i,.budgetBar i,.impactBar i{background:#21C784}
 
 .catalogueStats .metric{appearance:none;text-align:left;font:inherit;color:inherit;cursor:pointer}.catalogueStats .metric:hover{border-color:#1E66F5;box-shadow:0 6px 20px rgba(11,19,32,.08)}.catalogueTable tbody tr{cursor:pointer}.catalogueTable tbody tr:hover{background:#F7F9FC}.catalogueDetail{border-top:3px solid #1E66F5}.brand strong{letter-spacing:-.02em}.stockPill{color:#0D6B54}.catalogueTable .supplierMore svg{display:block}
