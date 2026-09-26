@@ -1,6 +1,6 @@
 'use client'
 import {Fragment,useEffect,useMemo,useState} from 'react'
-import {AlertCircle,ArrowRight,BarChart3,BookOpen,Calculator,LayoutDashboard,Plus,Settings,ShoppingBag,Star,Truck,Upload,Zap} from 'lucide-react'
+import {AlertCircle,ArrowRight,BarChart3,BookOpen,Bot,Calculator,LayoutDashboard,Plus,Settings,ShoppingBag,Star,Truck,Upload,Zap} from 'lucide-react'
 type Row={id:string;product:string;ean:string;supplier:string;buy:number;sell:number;qty:number;status:string;decision:string;actualSell?:number}
 const seed:Row[]=[
 {id:'1',product:"Reese's Pieces Theatre Box 113g",ean:'034000470772',supplier:'American Fizz',buy:1.95,sell:5.99,qty:24,status:'Completed',decision:'BUY',actualSell:5.75},
@@ -22,10 +22,11 @@ export default function Page(){
  const complete=(id:string)=>setRows(rows.map(r=>r.id===id?{...r,status:'Completed',actualSell:r.sell*.96}:r))
  const active=rows.filter(r=>['Purchased','Selling'].includes(r.status)).reduce((s,r)=>s+r.buy*r.qty,0)
  const realised=rows.filter(r=>r.status==='Completed').reduce((s,r)=>s+((r.actualSell||r.sell)-r.buy)*r.qty,0)
- const nav=[['Overview',LayoutDashboard],['New Analysis',Calculator],['Wholesale',ShoppingBag],['Product Identity',BookOpen],['Opportunities',Zap],['Suppliers',Truck],['Portfolio',BarChart3],['Settings',Settings]] as const
+ const nav=[['Overview',LayoutDashboard],['New Analysis',Calculator],['Wholesale',ShoppingBag],['Finn',Bot],['Product Identity',BookOpen],['Opportunities',Zap],['Suppliers',Truck],['Portfolio',BarChart3],['Settings',Settings]] as const
  return <div className="shell"><aside><div className="brand"><b className="flipLeadMark" aria-hidden="true"><svg viewBox="0 0 64 64" role="img"><defs><linearGradient id="flipLeadBlue" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stopColor="#0B4DEB"/><stop offset=".55" stopColor="#0877FF"/><stop offset="1" stopColor="#079CFF"/></linearGradient><linearGradient id="flipLeadMint" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stopColor="#00CDBD"/><stop offset="1" stopColor="#16E0C4"/></linearGradient></defs><path fill="url(#flipLeadMint)" d="M5 52h13l14-16H19L5 52Z"/><path fill="url(#flipLeadBlue)" d="M18 12 8 24h22L9 52h14l21-25v25l12-10V12H18Z"/></svg></b><strong>Flip Lead</strong></div><p className="tag">FIND IT. FLIP IT. KNOW THE NUMBERS.</p><nav>{nav.map(([n,I])=><button className={view===n?'active':''} onClick={()=>setView(n)} key={n}><I size={17}/>{n}</button>)}</nav><div className="user">MG <span>Matt · Trader</span></div></aside><main><header><span>Workspace / <b>{view}</b></span><i>V1.2</i></header><div className="page">
  {view==='Overview'&&<Overview rows={rows} budget={budget} active={active} realised={realised} go={setView}/>} 
  {view==='New Analysis'&&<AnalysisWorkspace a={a} setA={setA} calc={calc} rules={rules} budget={budget} active={active} rows={rows} decision={decision} seen={seen} save={save}/>} 
+ {view==='Finn'&&<Finn/>}
  {view==='Product Identity'&&<ProductIdentity/>}
  {view==='Opportunities'&&<Opportunities rows={rows} purchase={purchase} go={setView}/>}
  {view==='Portfolio'&&<><Title k="INTELLIGENCE" t="Portfolio" p="Compare capital committed with what actually happened."/><div className="cards"><Metric l="Capital committed" v={gbp(active)}/><Metric l="Realised profit" v={gbp(realised)}/><Metric l="Units remembered" v={String(rows.reduce((s,r)=>s+r.qty,0))}/><Metric l="Completed outcomes" v={String(rows.filter(r=>r.status==='Completed').length)}/></div><section><h2>Expected vs actual</h2>{rows.filter(r=>r.status==='Completed').map(r=><div className="outcome" key={r.id}><b>{r.product}</b><span>Expected sell {gbp(r.sell)}</span><span>Actual avg {gbp(r.actualSell||r.sell)}</span></div>)}</section></>}
@@ -50,6 +51,11 @@ export default function Page(){
  {view==='Wholesale'&&<WholesaleCatalogue/>} 
  {view==='Suppliers'&&<SupplierDirectory rows={rows}/>} 
  </div></main></div>}
+function Finn(){
+ return <><div className="overviewHero"><Title k="VIRTUAL BUYER" t="Finn" p="Your Flip Lead buying assistant. Scan suppliers, compare effective costs and turn your sourcing budget into a focused buying shortlist."/><div className="quick"><button className="primary" disabled><Zap size={15}/> Scan suppliers</button></div></div>
+ <div className="catalogueStats"><div className="metric"><span>Sourcing budget</span><strong>£500.00</strong><small>starting buying capital</small></div><div className="metric"><span>Supplier coverage</span><strong>4</strong><small>connected catalogues</small></div><div className="metric"><span>Shortlisted</span><strong>—</strong><small>waiting for Finn scan engine</small></div><div className="metric"><span>Capital selected</span><strong>£0.00</strong><small>nothing approved yet</small></div></div>
+ <section><div className="overviewSectionHead"><div><small>FINN · BUYING DESK</small><h2>Find the best use of your £500</h2></div><Bot size={22}/></div><p>Finn will match the same products across suppliers, normalise VAT and pack costs, identify the cheapest effective source, then use Product Identity and Amazon economics to investigate the strongest opportunities.</p><div className="emptyState"><b>Finn is ready for his sourcing engine.</b><span>The workspace is now separate from Wholesale Catalogue. Supplier scanning, matching and recommended baskets will be built here without interrupting the catalogue workflow.</span></div></section></>}
+
 function Title({k,t,p}:{k:string,t:string,p:string}){return <div className="title"><small>{k}</small><h1>{t}</h1><p>{p}</p></div>}
 function Metric({l,v,s}:{l:string,v:string,s?:string}){return <div className="metric"><span>{l}</span><strong>{v}</strong>{s&&<small>{s}</small>}</div>}
 function Opportunities({rows,purchase,go}:{rows:Row[];purchase:(x:string)=>void;go:(x:string)=>void}){
