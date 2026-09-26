@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { saveSupplierCatalogue } from '../../../../lib/catalogue-store'
 
 export const runtime='nodejs'
 export const dynamic='force-dynamic'
@@ -58,6 +59,7 @@ export async function GET(){
    pages.forEach(x=>offers.push(...x))
   }
   const unique=[...new Map(offers.map(x=>[x.supplierSku,x])).values()].sort((a:any,b:any)=>a.product.localeCompare(b.product))
+  await saveSupplierCatalogue('sweet-glory',unique,{brandPages:brands.length,cataloguePages:pagePaths.length})
   return NextResponse.json({ok:true,supplier:'Sweet & Glory',brandPages:brands.length,cataloguePages:pagePaths.length,inStock:unique.length,offers:unique})
  }catch(e:any){return NextResponse.json({ok:false,error:e?.message||'Sweet & Glory catalogue sync failed'},{status:500})}
 }
