@@ -4,7 +4,7 @@ export const runtime='nodejs'
 export const dynamic='force-dynamic'
 
 const BASE='https://sweetandglory.com'
-const SEEDS=['/candy','/food','/drinks']
+const SEEDS=['/candy','/chocolate','/grocery','/soft-drinks','/brands','/location','/just-landed']
 const HEADERS={'User-Agent':'Stockwise Supplier Catalogue/1.0','Accept':'text/html,application/xhtml+xml'}
 
 function decode(s:string){return s.replace(/&amp;/g,'&').replace(/&#39;/g,"'").replace(/&quot;/g,'"').replace(/&pound;/g,'£').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim()}
@@ -23,23 +23,13 @@ function links(html:string){
 
 function parseProducts(html:string,path:string){
  const text=decode(html)
- const chunks=text.split(/(?=\bCode:\s*)/i)
+ const re=/([^£]{3,180}?\s+-\s+(\d+)ct)\s+Code:\s*([^\s]+)\s+Availability:\s*([\d,]+)\s+In Stock\s+Pack Quantity:\s*(\d+)\s+Expiry Date:\s*([0-9/]+)\s+(?:\(RRP £[\d,.]+ Save £[\d,.]+\)\s*)?£([\d,.]+)\s*Ex VAT\s*\(£([\d,.]+)\s*Ex VAT per unit\)/gi
  const out:any[]=[]
- for(let i=1;i<chunks.length;i++){
-  const c=chunks[i]
-  const code=c.match(/^Code:\s*([^\s]+)/i)?.[1]||''
-  const before=chunks[i-1]
-  const headings=[...before.matchAll(/(?:^|\s)([^.]{3,160}?\s+-\s+\d+ct)\s*(?=Code:|Availability:|$)/gi)]
-  let title=headings.length?headings[headings.length-1][1].trim():''
-  if(!title){const m=before.match(/([A-Z][^£]{3,140}?\s+-\s+\d+ct)\s*$/i);title=m?.[1]?.trim()||''}
-  const availability=c.match(/Availability:\s*([\d,]+)\s*In Stock/i)
-  const pack=c.match(/Pack Quantity:\s*(\d+)/i)
-  const expiry=c.match(/Expiry Date:\s*([0-9/]+)/i)
-  const priceMatches=[...c.matchAll(/£([\d,.]+)\s*Ex VAT/gi)]
-  const unit=c.match(/£([\d,.]+)\s*Ex VAT per unit/i)
-  if(!code||!title||!availability||!pack||!priceMatches.length)continue
-  const casePrice=num(priceMatches[priceMatches.length-1][1]),caseQty=num(pack[1])
-  out.push({id:'sweet-glory-'+code,supplier:'Sweet & Glory',supplierProductId:code,supplierSku:code,product:title.replace(/\s+-\s+\d+ct\s*$/i,'').trim(),rawTitle:title,brand:brandFromPath(path),size:sizeFromTitle(title),caseQty,casePrice,unitCost:unit?num(unit[1]):casePrice/caseQty,ean:'',stockQty:num(availability[1]),expiry:expiry?.[1]||'',status:'IN STOCK',url:BASE+path,source:'Sweet & Glory live catalogue',checked:new Date().toISOString()})
+ for(const m of text.matchAll(re)){
+  let title=m[1].trim().replace(/^(?:Qty:|Add To Basket|Notify Me|\d+|Alphabetical|Price|Custom)\s+/gi,'').trim()
+  const code=m[3], stock=num(m[4]), caseQty=num(m[5]), expiry=m[6], casePrice=num(m[7]), unitCost=num(m[8])
+  if(!title||!code||!caseQty||!casePrice||!unitCost)continue
+  out.push({id:'sweet-glory-'+code,supplier:'Sweet & Glory',supplierProductId:code,supplierSku:code,product:title.replace(/\s+-\s+\d+ct\s*$/i,'').trim(),rawTitle:title,brand:brandFromPath(path),size:sizeFromTitle(title),caseQty,casePrice,unitCost,ean:'',stockQty:stock,expiry,status:'IN STOCK',url:BASE+path,source:'Sweet & Glory live catalogue',checked:new Date().toISOString()})
  }
  return out
 }
