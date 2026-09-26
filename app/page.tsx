@@ -8,7 +8,7 @@ const seed:Row[]=[
 {id:'3',product:'Jabra Evolve2 40 SE',ean:'5706991028090',supplier:'Office Outlet',buy:38.5,sell:69.99,qty:4,status:'Analysed',decision:'TEST BUY'}]
 const gbp=(n:number)=>'£'+n.toFixed(2)
 export default function Page(){
- const [view,setView]=useState('Overview'); const [rows,setRows]=useState(seed)
+ const [view,setView]=useState('Overview'); const [rows,setRows]=useState<Row[]>([])
  const defaults={roi:30,profit:2,margin:15,totalProfit:25,maxCapital:500,firstCapital:250,firstUnits:24}
  const [rules,setRules]=useState(defaults)
  const [budget,setBudget]=useState(2000)
@@ -67,7 +67,7 @@ function Overview({rows,budget,active,realised,go}:{rows:Row[];budget:number;act
  const expected=completed.reduce((s,r)=>s+(r.sell-r.buy)*r.qty,0); const actual=completed.reduce((s,r)=>s+((r.actualSell||r.sell)-r.buy)*r.qty,0)
  const stages=['Analysed','Shortlisted','Purchased','Selling','Completed']; const pct=budget?Math.min(100,active/budget*100):0
  return <><div className="overviewHero"><Title k="PURCHASING INTELLIGENCE" t="Good afternoon, Matt." p="Know what deserves your capital before you place the order."/><div className="quick"><button className="primary" onClick={()=>go('New Analysis')}><Plus size={15}/> Analyse Product</button><button className="secondaryAction" onClick={()=>go('Wholesale')}><Upload size={15}/> Upload Wholesale List</button></div></div>
- <div className="demoNote"><span>DEMO DATA</span> This workspace currently contains seeded example records. Persistent user data is the next platform milestone.</div>
+
  <div className="cards overviewCards"><div className="metric capitalMetric"><span>Buying capital</span><strong>{gbp(Math.max(0,budget-active))}</strong><small>available of {gbp(budget)}</small><div className="miniBar"><i style={{width:pct+'%'}}/></div><em>{gbp(active)} committed · {Math.round(pct)}% deployed</em></div><Metric l="Active purchases" v={String(activeRows.length)} s={activeRows.length?gbp(active)+' committed':'No capital currently in motion'}/><Metric l="Realised profit" v={gbp(realised)} s={completed.length+' completed outcome'+(completed.length===1?'':'s')}/><Metric l="Flip Lead Memory" v={String(rows.length)} s={completed.length+' completed · '+activeRows.length+' active'}/></div>
  <section className="attention"><div className="overviewSectionHead"><div><small>PRIORITY QUEUE</small><h2>Needs your attention</h2></div><AlertCircle size={20}/></div><div className="attentionGrid">
   <Attention n={test.length} title="Test buys to review" text={test.length?test[0].product:'No TEST BUY opportunities waiting.'} action="Review opportunities" click={()=>go('Opportunities')}/>
