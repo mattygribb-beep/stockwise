@@ -31,3 +31,8 @@ header i{background:#EAF1FF;color:#1E66F5}
 .miniBar i,.budgetBar i,.impactBar i{background:#21C784}
 
 .catalogueStats .metric{appearance:none;text-align:left;font:inherit;color:inherit;cursor:pointer}.catalogueStats .metric:hover{border-color:#1E66F5;box-shadow:0 6px 20px rgba(11,19,32,.08)}.catalogueTable tbody tr{cursor:pointer}.catalogueTable tbody tr:hover{background:#F7F9FC}.catalogueDetail{border-top:3px solid #1E66F5}.brand strong{letter-spacing:-.02em}.stockPill{color:#0D6B54}.catalogueTable .supplierMore svg{display:block}
+
+/* Exact Flip Lead arrow mark: blue rising arrow + turquoise lower stroke */
+.brand>b.flipLeadMark{position:relative;display:block;width:36px;height:34px;border-radius:0;background:transparent;color:inherit;box-shadow:none;overflow:visible;flex:0 0 36px}
+.flipLeadArrow{position:absolute;left:8px;top:2px;width:27px;height:27px;background:linear-gradient(135deg,#0B5CF6 0%,#087CFF 55%,#0AA0FF 100%);clip-path:polygon(34% 0,100% 0,100% 66%,78% 100%,78% 45%,34% 100%,0 100%,55% 43%,0 43%)}
+.flipLeadTail{position:absolute;left:0;bottom:1px;width:18px;height:10px;background:linear-gradient(135deg,#00D8C4,#18E0C2);transform:skewX(-40deg);transform-origin:center;border-radius:2px}
