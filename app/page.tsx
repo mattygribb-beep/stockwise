@@ -9,7 +9,8 @@ const seed:Row[]=[
 const gbp=(n:number)=>'£'+n.toFixed(2)
 export default function Page(){
  const [view,setView]=useState('Overview'); const [rows,setRows]=useState(seed)
- const defaults={roi:30,profit:2,margin:15,totalProfit:25,maxCapital:500,firstCapital:250,firstUnits:24}\n const [rules,setRules]=useState(defaults)
+ const defaults={roi:30,profit:2,margin:15,totalProfit:25,maxCapital:500,firstCapital:250,firstUnits:24}
+ const [rules,setRules]=useState(defaults)
  const [budget,setBudget]=useState(2000)
  const [a,setA]=useState({product:'Anker USB-C Hub 7-in-1',ean:'0194644020347',supplier:'Liquidation World',buy:12,sell:29.99,fees:4.5,fulfilment:3.49,pack:0.5,qty:24,source:'Manual Estimate'})
  const calc=useMemo(()=>{const profit=a.sell-a.buy-a.fees-a.fulfilment-a.pack,roi=profit/a.buy*100,margin=profit/a.sell*100,capital=a.buy*a.qty;return{profit,roi,margin,capital,revenue:a.sell*a.qty}},[a])
