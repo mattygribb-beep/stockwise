@@ -1,6 +1,6 @@
 'use client'
 import {useEffect,useMemo,useState} from 'react'
-import {AlertCircle,ArrowRight,BarChart3,BookOpen,Calculator,LayoutDashboard,Plus,Settings,ShoppingBag,Star,TrendingUp,Truck,Upload,Zap} from 'lucide-react'
+import {AlertCircle,ArrowRight,BarChart3,BookOpen,Calculator,LayoutDashboard,Plus,Settings,ShoppingBag,Star,Truck,Upload,Zap} from 'lucide-react'
 type Row={id:string;product:string;ean:string;supplier:string;buy:number;sell:number;qty:number;status:string;decision:string;actualSell?:number}
 const seed:Row[]=[
 {id:'1',product:"Reese's Pieces Theatre Box 113g",ean:'034000470772',supplier:'American Fizz',buy:1.95,sell:5.99,qty:24,status:'Completed',decision:'BUY',actualSell:5.75},
@@ -23,7 +23,7 @@ export default function Page(){
  const active=rows.filter(r=>['Purchased','Selling'].includes(r.status)).reduce((s,r)=>s+r.buy*r.qty,0)
  const realised=rows.filter(r=>r.status==='Completed').reduce((s,r)=>s+((r.actualSell||r.sell)-r.buy)*r.qty,0)
  const nav=[['Overview',LayoutDashboard],['New Analysis',Calculator],['Wholesale',ShoppingBag],['Opportunities',Zap],['Stock Memory',BookOpen],['Suppliers',Truck],['Portfolio',BarChart3],['Settings',Settings]] as const
- return <div className="shell"><aside><div className="brand"><b><TrendingUp size={19}/></b><strong>Flip Lead</strong></div><p className="tag">FIND IT. FLIP IT. KNOW THE NUMBERS.</p><nav>{nav.map(([n,I])=><button className={view===n?'active':''} onClick={()=>setView(n)} key={n}><I size={17}/>{n}</button>)}</nav><div className="user">MG <span>Matt · Trader</span></div></aside><main><header><span>Workspace / <b>{view}</b></span><i>V1.2</i></header><div className="page">
+ return <div className="shell"><aside><div className="brand"><b className="flipLeadMark" aria-hidden="true"><span className="flipLeadTail"/><span className="flipLeadArrow"/></b><strong>Flip Lead</strong></div><p className="tag">FIND IT. FLIP IT. KNOW THE NUMBERS.</p><nav>{nav.map(([n,I])=><button className={view===n?'active':''} onClick={()=>setView(n)} key={n}><I size={17}/>{n}</button>)}</nav><div className="user">MG <span>Matt · Trader</span></div></aside><main><header><span>Workspace / <b>{view}</b></span><i>V1.2</i></header><div className="page">
  {view==='Overview'&&<Overview rows={rows} budget={budget} active={active} realised={realised} go={setView}/>} 
  {view==='New Analysis'&&<AnalysisWorkspace a={a} setA={setA} calc={calc} rules={rules} budget={budget} active={active} rows={rows} decision={decision} seen={seen} save={save}/>} 
  {view==='Opportunities'&&<><Title k="BUYING" t="Opportunities" p="Move analysed opportunities through the real purchase lifecycle."/><section><Table rows={rows} actions purchase={purchase} complete={complete}/></section></>}
