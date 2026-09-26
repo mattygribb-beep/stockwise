@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { saveSupplierCatalogue } from '../../../../lib/catalogue-store'
 
 export const runtime='nodejs'
 export const dynamic='force-dynamic'
@@ -47,6 +48,7 @@ export async function GET(){
    offers.push(...rows.filter(Boolean))
   }
   offers.sort((a,b)=>a.product.localeCompare(b.product))
+  await saveSupplierCatalogue('stateside',offers,{collectionCount:unique.size,pages:pageResults.map(x=>({page:x.page,found:x.handles.length}))})
   return NextResponse.json({ok:true,supplier:'Stateside Distribution',collectionCount:unique.size,inStock:offers.length,pages:pageResults.map(x=>({page:x.page,found:x.handles.length})),offers})
  }catch(e:any){return NextResponse.json({ok:false,error:e?.message||'Catalogue sync failed'},{status:500})}
 }
