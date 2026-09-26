@@ -10,6 +10,16 @@ const HEADERS={'User-Agent':'Stockwise Supplier Catalogue/1.0','Accept':'text/ht
 function decode(s:string){return s.replace(/&nbsp;|&#160;/g,' ').replace(/&amp;/g,'&').replace(/&#39;|&apos;/g,"'").replace(/&quot;/g,'"').replace(/&pound;/g,'£').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim()}
 function num(s:string){const n=Number((s||'').replace(/,/g,''));return Number.isFinite(n)?n:0}
 function sizeFromTitle(t:string){const a=[...t.matchAll(/(\d+(?:\.\d+)?)\s*(g|kg|ml|l|oz|fl\.?\s*oz)\b/gi)];if(!a.length)return '';const m=a[a.length-1];return m[1]+m[2].replace(/\s+/g,'')}
+function cleanProductTitle(s:string){
+ let t=decode(s)
+ // The catalogue's flattened page text can prepend sort controls/CSS from the previous DOM block.
+ t=t.replace(/^.*?Latest Popularity Price Price Desc\s*\d*\s*/i,'')
+ t=t.replace(/^.*?Latest Popularity Price Desc\s*\d*\s*/i,'')
+ if(t.includes('}')) t=t.slice(t.lastIndexOf('}')+1).trim()
+ t=t.replace(/^(?:[£\d,.]+\s+Ex VAT per unit\)?\s*)?(?:Qty:\s*)?(?:Add To Basket\s*)?\d*\s*/i,'').trim()
+ t=t.replace(/^[:;,#\s]+/,'').replace(/\s+-\s+(?:\d+ct|Case)\s*$/i,'').trim()
+ return t
+}
 function brandFromPath(path:string){const m=path.match(/\/([^/]+)-wholesale-uk\/?$/);return m?m[1].replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase()):''}
 
 function brandLinks(html:string){
