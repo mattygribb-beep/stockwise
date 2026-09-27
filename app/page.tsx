@@ -13,7 +13,8 @@ const gbp=(n:number)=>'£'+n.toFixed(2)
 const usablePrice=(n:any)=>Number.isFinite(Number(n))&&Number(n)>0
 const priceOrUnavailable=(n:any)=>usablePrice(n)?gbp(Number(n)):'Price unavailable'
 export default function Page(){
- const [view,setView]=useState('Overview'); const [rows,setRows]=useState<Row[]>([])
+ const [view,setView]=useState('Overview'); const [rows,setRows]=useState<Row[]>([]); const [finnSeed,setFinnSeed]=useState('')
+ const openFinn=(query='')=>{setFinnSeed(query.trim());setView('Finn')}
  const defaults={roi:30,profit:2,margin:15,totalProfit:25,maxCapital:500,firstCapital:250,firstUnits:24}
  const [rules,setRules]=useState(defaults)
  const [budget,setBudget]=useState(2000)
@@ -28,8 +29,8 @@ export default function Page(){
  const nav=[['Overview',LayoutDashboard],['Wholesale',ShoppingBag],['Finn',Bot],['Product Identity',BookOpen],['Opportunities',Zap],['Suppliers',Truck],['Portfolio',BarChart3],['Settings',Settings]] as const
  return <div className="shell"><aside><div className="brand"><b className="flipLeadMark" aria-hidden="true"><svg viewBox="0 0 64 64" role="img"><defs><linearGradient id="flipLeadBlue" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stopColor="#0B4DEB"/><stop offset=".55" stopColor="#0877FF"/><stop offset="1" stopColor="#079CFF"/></linearGradient><linearGradient id="flipLeadMint" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stopColor="#00CDBD"/><stop offset="1" stopColor="#16E0C4"/></linearGradient></defs><path fill="url(#flipLeadMint)" d="M5 52h13l14-16H19L5 52Z"/><path fill="url(#flipLeadBlue)" d="M18 12 8 24h22L9 52h14l21-25v25l12-10V12H18Z"/></svg></b><strong>Flip Lead</strong></div><p className="tag">FIND IT. FLIP IT. KNOW THE NUMBERS.</p><nav>{nav.map(([n,I])=><button className={view===n?'active':''} onClick={()=>setView(n)} key={n}><I size={17}/>{n}</button>)}</nav><div className="user">MG <span>Matt · Trader</span></div></aside><main><header><span>Workspace / <b>{view}</b></span><div style={{display:'flex',gap:8,alignItems:'center'}}><button className="primary" onClick={()=>setView('Finn')}><Bot size={15}/> Find with {buyerName}</button><i>V1.2</i></div></header><div className="page">
 
- {view==='Overview'&&<Overview rows={rows} budget={budget} active={active} realised={realised} go={setView}/>} 
- {view==='Finn'&&<Finn buyerName={buyerName}/>}
+ {view==='Overview'&&<Overview rows={rows} budget={budget} active={active} realised={realised} go={setView} openFinn={openFinn}/>} 
+ {view==='Finn'&&<Finn buyerName={buyerName} initialQuery={finnSeed}/>}
  {view==='Product Identity'&&<ProductIdentity/>}
  {view==='Opportunities'&&<Opportunities rows={rows} purchase={purchase} go={setView}/>}
  {view==='Portfolio'&&<><Title k="INTELLIGENCE" t="Portfolio" p="Compare capital committed with what actually happened."/><div className="cards"><Metric l="Capital committed" v={gbp(active)}/><Metric l="Realised profit" v={gbp(realised)}/><Metric l="Units remembered" v={String(rows.reduce((s,r)=>s+r.qty,0))}/><Metric l="Completed outcomes" v={String(rows.filter(r=>r.status==='Completed').length)}/></div><section><h2>Expected vs actual</h2>{rows.filter(r=>r.status==='Completed').map(r=><div className="outcome" key={r.id}><b>{r.product}</b><span>Expected sell {gbp(r.sell)}</span><span>Actual avg {gbp(r.actualSell||r.sell)}</span></div>)}</section></>}
@@ -54,9 +55,10 @@ export default function Page(){
  {view==='Wholesale'&&<WholesaleCatalogue/>} 
  {view==='Suppliers'&&<SupplierDirectory rows={rows}/>} 
  </div></main></div>}
-function Finn({buyerName}:{buyerName:string}){
- const [brief,setBrief]=useState(''),[showFilters,setShowFilters]=useState(false),[include,setInclude]=useState(''),[exclude,setExclude]=useState(''),[brand,setBrand]=useState(''),[maxCase,setMaxCase]=useState(''),[handoff,setHandoff]=useState<any>(null)
+function Finn({buyerName,initialQuery=''}:{buyerName:string;initialQuery?:string}){
+ const [brief,setBrief]=useState(initialQuery),[showFilters,setShowFilters]=useState(false),[include,setInclude]=useState(''),[exclude,setExclude]=useState(''),[brand,setBrand]=useState(''),[maxCase,setMaxCase]=useState(''),[handoff,setHandoff]=useState<any>(null)
  const [scanned,setScanned]=useState(false),[scanning,setScanning]=useState(false),[error,setError]=useState(''),[results,setResults]=useState<any[]>([]),[offerCount,setOfferCount]=useState(0),[matchCount,setMatchCount]=useState(0)
+ useEffect(()=>{if(initialQuery)setBrief(initialQuery)},[initialQuery])
  const quick=(q:string)=>{setBrief(q);window.setTimeout(()=>document.getElementById('finn-ask')?.click(),0)}
  async function scan(){setScanning(true);setError('');try{
   const rs=await Promise.all(CATALOGUE_SLUGS.map(s=>fetch('/api/suppliers/catalogue?supplier='+s,{cache:'no-store'})))
@@ -91,11 +93,13 @@ function Table({rows,actions=false,purchase,complete}:{rows:Row[],actions?:boole
 function Rule({label,help,value,set,prefix,unit}:{label:string;help:string;value:number;set:(v:number)=>void;prefix?:string;unit?:string}){return <div className="ruleRow"><div><b>{label}</b><small>{help}</small></div><div className="ruleInput">{prefix&&<span>{prefix}</span>}<input type="number" value={value} onChange={e=>set(Number(e.target.value))}/>{unit&&<span>{unit}</span>}</div></div>}
 function Decision({n,c,text}:{n:string;c:string;text:string}){return <div className="decisionCard"><span className={'pill '+c}>{n}</span><p>{text}</p></div>}
 
-function Overview({rows,budget,active,realised,go}:{rows:Row[];budget:number;active:number;realised:number;go:(v:string)=>void}){
+function Overview({rows,budget,active,realised,go,openFinn}:{rows:Row[];budget:number;active:number;realised:number;go:(v:string)=>void;openFinn:(q?:string)=>void}){
+ const [findQuery,setFindQuery]=useState('')
  const activeRows=rows.filter(r=>['Purchased','Selling'].includes(r.status)); const completed=rows.filter(r=>r.status==='Completed'); const test=rows.filter(r=>r.decision==='TEST BUY'&&r.status==='Analysed')
  const expected=completed.reduce((s,r)=>s+(r.sell-r.buy)*r.qty,0); const actual=completed.reduce((s,r)=>s+((r.actualSell||r.sell)-r.buy)*r.qty,0)
  const stages=['Analysed','Shortlisted','Purchased','Selling','Completed']; const pct=budget?Math.min(100,active/budget*100):0
- return <><div className="overviewHero"><Title k="PURCHASING INTELLIGENCE" t="Good morning, Matt." p="Find the right products. Compare the numbers. Buy with confidence."/><div className="quick"><button className="primary" onClick={()=>go('Finn')}><Plus size={15}/> Analyse Product</button><button className="secondaryAction" onClick={()=>go('Wholesale')}><Upload size={15}/> Upload Wholesale List</button></div></div>
+ return <><div className="overviewHero"><Title k="PURCHASING INTELLIGENCE" t="Good morning, Matt." p="Find the right products. Compare the numbers. Buy with confidence."/><div className="quick"><button className="primary" onClick={()=>openFinn()}><Plus size={15}/> Find with Finn</button><button className="secondaryAction" onClick={()=>go('Wholesale')}><Upload size={15}/> Upload Wholesale List</button></div></div>
+ <section><div className="sectionHead"><div><small>FIND A PRODUCT</small><h2>Search or scan a barcode</h2><p>Enter a product, brand, EAN / UPC, ASIN or supplier SKU. Every route uses Finn's single retrieval engine.</p></div></div><div className="quick"><input style={{flex:1,minWidth:240}} value={findQuery} onChange={e=>setFindQuery(e.target.value)} onKeyDown={e=>{if(e.key==='Enter'&&findQuery.trim())openFinn(findQuery)}} placeholder="Product name or scan barcode here…"/><button className="primary" disabled={!findQuery.trim()} onClick={()=>openFinn(findQuery)}><Bot size={15}/> Search with Finn</button></div><small>USB/Bluetooth barcode scanners that type into the focused field work here immediately: scan, then press/emit Enter.</small></section>
 
  <div className="cards overviewCards"><div className="metric capitalMetric"><span>Buying capital</span><strong>{gbp(Math.max(0,budget-active))}</strong><small>available of {gbp(budget)}</small><div className="miniBar"><i style={{width:pct+'%'}}/></div><em>{gbp(active)} committed · {Math.round(pct)}% deployed</em></div><Metric l="Active purchases" v={String(activeRows.length)} s={activeRows.length?gbp(active)+' committed':'No capital currently in motion'}/><Metric l="Realised profit" v={gbp(realised)} s={completed.length+' completed outcome'+(completed.length===1?'':'s')}/><Metric l="Flip Lead Memory" v={String(rows.length)} s={completed.length+' completed · '+activeRows.length+' active'}/></div>
  <section className="attention"><div className="overviewSectionHead"><div><small>PRIORITY QUEUE</small><h2>Needs your attention</h2></div><AlertCircle size={20}/></div><div className="attentionGrid">
