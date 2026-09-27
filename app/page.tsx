@@ -13,7 +13,7 @@ const gbp=(n:number)=>'£'+n.toFixed(2)
 const usablePrice=(n:any)=>Number.isFinite(Number(n))&&Number(n)>0
 const priceOrUnavailable=(n:any)=>usablePrice(n)?gbp(Number(n)):'Price unavailable'
 export default function Page(){
- const [view,setView]=useState('Overview'); const [rows,setRows]=useState<Row[]>([]); const [finnSeed,setFinnSeed]=useState(''); const [identityHandoff,setIdentityHandoff]=useState<any>(null)
+ const [view,setView]=useState('Overview'); const [rows,setRows]=useState<Row[]>([]); const [finnSeed,setFinnSeed]=useState(''); const [identityHandoff,setIdentityHandoff]=useState<any>(null); const [finnSession,setFinnSession]=useState<any>(null)
  const openFinn=(query='')=>{setFinnSeed(query.trim());setView('Finn')}
  const verifyFromFinn=(result:any)=>{setIdentityHandoff(result);setView('Product Identity')}
  const returnToFinn=()=>{setView('Finn')}
@@ -32,7 +32,7 @@ export default function Page(){
  return <div className="shell"><aside><div className="brand"><b className="flipLeadMark" aria-hidden="true"><svg viewBox="0 0 64 64" role="img"><defs><linearGradient id="flipLeadBlue" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stopColor="#0B4DEB"/><stop offset=".55" stopColor="#0877FF"/><stop offset="1" stopColor="#079CFF"/></linearGradient><linearGradient id="flipLeadMint" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stopColor="#00CDBD"/><stop offset="1" stopColor="#16E0C4"/></linearGradient></defs><path fill="url(#flipLeadMint)" d="M5 52h13l14-16H19L5 52Z"/><path fill="url(#flipLeadBlue)" d="M18 12 8 24h22L9 52h14l21-25v25l12-10V12H18Z"/></svg></b><strong>Flip Lead</strong></div><p className="tag">FIND IT. FLIP IT. KNOW THE NUMBERS.</p><nav>{nav.map(([n,I])=><button className={view===n?'active':''} onClick={()=>setView(n)} key={n}><I size={17}/>{n}</button>)}</nav><div className="user">MG <span>Matt · Trader</span></div></aside><main><header><span>Workspace / <b>{view}</b></span><div style={{display:'flex',gap:8,alignItems:'center'}}><button className="primary" onClick={()=>setView('Finn')}><Bot size={15}/> Find with {buyerName}</button><i>V1.2</i></div></header><div className="page">
 
  {view==='Overview'&&<Overview rows={rows} budget={budget} active={active} realised={realised} go={setView} openFinn={openFinn}/>} 
- {view==='Finn'&&<Finn buyerName={buyerName} initialQuery={finnSeed} onVerify={verifyFromFinn}/>}
+ {view==='Finn'&&<Finn buyerName={buyerName} initialQuery={finnSeed} onVerify={verifyFromFinn} session={finnSession} onSession={setFinnSession}/>}
  {view==='Product Identity'&&<ProductIdentity handoff={identityHandoff} onReturn={returnToFinn}/>}
  {view==='Opportunities'&&<Opportunities rows={rows} purchase={purchase} go={setView}/>}
  {view==='Portfolio'&&<><Title k="INTELLIGENCE" t="Portfolio" p="Compare capital committed with what actually happened."/><div className="cards"><Metric l="Capital committed" v={gbp(active)}/><Metric l="Realised profit" v={gbp(realised)}/><Metric l="Units remembered" v={String(rows.reduce((s,r)=>s+r.qty,0))}/><Metric l="Completed outcomes" v={String(rows.filter(r=>r.status==='Completed').length)}/></div><section><h2>Expected vs actual</h2>{rows.filter(r=>r.status==='Completed').map(r=><div className="outcome" key={r.id}><b>{r.product}</b><span>Expected sell {gbp(r.sell)}</span><span>Actual avg {gbp(r.actualSell||r.sell)}</span></div>)}</section></>}
@@ -57,9 +57,9 @@ export default function Page(){
  {view==='Wholesale'&&<WholesaleCatalogue/>} 
  {view==='Suppliers'&&<SupplierDirectory rows={rows}/>} 
  </div></main></div>}
-function Finn({buyerName,initialQuery='',onVerify}:{buyerName:string;initialQuery?:string;onVerify:(result:any)=>void}){
- const [brief,setBrief]=useState(initialQuery),[showFilters,setShowFilters]=useState(false),[include,setInclude]=useState(''),[exclude,setExclude]=useState(''),[brand,setBrand]=useState(''),[maxCase,setMaxCase]=useState(''),[handoff,setHandoff]=useState<any>(null)
- const [scanned,setScanned]=useState(false),[scanning,setScanning]=useState(false),[error,setError]=useState(''),[results,setResults]=useState<any[]>([]),[offerCount,setOfferCount]=useState(0),[matchCount,setMatchCount]=useState(0)
+function Finn({buyerName,initialQuery='',onVerify,session,onSession}:{buyerName:string;initialQuery?:string;onVerify:(result:any)=>void;session?:any;onSession:(s:any)=>void}){
+ const [brief,setBrief]=useState(session?.brief||initialQuery),[showFilters,setShowFilters]=useState(false),[include,setInclude]=useState(session?.include||''),[exclude,setExclude]=useState(session?.exclude||''),[brand,setBrand]=useState(session?.brand||''),[maxCase,setMaxCase]=useState(session?.maxCase||''),[handoff,setHandoff]=useState<any>(null)
+ const [scanned,setScanned]=useState(!!session?.scanned),[scanning,setScanning]=useState(false),[error,setError]=useState(''),[results,setResults]=useState<any[]>(session?.results||[]),[offerCount,setOfferCount]=useState(session?.offerCount||0),[matchCount,setMatchCount]=useState(session?.matchCount||0)
  useEffect(()=>{if(initialQuery){setBrief(initialQuery);window.setTimeout(()=>document.getElementById('finn-ask')?.click(),50)}},[initialQuery])
  const quick=(q:string)=>{setBrief(q);window.setTimeout(()=>document.getElementById('finn-ask')?.click(),0)}
  async function scan(){setScanning(true);setError('');try{
@@ -70,8 +70,10 @@ function Finn({buyerName,initialQuery='',onVerify}:{buyerName:string;initialQuer
   const intent=parseFinnIntent(brief,{include,exclude,brand,maxCase})
   const ranked=rankFinnOffers(allOffers,intent)
   setMatchCount(ranked.length)
-  setResults(groupFinnResults(ranked).slice(0,30))
+  const grouped=groupFinnResults(ranked).slice(0,30)
+  setResults(grouped)
   setScanned(true)
+  onSession({brief,include,exclude,brand,maxCase,results:grouped,offerCount:allOffers.length,matchCount:ranked.length,scanned:true})
  }catch(e:any){setError(e.message||'Virtual buyer could not search supplier data')}finally{setScanning(false)}}
  return <><div className="overviewHero"><Title k="VIRTUAL BUYER" t={buyerName} p="Ask naturally. Finn searches your saved supplier data, ranks likely matches and keeps single-source leads visible."/><div className="quick"><button id="finn-ask" className="primary" onClick={scan} disabled={scanning||!brief.trim()}><Zap size={15}/> {scanning?'Searching…':'Ask '+buyerName}</button></div></div>
  <div className="catalogueStats"><Metric l="Offers searched" v={scanned?String(offerCount):'—'} s="saved supplier records"/><Metric l="Relevant offers" v={scanned?String(matchCount):'—'} s="matched to your prompt"/><Metric l="Product leads" v={scanned?String(results.length):'—'} s="single-source + comparisons"/><Metric l="Verified identity" v={scanned?String(results.filter((r:any)=>r.confidence==='VERIFIED').length):'—'} s="EAN / ASIN confidence"/></div>
