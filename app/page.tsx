@@ -3,6 +3,7 @@ import {Fragment,useEffect,useMemo,useState} from 'react'
 import {AlertCircle,ArrowRight,BarChart3,BookOpen,Bot,Calculator,LayoutDashboard,Plus,Settings,ShoppingBag,Star,Truck,Upload,Zap} from 'lucide-react'
 import {parseFinnIntent,rankFinnOffers,groupFinnResults} from '../lib/finn-retrieval'
 import {buyingReadiness} from '../lib/finn-rules'
+import {CATALOGUE_SUPPLIERS,CATALOGUE_SLUGS} from '../lib/suppliers'
 type Row={id:string;product:string;ean:string;supplier:string;buy:number;sell:number;qty:number;status:string;decision:string;actualSell?:number}
 const seed:Row[]=[
 {id:'1',product:"Reese's Pieces Theatre Box 113g",ean:'034000470772',supplier:'American Fizz',buy:1.95,sell:5.99,qty:24,status:'Completed',decision:'BUY',actualSell:5.75},
@@ -61,8 +62,7 @@ function Finn({buyerName}:{buyerName:string}){
  const [scanned,setScanned]=useState(false),[scanning,setScanning]=useState(false),[error,setError]=useState(''),[results,setResults]=useState<any[]>([]),[offerCount,setOfferCount]=useState(0),[matchCount,setMatchCount]=useState(0)
  const quick=(q:string)=>{setBrief(q);window.setTimeout(()=>document.getElementById('finn-ask')?.click(),0)}
  async function scan(){setScanning(true);setError('');try{
-  const slugs=['stateside','sweet-glory','wholesale-sweets','kings-candy','american-candy-n-drinks','candy-cargo','yc-wholesale','world-candies','americatessen','hancocks']
-  const rs=await Promise.all(slugs.map(s=>fetch('/api/suppliers/catalogue?supplier='+s,{cache:'no-store'})))
+  const rs=await Promise.all(CATALOGUE_SLUGS.map(s=>fetch('/api/suppliers/catalogue?supplier='+s,{cache:'no-store'})))
   const js=await Promise.all(rs.map(r=>r.json()))
   const allOffers=js.flatMap((d:any)=>d.ok&&Array.isArray(d.offers)?d.offers:[])
   setOfferCount(allOffers.length)
@@ -199,18 +199,12 @@ function WholesaleCatalogue(){
  const openProduct=(x:any)=>{setSelected(s=>s?.id===x.id?null:x)}; const [favourites,setFavourites]=useState<string[]>([])
  const [stateside,setStateside]=useState<any[]>([]); const [sweetGlory,setSweetGlory]=useState<any[]>([]); const [wholesaleSweets,setWholesaleSweets]=useState<any[]>([]); const [kingsCandy,setKingsCandy]=useState<any[]>([]); const [americanCandy,setAmericanCandy]=useState<any[]>([]); const [candyCargo,setCandyCargo]=useState<any[]>([]); const [ycWholesale,setYcWholesale]=useState<any[]>([]); const [worldCandies,setWorldCandies]=useState<any[]>([]); const [americatessen,setAmericatessen]=useState<any[]>([]); const [hancocks,setHancocks]=useState<any[]>([]); const [costSort,setCostSort]=useState<'none'|'caseAsc'|'caseDesc'|'unitAsc'|'unitDesc'>('none'); const [catalogueLoading,setCatalogueLoading]=useState(true); const [syncing,setSyncing]=useState(false); const [syncError,setSyncError]=useState(''); const [syncTimes,setSyncTimes]=useState<Record<string,string>>({})
  useEffect(()=>{try{setFavourites(JSON.parse(localStorage.getItem('flip-lead-favourites')||'[]'))}catch{};(async()=>{try{
-  const specs=[
-    ['stateside','Stateside Distribution',setStateside],
-    ['sweet-glory','Sweet & Glory',setSweetGlory],
-    ['wholesale-sweets','Wholesale Sweets',setWholesaleSweets],
-    ['kings-candy',"King's Candy",setKingsCandy],
-    ['american-candy-n-drinks','American Candy N Drinks',setAmericanCandy],
-    ['candy-cargo','Candy Cargo',setCandyCargo],
-    ['yc-wholesale','Y&C Wholesale',setYcWholesale],
-    ['world-candies','World Candies',setWorldCandies],
-    ['americatessen','Americatessen',setAmericatessen],
-    ['hancocks','Hancocks',setHancocks],
-  ] as const
+  const setters:Record<string,(rows:any[])=>void>={
+    'stateside':setStateside,'sweet-glory':setSweetGlory,'wholesale-sweets':setWholesaleSweets,'kings-candy':setKingsCandy,
+    'american-candy-n-drinks':setAmericanCandy,'candy-cargo':setCandyCargo,'yc-wholesale':setYcWholesale,
+    'world-candies':setWorldCandies,'americatessen':setAmericatessen,'hancocks':setHancocks,
+  }
+  const specs=CATALOGUE_SUPPLIERS.map(s=>[s.slug,s.name,setters[s.slug]] as const)
   const responses=await Promise.all(specs.map(([slug])=>fetch('/api/suppliers/catalogue?supplier='+slug,{cache:'no-store'})))
   const payloads=await Promise.all(responses.map(r=>r.json()))
   const times:Record<string,string>={}
