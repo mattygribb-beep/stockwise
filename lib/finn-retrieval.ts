@@ -31,7 +31,7 @@ export type FinnSearchIntent = {
   maxCase?: number
 }
 
-const STOP = new Set(['find','me','for','a','an','the','some','please','looking','want','i','am','interested','in','with','and','or','product','products','stock','supplier','suppliers','case','cases'])
+const STOP = new Set(['find','show','search','look','lookup','compare','check','tell','give','get','who','stocks','stocked','cheapest','cheap','best','source','sources','sourcing','me','my','for','a','an','the','some','please','looking','want','i','am','interested','in','with','and','or','product','products','stock','supplier','suppliers','case','cases','anything','any'])
 const clean = (s = '') => s.toLowerCase().replace(/[^a-z0-9.]+/g, ' ').replace(/\s+/g, ' ').trim()
 const tokens = (s = '') => clean(s).split(' ').filter(x => x.length > 1 && !STOP.has(x))
 
@@ -56,7 +56,7 @@ export function parseFinnIntent(raw: string, filters?: {include?: string; exclud
     asin,
     size: size ? clean(size) : undefined,
     packCount: pack ? Number(pack[1]) : undefined,
-    maxCase: Number(filters?.maxCase) || undefined,
+    maxCase: Number(filters?.maxCase) || Number(priceLimit) || undefined,
   }
 }
 
