@@ -92,7 +92,7 @@ header i{background:#EAF1FF;color:#1E66F5}
  button{touch-action:manipulation}
 }
 
-.finnSearchRow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:stretch}.finnSearchRow input{width:100%;min-width:0;padding:13px 14px;border:1px solid #d7dde6;border-radius:10px;background:#fff}.finnSearchRow .primary{white-space:nowrap;justify-content:center}@media(max-width:700px){.finnSearchRow{grid-template-columns:1fr}.finnSearchRow .primary{width:100%}}
+.finnSearchRow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:stretch}.finnSearchRow input{width:100%;min-width:0;height:52px;padding:0 14px;border:1px solid #d7dde6;border-radius:10px;background:#fff}.finnSearchRow .primary{height:52px;align-self:stretch;white-space:nowrap;justify-content:center}@media(max-width:700px){.finnSearchRow{grid-template-columns:1fr}.finnSearchRow .primary{width:100%}}
 
 .finnResult{display:block}.finnResultMain{display:grid;gap:7px}.finnStatusRow{display:flex;gap:7px;flex-wrap:wrap}.finnResultMain>small{color:#64748b}.finnResult .quick{margin-top:4px}.finnResult .matchEmpty{margin-top:10px}
 
