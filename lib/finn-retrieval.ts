@@ -1,3 +1,4 @@
+import {CATALOGUE_SUPPLIERS} from './suppliers'
 export type FinnOffer = {
   id?: string
   supplier?: string
@@ -35,18 +36,7 @@ export type FinnSearchIntent = {
   missingAsin?: boolean
 }
 
-const SUPPLIERS = [
-  'Stateside',
-  'Sweet & Glory',
-  'Wholesale Sweets',
-  "King's Candy",
-  'Candy Cargo',
-  'Y&C Wholesale',
-  'American Candy N Drinks',
-  'World Candies',
-  'Americatessen',
-  'Hancocks',
-]
+const SUPPLIERS = CATALOGUE_SUPPLIERS.map(s=>s.name)
 
 const STOP = new Set(['find','show','search','look','lookup','compare','check','tell','give','get','who','stocks','stocked','cheapest','cheap','best','source','sources','sourcing','me','my','for','a','an','the','some','please','looking','want','i','am','interested','in','with','and','or','product','products','stock','supplier','suppliers','case','cases','anything','any','from','does','do','have','has'])
 const clean = (s = '') => s.toLowerCase().replace(/[^a-z0-9.]+/g, ' ').replace(/\s+/g, ' ').trim()
@@ -183,9 +173,10 @@ export function rankFinnOffers(allOffers: FinnOffer[], intent: FinnSearchIntent)
     if (validPrice(caseCost)) score += 4
 
     if (!eanExact && !asinExact && wanted.length && matched.length === 0) return null
-    const confidence = eanExact || asinExact ? 'VERIFIED' : (coverage >= .75 && (sizeMatch || !!intent.brand) && fuzzyMatched.length===0) ? 'STRONG POSSIBLE' : coverage >= .4 ? 'POSSIBLE' : 'LOOSE POSSIBLE'
-    const explanation=matchReason(confidence,[eanExact?'exact EAN/UPC':'',asinExact?'exact ASIN':''].filter(Boolean),matched,sizeMatch,packMatch,fuzzyMatched)
-    return {offer, score, confidence, matchedTerms: matched, fuzzyMatched, explanation, caseCost: validPrice(caseCost) ? caseCost : 0, unitCost: validPrice(unitCost) ? unitCost : 0}
+    const confidence = eanExact || asinExact ? 'EXACT SEARCH MATCH' : (coverage >= .75 && (sizeMatch || !!intent.brand) && fuzzyMatched.length===0) ? 'STRONG POSSIBLE' : coverage >= .4 ? 'POSSIBLE' : 'LOOSE POSSIBLE'
+    const identityConfidence = offer.identityStatus==='completed' ? 'VERIFIED' : 'UNVERIFIED'
+    const explanation=matchReason(identityConfidence,[eanExact?'exact EAN/UPC':'',asinExact?'exact ASIN':''].filter(Boolean),matched,sizeMatch,packMatch,fuzzyMatched)
+    return {offer, score, confidence, identityConfidence, matchedTerms: matched, fuzzyMatched, explanation, caseCost: validPrice(caseCost) ? caseCost : 0, unitCost: validPrice(unitCost) ? unitCost : 0}
   }).filter(Boolean).sort((a:any,b:any) => b.score - a.score || (a.caseCost || Infinity) - (b.caseCost || Infinity))
 }
 
@@ -198,7 +189,7 @@ export function groupFinnResults(ranked: ReturnType<typeof rankFinnOffers>) {
     groups.set(identity, [...(groups.get(identity) || []), r])
   }
   return [...groups.values()].map(group => {
-    const verifiedIdentity = group.some(x => x.confidence === 'VERIFIED')
+    const verifiedIdentity = group.some(x => x.identityConfidence === 'VERIFIED')
     const sorted = [...group].sort((a,b) => {
       // Compare economics by effective unit cost, not headline case price.
       const au = a.unitCost > 0 ? a.unitCost : Number.POSITIVE_INFINITY
@@ -218,6 +209,7 @@ export function groupFinnResults(ranked: ReturnType<typeof rankFinnOffers>) {
       bestCost: best.caseCost,
       bestUnitCost: best.unitCost,
       confidence: best.confidence,
+      identityConfidence: verifiedIdentity ? 'VERIFIED' : 'UNVERIFIED',
       explanation: best.explanation,
       matchedTerms: best.matchedTerms,
       fuzzyMatched: best.fuzzyMatched,
