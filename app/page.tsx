@@ -20,8 +20,11 @@ export default function Page(){
  const defaults={roi:30,profit:2,margin:15,totalProfit:25,maxCapital:500,firstCapital:250,firstUnits:24}
  const [rules,setRules]=useState(defaults)
  const [budget,setBudget]=useState(2000)
+ const [settingsLoaded,setSettingsLoaded]=useState(false)
  const [buyerName,setBuyerName]=useState('Finn'); const [buyerNameDraft,setBuyerNameDraft]=useState('Finn'); const [buyerNameSaved,setBuyerNameSaved]=useState(false); const [settingsOpen,setSettingsOpen]=useState<string|null>(null)
- useEffect(()=>{const n=localStorage.getItem('flip-lead-buyer-name')||'Finn';setBuyerName(n);setBuyerNameDraft(n)},[])
+ useEffect(()=>{const n=localStorage.getItem('flip-lead-buyer-name')||'Finn';setBuyerName(n);setBuyerNameDraft(n);try{const savedRules=localStorage.getItem('flip-lead-buying-rules');if(savedRules){const parsed=JSON.parse(savedRules);setRules({...defaults,...parsed})}const savedBudget=localStorage.getItem('flip-lead-buying-budget');if(savedBudget!==null&&Number.isFinite(Number(savedBudget))&&Number(savedBudget)>0)setBudget(Number(savedBudget))}catch{}setSettingsLoaded(true)},[])
+ useEffect(()=>{if(!settingsLoaded)return;localStorage.setItem('flip-lead-buying-rules',JSON.stringify(rules))},[rules,settingsLoaded])
+ useEffect(()=>{if(!settingsLoaded)return;localStorage.setItem('flip-lead-buying-budget',String(budget))},[budget,settingsLoaded])
  const saveBuyerName=()=>{const n=buyerNameDraft.trim()||'Finn';setBuyerName(n);setBuyerNameDraft(n);localStorage.setItem('flip-lead-buyer-name',n);setBuyerNameSaved(true);window.setTimeout(()=>setBuyerNameSaved(false),1600)}
 
  const saveFinnOpportunity=(r:any)=>{const b=r.best||{};const buy=Number(r.bestUnitCost||b.effectiveUnitCost||b.unitCost||0);const qty=Math.max(1,Number(b.caseQty||1));const readiness=buyingReadiness({confidence:r.identityConfidence,usablePrice:buy>0,amazonMatched:false,feesKnown:false,demandKnown:false,sameVariant:r.sameVariant!==false,sameSize:r.sameSize!==false});const item:Row={id:'finn-'+Date.now(),product:r.product||b.product||'Supplier product',ean:b.ean||'',asin:b.asin||'',supplier:b.supplier||b.source||'',buy,sell:0,qty,status:'Shortlisted',decision:'CONSIDER',identityStatus:r.identityConfidence||'UNVERIFIED',finnStatus:readiness.ready?'READY':'NOT READY'};setRows(v=>[item,...v.filter(x=>!(item.ean&&x.ean===item.ean&&x.supplier===item.supplier))]);setView('Opportunities')}
