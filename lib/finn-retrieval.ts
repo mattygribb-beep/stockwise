@@ -1,3 +1,4 @@
+import {CATALOGUE_SUPPLIERS} from './suppliers'
 export type FinnOffer = {
   id?: string
   supplier?: string
@@ -35,18 +36,7 @@ export type FinnSearchIntent = {
   missingAsin?: boolean
 }
 
-const SUPPLIERS = [
-  'Stateside',
-  'Sweet & Glory',
-  'Wholesale Sweets',
-  "King's Candy",
-  'Candy Cargo',
-  'Y&C Wholesale',
-  'American Candy N Drinks',
-  'World Candies',
-  'Americatessen',
-  'Hancocks',
-]
+const SUPPLIERS = CATALOGUE_SUPPLIERS.map(s=>s.name)
 
 const STOP = new Set(['find','show','search','look','lookup','compare','check','tell','give','get','who','stocks','stocked','cheapest','cheap','best','source','sources','sourcing','me','my','for','a','an','the','some','please','looking','want','i','am','interested','in','with','and','or','product','products','stock','supplier','suppliers','case','cases','anything','any','from','does','do','have','has'])
 const clean = (s = '') => s.toLowerCase().replace(/[^a-z0-9.]+/g, ' ').replace(/\s+/g, ' ').trim()
