@@ -18,12 +18,7 @@ export default function Page(){
  const [buyerName,setBuyerName]=useState('Finn'); const [buyerNameDraft,setBuyerNameDraft]=useState('Finn'); const [buyerNameSaved,setBuyerNameSaved]=useState(false)
  useEffect(()=>{const n=localStorage.getItem('flip-lead-buyer-name')||'Finn';setBuyerName(n);setBuyerNameDraft(n)},[])
  const saveBuyerName=()=>{const n=buyerNameDraft.trim()||'Finn';setBuyerName(n);setBuyerNameDraft(n);localStorage.setItem('flip-lead-buyer-name',n);setBuyerNameSaved(true);window.setTimeout(()=>setBuyerNameSaved(false),1600)}
- const [a,setA]=useState({product:'',ean:'',supplier:'',sku:'',marketplace:'Amazon UK',buy:0,sell:0,fees:0,fulfilment:0,pack:0,other:0,delivery:0,qty:0,moq:1,packSize:1,source:'Manual Estimate'})
- const calc=useMemo(()=>{const landed=a.buy+(a.delivery/a.qty),profit=a.sell-landed-a.fees-a.fulfilment-a.pack-a.other,roi=landed?profit/landed*100:0,margin=a.sell?profit/a.sell*100:0,capital=a.buy*a.qty+a.delivery;return{landed,profit,roi,margin,capital,revenue:a.sell*a.qty,totalProfit:profit*a.qty}},[a])
- const seen=rows.find(r=>r.ean===a.ean); const totalProfit=calc.profit*a.qty; const hard=calc.roi>=rules.roi&&calc.profit>=rules.profit&&calc.margin>=rules.margin&&totalProfit>=rules.totalProfit&&calc.capital<=rules.maxCapital
- const exposure=calc.capital<=rules.firstCapital&&a.qty<=rules.firstUnits
- const decision=hard&&exposure&&a.source!=='Manual Estimate'?'BUY':calc.roi>=rules.roi&&calc.profit>=rules.profit?'TEST BUY':calc.profit>0?'CONSIDER':'WALK AWAY'
- const save=()=>{setRows([{id:String(Date.now()),product:a.product,ean:a.ean,supplier:a.supplier,buy:a.buy,sell:a.sell,qty:a.qty,status:'Analysed',decision},...rows]);setView('Opportunities')}
+
  const purchase=(id:string)=>setRows(rows.map(r=>r.id===id?{...r,status:'Purchased'}:r))
  const active=rows.filter(r=>['Purchased','Selling'].includes(r.status)).reduce((s,r)=>s+r.buy*r.qty,0)
  const realised=rows.filter(r=>r.status==='Completed').reduce((s,r)=>s+((r.actualSell||r.sell)-r.buy)*r.qty,0)
