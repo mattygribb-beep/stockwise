@@ -44,7 +44,7 @@ export function parseFinnIntent(raw: string, filters?: {include?: string; exclud
   const pack = q.match(/\b(?:pack|case|box)\s*(?:of\s*)?(\d+)\b/i) || q.match(/\b(\d+)\s*[xX]\b/)
   const excludedPhrase = (lower.match(/(?:don't|do not|exclude|excluding|avoid)\s+(?:find\s+)?([^.;]+)/) || [])[1] || ''
   const explicitInclude = filters?.include?.trim()
-  const includeText = explicitInclude || q.replace(/(?:don't|do not|exclude|excluding|avoid)[^.;]*/gi, ' ')
+  const includeText = explicitInclude || q\n    .replace(/(?:don't|do not|exclude|excluding|avoid)[^.;]*/gi, ' ')\n    .replace(/(?:under|below|less than|max(?:imum)?(?: case)?(?: price)?|up to)\\s*£?\\s*\\d+(?:\\.\\d+)?/gi, ' ')\n    .replace(/\\b(?:missing|without|no)\\s+(?:an?\\s+)?(?:ean|barcode|asin)s?\\b/gi, ' ')
   const include = tokens(includeText)
   const exclude = tokens(filters?.exclude || excludedPhrase)
   return {
@@ -56,12 +56,12 @@ export function parseFinnIntent(raw: string, filters?: {include?: string; exclud
     asin,
     size: size ? clean(size) : undefined,
     packCount: pack ? Number(pack[1]) : undefined,
-    maxCase: Number(filters?.maxCase) || Number(priceLimit) || undefined,
+    maxCase: Number(filters?.maxCase) || Number(priceLimit) || undefined,\n    missingEan: /\\b(?:missing|without|no)\\s+(?:an?\\s+)?(?:ean|barcode)s?\\b/i.test(q),\n    missingAsin: /\\b(?:missing|without|no)\\s+(?:an?\\s+)?asin?s?\\b/i.test(q),
   }
 }
 
 function offerHaystack(o: FinnOffer) {
-  return clean([o.product,o.rawTitle,o.brand,o.size,o.ean,o.asin,o.supplierSku].filter(Boolean).join(' '))
+  return clean([o.product,o.rawTitle,o.brand,o.size,o.ean,o.asin,o.supplierSku,o.supplier].filter(Boolean).join(' '))
 }
 
 export function rankFinnOffers(allOffers: FinnOffer[], intent: FinnSearchIntent) {
@@ -70,7 +70,7 @@ export function rankFinnOffers(allOffers: FinnOffer[], intent: FinnSearchIntent)
     const hay = offerHaystack(offer)
     const hayTokens = new Set(tokens(hay))
     const caseCost = Number(offer.effectiveCasePrice ?? offer.casePrice ?? 0)
-    if (intent.maxCase && caseCost > intent.maxCase) return null
+    if (intent.maxCase && (caseCost <= 0 || caseCost > intent.maxCase)) return null\n    if (intent.missingEan && String(offer.ean || '').trim()) return null\n    if (intent.missingAsin && String(offer.asin || '').trim()) return null
     if (intent.exclude.some(t => hay.includes(clean(t)))) return null
     if (intent.brand && !hay.includes(clean(intent.brand))) return null
 
