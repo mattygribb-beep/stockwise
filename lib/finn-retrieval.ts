@@ -41,7 +41,8 @@ const SUPPLIERS = [
   'Wholesale Sweets',
   "King's Candy",
   'Candy Cargo',
-  'Y&C',
+  'Y&C Wholesale',
+  'American Candy N Drinks',
   'World Candies',
   'Americatessen',
   'Hancocks',
@@ -87,7 +88,8 @@ function supplierAliases(name: string) {
   if (base === 'wholesale sweets') aliases.push('wholesale sweet')
   if (base === 'sweet glory') aliases.push('sweet and glory')
   if (base === 'kings candy') aliases.push('king candy', 'kings')
-  if (base === 'y c') aliases.push('yc', 'y and c')
+  if (base === 'y c wholesale') aliases.push('yc', 'y c', 'y and c', 'y and c wholesale')
+  if (base === 'american candy n drinks') aliases.push('american candy and drinks', 'american candy drinks')
   if (base === 'candy cargo') aliases.push('candycargo')
   return aliases
 }
@@ -121,7 +123,7 @@ export function parseFinnIntent(raw: string, filters?: {include?: string; exclud
   const excludedPhrase = (lower.match(/(?:don't|do not|exclude|excluding|avoid|but not|not)\s+(?:find\s+)?([^.;]+)/) || [])[1] || ''
   const explicitInclude = filters?.include?.trim()
   let includeText = explicitInclude || q
-    .replace(/(?:don't|do not|exclude|excluding|avoid|but not)[^.;]*/gi, ' ')
+    .replace(/(?:don't|do not|exclude|excluding|avoid|but not|\bnot\b)[^.;]*/gi, ' ')
     .replace(/(?:under|below|less than|max(?:imum)?(?: case)?(?: price)?|up to)\s*£?\s*\d+(?:\.\d+)?(?:\s*(?:per\s*)?(?:unit|each|item|piece))?/gi, ' ')
     .replace(/\b(?:missing|without|no)\s+(?:an?\s+)?(?:ean|barcode|asin)s?\b/gi, ' ')
   includeText = removeSupplierNames(includeText, detectedSuppliers)
@@ -153,7 +155,7 @@ export function rankFinnOffers(allOffers: FinnOffer[], intent: FinnSearchIntent)
     const hayTokens = new Set(tokens(hay))
     const caseCost = Number(offer.effectiveCasePrice ?? offer.casePrice ?? 0)
     const unitCost = Number(offer.effectiveUnitCost ?? offer.unitCost ?? (validPrice(caseCost) && Number(offer.caseQty) > 0 ? caseCost / Number(offer.caseQty) : 0))
-    if (intent.suppliers?.length && !intent.suppliers.some(s => clean(String(offer.supplier || '')) === clean(s))) return null
+    if (intent.suppliers?.length && !intent.suppliers.some(s => supplierAliases(s).includes(clean(String(offer.supplier || ''))) || supplierAliases(String(offer.supplier || '')).some(a => supplierAliases(s).includes(a)))) return null
     if (intent.maxCase && (!validPrice(caseCost) || caseCost > intent.maxCase)) return null
     if (intent.maxUnit && (!validPrice(unitCost) || unitCost > intent.maxUnit)) return null
     if (intent.missingEan && String(offer.ean || '').trim()) return null
@@ -191,19 +193,24 @@ export function groupFinnResults(ranked: ReturnType<typeof rankFinnOffers>) {
   const groups = new Map<string, any[]>()
   for (const r of ranked as any[]) {
     const o = r.offer as FinnOffer
-    const identity = o.ean ? `ean:${String(o.ean).replace(/^0+/, '')}` : o.asin ? `asin:${String(o.asin).toUpperCase()}` : `name:${clean(`${o.product || ''} ${o.size || ''}`)}`
+    // Exact identifiers may safely group supplier offers. Name/size is discovery-only.
+    const identity = o.ean ? `ean:${String(o.ean).replace(/^0+/, '')}` : o.asin ? `asin:${String(o.asin).toUpperCase()}` : `candidate:${clean(`${o.product || ''} ${o.size || ''}`)}`
     groups.set(identity, [...(groups.get(identity) || []), r])
   }
   return [...groups.values()].map(group => {
+    const verifiedIdentity = group.some(x => x.confidence === 'VERIFIED')
     const sorted = [...group].sort((a,b) => {
-      const ap = a.caseCost > 0 ? a.caseCost : Number.POSITIVE_INFINITY
-      const bp = b.caseCost > 0 ? b.caseCost : Number.POSITIVE_INFINITY
-      return ap - bp || b.score - a.score
+      // Compare economics by effective unit cost, not headline case price.
+      const au = a.unitCost > 0 ? a.unitCost : Number.POSITIVE_INFINITY
+      const bu = b.unitCost > 0 ? b.unitCost : Number.POSITIVE_INFINITY
+      return au - bu || b.score - a.score
     })
-    const priced = sorted.filter(x => x.caseCost > 0)
+    const priced = sorted.filter(x => x.caseCost > 0 && x.unitCost > 0)
     const best = priced[0] || sorted[0]
-    const alt = priced[1]
     const pricedSupplierCount = new Set(priced.map(x => x.offer.supplier)).size
+    // Never expose a supplier comparison/saving from title similarity alone.
+    const comparisonAllowed = verifiedIdentity && pricedSupplierCount > 1
+    const alt = comparisonAllowed ? priced[1] : undefined
     return {
       product: best.offer.product,
       size: best.offer.size,
@@ -219,9 +226,11 @@ export function groupFinnResults(ranked: ReturnType<typeof rankFinnOffers>) {
       pricedSupplierCount,
       alt: alt?.offer,
       altCost: alt?.caseCost,
-      saving: alt ? alt.caseCost - best.caseCost : null,
-      pct: alt?.caseCost ? ((alt.caseCost - best.caseCost) / alt.caseCost) * 100 : null,
-      status: pricedSupplierCount > 1 ? 'COMPARISON' : 'SINGLE SOURCE',
+      altUnitCost: alt?.unitCost,
+      saving: alt ? alt.unitCost - best.unitCost : null,
+      pct: alt?.unitCost ? ((alt.unitCost - best.unitCost) / alt.unitCost) * 100 : null,
+      status: comparisonAllowed ? 'COMPARISON' : (pricedSupplierCount > 1 ? 'POSSIBLE MATCH' : 'SINGLE SOURCE'),
+      comparisonAllowed,
     }
   }).sort((a,b) => b.score - a.score)
 }
