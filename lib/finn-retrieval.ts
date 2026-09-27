@@ -104,7 +104,7 @@ export function groupFinnResults(ranked: ReturnType<typeof rankFinnOffers>) {
     groups.set(identity, [...(groups.get(identity) || []), r])
   }
   return [...groups.values()].map(group => {
-    const sorted = [...group].sort((a,b) => a.caseCost - b.caseCost)
+    const sorted = [...group].sort((a,b) => {\n      const ap=a.caseCost>0?a.caseCost:Number.POSITIVE_INFINITY, bp=b.caseCost>0?b.caseCost:Number.POSITIVE_INFINITY\n      return ap-bp || b.score-a.score\n    })
     const best = sorted[0]
     const alt = sorted[1]
     return {
@@ -119,7 +119,7 @@ export function groupFinnResults(ranked: ReturnType<typeof rankFinnOffers>) {
       altCost: alt?.caseCost,
       saving: alt ? alt.caseCost - best.caseCost : null,
       pct: alt?.caseCost ? ((alt.caseCost - best.caseCost) / alt.caseCost) * 100 : null,
-      status: alt ? 'COMPARISON' : 'SINGLE SOURCE',
+      status: new Set(sorted.filter(x=>x.caseCost>0).map(x=>x.offer.supplier)).size>1 ? 'COMPARISON' : 'SINGLE SOURCE',
     }
   }).sort((a,b) => b.score - a.score)
 }
