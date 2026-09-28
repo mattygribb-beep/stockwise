@@ -1,33 +1,33 @@
 import {NextResponse} from 'next/server'
 import {getSql} from '../../../lib/db'
 export const runtime='nodejs'; export const dynamic='force-dynamic'
-
-const norm=(s:any)=>String(s||'').toLowerCase().replace(/&amp;/g,'&').replace(/[^a-z0-9]+/g,' ').trim()
-const tokens=(s:any)=>new Set(norm(s).split(' ').filter((x:string)=>x.length>1&&!['case','pack','box','bag','can','candy','flavour','flavor','theatre','of','and','x'].includes(x)))
-function similarity(a:any,b:any){const A=tokens(a),B=tokens(b);if(!A.size||!B.size)return 0;let hit=0;A.forEach(x=>{if(B.has(x))hit++});return hit/Math.max(A.size,B.size)}
-function score(offer:any,id:any){
- const oe=String(offer.ean||'').replace(/\D/g,''),ie=String(id.ean||'').replace(/\D/g,'')
- if(oe&&ie&&oe===ie)return {score:100,reason:'Exact EAN / UPC'}
- const name=Math.round(similarity(offer.product,id.product_name)*55)
- const brand=norm(offer.brand)&&norm(id.brand)&&norm(offer.brand)===norm(id.brand)?20:0
- const size=norm(offer.size)&&norm(id.size)&&norm(offer.size)===norm(id.size)?25:0
- const conflict=norm(offer.size)&&norm(id.size)&&norm(offer.size)!==norm(id.size)
- return {score:Math.max(0,name+brand+size-(conflict?30:0)),reason:[brand?'brand':'',size?'size':'',name>=30?'product name':'',conflict?'size conflict':''].filter(Boolean).join(' + ')}
+const STOP=new Set(['case','pack','box','bag','can','candy','flavour','flavor','theatre','of','and','x','usa','us','american','wholesale'])
+const norm=(s:any)=>String(s||'').toLowerCase().replace(/&amp;/g,'&').replace(/strawberries/g,'strawberry').replace(/&/g,' and ').replace(/[^a-z0-9.]+/g,' ').trim()
+const toks=(s:any)=>norm(s).split(' ').filter((x:string)=>x.length>1&&!STOP.has(x)&&!/^\d/.test(x))
+const set=(s:any)=>new Set(toks(s))
+const sim=(a:any,b:any)=>{const A=set(a),B=set(b);if(!A.size||!B.size)return 0;let h=0;A.forEach(x=>{if(B.has(x))h++});return h/Math.max(A.size,B.size)}
+function sizeMlG(s:any){const x=norm(s);let m=x.match(/(\d+(?:\.\d+)?)\s*(ml|g)\b/);if(m)return m[1]+m[2];m=x.match(/(\d+(?:\.\d+)?)\s*fl\s*oz/);if(m)return Math.round(Number(m[1])*29.5735)+'ml';m=x.match(/(\d+(?:\.\d+)?)\s*oz/);if(m)return Math.round(Number(m[1])*28.3495)+'g';return ''}
+function canonicalBrand(o:any,id:any){const b=norm(o.brand);if(!b||b.includes('distribution')||b.includes('wholesale')||b.includes('glory')){const ib=norm(id.brand);return ib&&norm(o.product).includes(ib)?ib:''}return b}
+function attributes(o:any,id:any){
+ const ob=canonicalBrand(o,id),ib=norm(id.brand),os=sizeMlG(o.size)||sizeMlG(o.product),is=sizeMlG(id.unit_size||id.size)||sizeMlG(id.product_name)
+ const O=set(o.product),I=set(id.product_name),brandWords=new Set([...toks(ob),...toks(ib)])
+ const common=[...O].filter(x=>I.has(x)&&!brandWords.has(x))
+ const oOnly=[...O].filter(x=>!I.has(x)&&!brandWords.has(x)),iOnly=[...I].filter(x=>!O.has(x)&&!brandWords.has(x))
+ const variantConflict=oOnly.length>0&&iOnly.length>0
+ return {ob,ib,os,is,common,oOnly,iOnly,variantConflict}
 }
-export async function GET(){
- try{
-  const sql=getSql()
-  const offers=await sql`SELECT s.name supplier,o.supplier_product_id,o.product,o.brand,o.size,o.case_qty,o.case_price,o.unit_cost,o.ean,o.country_origin FROM supplier_offers o JOIN suppliers s ON s.id=o.supplier_id LEFT JOIN product_identity_offers l ON l.supplier=s.name AND l.supplier_offer_id=o.supplier_product_id::text LEFT JOIN identity_match_decisions d ON d.supplier=s.name AND d.supplier_offer_id=o.supplier_product_id::text AND d.decision='reject' WHERE o.is_active=true AND l.supplier_offer_id IS NULL AND d.id IS NULL ORDER BY o.last_seen_at DESC LIMIT 1000`
-  const ids=await sql`SELECT id,product_name,brand,size,ean,asin,country_origin,status FROM master_product_identities ORDER BY updated_at DESC`
-  const suggestions:any[]=[]
-  for(const o of offers){let best:any=null;for(const id of ids){const s=score(o,id);if(!best||s.score>best.score)best={...s,identity:id}}if(best&&best.score>=55)suggestions.push({offer:o,...best,band:best.score>=95?'STRONG':best.score>=75?'REVIEW':'WEAK'})}
-  suggestions.sort((a,b)=>b.score-a.score)
-  return NextResponse.json({ok:true,suggestions:suggestions.slice(0,200),unlinkedOffers:offers.length,identities:ids.length})
- }catch(e:any){return NextResponse.json({ok:false,error:e?.message||'Unable to build suggestions'},{status:500})}
+function score(o:any,id:any){
+ const oe=String(o.ean||'').replace(/\D/g,''),ie=String(id.ean||'').replace(/\D/g,'')
+ if(oe&&ie)return oe===ie?{score:100,band:'STRONG',reason:'Exact verified EAN / UPC'}:{score:0,band:'NO_MATCH',reason:'Barcode conflict'}
+ const a=attributes(o,id)
+ if(a.os&&a.is&&a.os!==a.is)return {score:0,band:'NO_MATCH',reason:'Unit size conflict'}
+ if(a.variantConflict)return {score:0,band:'NO_MATCH',reason:'Variant conflict'}
+ const brand=a.ob&&a.ib&&a.ob===a.ib
+ const name=sim(o.product,id.product_name)
+ const size=!!a.os&&a.os===a.is
+ let n=Math.round(name*45)+(brand?25:0)+(size?25:0)+(a.common.length?5:0)
+ const band=n>=95?'STRONG':n>=75?'REVIEW':'WEAK'
+ return {score:n,band,reason:[brand?'brand':'',a.common.length?'product / variant':'',size?'unit size':''].filter(Boolean).join(' + ')||'Limited product similarity'}
 }
-export async function POST(req:Request){
- try{const b=await req.json(),sql=getSql();if(!b.identityId||!b.supplier||!b.supplierOfferId)return NextResponse.json({ok:false,error:'Identity and supplier offer required'},{status:400})
-  if(b.action==='reject'){await sql`INSERT INTO identity_match_decisions(identity_id,supplier,supplier_offer_id,candidate_identity_id,score,decision,reason) VALUES(NULL,${b.supplier},${String(b.supplierOfferId)},${Number(b.identityId)},${Number(b.score)||null},'reject',${b.reason||''})`;return NextResponse.json({ok:true})} await sql`INSERT INTO product_identity_offers(identity_id,supplier,supplier_offer_id,match_score,match_status,match_reason) VALUES(${Number(b.identityId)},${b.supplier},${String(b.supplierOfferId)},${Number(b.score)||null},'confirmed',${b.reason||''}) ON CONFLICT(supplier,supplier_offer_id) DO UPDATE SET identity_id=excluded.identity_id,match_score=excluded.match_score,match_status='confirmed',match_reason=excluded.match_reason,updated_at=now()`;await sql`INSERT INTO identity_match_decisions(identity_id,supplier,supplier_offer_id,candidate_identity_id,score,decision,reason) VALUES(${Number(b.identityId)},${b.supplier},${String(b.supplierOfferId)},${Number(b.identityId)},${Number(b.score)||null},'confirm',${b.reason||''})`
-  return NextResponse.json({ok:true})
- }catch(e:any){return NextResponse.json({ok:false,error:e?.message||'Unable to save match'},{status:500})}
-}
+export async function GET(){try{const sql=getSql();const offers=await sql`SELECT s.name supplier,o.supplier_product_id,o.product,o.brand,o.size,o.case_qty,o.case_price,o.unit_cost,o.ean,o.country_origin FROM supplier_offers o JOIN suppliers s ON s.id=o.supplier_id LEFT JOIN product_identity_offers l ON l.supplier=s.name AND l.supplier_offer_id=o.supplier_product_id::text WHERE o.is_active=true AND l.supplier_offer_id IS NULL ORDER BY o.last_seen_at DESC LIMIT 1000`;const ids=await sql`SELECT id,product_name,brand,variant,size,unit_size,ean,asin,country_origin,status FROM master_product_identities ORDER BY updated_at DESC`;const rejected=await sql`SELECT supplier,supplier_offer_id,candidate_identity_id FROM identity_match_decisions WHERE decision='reject'`;const rej=new Set(rejected.map((x:any)=>x.supplier+'|'+x.supplier_offer_id+'|'+x.candidate_identity_id));const suggestions:any[]=[],newProducts:any[]=[];for(const o of offers){let best:any=null;for(const id of ids){if(rej.has(o.supplier+'|'+o.supplier_product_id+'|'+id.id))continue;const s=score(o,id);if(s.band==='NO_MATCH')continue;if(!best||s.score>best.score)best={...s,identity:id}}if(best&&best.score>=55)suggestions.push({offer:o,...best});else newProducts.push(o)}suggestions.sort((a,b)=>b.score-a.score);const strong=suggestions.filter(x=>x.band==='STRONG'),review=suggestions.filter(x=>x.band!=='STRONG');return NextResponse.json({ok:true,suggestions:suggestions.slice(0,250),strongCount:strong.length,reviewCount:review.length,newCount:newProducts.length,newProducts:newProducts.slice(0,100),unlinkedOffers:offers.length,identities:ids.length})}catch(e:any){return NextResponse.json({ok:false,error:e?.message||'Unable to build suggestions'},{status:500})}}
+export async function POST(req:Request){try{const b=await req.json(),sql=getSql();if(!b.identityId||!b.supplier||!b.supplierOfferId)return NextResponse.json({ok:false,error:'Identity and supplier offer required'},{status:400});if(b.action==='reject'){await sql`INSERT INTO identity_match_decisions(identity_id,supplier,supplier_offer_id,candidate_identity_id,score,decision,reason) VALUES(NULL,${b.supplier},${String(b.supplierOfferId)},${Number(b.identityId)},${Number(b.score)||null},'reject',${b.reason||''})`;return NextResponse.json({ok:true})}await sql`INSERT INTO product_identity_offers(identity_id,supplier,supplier_offer_id,match_score,match_status,match_reason) VALUES(${Number(b.identityId)},${b.supplier},${String(b.supplierOfferId)},${Number(b.score)||null},'confirmed',${b.reason||''}) ON CONFLICT(supplier,supplier_offer_id) DO UPDATE SET identity_id=excluded.identity_id,match_score=excluded.match_score,match_status='confirmed',match_reason=excluded.match_reason,updated_at=now()`;await sql`INSERT INTO identity_match_decisions(identity_id,supplier,supplier_offer_id,candidate_identity_id,score,decision,reason) VALUES(${Number(b.identityId)},${b.supplier},${String(b.supplierOfferId)},${Number(b.identityId)},${Number(b.score)||null},'confirm',${b.reason||''})`;return NextResponse.json({ok:true})}catch(e:any){return NextResponse.json({ok:false,error:e?.message||'Unable to save match'},{status:500})}}
