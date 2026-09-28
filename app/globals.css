@@ -101,3 +101,11 @@ header i{background:#EAF1FF;color:#1E66F5}
 .taglineStack{display:grid;gap:2px;line-height:1.2}.taglineStack span{display:block}
 
 .settingsFoldBody .ruleRow{grid-template-columns:minmax(260px,520px) 128px;justify-content:space-between;gap:28px;padding:15px 0}.settingsFoldBody .ruleCopy{max-width:520px}.settingsFoldBody .ruleInput{width:128px;height:42px}.settingsFoldBody .ruleInput input{width:100%;height:40px;padding:0 8px}.settingsFoldBody .ruleInput span{padding:0 8px;font-size:11px}@media(max-width:700px){.settingsFoldBody .ruleRow{grid-template-columns:1fr 118px;gap:14px}.settingsFoldBody .ruleInput{width:118px}}@media(max-width:520px){.settingsFoldBody .ruleRow{grid-template-columns:1fr}.settingsFoldBody .ruleInput{width:100%}}
+
+/* Compact overview product finder */
+.overviewFindProduct{padding:14px 22px 13px}
+.overviewFindProduct .sectionHead{padding:0 0 10px;margin-bottom:10px}
+.overviewFindProduct .sectionHead h2{margin:3px 0 2px}
+.overviewFindProduct .sectionHead p{line-height:1.35}
+.overviewFindProduct .quick input{min-height:42px}
+.overviewFindProduct>.quick+small{display:block;margin-top:7px}
