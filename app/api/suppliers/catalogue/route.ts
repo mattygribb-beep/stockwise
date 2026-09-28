@@ -9,7 +9,7 @@ export async function GET(req:Request){
   const url=new URL(req.url), slug=url.searchParams.get('supplier')||'stateside', sql=getSql()
   const rows=await sql`SELECT s.name AS supplier,o.supplier_product_id,o.supplier_sku,o.product,o.raw_title,o.brand,o.size,COALESCE(NULLIF(mpi.country_origin,''),NULLIF(pi.country_origin,''),o.country_origin) AS country_origin,o.case_qty,o.case_price,o.unit_cost,
     COALESCE(NULLIF(pi.ean,''),o.ean) AS ean, COALESCE(NULLIF(mpi.asin,''),pi.asin) AS asin, COALESCE(pio.match_status,pi.status) AS identity_status, pi.ean_confidence, pi.asin_confidence,
-    o.stock_qty,o.expiry,o.status,o.product_url,o.source,o.source_page,o.tags,o.last_seen_at
+    pio.identity_id,o.stock_qty,o.expiry,o.status,o.product_url,o.source,o.source_page,o.tags,o.last_seen_at
     FROM supplier_offers o JOIN suppliers s ON s.id=o.supplier_id
     LEFT JOIN product_identities pi ON pi.supplier=s.name AND pi.supplier_offer_id=o.supplier_product_id::text
     LEFT JOIN product_identity_offers pio ON pio.supplier=s.name AND pio.supplier_offer_id=o.supplier_product_id::text
