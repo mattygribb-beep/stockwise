@@ -15,6 +15,7 @@ export type FinnOffer = {
   effectiveUnitCost?: number
   unitCost?: number
   identityStatus?: string
+  masterIdentityId?: number|string|null
   eanConfidence?: string
   asinConfidence?: string
   [key: string]: unknown
@@ -185,11 +186,11 @@ export function groupFinnResults(ranked: ReturnType<typeof rankFinnOffers>) {
   for (const r of ranked as any[]) {
     const o = r.offer as FinnOffer
     // Exact identifiers may safely group supplier offers. Name/size is discovery-only.
-    const identity = o.ean ? `ean:${String(o.ean).replace(/^0+/, '')}` : o.asin ? `asin:${String(o.asin).toUpperCase()}` : `candidate:${clean(`${o.product || ''} ${o.size || ''}`)}`
+    const identity = o.masterIdentityId ? `master:${o.masterIdentityId}` : o.ean ? `ean:${String(o.ean).replace(/^0+/, '')}` : o.asin ? `asin:${String(o.asin).toUpperCase()}` : `candidate:${clean(`${o.product || ''} ${o.size || ''}`)}`
     groups.set(identity, [...(groups.get(identity) || []), r])
   }
   return [...groups.values()].map(group => {
-    const verifiedIdentity = group.some(x => x.identityConfidence === 'VERIFIED')
+    const verifiedIdentity = group.some(x => x.identityConfidence === 'VERIFIED' || x.offer.masterIdentityId)
     const sorted = [...group].sort((a,b) => {
       // Compare economics by effective unit cost, not headline case price.
       const au = a.unitCost > 0 ? a.unitCost : Number.POSITIVE_INFINITY
@@ -210,6 +211,7 @@ export function groupFinnResults(ranked: ReturnType<typeof rankFinnOffers>) {
       bestUnitCost: best.unitCost,
       confidence: best.confidence,
       identityConfidence: verifiedIdentity ? 'VERIFIED' : 'UNVERIFIED',
+      learnedIdentity: best.offer.masterIdentityId ? `Master Product #${best.offer.masterIdentityId}` : undefined,
       explanation: best.explanation,
       matchedTerms: best.matchedTerms,
       fuzzyMatched: best.fuzzyMatched,
