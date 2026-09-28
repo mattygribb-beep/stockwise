@@ -17,17 +17,17 @@ function score(offer:any,id:any){
 export async function GET(){
  try{
   const sql=getSql()
-  const offers=await sql`SELECT s.name supplier,o.supplier_product_id,o.product,o.brand,o.size,o.case_qty,o.case_price,o.unit_cost,o.ean,o.country_origin FROM supplier_offers o JOIN suppliers s ON s.id=o.supplier_id LEFT JOIN product_identity_offers l ON l.supplier=s.name AND l.supplier_offer_id=o.supplier_product_id::text WHERE o.is_active=true AND l.supplier_offer_id IS NULL ORDER BY o.last_seen_at DESC LIMIT 1000`
+  const offers=await sql`SELECT s.name supplier,o.supplier_product_id,o.product,o.brand,o.size,o.case_qty,o.case_price,o.unit_cost,o.ean,o.country_origin FROM supplier_offers o JOIN suppliers s ON s.id=o.supplier_id LEFT JOIN product_identity_offers l ON l.supplier=s.name AND l.supplier_offer_id=o.supplier_product_id::text LEFT JOIN identity_match_decisions d ON d.supplier=s.name AND d.supplier_offer_id=o.supplier_product_id::text AND d.decision='reject' WHERE o.is_active=true AND l.supplier_offer_id IS NULL AND d.id IS NULL ORDER BY o.last_seen_at DESC LIMIT 1000`
   const ids=await sql`SELECT id,product_name,brand,size,ean,asin,country_origin,status FROM master_product_identities ORDER BY updated_at DESC`
   const suggestions:any[]=[]
-  for(const o of offers){let best:any=null;for(const id of ids){const s=score(o,id);if(!best||s.score>best.score)best={...s,identity:id}}if(best&&best.score>=55)suggestions.push({offer:o,...best})}
+  for(const o of offers){let best:any=null;for(const id of ids){const s=score(o,id);if(!best||s.score>best.score)best={...s,identity:id}}if(best&&best.score>=55)suggestions.push({offer:o,...best,band:best.score>=95?'STRONG':best.score>=75?'REVIEW':'WEAK'})}
   suggestions.sort((a,b)=>b.score-a.score)
   return NextResponse.json({ok:true,suggestions:suggestions.slice(0,200),unlinkedOffers:offers.length,identities:ids.length})
  }catch(e:any){return NextResponse.json({ok:false,error:e?.message||'Unable to build suggestions'},{status:500})}
 }
 export async function POST(req:Request){
  try{const b=await req.json(),sql=getSql();if(!b.identityId||!b.supplier||!b.supplierOfferId)return NextResponse.json({ok:false,error:'Identity and supplier offer required'},{status:400})
-  await sql`INSERT INTO product_identity_offers(identity_id,supplier,supplier_offer_id,match_score,match_status,match_reason) VALUES(${Number(b.identityId)},${b.supplier},${String(b.supplierOfferId)},${Number(b.score)||null},${b.action==='reject'?'rejected':'confirmed'},${b.reason||''}) ON CONFLICT(supplier,supplier_offer_id) DO UPDATE SET identity_id=excluded.identity_id,match_score=excluded.match_score,match_status=excluded.match_status,match_reason=excluded.match_reason,updated_at=now()`
+  if(b.action==='reject'){await sql`INSERT INTO identity_match_decisions(identity_id,supplier,supplier_offer_id,candidate_identity_id,score,decision,reason) VALUES(NULL,${b.supplier},${String(b.supplierOfferId)},${Number(b.identityId)},${Number(b.score)||null},'reject',${b.reason||''})`;return NextResponse.json({ok:true})} await sql`INSERT INTO product_identity_offers(identity_id,supplier,supplier_offer_id,match_score,match_status,match_reason) VALUES(${Number(b.identityId)},${b.supplier},${String(b.supplierOfferId)},${Number(b.score)||null},'confirmed',${b.reason||''}) ON CONFLICT(supplier,supplier_offer_id) DO UPDATE SET identity_id=excluded.identity_id,match_score=excluded.match_score,match_status='confirmed',match_reason=excluded.match_reason,updated_at=now()`;await sql`INSERT INTO identity_match_decisions(identity_id,supplier,supplier_offer_id,candidate_identity_id,score,decision,reason) VALUES(${Number(b.identityId)},${b.supplier},${String(b.supplierOfferId)},${Number(b.identityId)},${Number(b.score)||null},'confirm',${b.reason||''})`
   return NextResponse.json({ok:true})
  }catch(e:any){return NextResponse.json({ok:false,error:e?.message||'Unable to save match'},{status:500})}
 }
