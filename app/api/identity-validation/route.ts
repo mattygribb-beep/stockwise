@@ -28,8 +28,8 @@ export async function GET(req:Request){
   const knowledge={brandAliases,variantAliases,noiseTerms}
   const brands=[...ids.map((x:any)=>x.brand),...brandAliases.map((x:any)=>x.canonical_brand)].filter(Boolean)
   const rej=new Set(rejected.map((x:any)=>x.supplier+'|'+x.supplier_offer_id+'|'+x.candidate_identity_id))
-  const metrics:any={total:offers.length,strong:0,review:0,new:0,conflict:0,nonProduct:0,confirmedMemory:0,missingBrand:0,missingSize:0,missingEan:0,sizeConflict:0}
-  const examples:any={strong:[],review:[],conflict:[],nonProduct:[]}
+  const metrics:any={total:offers.length,strong:0,review:0,new:0,conflict:0,nonProduct:0,confirmedMemory:0,knownProductRecallMisses:0,missingBrand:0,missingSize:0,missingEan:0,sizeConflict:0}
+  const examples:any={strong:[],review:[],conflict:[],nonProduct:[],knownProductRecallMisses:[]}
   const parsed:any[]=[]
   for(const o of offers){
    if(!String(o.brand||'').trim())metrics.missingBrand++
@@ -51,6 +51,7 @@ export async function GET(req:Request){
    else if(best){metrics.review++;if(examples.review.length<20)examples.review.push({supplier:o.supplier,product:o.product,master:best.id.product_name,score:best.score,reason:best.reason})}
    else if(hardConflict){metrics.conflict++;if(examples.conflict.length<20)examples.conflict.push({supplier:o.supplier,product:o.product,reason:'No safe master match; hard conflict(s) encountered'})}
    else metrics.new++
+   if(!o.identity_id){const known=ids.find((id:any)=>{const q=parseCanonicalProduct({title:id.product_name,brand:id.brand,size:id.unit_size||id.size,caseQty:1},brands,knowledge);const m=canonicalMatch(p,q);return m.match&&m.score>=95});if(known){metrics.knownProductRecallMisses++;if(examples.knownProductRecallMisses.length<20)examples.knownProductRecallMisses.push({supplier:o.supplier,product:o.product,expectedMaster:known.product_name,masterId:known.id})}}
    parsed.push({o,p})
   }
   const masterGroups=new Map<any,any[]>()
