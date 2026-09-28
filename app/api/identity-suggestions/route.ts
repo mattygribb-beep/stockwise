@@ -14,6 +14,7 @@ function score(o:any,id:any,brands:string[],knowledge:any){
  if(oe&&ie)return oe===ie?{score:100,band:'STRONG',reason:'Exact verified EAN / UPC'}:{score:0,band:'NO_MATCH',reason:'Barcode conflict'}
  const a=parseCanonicalProduct({title:o.product,brand:o.brand,size:o.size,caseQty:o.case_qty},brands,knowledge)
  const b=parseCanonicalProduct({title:id.product_name,brand:id.brand,size:id.unit_size||id.size,caseQty:1},brands,knowledge)
+ if(a.variant.includes('[SIZE CONFLICT'))return {score:0,band:'NO_MATCH',reason:'Supplier structured size conflicts with title size',parsed:a}
  const m=canonicalMatch(a,b); if(!m.match)return {score:m.score,band:'NO_MATCH',reason:m.reason,parsed:a}
  const band=m.score>=95?'STRONG':m.score>=75?'REVIEW':'WEAK'; return {score:m.score,band,reason:m.reason,parsed:a}
 }
