@@ -11,8 +11,8 @@ export function parseCanonicalProduct(input:{title:any;brand?:any;size?:any;case
  body=body.replace(/\b\d+(?:\.\d+)?\s*(?:kg|g|ml|l|fl\s*oz|oz)\b/g,' ').replace(/\b\d+\s*x\s*\d+(?:\.\d+)?\b/g,' ').replace(/\b(?:case|box|pack)\s*(?:of)?\s*\d+\b/g,' ').replace(/\b(?:case|box|pack|bags?|cans?|bottles?|tubs?|bars?|multipacks?)\b/g,' ').replace(/\b(?:usa import|china|canada|aus|bbd)\b/g,' ').replace(/\b\d+ct\b/g,' ');for(const x of knowledge.noiseTerms||[]){const z=n(x.term);if(z)body=(' '+body+' ').split(' '+z+' ').join(' ').trim()}body=body.replace(/\s+/g,' ').trim()
  const generic=new Set(['candy','gummy','soda','drink','energy','flavour','flavor','chewy','peg','theatre'])
  const parts=body.split(' ').filter(Boolean),meaningful=parts.filter(x=>!generic.has(x))
- const family=meaningful.slice(0,Math.min(2,meaningful.length)).join(' ')||parts.slice(0,2).join(' ');let variant=meaningful.slice(Math.min(2,meaningful.length)).join(' ');const va=(knowledge.variantAliases||[]).filter((x:any)=>!x.brand||n(x.brand)===n(brand)).find((x:any)=>n(body).includes(n(x.alias)));if(va)variant=va.canonical_variant
- return {brand,family,variant,unitSize:us,caseQty:qty,canonicalKey:[n(brand),n(family),n(variant),us].filter(Boolean).join('|')}
+ const family=meaningful.slice(0,Math.min(2,meaningful.length)).join(' ')||parts.slice(0,2).join(' ');let variant=meaningful.slice(Math.min(2,meaningful.length)).join(' ');const va=(knowledge.variantAliases||[]).filter((x:any)=>!x.brand||n(x.brand)===n(brand)).filter((x:any)=>n(body).includes(n(x.alias))).sort((a:any,b:any)=>n(b.alias).length-n(a.alias).length)[0];if(va)variant=va.canonical_variant
+ if(structuredSize&&titleSize&&structuredSize!==titleSize)variant=(variant+' [SIZE CONFLICT '+structuredSize+' vs '+titleSize+']').trim();return {brand,family,variant,unitSize:us,caseQty:qty,canonicalKey:[n(brand),n(family),n(variant),us].filter(Boolean).join('|')}
 }
 export function canonicalMatch(a:CanonicalProduct,b:CanonicalProduct){
  if(a.unitSize&&b.unitSize&&a.unitSize!==b.unitSize)return {match:false,score:0,reason:'Unit size conflict'}
