@@ -6,6 +6,7 @@ const H={'User-Agent':'Flip Lead Supplier Catalogue/1.0','Accept':'text/html,app
 const d=(s:string)=>s.replace(/&nbsp;|&#160;/gi,' ').replace(/&amp;/gi,'&').replace(/&#39;|&apos;/gi,"'").replace(/&quot;/gi,'"').replace(/&pound;|&#163;/gi,'£').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim()
 const n=(s:string)=>{const x=Number(String(s||'').replace(/,/g,''));return Number.isFinite(x)?x:0}
 const size=(s:string)=>{const a=[...s.matchAll(/(\d+(?:\.\d+)?)\s*(g|kg|ml|l|oz|fl\.?\s*oz)\b/gi)];return a.length?a[a.length-1][1]+a[a.length-1][2].replace(/\s+/g,''):''}
+const origin=(s:string)=>/\b(?:Chinese|China)\b/i.test(s)?'China':/\b(?:Canadian|Canada|CAN)\b/i.test(s)?'Canada':/\b(?:Japanese|Japan)\b/i.test(s)?'Japan':/\bMexican\b/i.test(s)?'Mexico':/\b(?:USA|US Version|American)\b/i.test(s)?'United States':''
 const qty=(s:string)=>{const m=s.match(/\b(\d+)\s*x\s*(?:\d|[A-Za-z])/i);return m?+m[1]:1}
 function totalPages(h:string){const t=d(h).match(/Showing\s+\d+\s+of\s+([\d,]+)/i);return t?Math.ceil(n(t[1])/20):1}
 function parse(h:string,page:number){
@@ -18,7 +19,7 @@ function parse(h:string,page:number){
   const inc=[...text.matchAll(/£\s*([\d,.]+)\s*inc\.?\s*VAT/gi)].map(x=>n(x[1])).filter(Boolean)
   if(!inc.length)continue
   const casePrice=inc[inc.length-1],pack=text.match(/\b(\d+)\s*x\s*([^£]{1,70}?)(?=\s+(?:Offers Available|Out of Stock|£|Add to Basket|$))/i),q=pack?+pack[1]:qty(c.title)
-  out.push({id:'wholesale-sweets-'+c.path.slice(1),supplier:'Wholesale Sweets',supplierProductId:c.path.slice(1),supplierSku:'',product:c.title,rawTitle:c.title,brand:'',size:size(pack?.[2]||c.title),caseQty:q,casePrice,unitCost:casePrice/q,ean:'',status:/Out of Stock/i.test(text)?'OUT OF STOCK':'IN STOCK',url:BASE+c.path,source:'Wholesale Sweets catalogue · VAT inclusive',sourcePage:page,checked:new Date().toISOString(),tags:['VAT_INCLUSIVE']})
+  out.push({id:'wholesale-sweets-'+c.path.slice(1),supplier:'Wholesale Sweets',supplierProductId:c.path.slice(1),supplierSku:'',product:c.title,rawTitle:c.title,brand:'',size:size(pack?.[2]||c.title),countryOrigin:origin(c.title),caseQty:q,casePrice,unitCost:casePrice/q,ean:'',status:/Out of Stock/i.test(text)?'OUT OF STOCK':'IN STOCK',url:BASE+c.path,source:'Wholesale Sweets catalogue · VAT inclusive',sourcePage:page,checked:new Date().toISOString(),tags:['VAT_INCLUSIVE']})
  }
  return out
 }
