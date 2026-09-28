@@ -23,6 +23,7 @@ function cleanProductTitle(s:string){
  t=t.replace(/^[:;,#\s]+/,'').replace(/\s+-\s+(?:\d+ct|Case)\s*$/i,'').trim()
  return t
 }
+function originFromTitle(s:string){return /\b(?:CAN|Canada|Canadian)\b/i.test(s)?'Canada':/\b(?:China|Chinese)\b/i.test(s)?'China':/\b(?:Japan|Japanese)\b/i.test(s)?'Japan':/\bMexican\b/i.test(s)?'Mexico':/\b(?:USA|US Version|American)\b/i.test(s)?'United States':''}
 function brandFromPath(path:string){const m=path.match(/\/([^/]+)-wholesale-uk\/?$/);return m?m[1].replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase()):''}
 
 function brandLinks(html:string){
@@ -48,7 +49,7 @@ function parseProducts(html:string,path:string){
   let title=cleanProductTitle(m[1])
   const code=m[2],stock=num(m[3]),caseQty=num(m[4]),expiry=m[5],casePrice=num(m[6]),unitCost=num(m[7])
   if(!code||!caseQty||!casePrice||!unitCost)continue
-  out.push({id:'sweet-glory-'+code,supplier:'Sweet & Glory',supplierProductId:code,supplierSku:code,product:title,rawTitle:title,brand:brandFromPath(path),size:sizeFromTitle(title),caseQty,casePrice,unitCost,ean:'',stockQty:stock,expiry,status:'IN STOCK',url:BASE+path.split('?')[0],source:'Sweet & Glory live catalogue',checked:new Date().toISOString()})
+  out.push({id:'sweet-glory-'+code,supplier:'Sweet & Glory',supplierProductId:code,supplierSku:code,product:title,rawTitle:title,brand:brandFromPath(path),size:sizeFromTitle(title),countryOrigin:originFromTitle(title),caseQty,casePrice,unitCost,ean:'',stockQty:stock,expiry,status:'IN STOCK',url:BASE+path.split('?')[0],source:'Sweet & Glory live catalogue',checked:new Date().toISOString()})
  }
  return out
 }
