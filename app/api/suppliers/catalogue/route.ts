@@ -12,7 +12,7 @@ export async function GET(req:Request){
     pio.identity_id,o.stock_qty,o.expiry,o.status,o.product_url,o.source,o.source_page,o.tags,o.last_seen_at
     FROM supplier_offers o JOIN suppliers s ON s.id=o.supplier_id
     LEFT JOIN product_identities pi ON pi.supplier=s.name AND pi.supplier_offer_id=o.supplier_product_id::text
-    LEFT JOIN product_identity_offers pio ON pio.supplier=s.name AND pio.supplier_offer_id=o.supplier_product_id::text
+    LEFT JOIN product_identity_offers pio ON pio.supplier=s.name AND pio.supplier_offer_id=o.supplier_product_id::text AND pio.match_status='confirmed'
     LEFT JOIN master_product_identities mpi ON mpi.id=pio.identity_id
     WHERE s.slug=${slug} AND o.is_active=true ORDER BY o.product`
   const last=await sql`SELECT r.completed_at,r.offer_count FROM supplier_sync_runs r JOIN suppliers s ON s.id=r.supplier_id WHERE s.slug=${slug} AND r.status='success' ORDER BY r.completed_at DESC LIMIT 1`
