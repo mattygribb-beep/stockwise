@@ -7,7 +7,7 @@ export const dynamic='force-dynamic'
 const BASE='https://statesidedistribution.com'
 const HEADERS={'User-Agent':'Stockwise Supplier Catalogue/1.0','Accept':'application/json'}
 function n(v:any){const x=Number(v);return Number.isFinite(x)?x:0}
-function packFromTitle(title:string){const m=title.match(/(?:pack\s*of|case\s*of|x)\s*(\d+)/i);return m?Number(m[1]):1}
+function packFromTitle(title:string){const explicit=title.match(/(?:pack|case)[\s-]*of[\s-]*(\d+)/i);if(explicit)return Number(explicit[1]);const mult=title.match(/(?:^|[\s(])(\d+)\s*x\s*\d+(?:\.\d+)?\s*(?:g|kg|ml|l|oz|fl\.?\s*oz)\b/i);return mult?Number(mult[1]):1}
 function sizeFromTitle(title:string){const a=[...title.matchAll(/(\d+(?:\.\d+)?)\s*(g|kg|ml|l|oz|fl\.?\s*oz)\b/gi)];if(!a.length)return '';const m=a[a.length-1];return m[1]+m[2].replace(/\s+/g,'')}
 function cleanTitle(title:string){return title.replace(/\s*[-–]?\s*\(?pack\s*of\s*\d+\)?/ig,'').trim()}
 function originFromProduct(p:any){const html=String(p.body_html||'').replace(/<[^>]+>/g,' ');const m=html.match(/Country\s+of\s+Origin\s*:?\s*(?:Made\s+in\s+)?([A-Za-z ]{2,40}?)(?=\s{2,}|Ingredients|Allergen|Nutrition|$)/i);return m?m[1].trim().replace(/United Sates/i,'United States'):''}
