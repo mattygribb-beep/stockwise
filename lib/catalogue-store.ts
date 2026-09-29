@@ -1,4 +1,4 @@
-import { getSql } from './db'
+import { getSql } from './db'\nimport { cleanProductTitle, isNonProductTitle } from './product-parser'
 
 export type SupplierOffer={
  supplierProductId:string;supplierSku?:string;product:string;rawTitle?:string;brand?:string;size?:string;countryOrigin?:string;
@@ -14,7 +14,7 @@ export async function saveSupplierCatalogue(slug:string,offers:SupplierOffer[],m
  const supplierId=suppliers[0].id
  const runs=await sql`INSERT INTO supplier_sync_runs(supplier_id,status,offer_count,metadata) VALUES(${supplierId},'running',0,${JSON.stringify(metadata)}::jsonb) RETURNING id`
  const runId=runs[0].id
- const payload=JSON.stringify(offers.map(o=>({
+ const payload=JSON.stringify(cleanedOffers.map(o=>({
   supplier_product_id:String(o.supplierProductId),supplier_sku:o.supplierSku||'',product:o.product,raw_title:o.rawTitle||'',brand:o.brand||'',size:o.size||'',country_origin:o.countryOrigin||'',
   case_qty:o.caseQty||1,case_price:o.casePrice||0,unit_cost:o.unitCost||0,ean:o.ean||'',stock_qty:o.stockQty??null,expiry:o.expiry||'',status:o.status||'IN STOCK',
   product_url:o.url||'',source:o.source||'',source_page:o.sourcePage??null,tags:o.tags||[]
@@ -29,8 +29,8 @@ export async function saveSupplierCatalogue(slug:string,offers:SupplierOffer[],m
    SELECT ${runId},${supplierId},x.supplier_product_id,x.supplier_sku,x.product,x.brand,x.size,x.country_origin,x.case_qty,x.case_price,x.unit_cost,x.ean,x.stock_qty,x.expiry,x.status,x.product_url
    FROM jsonb_to_recordset(${payload}::jsonb) AS x(supplier_product_id text,supplier_sku text,product text,raw_title text,brand text,size text,country_origin text,case_qty int,case_price numeric,unit_cost numeric,ean text,stock_qty int,expiry text,status text,product_url text)`
   await sql`UPDATE supplier_offers SET is_active=false WHERE supplier_id=${supplierId} AND last_sync_run_id IS DISTINCT FROM ${runId}`
-  await sql`UPDATE supplier_sync_runs SET status='success',offer_count=${offers.length},completed_at=now() WHERE id=${runId}`
-  return {runId,count:offers.length}
+  await sql`UPDATE supplier_sync_runs SET status='success',offer_count=${cleanedOffers.length},completed_at=now() WHERE id=${runId}`
+  return {runId,count:cleanedOffers.length}
  }catch(e:any){
   await sql`UPDATE supplier_sync_runs SET status='failed',error_message=${e?.message||'Save failed'},completed_at=now() WHERE id=${runId}`
   throw e
