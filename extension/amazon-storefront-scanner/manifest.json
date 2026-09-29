@@ -1,29 +1,10 @@
 {
-  "manifest_version": 3,
-  "name": "Flip Lead Amazon Scanner",
-  "version": "0.1.0",
-  "description": "Capture rendered Amazon UK storefront products for Flip Lead.",
-  "permissions": [
-    "storage",
-    "downloads",
-    "tabs"
-  ],
-  "host_permissions": [
-    "https://www.amazon.co.uk/*"
-  ],
-  "action": {
-    "default_title": "Flip Lead Amazon Scanner",
-    "default_popup": "popup.html"
-  },
-  "content_scripts": [
-    {
-      "matches": [
-        "https://www.amazon.co.uk/s*"
-      ],
-      "js": [
-        "content.js"
-      ],
-      "run_at": "document_idle"
-    }
-  ]
+  "manifest_version":3,
+  "name":"Flip Lead Amazon Scanner",
+  "version":"0.2.0",
+  "description":"Capture rendered Amazon UK storefront products and enrich product identifiers for Flip Lead.",
+  "permissions":["storage","downloads","tabs"],
+  "host_permissions":["https://www.amazon.co.uk/*"],
+  "action":{"default_title":"Flip Lead Amazon Scanner","default_popup":"popup.html"},
+  "content_scripts":[{"matches":["https://www.amazon.co.uk/s*","https://www.amazon.co.uk/dp/*","https://www.amazon.co.uk/*/dp/*"],"js":["content.js"],"run_at":"document_idle"}]
 }
