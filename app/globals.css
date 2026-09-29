@@ -109,3 +109,11 @@ header i{background:#EAF1FF;color:#1E66F5}
 .overviewFindProduct .sectionHead p{line-height:1.35}
 .overviewFindProduct .quick input{min-height:42px}
 .overviewFindProduct>.quick+small{display:block;margin-top:7px}
+
+
+/* Overview spacing rhythm: consistent 24px gutters between dashboard cards */
+.overviewFindProduct{margin-top:24px}
+.overviewCards{margin-top:24px;margin-bottom:0}
+.overviewCards+.attention,.attention+.pipeline,.pipeline+section{margin-top:24px}
+.overviewBottom{margin-top:24px}
+.overviewBottom section{margin-top:0}
