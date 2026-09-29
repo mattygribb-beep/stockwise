@@ -1,0 +1,20 @@
+{
+  "name": "Flip Lead",
+  "short_name": "Flip Lead",
+  "description": "Find it. Source it. Know the numbers.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b1320",
+  "theme_color": "#0b1320",
+  "categories": ["business", "productivity", "shopping"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
