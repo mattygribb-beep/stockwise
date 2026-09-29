@@ -10,7 +10,6 @@ export async function GET(req:Request){
   const url=new URL(req.url),sql=getSql()
   const limit=clamp(Number(url.searchParams.get('limit'))||2000,100,5000)
   const seed=url.searchParams.get('seed')||'stockwise-validation-v1'
-  const per=Math.ceil(limit/SLUGS.length)
   const [ids,brandAliases,variantAliases,noiseTerms,rejected]=await Promise.all([
    sql`SELECT id,product_name,brand,variant,size,unit_size,ean,asin,status FROM master_product_identities`,
    sql`SELECT canonical_brand,alias FROM product_brand_aliases`,
@@ -18,13 +17,21 @@ export async function GET(req:Request){
    sql`SELECT term FROM product_noise_terms`,
    sql`SELECT supplier,supplier_offer_id,candidate_identity_id FROM identity_match_decisions WHERE decision='reject'`
   ])
-  const offers=await sql`WITH ranked AS (
-   SELECT s.slug,s.name supplier,o.supplier_product_id::text offer_id,o.product,o.brand,o.size,o.case_qty,o.case_price,o.unit_cost,o.ean,o.is_active,
-    pio.identity_id,pio.match_status,row_number() over(partition by s.slug order by md5(o.supplier_product_id::text || ${seed})) rn
-   FROM supplier_offers o JOIN suppliers s ON s.id=o.supplier_id
-   LEFT JOIN product_identity_offers pio ON pio.supplier=s.name AND pio.supplier_offer_id=o.supplier_product_id::text AND pio.match_status='confirmed'
-   WHERE o.is_active=true AND s.slug=ANY(${SLUGS})
-  ) SELECT * FROM ranked WHERE rn<=${per} ORDER BY md5(offer_id || ${seed}) LIMIT ${limit}`
+  const offers=limit<=100
+   ? await sql`WITH ranked AS (
+      SELECT s.slug,s.name supplier,o.supplier_product_id::text offer_id,o.product,o.brand,o.size,o.case_qty,o.case_price,o.unit_cost,o.ean,o.is_active,
+       pio.identity_id,pio.match_status,row_number() over(partition by s.slug order by md5(o.supplier_product_id::text || ${seed})) rn
+      FROM supplier_offers o JOIN suppliers s ON s.id=o.supplier_id
+      LEFT JOIN product_identity_offers pio ON pio.supplier=s.name AND pio.supplier_offer_id=o.supplier_product_id::text AND pio.match_status='confirmed'
+      WHERE o.is_active=true AND s.slug=ANY(${SLUGS})
+     ) SELECT * FROM ranked WHERE rn<=25 ORDER BY md5(offer_id || ${seed}) LIMIT ${limit}`
+   : await sql`SELECT s.slug,s.name supplier,o.supplier_product_id::text offer_id,o.product,o.brand,o.size,o.case_qty,o.case_price,o.unit_cost,o.ean,o.is_active,
+      pio.identity_id,pio.match_status
+     FROM supplier_offers o JOIN suppliers s ON s.id=o.supplier_id
+     LEFT JOIN product_identity_offers pio ON pio.supplier=s.name AND pio.supplier_offer_id=o.supplier_product_id::text AND pio.match_status='confirmed'
+     WHERE o.is_active=true
+     ORDER BY md5(s.slug || ':' || o.supplier_product_id::text || ${seed})
+     LIMIT ${limit}`
   const knowledge={brandAliases,variantAliases,noiseTerms}
   const brands=[...ids.map((x:any)=>x.brand),...brandAliases.map((x:any)=>x.canonical_brand)].filter(Boolean)
   const rej=new Set(rejected.map((x:any)=>x.supplier+'|'+x.supplier_offer_id+'|'+x.candidate_identity_id))
