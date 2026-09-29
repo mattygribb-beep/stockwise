@@ -1,4 +1,5 @@
-import { getSql } from './db'\nimport { cleanProductTitle, isNonProductTitle } from './product-parser'
+import { getSql } from './db'
+import { cleanProductTitle, isNonProductTitle } from './product-parser'
 
 export type SupplierOffer={
  supplierProductId:string;supplierSku?:string;product:string;rawTitle?:string;brand?:string;size?:string;countryOrigin?:string;
