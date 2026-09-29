@@ -1,4 +1,4 @@
-const DISTRIBUTOR=/distribution|wholesale|wando|spv services|a&a distribution|sweet\s*&?\s*glory/i
+const DISTRIBUTOR=/distribution|wholesale|wando|spv services|a&a distribution|sweet\s*&?\s*glory|candy\s*cargo/i
 export type CanonicalProduct={brand:string;brandSource:'supplied'|'alias'|'known-title'|'fallback';family:string;variant:string;unitSize:string;caseQty:number;consumerPackQty:number;canonicalKey:string;sizeConflict?:string}
 export type ParserKnowledge={brandAliases?:any[];variantAliases?:any[];noiseTerms?:any[]}
 const clean=(s:any)=>String(s||'').replace(/&amp;|&#x26;/gi,'&').replace(/&#x27;|&#039;|&apos;/gi,"'").replace(/&quot;|&#34;/gi,'"').replace(/\s+/g,' ').trim()
@@ -15,6 +15,7 @@ export function cleanProductTitle(value:any){
  s=s.replace(/^model:\s*\S+\s+/i,'').replace(/^brand:\s*/i,'')
  s=s.replace(/^.*?popularity\s+alphabetical\s+alphabetical\s+reversed\s+latest\s+popularity\s+0\s+/i,'')
  s=s.replace(/^gen\.?\s+mills\s+/i,'General Mills ')
+ s=s.replace(/\s+([,.;:!?])/g,'$1').replace(/([,.;:!?])(?!\s|$|\d)/g,'$1 ')
  // Keep the sellable identity; discard prose after the first sentence/bullet.
  s=s.split(/\s*[•]\s*|\.\s+(?=[A-Z])/)[0]
  s=s.replace(/\s+imported\s+from\s+[^.]+.*$/i,'').replace(/\s+wholesale\s+case\s+includes\s+.*$/i,'')
