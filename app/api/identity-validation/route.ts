@@ -28,7 +28,7 @@ export async function GET(req:Request){
   const knowledge={brandAliases,variantAliases,noiseTerms}
   const brands=[...ids.map((x:any)=>x.brand),...brandAliases.map((x:any)=>x.canonical_brand)].filter(Boolean)
   const rej=new Set(rejected.map((x:any)=>x.supplier+'|'+x.supplier_offer_id+'|'+x.candidate_identity_id))
-  const metrics:any={total:offers.length,strong:0,review:0,new:0,conflict:0,nonProduct:0,confirmedMemory:0,knownProductRecallMisses:0,missingBrand:0,missingSize:0,missingEan:0,sizeConflict:0}
+  const metrics:any={total:offers.length,strong:0,review:0,new:0,conflict:0,nonProduct:0,confirmedMemory:0,knownProductRecallMisses:0,missingBrand:0,missingSize:0,missingEan:0,sizeConflict:0,fallbackBrand:0,knownBrandInferred:0,consumerMultipack:0,packagingWarnings:0}
   const examples:any={strong:[],review:[],conflict:[],nonProduct:[],knownProductRecallMisses:[]}
   const parsed:any[]=[]
   for(const o of offers){
@@ -37,6 +37,7 @@ export async function GET(req:Request){
    if(!String(o.ean||'').trim())metrics.missingEan++
    if(isNonProductTitle(o.product)){metrics.nonProduct++; if(examples.nonProduct.length<20)examples.nonProduct.push({supplier:o.supplier,product:o.product});continue}
    const p=parseCanonicalProduct({title:o.product,brand:o.brand,size:o.size,caseQty:o.case_qty},brands,knowledge)
+   if(p.brandSource==='fallback')metrics.fallbackBrand++; if(p.brandSource==='known-title')metrics.knownBrandInferred++; if(p.consumerPackQty>1)metrics.consumerMultipack++; if(p.consumerPackQty>1&&Number(o.case_qty)<=1)metrics.packagingWarnings++;
    if(p.sizeConflict){metrics.sizeConflict++;metrics.conflict++;if(examples.conflict.length<20)examples.conflict.push({supplier:o.supplier,product:o.product,reason:'Size conflict '+p.sizeConflict});continue}
    if(o.identity_id){metrics.confirmedMemory++;parsed.push({o,p});continue}
    let best:any=null, hardConflict=false
@@ -62,6 +63,8 @@ export async function GET(req:Request){
    if(suppliers.size>1){comparableGroups++;for(const x of g){if(!(Number(x.o.case_qty)>0)||!(Number(x.o.case_price)>0))economicsWarnings++}}
   }
   const supplierCounts=offers.reduce((a:any,o:any)=>(a[o.supplier]=(a[o.supplier]||0)+1,a),{})
-  return NextResponse.json({ok:true,seed,requested:limit,metrics:{...metrics,comparableGroups,economicsWarnings},supplierCounts,examples,safety:{onlyConfirmedMasterLinks:true,rejectionsApplied:true,nonProductsExcluded:true,packagingNotUsedAsIdentity:true}})
+  const traps=[['A&W Root Beer Float Zero Sugar 355ml','A&W Root Beer Float 355ml'],['Dr Pepper Cream Soda 355ml','Dr Pepper Creamy Coconut 355ml'],['IBC Black Cherry 355ml','Kool-Aid Black Cherry 355ml'],['Monster Strawberry Lemonade 473ml','Monster Strawberry Shot 473ml']]
+  const regression=traps.map(([a,b])=>{const pa=parseCanonicalProduct({title:a},brands,knowledge),pb=parseCanonicalProduct({title:b},brands,knowledge),m=canonicalMatch(pa,pb);return {a,b,passed:!m.match,score:m.score,reason:m.reason}})
+  return NextResponse.json({ok:true,validatorVersion:'identity-validation-v2',seed,requested:limit,metrics:{...metrics,comparableGroups,economicsWarnings},supplierCounts,regression:{passed:regression.every(x=>x.passed),traps:regression},examples,safety:{onlyConfirmedMasterLinks:true,rejectionsApplied:true,nonProductsExcluded:true,packagingNotUsedAsIdentity:true,consumerPackSeparatedFromSupplierCase:true,aliasPhraseBoundaries:true}})
  }catch(e:any){return NextResponse.json({ok:false,error:e?.message||'Validation failed'},{status:500})}
 }
