@@ -4,6 +4,20 @@ export type ParserKnowledge={brandAliases?:any[];variantAliases?:any[];noiseTerm
 const clean=(s:any)=>String(s||'').replace(/&amp;|&#x26;/gi,'&').replace(/&#x27;|&apos;/gi,"'").replace(/\s+/g,' ').trim()
 export const normalize=(s:any)=>clean(s).toLowerCase().replace(/strawberries/g,'strawberry').replace(/&/g,' and ').replace(/[^a-z0-9.]+/g,' ').replace(/\s+/g,' ').trim()
 const phrase=(hay:string,needle:string)=>(' '+normalize(hay)+' ').includes(' '+normalize(needle)+' ')
+export function cleanProductTitle(value:any){
+ let s=clean(value)
+ s=s.replace(/^(?:new\s+)+/i,'')
+ s=s.replace(/^price\s+inc(?:luding)?\s+sugar\s+tax\s+/i,'')
+ // World Candies embeds catalogue metadata + a repeated description before the real product title.
+ s=s.replace(/^pack\s+size\s+\d+\s+/i,'').replace(/^model\s+\S+\s+/i,'').replace(/^brand:\s*[^:]+?\s+model:\s*\S+\s+/i,'')
+ s=s.replace(/^model:\s*\S+\s+/i,'').replace(/^brand:\s*/i,'')
+ // Keep the sellable identity; discard prose after the first sentence/bullet.
+ s=s.split(/\s*[•]\s*|\.\s+(?=[A-Z])/)[0]
+ s=s.replace(/\s+imported\s+from\s+[^.]+.*$/i,'').replace(/\s+wholesale\s+case\s+includes\s+.*$/i,'')
+ s=s.replace(/\s+-\s+pack\s+of\s+(\d+)\s*x\s*([\d.]+\s*(?:kg|g|ml|l|fl\s*oz|oz))\b.*$/i,' - $1 x $2')
+ s=s.replace(/\s+\((?:usa|china|canada|canadian|aus|australia)\)\s*/ig,' ')
+ return clean(s)
+}
 const measure=(v:number,u:string)=>u==='kg'?{v:v*1000,u:'g'}:u==='l'?{v:v*1000,u:'ml'}:{v,u}
 function measureText(v:number,u:string){const m=measure(v,u);return (Number.isInteger(m.v)?m.v:Number(m.v.toFixed(2)))+m.u}
 export function unitSize(size:any,title:any=''){const s=normalize(size||title);let m=s.match(/(\d+(?:\.\d+)?)\s*(kg|g|ml|l)\b/);if(m)return measureText(Number(m[1]),m[2]);m=s.match(/(\d+(?:\.\d+)?)\s*fl\s*oz/);if(m)return Math.round(Number(m[1])*29.5735)+'ml';m=s.match(/(\d+(?:\.\d+)?)\s*oz/);if(m)return Math.round(Number(m[1])*28.3495)+'g';return ''}
@@ -13,7 +27,7 @@ function sizesCompatible(structured:string,titleSize:string,title:string){if(!st
 function inferBrand(title:string,brand:string,known:string[]=[]){const b=clean(brand);if(b&&!DISTRIBUTOR.test(b))return {brand:b,source:'supplied' as const};const t=normalize(title),hit=known.filter(Boolean).sort((a,b)=>b.length-a.length).find(x=>t.startsWith(normalize(x)+' ')||t===normalize(x));if(hit)return {brand:hit,source:'known-title' as const};return {brand:clean(title).replace(/^\([^)]*\)\s*/,'').split(/\s+/)[0]||'',source:'fallback' as const}}
 export function isNonProductTitle(title:any){const t=normalize(title);return /\b(compliance labels?|shipping labels?|pallet labels?|packaging service|delivery charge|carriage charge)\b/.test(t)}
 export function parseCanonicalProduct(input:{title:any;brand?:any;size?:any;caseQty?:any},knownBrands:string[]=[],knowledge:ParserKnowledge={}):CanonicalProduct{
- const aliases=knowledge.brandAliases||[],rawBrand=clean(input.brand),alias=aliases.find((x:any)=>normalize(x.alias)===normalize(rawBrand)),title=clean(input.title).replace(/^(?:new\s+){1,}/i,'')
+ const aliases=knowledge.brandAliases||[],rawBrand=clean(input.brand),alias=aliases.find((x:any)=>normalize(x.alias)===normalize(rawBrand)),title=cleanProductTitle(input.title)
  const bi=inferBrand(title,alias?.canonical_brand||rawBrand,[...knownBrands,...aliases.map((x:any)=>x.canonical_brand)]),brand=bi.brand,brandSource=alias?'alias':bi.source
  const structuredSize=unitSize(input.size,''),titleSize=unitSize('',title),us=structuredSize||titleSize,qty=Math.max(1,Number(input.caseQty)||1),packQty=consumerPackQty(title)
  let body=normalize(title),nb=normalize(brand);if(nb&&body.startsWith(nb+' '))body=body.slice(nb.length+1)
