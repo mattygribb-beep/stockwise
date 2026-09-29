@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { saveSupplierCatalogue } from '../../../../lib/catalogue-store'
+import { cleanProductTitle, isNonProductTitle } from '../../../../lib/product-parser'
 export const runtime='nodejs';export const dynamic='force-dynamic';export const maxDuration=60
 const BASE='https://www.wholesalesweets.co.uk',START='/shop-online-1137'
 const H={'User-Agent':'Flip Lead Supplier Catalogue/1.0','Accept':'text/html,application/xhtml+xml'}
@@ -27,7 +28,7 @@ async function getPage(page:number){const r=await fetch(BASE+START+(page===1?'':
 export async function GET(){try{
  const first=await getPage(1),pages=totalPages(first.h),offers=[...first.offers]
  for(let i=2;i<=pages;i+=20){const nums=Array.from({length:Math.min(20,pages-i+1)},(_,k)=>i+k);const batch=await Promise.all(nums.map(getPage));batch.forEach(x=>offers.push(...x.offers))}
- const all=[...new Map(offers.map((x:any)=>[x.supplierProductId,x])).values()],unique=all.filter((x:any)=>x.status==='IN STOCK').sort((a:any,b:any)=>a.product.localeCompare(b.product))
+ const all=[...new Map(offers.map((x:any)=>[x.supplierProductId,x])).values()],unique=all.filter((x:any)=>x.status==='IN STOCK').map((x:any)=>({...x,product:cleanProductTitle(x.product)})).filter((x:any)=>!isNonProductTitle(x.product)).sort((a:any,b:any)=>a.product.localeCompare(b.product))
  if(unique.length<500)throw new Error('Wholesale Sweets parser found only '+unique.length+' in-stock offers from '+all.length+' products across '+pages+' pages; saved catalogue kept')
  await saveSupplierCatalogue('wholesale-sweets',unique,{cataloguePages:pages,productsSeen:all.length,method:'catalogue-title-links',priceBasis:'VAT inclusive'})
  return NextResponse.json({ok:true,supplier:'Wholesale Sweets',cataloguePages:pages,productsSeen:all.length,inStock:unique.length,offers:unique})
