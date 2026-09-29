@@ -7,7 +7,8 @@ export type SupplierOffer={
 }
 
 export async function saveSupplierCatalogue(slug:string,offers:SupplierOffer[],metadata:any={}){
- if(!offers.length) throw new Error('Refusing to replace saved catalogue with zero offers')
+ const cleanedOffers=offers.map(o=>({...o,rawTitle:o.rawTitle||o.product,product:cleanProductTitle(o.product)})).filter(o=>!isNonProductTitle(o.product))
+ if(!cleanedOffers.length) throw new Error('Refusing to replace saved catalogue with zero product offers')
  const sql=getSql()
  const suppliers=await sql`SELECT id FROM suppliers WHERE slug=${slug} LIMIT 1`
  if(!suppliers.length) throw new Error('Unknown supplier: '+slug)
