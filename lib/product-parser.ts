@@ -6,7 +6,7 @@ export const normalize=(s:any)=>clean(s).toLowerCase().replace(/strawberries/g,'
 const phrase=(hay:string,needle:string)=>(' '+normalize(hay)+' ').includes(' '+normalize(needle)+' ')
 export function cleanProductTitle(value:any){
  let s=clean(value)
- s=s.replace(/^(?:new\s+)+/i,'')
+ s=s.replace(/^(?:new\s+)+/i,'')\n s=s.replace(/^\*{2,}\s*/,'').replace(/\*([^*]+)\*/g,'$1')
  s=s.replace(/^price\s+inc(?:luding)?\s+sugar\s+tax\s+/i,'')
  // World Candies embeds catalogue metadata + a repeated description before the real product title.
  s=s.replace(/^pack\s+size\s+\d+\s+/i,'').replace(/^model\s+\S+\s+/i,'').replace(/^brand:\s*[^:]+?\s+model:\s*\S+\s+/i,'')
@@ -25,7 +25,7 @@ function parseMeasure(s:string){const m=s.match(/^(\d+(?:\.\d+)?)(g|ml)$/);retur
 export function consumerPackQty(title:string){const t=normalize(title);let m=t.match(/\bmultipack\s+(?:of\s+)?(\d+)\b/);if(m)return Number(m[1]);m=t.match(/\b(\d+)\s+(?:[a-z]+\s+){0,2}packs?\b/);if(m)return Number(m[1]);m=t.match(/\b(\d+)\s*x\s*(\d+(?:\.\d+)?)\s*(?:g|ml)\b/);return m?Number(m[1]):1}
 function sizesCompatible(structured:string,titleSize:string,title:string){if(!structured||!titleSize||structured===titleSize)return true;const a=parseMeasure(structured),b=parseMeasure(titleSize);if(!a||!b||a.u!==b.u)return false;const p=consumerPackQty(title);return p>1&&(Math.abs(a.v*p-b.v)<0.11||Math.abs(b.v*p-a.v)<0.11)}
 function inferBrand(title:string,brand:string,known:string[]=[]){const b=clean(brand);if(b&&!DISTRIBUTOR.test(b))return {brand:b,source:'supplied' as const};const t=normalize(title),hit=known.filter(Boolean).sort((a,b)=>b.length-a.length).find(x=>t.startsWith(normalize(x)+' ')||t===normalize(x));if(hit)return {brand:hit,source:'known-title' as const};return {brand:clean(title).replace(/^\([^)]*\)\s*/,'').split(/\s+/)[0]||'',source:'fallback' as const}}
-export function isNonProductTitle(title:any){const t=normalize(title);return /\b(compliance labels?|shipping labels?|pallet labels?|packaging service|delivery charge|carriage charge)\b/.test(t)}
+export function isNonProductTitle(title:any){const t=normalize(title);return /\b(compliance labels?|shipping labels?|pallet labels?|packaging service|delivery charge|carriage charge)\b/.test(t)||/^accessories\b/.test(t)||/\b(?:jars?|tubs?)\b/.test(t)&&/\bempty\b/.test(t)||/\bwax paper ice cream tubs?\b/.test(t)||/\bplastic (?:spade )?ice cream spoons?\b/.test(t)}
 export function parseCanonicalProduct(input:{title:any;brand?:any;size?:any;caseQty?:any},knownBrands:string[]=[],knowledge:ParserKnowledge={}):CanonicalProduct{
  const aliases=knowledge.brandAliases||[],rawBrand=clean(input.brand),alias=aliases.find((x:any)=>normalize(x.alias)===normalize(rawBrand)),title=cleanProductTitle(input.title)
  const bi=inferBrand(title,alias?.canonical_brand||rawBrand,[...knownBrands,...aliases.map((x:any)=>x.canonical_brand)]),brand=bi.brand,brandSource=alias?'alias':bi.source
