@@ -1,21 +1,21 @@
 const DISTRIBUTOR=/distribution|wholesale|wando|spv services|a&a distribution|sweet\s*&?\s*glory/i
 export type CanonicalProduct={brand:string;brandSource:'supplied'|'alias'|'known-title'|'fallback';family:string;variant:string;unitSize:string;caseQty:number;consumerPackQty:number;canonicalKey:string;sizeConflict?:string}
 export type ParserKnowledge={brandAliases?:any[];variantAliases?:any[];noiseTerms?:any[]}
-const clean=(s:any)=>String(s||'').replace(/&amp;|&#x26;/gi,'&').replace(/&#x27;|&apos;/gi,"'").replace(/\s+/g,' ').trim()
+const clean=(s:any)=>String(s||'').replace(/&amp;|&#x26;/gi,'&').replace(/&#x27;|&#039;|&apos;/gi,"'").replace(/&quot;|&#34;/gi,'"').replace(/\s+/g,' ').trim()
 export const normalize=(s:any)=>clean(s).toLowerCase().replace(/strawberries/g,'strawberry').replace(/&/g,' and ').replace(/[^a-z0-9.]+/g,' ').replace(/\s+/g,' ').trim()
 const phrase=(hay:string,needle:string)=>(' '+normalize(hay)+' ').includes(' '+normalize(needle)+' ')
 export function cleanProductTitle(value:any){
  let s=clean(value)
- s=s.replace(/^(?:new\s+)+/i,'')\n s=s.replace(/^\*{2,}\s*/,'').replace(/\*([^*]+)\*/g,'$1')
+ s=s.replace(/^(?:new\s+)+/i,'')\n s=s.replace(/^\*{1,}\s*/,'').replace(/\*([^*]+)\*/g,'$1').replace(/\s+\*+\s*/g,' ')\n s=s.replace(/^\*{2,}\s*/,'').replace(/\*([^*]+)\*/g,'$1')
  s=s.replace(/^price\s+inc(?:luding)?\s+sugar\s+tax\s+/i,'')
  // World Candies embeds catalogue metadata + a repeated description before the real product title.
  s=s.replace(/^pack\s+size\s+\d+\s+/i,'').replace(/^model\s+\S+\s+/i,'').replace(/^brand:\s*[^:]+?\s+model:\s*\S+\s+/i,'')
- s=s.replace(/^model:\s*\S+\s+/i,'').replace(/^brand:\s*/i,'')
+ s=s.replace(/^model:\s*\S+\s+/i,'').replace(/^brand:\s*/i,'')\n s=s.replace(/^.*?popularity\s+alphabetical\s+alphabetical\s+reversed\s+latest\s+popularity\s+0\s+/i,'')\n s=s.replace(/^gen\.?\s+mills\s+/i,'General Mills ')
  // Keep the sellable identity; discard prose after the first sentence/bullet.
  s=s.split(/\s*[•]\s*|\.\s+(?=[A-Z])/)[0]
  s=s.replace(/\s+imported\s+from\s+[^.]+.*$/i,'').replace(/\s+wholesale\s+case\s+includes\s+.*$/i,'')
  s=s.replace(/\s+-\s+pack\s+of\s+(\d+)\s*x\s*([\d.]+\s*(?:kg|g|ml|l|fl\s*oz|oz))\b.*$/i,' - $1 x $2')
- s=s.replace(/\s+\((?:usa|china|canada|canadian|aus|australia)\)\s*/ig,' ')
+ s=s.replace(/\s+\((?:usa|china|canada|canadian|aus|australia)\)\s*/ig,' ')\n s=s.replace(/\s+bag\s+bag\b/ig,' Bag')
  return clean(s)
 }
 const measure=(v:number,u:string)=>u==='kg'?{v:v*1000,u:'g'}:u==='l'?{v:v*1000,u:'ml'}:{v,u}
