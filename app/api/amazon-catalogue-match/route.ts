@@ -2,6 +2,7 @@ import {NextResponse} from 'next/server'
 import {getSql} from '../../../lib/db'
 import {parseCanonicalProduct,canonicalMatch,isNonProductTitle} from '../../../lib/product-parser'
 export const runtime='nodejs';export const dynamic='force-dynamic'
+const money=(v:any)=>{const n=Number(v);return Number.isFinite(n)&&n>0?n:null}
 export async function GET(){
  try{
   const sql=getSql()
@@ -20,9 +21,16 @@ export async function GET(){
     const candidate={score:m.score,reason:m.reason,offer:po.offer,amazonParsed:ap,supplierParsed:po.parsed}
     if(!best||candidate.score>best.score){second=best;best=candidate}else if(!second||candidate.score>second.score)second=candidate
    }
-   if(best){const margin=best.score-(second?.score||0);matches.push({asin:a.asin,title:a.title,amazonPrice:a.observed_price,score:best.score,margin,band:best.score>=95&&margin>=10?'STRONG':'REVIEW',reason:best.reason,supplier:best.offer.supplier,supplierOfferId:best.offer.supplier_product_id,supplierProduct:best.offer.product,caseQty:best.offer.case_qty,casePrice:best.offer.case_price,unitCost:best.offer.unit_cost,amazonParsed:best.amazonParsed,supplierParsed:best.supplierParsed})}
+   if(best){
+    const confidenceGap=best.score-(second?.score||0),amazonPack=Math.max(1,Number(best.amazonParsed.consumerPackQty)||1),supplierCase=Math.max(1,Number(best.offer.case_qty)||Number(best.supplierParsed.caseQty)||1)
+    const sellablePacks=Math.floor(supplierCase/amazonPack),remainderUnits=supplierCase%amazonPack,casePrice=money(best.offer.case_price),storedUnitCost=money(best.offer.unit_cost),physicalUnitCost=casePrice?casePrice/supplierCase:storedUnitCost
+    const amazonPackCost=physicalUnitCost?physicalUnitCost*amazonPack:null,amazonPrice=money(a.observed_price),preFeeSpread=amazonPrice&&amazonPackCost!=null?amazonPrice-amazonPackCost:null
+    const completeIdentity=!!best.amazonParsed.brand&&!!best.supplierParsed.brand&&!!best.amazonParsed.variant&&!!best.supplierParsed.variant&&!!best.amazonParsed.unitSize&&!!best.supplierParsed.unitSize
+    const band=best.score>=95&&confidenceGap>=10&&completeIdentity?'STRONG':'REVIEW'
+    matches.push({asin:a.asin,title:a.title,amazonPrice:a.observed_price,score:best.score,confidenceGap,band,reason:best.reason,supplier:best.offer.supplier,supplierOfferId:best.offer.supplier_product_id,supplierProduct:best.offer.product,caseQty:supplierCase,casePrice:best.offer.case_price,unitCost:best.offer.unit_cost,packConversion:{amazonPackQty:amazonPack,supplierCaseQty:supplierCase,sellableAmazonPacksPerCase:sellablePacks,remainderPhysicalUnits:remainderUnits,exactCaseConversion:remainderUnits===0},economics:{physicalUnitCost,amazonPackProductCost:amazonPackCost,amazonObservedPrice:amazonPrice,preAmazonFeeSpread:preFeeSpread,costKnown:physicalUnitCost!=null},amazonParsed:best.amazonParsed,supplierParsed:best.supplierParsed})
+   }
   }
-  matches.sort((a,b)=>b.score-a.score||b.margin-a.margin)
+  matches.sort((a,b)=>(a.band===b.band?0:a.band==='STRONG'?-1:1)||b.score-a.score||b.confidenceGap-a.confidenceGap)
   return NextResponse.json({ok:true,amazonChecked:amazon.length,supplierOffers:offers.length,strong:matches.filter(x=>x.band==='STRONG').length,review:matches.filter(x=>x.band==='REVIEW').length,noCandidate:amazon.length-matches.length,matches})
  }catch(e:any){return NextResponse.json({ok:false,error:e?.message||'Unable to match catalogue'},{status:500})}
 }
