@@ -2,7 +2,6 @@ import {NextResponse} from 'next/server'
 import {getSql} from '../../../lib/db'
 import {parseCanonicalProduct,canonicalMatch,isNonProductTitle} from '../../../lib/product-parser'
 export const runtime='nodejs';export const dynamic='force-dynamic'
-const norm=(v:any)=>String(v||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()
 export async function GET(){
  try{
   const sql=getSql()
@@ -12,14 +11,13 @@ export async function GET(){
   const ba=await sql`SELECT canonical_brand,alias FROM product_brand_aliases`,va=await sql`SELECT brand,canonical_variant,alias FROM product_variant_aliases`,nt=await sql`SELECT term FROM product_noise_terms`
   const brands=[...new Set([...masters.map((x:any)=>x.brand),...ba.map((x:any)=>x.canonical_brand)].filter(Boolean))]
   const knowledge={brandAliases:ba,variantAliases:va,noiseTerms:nt};const matches:any[]=[]
+  const parsedOffers=offers.filter((o:any)=>!isNonProductTitle(o.product)).map((o:any)=>({offer:o,parsed:parseCanonicalProduct({title:o.product,brand:o.brand,size:o.size,caseQty:o.case_qty},brands,knowledge)}))
   for(const a of amazon){
    if(isNonProductTitle(a.title))continue
    const ap=parseCanonicalProduct({title:a.title,caseQty:1},brands,knowledge);let best:any=null,second:any=null
-   for(const o of offers){
-    if(isNonProductTitle(o.product))continue
-    const op=parseCanonicalProduct({title:o.product,brand:o.brand,size:o.size,caseQty:o.case_qty},brands,knowledge)
-    const m=canonicalMatch(ap,op);if(!m.match)continue
-    const candidate={score:m.score,reason:m.reason,offer:o,amazonParsed:ap,supplierParsed:op}
+   for(const po of parsedOffers){
+    const m=canonicalMatch(ap,po.parsed);if(!m.match)continue
+    const candidate={score:m.score,reason:m.reason,offer:po.offer,amazonParsed:ap,supplierParsed:po.parsed}
     if(!best||candidate.score>best.score){second=best;best=candidate}else if(!second||candidate.score>second.score)second=candidate
    }
    if(best){const margin=best.score-(second?.score||0);matches.push({asin:a.asin,title:a.title,amazonPrice:a.observed_price,score:best.score,margin,band:best.score>=95&&margin>=10?'STRONG':'REVIEW',reason:best.reason,supplier:best.offer.supplier,supplierOfferId:best.offer.supplier_product_id,supplierProduct:best.offer.product,caseQty:best.offer.case_qty,casePrice:best.offer.case_price,unitCost:best.offer.unit_cost,amazonParsed:best.amazonParsed,supplierParsed:best.supplierParsed})}
