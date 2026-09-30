@@ -174,6 +174,8 @@ export function rankFinnOffers(allOffers: FinnOffer[], intent: FinnSearchIntent)
     if (validPrice(caseCost)) score += 4
 
     if (!eanExact && !asinExact && wanted.length && matched.length === 0) return null
+    // Specific multi-term product searches should not be flooded by one-word matches.
+    if (!eanExact && !asinExact && wanted.length >= 2 && coverage < 1 && !intent.brand && !intent.size) return null
     const confidence = eanExact || asinExact ? 'EXACT SEARCH MATCH' : (coverage >= .75 && (sizeMatch || !!intent.brand) && fuzzyMatched.length===0) ? 'STRONG POSSIBLE' : coverage >= .4 ? 'POSSIBLE' : 'LOOSE POSSIBLE'
     const identityConfidence = offer.identityStatus==='completed' ? 'VERIFIED' : 'UNVERIFIED'
     const explanation=matchReason(identityConfidence,[eanExact?'exact EAN/UPC':'',asinExact?'exact ASIN':''].filter(Boolean),matched,sizeMatch,packMatch,fuzzyMatched)
@@ -212,7 +214,7 @@ export function groupFinnResults(ranked: ReturnType<typeof rankFinnOffers>) {
       confidence: best.confidence,
       identityConfidence: verifiedIdentity ? 'VERIFIED' : 'UNVERIFIED',
       learnedIdentity: best.offer.masterIdentityId ? `Master Product #${best.offer.masterIdentityId}` : undefined,
-      explanation: best.explanation,
+      explanation: verifiedIdentity ? {...best.explanation,whyNotVerified:undefined,reasons:[...(best.explanation?.reasons||[]),'resolved Master Product identity']} : best.explanation,
       matchedTerms: best.matchedTerms,
       fuzzyMatched: best.fuzzyMatched,
       score: best.score,
