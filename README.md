@@ -1,8 +1,8 @@
-# Stockwise
+# Source Stack
 
 **Know before you buy.**
 
-Stockwise is a purchasing-intelligence prototype for UK resellers and small wholesale businesses. It helps users analyse an opportunity before committing capital, apply personal buying rules, remember product/EAN history, review wholesale catalogues, record purchases, and compare expected economics with actual outcomes.
+Source Stack is a purchasing-intelligence prototype for UK resellers and small wholesale businesses. It helps users analyse an opportunity before committing capital, apply personal buying rules, remember product/EAN history, review wholesale catalogues, record purchases, and compare expected economics with actual outcomes.
 
 ## Current build — V1.2
 
