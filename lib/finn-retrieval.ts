@@ -157,8 +157,8 @@ export function rankFinnOffers(allOffers: FinnOffer[], intent: FinnSearchIntent)
     const eanExact = !!intent.ean && clean(String(offer.ean || '')).replace(/^0+/, '') === clean(intent.ean).replace(/^0+/, '')
     const asinExact = !!intent.asin && String(offer.asin || '').toUpperCase() === intent.asin
     const candidateTokens=[...hayTokens]
-    const matched = wanted.filter(t => hay.includes(clean(t)) || hayTokens.has(clean(t)) || fuzzyTokenMatch(t,candidateTokens))
-    const fuzzyMatched = wanted.filter(t => !hay.includes(clean(t)) && !hayTokens.has(clean(t)) && fuzzyTokenMatch(t,candidateTokens))
+    const matched = wanted.filter(t => hayTokens.has(clean(t)) || fuzzyTokenMatch(t,candidateTokens))
+    const fuzzyMatched = wanted.filter(t => !hayTokens.has(clean(t)) && fuzzyTokenMatch(t,candidateTokens))
     const coverage = wanted.length ? matched.length / wanted.length : 0
     const sizeMatch = !!intent.size && hay.includes(intent.size)
     const packMatch = !!intent.packCount && Number(offer.caseQty || 0) === intent.packCount
@@ -213,6 +213,7 @@ export function groupFinnResults(ranked: ReturnType<typeof rankFinnOffers>) {
       bestUnitCost: best.unitCost,
       confidence: best.confidence,
       identityConfidence: verifiedIdentity ? 'VERIFIED' : 'UNVERIFIED',
+      resultTier: verifiedIdentity ? 'EXACT VERIFIED' : 'RELATED PRODUCT',
       learnedIdentity: best.offer.masterIdentityId ? `Master Product #${best.offer.masterIdentityId}` : undefined,
       explanation: verifiedIdentity ? {...best.explanation,whyNotVerified:undefined,reasons:[...(best.explanation?.reasons||[]),'resolved Master Product identity']} : best.explanation,
       matchedTerms: best.matchedTerms,
@@ -228,5 +229,5 @@ export function groupFinnResults(ranked: ReturnType<typeof rankFinnOffers>) {
       status: comparisonAllowed ? 'COMPARISON' : (pricedSupplierCount > 1 ? 'POSSIBLE MATCH' : 'SINGLE SOURCE'),
       comparisonAllowed,
     }
-  }).sort((a,b) => b.score - a.score)
+  }).sort((a,b) => (a.resultTier==='EXACT VERIFIED'?0:1)-(b.resultTier==='EXACT VERIFIED'?0:1) || b.score - a.score)
 }
