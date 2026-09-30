@@ -3,12 +3,12 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Flip Lead — Find it. Source it. Know the numbers.',
+  title: 'Source Stack — Find it. Source it. Know the numbers.',
   description: 'Purchasing intelligence for resellers and product-based businesses.',
-  applicationName: 'Flip Lead',
-  generator: 'Flip Lead',
+  applicationName: 'Source Stack',
+  generator: 'Source Stack',
   manifest: '/manifest.webmanifest',
-  appleWebApp: { capable: true, title: 'Flip Lead', statusBarStyle: 'black-translucent' },
+  appleWebApp: { capable: true, title: 'Source Stack', statusBarStyle: 'black-translucent' },
   formatDetection: { telephone: false },
   icons: { icon: [{ url: '/icon.svg', type: 'image/svg+xml' }], apple: [{ url: '/icon.svg', type: 'image/svg+xml' }] }
 }
