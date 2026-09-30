@@ -56,8 +56,9 @@ export function canonicalMatch(a:CanonicalProduct,b:CanonicalProduct){
  if(b.sizeConflict)return {match:false,score:0,reason:'Master size conflict: '+b.sizeConflict}
  if(a.unitSize&&b.unitSize&&!sizeEquivalent(a.unitSize,b.unitSize))return {match:false,score:0,reason:'Unit size conflict'}
  if(!brandEquivalent(a.brand,b.brand))return {match:false,score:0,reason:'Brand conflict'}
- if(a.variant&&b.variant&&normalize(a.variant)!==normalize(b.variant))return {match:false,score:0,reason:'Variant conflict'}
- const fam=normalize(a.family)===normalize(b.family),variant=!a.variant||!b.variant||normalize(a.variant)===normalize(b.variant),size=!a.unitSize||!b.unitSize||sizeEquivalent(a.unitSize,b.unitSize)
+ if(!a.variant||!b.variant)return {match:false,score:0,reason:'Variant unproven'}
+ if(normalize(a.variant)!==normalize(b.variant))return {match:false,score:0,reason:'Variant conflict'}
+ const fam=normalize(a.family)===normalize(b.family),variant=true,size=!a.unitSize||!b.unitSize||sizeEquivalent(a.unitSize,b.unitSize)
  const score=25+(fam?30:0)+(variant?25:0)+(size?20:0)
  return {match:score>=75,score,reason:[fam?'family':'',variant?'variant':'',size?'unit size':''].filter(Boolean).join(' + ')}
 }
