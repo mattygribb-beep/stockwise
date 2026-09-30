@@ -10,14 +10,19 @@ export function calculateEconomics(i:EconomicsInput){
  const breakEven=cogs+costs
  return {caseQty,amazonPackQty:pack,yield:yieldCount,leftover,unitCost,cogs,sellPrice:sell,costs,profit,roi,margin,caseProfit,capitalRequired:caseCost,breakEven}
 }
-export function buyingDecision(e:ReturnType<typeof calculateEconomics>,rules:any,evidence:{identityVerified:boolean;demandChecked:boolean;competitionChecked:boolean}){
+export function buyingDecision(e:ReturnType<typeof calculateEconomics>,rules:any,evidence:{identityVerified:boolean;demandChecked:boolean;competitionChecked:boolean},context:{budgetAvailable?:number;existingCapitalOnProduct?:number}={}){
  const reasons:string[]=[]
  if(!evidence.identityVerified)reasons.push('Verify the exact Amazon product and pack')
  if(!e.sellPrice)reasons.push('Add a checked selling price')
  if(!evidence.demandChecked)reasons.push('Check demand')
  if(!evidence.competitionChecked)reasons.push('Check competition')
+ if(e.amazonPackQty>e.caseQty)reasons.push('Amazon sell pack is larger than the supplier case')
+ if(e.yield<1)reasons.push('Supplier case cannot make one complete Amazon sell pack')
  if(reasons.length)return {decision:'CONSIDER',reasons,ready:false}
  if(e.profit<=0||e.roi<Number(rules.roi||0)||e.margin<Number(rules.margin||0))return {decision:'WALK AWAY',reasons:['Return falls below a configured buying rule'],ready:true}
+ const productCapital=e.capitalRequired+Math.max(0,Number(context.existingCapitalOnProduct)||0)
+ if(productCapital>Number(rules.maxCapital||Infinity))return {decision:'WALK AWAY',reasons:['Capital required exceeds the configured maximum per product'],ready:true}
+ if(Number.isFinite(Number(context.budgetAvailable))&&e.capitalRequired>Number(context.budgetAvailable))return {decision:'WALK AWAY',reasons:['Capital required exceeds the available buying budget'],ready:true}
  if(e.profit>=Number(rules.profit||0)&&e.caseProfit>=Number(rules.totalProfit||0)){
   const test=e.capitalRequired>Number(rules.firstCapital||Infinity)||e.yield>Number(rules.firstUnits||Infinity)
   return {decision:test?'TEST BUY':'BUY',reasons:[test?'Economics pass but first-buy exposure is high':'Economics and evidence pass configured rules'],ready:true}
