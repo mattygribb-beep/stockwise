@@ -28,6 +28,9 @@ const measure=(v:number,u:string)=>u==='kg'?{v:v*1000,u:'g'}:u==='l'?{v:v*1000,u
 function measureText(v:number,u:string){const m=measure(v,u);return (Number.isInteger(m.v)?m.v:Number(m.v.toFixed(2)))+m.u}
 export function unitSize(size:any,title:any=''){const s=normalize(size||title);let m=s.match(/(\d+(?:\.\d+)?)\s*(kg|g|ml|l)\b/);if(m)return measureText(Number(m[1]),m[2]);m=s.match(/(\d+(?:\.\d+)?)\s*fl\s*oz/);if(m)return Math.round(Number(m[1])*29.5735)+'ml';m=s.match(/(\d+(?:\.\d+)?)\s*oz/);if(m)return Math.round(Number(m[1])*28.3495)+'g';return ''}
 function parseMeasure(s:string){const m=s.match(/^(\d+(?:\.\d+)?)(g|ml)$/);return m?{v:Number(m[1]),u:m[2]}:null}
+function sizeEquivalent(a:string,b:string){if(!a||!b)return true;if(a===b)return true;const x=parseMeasure(a),y=parseMeasure(b);if(!x||!y||x.u!==y.u)return false;const tolerance=x.u==='g'?Math.max(1,Math.min(x.v,y.v)*0.015):Math.max(2,Math.min(x.v,y.v)*0.015);return Math.abs(x.v-y.v)<=tolerance}
+function brandKey(v:string){return normalize(v).replace(/\b([a-z0-9]+) s\b/g,'$1').trim()}
+function brandEquivalent(a:string,b:string){const x=brandKey(a),y=brandKey(b);if(x===y)return true;return x.length>3&&y.length>3&&(x+'s'===y||y+'s'===x)}
 export function consumerPackQty(title:string){const t=normalize(title);let m=t.match(/\bmultipack\s+(?:of\s+)?(\d+)\b/);if(m)return Number(m[1]);m=t.match(/\b(\d+)\s+(?:[a-z]+\s+){0,2}packs?\b/);if(m)return Number(m[1]);m=t.match(/\b(\d+)\s*x\s*(\d+(?:\.\d+)?)\s*(?:g|ml)\b/);return m?Number(m[1]):1}
 function sizesCompatible(structured:string,titleSize:string,title:string){if(!structured||!titleSize||structured===titleSize)return true;const a=parseMeasure(structured),b=parseMeasure(titleSize);if(!a||!b||a.u!==b.u)return false;const p=consumerPackQty(title);return p>1&&(Math.abs(a.v*p-b.v)<0.11||Math.abs(b.v*p-a.v)<0.11)}
 function inferBrand(title:string,brand:string,known:string[]=[]){const b=clean(brand);if(b&&!DISTRIBUTOR.test(b))return {brand:b,source:'supplied' as const};const t=normalize(title),hit=known.filter(Boolean).sort((a,b)=>b.length-a.length).find(x=>t.startsWith(normalize(x)+' ')||t===normalize(x));if(hit)return {brand:hit,source:'known-title' as const};return {brand:clean(title).replace(/^\([^)]*\)\s*/,'').split(/\s+/)[0]||'',source:'fallback' as const}}
@@ -51,10 +54,10 @@ export function parseCanonicalProduct(input:{title:any;brand?:any;size?:any;case
 export function canonicalMatch(a:CanonicalProduct,b:CanonicalProduct){
  if(a.sizeConflict)return {match:false,score:0,reason:'Supplier size conflict: '+a.sizeConflict}
  if(b.sizeConflict)return {match:false,score:0,reason:'Master size conflict: '+b.sizeConflict}
- if(a.unitSize&&b.unitSize&&a.unitSize!==b.unitSize)return {match:false,score:0,reason:'Unit size conflict'}
- if(normalize(a.brand)!==normalize(b.brand))return {match:false,score:0,reason:'Brand conflict'}
+ if(a.unitSize&&b.unitSize&&!sizeEquivalent(a.unitSize,b.unitSize))return {match:false,score:0,reason:'Unit size conflict'}
+ if(!brandEquivalent(a.brand,b.brand))return {match:false,score:0,reason:'Brand conflict'}
  if(a.variant&&b.variant&&normalize(a.variant)!==normalize(b.variant))return {match:false,score:0,reason:'Variant conflict'}
- const fam=normalize(a.family)===normalize(b.family),variant=!a.variant||!b.variant||normalize(a.variant)===normalize(b.variant),size=!a.unitSize||!b.unitSize||a.unitSize===b.unitSize
+ const fam=normalize(a.family)===normalize(b.family),variant=!a.variant||!b.variant||normalize(a.variant)===normalize(b.variant),size=!a.unitSize||!b.unitSize||sizeEquivalent(a.unitSize,b.unitSize)
  const score=25+(fam?30:0)+(variant?25:0)+(size?20:0)
  return {match:score>=75,score,reason:[fam?'family':'',variant?'variant':'',size?'unit size':''].filter(Boolean).join(' + ')}
 }
