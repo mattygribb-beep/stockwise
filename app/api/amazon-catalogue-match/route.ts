@@ -10,7 +10,12 @@ export async function GET(){
   const offers=await sql`SELECT o.id,o.supplier_product_id,o.product,o.brand,o.size,o.case_qty,o.case_price,o.unit_cost,o.ean,s.name supplier FROM supplier_offers o JOIN suppliers s ON s.id=o.supplier_id WHERE o.is_active=true`
   const masters=await sql`SELECT brand FROM master_product_identities WHERE coalesce(brand,'')<>''`
   const ba=await sql`SELECT canonical_brand,alias FROM product_brand_aliases`,va=await sql`SELECT brand,canonical_variant,alias FROM product_variant_aliases`,nt=await sql`SELECT term FROM product_noise_terms`
-  const brands=[...new Set([...masters.map((x:any)=>x.brand),...ba.map((x:any)=>x.canonical_brand)].filter(Boolean))]
+  // Supplier catalogue brands are evidence too. Using them as known-title brands lets
+  // Amazon titles such as "Taco Bell Diablo Sauce 213g" infer "Taco Bell" instead
+  // of the unsafe one-word fallback "Taco". This only improves brand inference;
+  // canonicalMatch still requires brand + family + variant + unit-size agreement.
+  const supplierBrands=offers.map((x:any)=>x.brand).filter(Boolean)
+  const brands=[...new Set([...masters.map((x:any)=>x.brand),...ba.map((x:any)=>x.canonical_brand),...supplierBrands].filter(Boolean))]
   const knowledge={brandAliases:ba,variantAliases:va,noiseTerms:nt};const matches:any[]=[]
   const parsedOffers=offers.filter((o:any)=>!isNonProductTitle(o.product)).map((o:any)=>({offer:o,parsed:parseCanonicalProduct({title:o.product,brand:o.brand,size:o.size,caseQty:o.case_qty},brands,knowledge)}))
   for(const a of amazon){
