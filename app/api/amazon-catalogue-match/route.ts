@@ -26,7 +26,7 @@ export async function GET(){
     const sameIdentity=candidates.filter(x=>x.identityKey===best.identityKey)
     const competingIdentities=candidates.filter(x=>x.identityKey!==best.identityKey)
     const second=competingIdentities[0]||null
-    const confidenceGap=best.retrievalScore-(second?.retrievalScore||0),amazonPack=Math.max(1,Number(best.amazonParsed.consumerPackQty)||1),supplierCase=Math.max(1,Number(best.offer.case_qty)||Number(best.supplierParsed.caseQty)||1)
+    const confidenceGap=best.retrievalScore-(second?.retrievalScore||0);if(second&&confidenceGap<=0)continue;const amazonPack=Math.max(1,Number(best.amazonParsed.consumerPackQty)||1),supplierCase=Math.max(1,Number(best.offer.case_qty)||Number(best.supplierParsed.caseQty)||1)
     const sellablePacks=Math.floor(supplierCase/amazonPack),remainderUnits=supplierCase%amazonPack,casePrice=money(best.offer.case_price),storedUnitCost=money(best.offer.unit_cost),physicalUnitCost=casePrice?casePrice/supplierCase:storedUnitCost
     const amazonPackCost=physicalUnitCost?physicalUnitCost*amazonPack:null,amazonPrice=money(a.observed_price),preFeeSpread=amazonPrice&&amazonPackCost!=null?amazonPrice-amazonPackCost:null
     const grossProductROI=amazonPackCost&&preFeeSpread!=null?(preFeeSpread/amazonPackCost)*100:null,grossProductMargin=amazonPrice&&preFeeSpread!=null?(preFeeSpread/amazonPrice)*100:null
