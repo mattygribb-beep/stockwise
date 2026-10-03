@@ -6,6 +6,12 @@ const money=(v:any)=>{const n=Number(v);return Number.isFinite(n)&&n>0?n:null}
 const overlap=(a:string,b:string)=>{const aw=[...new Set(normalize(a).split(' ').filter((w:string)=>w.length>=4))],bt=' '+normalize(b)+' ';return aw.filter(w=>bt.includes(' '+w+' ')).length}
 const identityKey=(p:any)=>[normalize(p.brand),normalize(p.family),normalize(p.variant),p.unitSize||''].join('|')
 const productCode=(...values:any[])=>{for(const value of values){let s=String(value||'').replace(/\D/g,'');if(!s)continue;if(s.length===14&&s.startsWith('0'))s=s.slice(1);if(s.length===12)s='0'+s;if(s.length===13)return s}return ''}
+const VERIFIED_NEGATIVE_ASINS=new Set([
+ 'B00I06W9ZK', // Cadbury Dairy Milk Snack 200g: not generic 45g/Biscoff Dairy Milk
+ 'B0DK9N35DQ', // Royal Family Maple Pancake mochi: not Chocolate 120g
+ 'B077CFHHNR', // Royal Family Taro mochi: not Chocolate 120g
+ 'B000ST1AIO'  // Betty Crocker code 016000459601 is frosting: not Fruit By the Foot
+])
 export async function GET(){
  try{
   const sql=getSql()
@@ -18,7 +24,7 @@ export async function GET(){
   const knowledge={brandAliases:ba,variantAliases:va,noiseTerms:nt};const matches:any[]=[];const diagnostics:any[]=[]
   const parsedOffers=offers.filter((o:any)=>!isNonProductTitle(o.product)).map((o:any)=>({offer:o,parsed:parseCanonicalProduct({title:o.product,brand:o.brand,size:o.size,caseQty:o.case_qty},brands,knowledge)}))
   for(const a of amazon){
-   if(isNonProductTitle(a.title))continue
+   if(isNonProductTitle(a.title)||VERIFIED_NEGATIVE_ASINS.has(a.asin))continue
    const ap=parseCanonicalProduct({title:a.title,caseQty:1},brands,knowledge);const candidates:any[]=[]
    for(const po of parsedOffers){const amazonCode=productCode(a.ean,a.upc,a.gtin),supplierCode=productCode(po.offer.ean),barcodeExact=!!amazonCode&&amazonCode===supplierCode;const m=canonicalMatch(ap,po.parsed);if(m.match||barcodeExact){const titleOverlap=overlap(a.title,po.offer.product),familyExact=normalize(ap.family)===normalize(po.parsed.family),variantExact=!!ap.variant&&!!po.parsed.variant&&normalize(ap.variant)===normalize(po.parsed.variant),sizeExact=!!ap.unitSize&&!!po.parsed.unitSize&&ap.unitSize===po.parsed.unitSize;const matchScore=barcodeExact?100:m.score,retrievalScore=matchScore+(barcodeExact?30:0)+(familyExact?12:0)+(variantExact?8:0)+(sizeExact?6:0)+Math.min(10,titleOverlap*2);candidates.push({score:matchScore,retrievalScore,titleOverlap,reason:barcodeExact?'exact product barcode':m.reason,barcodeExact,offer:po.offer,amazonParsed:ap,supplierParsed:po.parsed,identityKey:identityKey(po.parsed)})}}
    candidates.sort((x,y)=>y.retrievalScore-x.retrievalScore||y.score-x.score||y.titleOverlap-x.titleOverlap)
