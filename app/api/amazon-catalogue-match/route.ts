@@ -17,8 +17,11 @@ const VERIFIED_NEGATIVE_ASINS=new Set([
 export async function GET(){
  try{
   const sql=getSql()
-  const amazon=await sql`SELECT id,asin,title,observed_price,ean,upc,gtin,match_evidence FROM amazon_catalogue_candidates WHERE match_status='unmatched' ORDER BY id`
   const offers=await sql`SELECT o.id,o.supplier_product_id,o.product,o.brand,o.size,o.case_qty,o.case_price,o.unit_cost,o.ean,s.name supplier FROM supplier_offers o JOIN suppliers s ON s.id=o.supplier_id WHERE o.is_active=true`
+  // Include the original unmatched Amazon pool plus any catalogue neighbour whose stored barcode
+  // exactly matches an active supplier barcode. This lets barcode-enriched discoveries enter the
+  // regression without weakening canonical identity rules or pulling the whole Amazon table in.
+  const amazon=await sql`SELECT id,asin,title,observed_price,ean,upc,gtin,match_evidence FROM amazon_catalogue_candidates a WHERE a.match_status='unmatched' OR EXISTS (SELECT 1 FROM supplier_offers o WHERE o.is_active=true AND coalesce(nullif(regexp_replace(o.ean,'[^0-9]','','g'),''),'#') IN (coalesce(nullif(regexp_replace(a.ean,'[^0-9]','','g'),''),'!'),coalesce(nullif(regexp_replace(a.upc,'[^0-9]','','g'),''),'!'),coalesce(nullif(regexp_replace(a.gtin,'[^0-9]','','g'),''),'!'))) ORDER BY a.id`
   const masters=await sql`SELECT brand FROM master_product_identities WHERE coalesce(brand,'')<>''`
   const ba=await sql`SELECT canonical_brand,alias FROM product_brand_aliases`,va=await sql`SELECT brand,canonical_variant,alias FROM product_variant_aliases`,nt=await sql`SELECT term FROM product_noise_terms`
   const supplierBrands=offers.map((x:any)=>x.brand).filter(Boolean)
