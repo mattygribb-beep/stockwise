@@ -12,7 +12,8 @@ const VERIFIED_NEGATIVE_ASINS=new Set([
  'B077CFHHNR', // Royal Family Taro mochi: not Chocolate 120g
  'B000ST1AIO', // Betty Crocker code 016000459601 is frosting: not Fruit By the Foot
  'B0743DMHVM', // Airheads Blue Raspberry gum: not Airheads Blue Raspberry 15g candy
- 'B07JFNXX9G'  // Cadbury Turkish Delight: not plain Dairy Milk 4-pack
+ 'B07JFNXX9G', // Cadbury Turkish Delight: not plain Dairy Milk 4-pack
+ 'B003VN949Q'  // Jell-O Strawberry 85g (UPC 043000200018): not Strawberry Banana 85g
 ])
 export async function GET(){
  try{
