@@ -131,3 +131,37 @@ header i{background:#EAF1FF;color:#1E66F5}
 .brand strong{color:#fff}
 .tag.taglineStack{justify-items:center;text-align:center;color:#fff;margin-left:auto;margin-right:auto}
 .taglineStack span{color:#fff}
+
+
+/* Source Stack private workspace — October visual refinement */
+:root{--navy:#101827;--slate:#1b2940;--mint:#356eea;--paper:#f5f7fb;--surface:#fff;--line:#e5eaf1;--muted:#66758a;--ink:#142033}
+body{background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}
+.shell{grid-template-columns:232px minmax(0,1fr)}
+aside{background:#101827;border-right:1px solid rgba(255,255,255,.08);padding:28px 14px}
+.brand{font-size:19px;letter-spacing:-.045em}
+.tag.taglineStack{font-size:9px;letter-spacing:.11em;opacity:.65;margin-bottom:38px}
+nav{gap:5px}
+nav button{font-size:13px;font-weight:560;min-height:43px;padding:11px 13px;border-radius:10px;transition:background .15s ease,color .15s ease}
+nav button:hover{background:#1a2a42}
+nav button.active{background:#243752;color:#fff;box-shadow:inset 3px 0 0 #7eacff}
+header{height:70px;padding:0 36px;border-bottom:1px solid var(--line);font-size:12px;background:rgba(255,255,255,.96)}
+header i{background:#edf2fa;color:#51647d;font-size:10px;letter-spacing:.02em;font-weight:650}
+.page{padding:32px 36px 56px;max-width:1480px}
+.title h1{font-size:clamp(26px,2.4vw,34px);letter-spacing:-.045em;line-height:1.16;font-weight:760}
+.title small{font-size:10px;letter-spacing:.12em;color:#57749f;font-weight:750}
+.title p{font-size:13px;line-height:1.6;max-width:760px}
+.metric,section{border:1px solid #e6ebf2;border-radius:16px;box-shadow:0 3px 18px rgba(20,32,51,.035)}
+.metric{padding:21px;gap:9px}
+.metric strong{font-size:26px;letter-spacing:-.04em}
+section{padding:23px}
+section h2{font-size:17px;letter-spacing:-.025em}
+th{font-size:10px;letter-spacing:.075em;color:#778398;background:#fbfcfe}
+td{border-bottom:1px solid #edf0f5}
+input,select,textarea{border-color:#dce3ed;border-radius:10px;background:#fff;color:#142033;min-height:40px}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid rgba(53,110,234,.28);outline-offset:2px}
+button{transition:background-color .15s ease,box-shadow .15s ease}
+.primary{background:#2458cb;color:#fff;border-radius:10px;font-weight:700}
+.primary:hover{background:#1747af}
+.user{background:#1b2940;font-weight:700}
+@media(max-width:900px){.page{padding:22px 18px 40px}header{padding:0 18px}.shell{grid-template-columns:minmax(0,1fr)}aside{position:relative;height:auto;padding:14px 16px}.user{display:none}.tag.taglineStack{margin-bottom:12px}nav{display:flex;overflow-x:auto;gap:6px}nav button{white-space:nowrap;min-height:40px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.page{padding:18px 12px 32px}.cards{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px}.metric{padding:13px}.metric strong{font-size:21px}section{padding:16px}.title h1{font-size:27px}}
