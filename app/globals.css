@@ -188,3 +188,23 @@ button{transition:background-color .15s ease,box-shadow .15s ease}
  .shell{padding-bottom:76px}
  .headerActions i{display:none}
 }
+
+
+/* Search-first mobile home: dashboard remains available on demand. */
+.mobileHomeQuick,.mobileDashboardToggle{display:none}
+@media(max-width:900px){
+ .overviewHero .title{margin-bottom:12px}
+ .overviewHero .title h1{font-size:23px}
+ .overviewFindProduct{padding:17px!important;margin-bottom:13px}
+ .overviewFindProduct .sectionHead h2{font-size:17px}
+ .overviewFindProduct .sectionHead p{font-size:12px;line-height:1.45}
+ .overviewFindProduct .quick{display:flex;flex-direction:column;gap:9px}
+ .overviewFindProduct .quick input{min-width:0!important;width:100%;min-height:46px}
+ .overviewFindProduct .quick button{width:100%;justify-content:center;min-height:44px}
+ .mobileHomeQuick{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:12px}
+ .mobileHomeQuick button{display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-height:90px;padding:14px;border:1px solid #e2e8f0;border-radius:13px;background:#fff;color:#1c2d45;font-weight:700;text-align:left;font-size:12px}
+ .mobileHomeQuick button svg:last-child{align-self:flex-end;margin-top:-24px}
+ .mobileDashboardToggle{display:flex;align-items:center;justify-content:space-between;width:100%;padding:13px 15px;margin:0 0 14px;border:1px solid #e2e8f0;background:#f8fafc;border-radius:11px;color:#34465e;font-weight:700}
+ .mobileDashboardCollapsed{display:none}
+ .mobileDashboardExpanded{display:block}
+}
