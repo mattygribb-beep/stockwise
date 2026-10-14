@@ -218,14 +218,21 @@ function WholesaleCatalogue(){
   setSyncing(true);setSyncError('');setSyncAllResults([])
   const results:Array<{name:string;ok:boolean;detail:string}>=[]
   const setters:Record<string,(rows:any[])=>void>={'stateside':setStateside,'sweet-glory':setSweetGlory,'wholesale-sweets':setWholesaleSweets,'kings-candy':setKingsCandy,'american-candy-n-drinks':setAmericanCandy,'candy-cargo':setCandyCargo,'yc-wholesale':setYcWholesale,'world-candies':setWorldCandies,'americatessen':setAmericatessen,'hancocks':setHancocks}
+  const completed=new Set<string>(JSON.parse(sessionStorage.getItem('source-stack-sync-all-completed')||'[]'))
   for(let i=0;i<CATALOGUE_SUPPLIERS.length;i++){
    const item=CATALOGUE_SUPPLIERS[i]
+   if(completed.has(item.slug)){results.push({name:item.name,ok:true,detail:'Already completed this session — skipped'});setSyncAllResults([...results]);continue}
    setSyncAllProgress('Syncing '+(i+1)+'/'+CATALOGUE_SUPPLIERS.length+': '+item.name)
    try{
-    const response=await fetch('/api/suppliers/'+item.slug,{cache:'no-store'})
+    const controller=new AbortController()
+    const timeout=setTimeout(()=>controller.abort(),45000)
+    let response:Response
+    try{response=await fetch('/api/suppliers/'+item.slug,{cache:'no-store',signal:controller.signal})}finally{clearTimeout(timeout)}
     const data=await response.json()
     if(!response.ok||!data.ok||!Array.isArray(data.offers)||!data.offers.length)throw new Error(data.error||'No products returned')
     setters[item.slug]?.(data.offers)
+    completed.add(item.slug)
+    sessionStorage.setItem('source-stack-sync-all-completed',JSON.stringify([...completed]))
     setSyncTimes(t=>({...t,[item.name]:new Date().toLocaleString('en-GB')}))
     results.push({name:item.name,ok:true,detail:data.offers.length+' offers saved'})
    }catch(e:any){results.push({name:item.name,ok:false,detail:e?.message||'Sync failed — saved records kept'})}
