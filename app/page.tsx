@@ -241,6 +241,7 @@ function WholesaleCatalogue(){
    }catch(e:any){results.push({name:item.name,ok:false,detail:e?.message||'Sync failed — saved records kept'})}
    setSyncAllResults([...results])
   }
+  if(results.every(x=>x.ok)){sessionStorage.removeItem('source-stack-sync-all-completed')}
   setSyncAllProgress('Supplier sync finished: '+results.filter(x=>x.ok).length+'/'+results.length+' successful. Amazon matching has not been rerun.')
   await loadSupplierChanges(CATALOGUE_SUPPLIERS.find(x=>x.name===supplier)?.slug||'stateside')
   setSyncing(false)
