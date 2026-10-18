@@ -120,7 +120,7 @@ function Rule({label,help,value,set,prefix,unit}:{label:string;help:string;value
 function Decision({n,c,text}:{n:string;c:string;text:string}){return <div className="decisionCard"><span className={'pill '+c}>{n}</span><p>{text}</p></div>}
 
 function Overview({rows,budget,active,realised,go,openFinn}:{rows:Row[];budget:number;active:number;realised:number;go:(v:string)=>void;openFinn:(q?:string)=>void}){
- const [findQuery,setFindQuery]=useState(''); const [greeting,setGreeting]=useState('Hello'); const [mobileDetails,setMobileDetails]=useState(false)
+ const [findQuery,setFindQuery]=useState(''); const [greeting,setGreeting]=useState(''); const [mobileDetails,setMobileDetails]=useState(false)
  useEffect(()=>{const update=()=>{const h=new Date().getHours();setGreeting(h<12?'Good morning':h<18?'Good afternoon':'Good evening')};update();const id=window.setInterval(update,60000);return()=>window.clearInterval(id)},[])
  const activeRows=rows.filter(r=>['Purchased','Selling'].includes(r.status)); const completed=rows.filter(r=>r.status==='Completed'); const test=rows.filter(r=>r.decision==='REVIEW'&&r.status==='Analysed')
  const expected=completed.reduce((s,r)=>s+(r.sell-r.buy)*r.qty,0); const actual=completed.reduce((s,r)=>s+((r.actualSell||r.sell)-r.buy)*r.qty,0)
