@@ -24,10 +24,10 @@ function parse(h:string,page:number){
  }
  return out
 }
-async function getPage(page:number){const r=await fetch(BASE+START+(page===1?'':'?page='+page),{cache:'no-store',headers:H});if(!r.ok)throw new Error('Wholesale Sweets page '+page+' returned '+r.status);const h=await r.text();return {h,offers:parse(h,page)}}
+async function getPage(page:number){const r=await fetch(BASE+START+(page===1?'':'?page='+page),{cache:'no-store',headers:H});if(r.status===404&&page>1)return {h:'',offers:[],endOfCatalogue:true};if(!r.ok)throw new Error('Wholesale Sweets page '+page+' returned '+r.status);const h=await r.text();return {h,offers:parse(h,page),endOfCatalogue:false}}
 export async function GET(){try{
  const first=await getPage(1),pages=totalPages(first.h),offers=[...first.offers]
- for(let i=2;i<=pages;i+=20){const nums=Array.from({length:Math.min(20,pages-i+1)},(_,k)=>i+k);const batch=await Promise.all(nums.map(getPage));batch.forEach(x=>offers.push(...x.offers))}
+ for(let i=2;i<=pages;i+=20){const nums=Array.from({length:Math.min(20,pages-i+1)},(_,k)=>i+k);const batch=await Promise.all(nums.map(getPage));const firstMissing=batch.findIndex(x=>x.endOfCatalogue);if(firstMissing>=0){if(batch.slice(firstMissing).some(x=>!x.endOfCatalogue))throw new Error('Wholesale Sweets pagination gap: a 404 was followed by a valid page; saved catalogue kept');batch.slice(0,firstMissing).forEach(x=>offers.push(...x.offers));break}batch.forEach(x=>offers.push(...x.offers))}
  const all=[...new Map(offers.map((x:any)=>[x.supplierProductId,x])).values()],unique=all.filter((x:any)=>x.status==='IN STOCK').map((x:any)=>({...x,product:cleanProductTitle(x.product)})).filter((x:any)=>!isNonProductTitle(x.product)).sort((a:any,b:any)=>a.product.localeCompare(b.product))
  if(unique.length<500)throw new Error('Wholesale Sweets parser found only '+unique.length+' in-stock offers from '+all.length+' products across '+pages+' pages; saved catalogue kept')
  await saveSupplierCatalogue('wholesale-sweets',unique,{cataloguePages:pages,productsSeen:all.length,method:'catalogue-title-links',priceBasis:'VAT inclusive'})
