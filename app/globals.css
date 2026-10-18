@@ -231,3 +231,37 @@ button{transition:background-color .15s ease,box-shadow .15s ease}
  .finnSearchRow{display:flex;flex-direction:column;gap:8px}
  .finnSearchRow input,.finnSearchRow button{width:100%;min-width:0;min-height:44px}
 }
+
+
+/* Source Stack 2027 · Release 1 — shared interface foundations */
+:root{--navy:#101b30;--slate:#192941;--mint:#3779ff;--paper:#f5f7fb;--surface:#fff;--line:#e3e8f0;--muted:#61718a;--ink:#16243b;--radius-sm:10px;--radius-md:14px;--radius-lg:20px;--shadow-soft:0 2px 12px rgba(18,34,59,.035)}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit}
+button{transition:background-color .15s ease,border-color .15s ease,box-shadow .15s ease,transform .15s ease}
+button:disabled{opacity:.55;cursor:not-allowed}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #4388ff;outline-offset:3px}
+a{color:#1859c8}
+.desktopNav{display:flex;flex-direction:column;gap:3px}
+.desktopNav .navSectionLabel{padding:16px 13px 7px;font-size:10px;font-weight:800;letter-spacing:.15em;color:#8190a9}
+.desktopNav .navSectionDivider{margin-top:9px;border-top:1px solid #29364d}
+.desktopNav button{width:100%;min-height:43px;font-size:13px;font-weight:650;border-radius:11px}
+.desktopNav button.active{background:#263b5c;box-shadow:inset 3px 0 0 #65a4ff;color:#fff}
+.desktopNav button:hover:not(.active){background:#20314c}
+.page{max-width:1480px}
+.page>section,section,.metric{border-radius:var(--radius-md);border-color:var(--line);box-shadow:var(--shadow-soft)}
+.title h1{font-size:clamp(26px,2.8vw,38px);letter-spacing:-.045em;line-height:1.12}
+.title p{font-size:14px;line-height:1.55}
+.sectionHead h2,.overviewSectionHead h2{letter-spacing:-.025em}
+.primary{background:#185cdb;color:white;border-radius:var(--radius-sm);min-height:42px;padding:11px 17px}
+.primary:hover:not(:disabled){background:#1249af}
+input,select,textarea{border-color:#d8e0ec;border-radius:var(--radius-sm);min-height:42px}
+table th{position:sticky;top:0;background:#f9fbfe;z-index:1}
+table tbody tr:hover{background:#f8faff}
+table td{border-color:#edf0f5}
+.emptyState{padding:36px 24px;text-align:center;color:var(--muted);line-height:1.6}
+.skipToContent{position:absolute;left:-9999px;top:0;z-index:200;background:#fff;padding:10px}
+.skipToContent:focus{left:12px;top:12px}
+@media(max-width:900px){.desktopNav{display:none}.page{padding:20px 16px 110px}.mobileNav button{min-height:48px}.mobileMore button{min-height:44px}}
+@media(max-width:600px){.page{padding:16px 12px 110px}.title h1{font-size:28px}.sectionHead{padding:16px}.metric{padding:15px}input,select,textarea{font-size:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}button{transition:none}}
