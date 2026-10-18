@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
+import './release2.css'
 
 export const metadata: Metadata = {
   title: 'Source Stack — Find it. Source it. Know the numbers.',
