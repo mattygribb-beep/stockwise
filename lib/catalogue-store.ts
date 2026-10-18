@@ -10,6 +10,9 @@ export type SupplierOffer={
 export async function saveSupplierCatalogue(slug:string,offers:SupplierOffer[],metadata:any={}){
  const cleanedOffers=offers.map(o=>({...o,rawTitle:o.rawTitle||o.product,product:cleanProductTitle(o.product)})).filter(o=>!isNonProductTitle(o.product))
  if(!cleanedOffers.length) throw new Error('Refusing to replace saved catalogue with zero product offers')
+ if(cleanedOffers.some(o=>!String(o.supplierProductId||'').trim())) throw new Error('Supplier product ID missing; existing catalogue preserved')
+ if(cleanedOffers.some(o=>o.caseQty!=null&&(!Number.isInteger(Number(o.caseQty))||Number(o.caseQty)<1||Number(o.caseQty)>100000))) throw new Error('Invalid supplier case quantity; existing catalogue preserved')
+ if(cleanedOffers.some(o=>[o.casePrice,o.unitCost].some(v=>v!=null&&(!Number.isFinite(Number(v))||Number(v)<0)))) throw new Error('Invalid supplier price; existing catalogue preserved')
  const sql=getSql()
  const suppliers=await sql`SELECT id FROM suppliers WHERE slug=${slug} LIMIT 1`
  if(!suppliers.length) throw new Error('Unknown supplier: '+slug)
