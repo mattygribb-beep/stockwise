@@ -265,3 +265,32 @@ table td{border-color:#edf0f5}
 @media(max-width:900px){.desktopNav{display:none}.page{padding:20px 16px 110px}.mobileNav button{min-height:48px}.mobileMore button{min-height:44px}}
 @media(max-width:600px){.page{padding:16px 12px 110px}.title h1{font-size:28px}.sectionHead{padding:16px}.metric{padding:15px}input,select,textarea{font-size:16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}button{transition:none}}
+
+
+/* Source Stack 2027 · Release 2 — product-led dashboard */
+.release2Search{padding:26px 28px!important;border:1px solid #dce5f2!important;background:linear-gradient(115deg,#fff 55%,#f0f5ff 100%)!important;box-shadow:0 14px 35px rgba(22,53,107,.045)!important}
+.release2SearchHeader{display:flex;justify-content:space-between;align-items:start;gap:20px;margin-bottom:22px}
+.release2SearchHeader small,.release2DashboardHeading small,.release2OpportunityIntro small{display:block;font-size:10px;letter-spacing:.14em;color:#2367db;font-weight:850}
+.release2SearchHeader h2{font-size:clamp(22px,2.4vw,30px);line-height:1.2;letter-spacing:-.045em;margin:8px 0}
+.release2SearchHeader p,.release2OpportunityIntro p{color:#61718a;font-size:13px;line-height:1.6;margin:0}
+.release2SearchIcon{display:grid;place-items:center;width:50px;height:50px;flex-shrink:0;border-radius:15px;background:#e7efff;color:#1b60d5}
+.release2SearchBar{display:flex;align-items:center;gap:13px;padding:8px 9px 8px 18px;border:1px solid #d4deec;border-radius:15px;background:#fff;box-shadow:0 3px 14px rgba(22,44,84,.04)}
+.release2SearchBar>svg{color:#8391a8;flex-shrink:0}
+.release2SearchBar input{flex:1;min-width:0;border:0!important;outline:none!important;box-shadow:none!important;background:transparent;font-size:14px}
+.release2SearchBar button{display:flex;align-items:center;justify-content:center;gap:9px;margin:0;white-space:nowrap}
+.release2QuickLinks{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.release2QuickLinks button{display:flex;align-items:center;gap:8px;border:1px solid #e2e9f3;background:#fff;color:#344765;padding:10px 13px;border-radius:10px;font-size:12px;font-weight:700}
+.release2QuickLinks button:hover{border-color:#8aafea;background:#f7faff}
+.release2QuickLinks button svg:last-child{color:#8da0bb}
+.release2DashboardHeading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:22px 0 13px}
+.release2DashboardHeading h2{font-size:20px;letter-spacing:-.035em;margin:5px 0 0}
+.release2DashboardHeading button{display:flex;align-items:center;gap:7px;border:0;background:none;color:#2367db;font-weight:750;font-size:12px}
+.overviewCards .metric{border-radius:16px!important;min-height:138px!important;box-shadow:0 4px 20px rgba(22,44,84,.035)!important}
+.overviewCards .metric strong{font-size:clamp(22px,2vw,30px);letter-spacing:-.04em}
+.release2OpportunityIntro{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:18px}
+.release2OpportunityIntro h2{margin:6px 0;font-size:22px;letter-spacing:-.035em}
+.release2OpportunityIntro button{display:flex;align-items:center;gap:8px;margin:0}
+.release2OpportunityTable{border:1px solid #e8edf4;border-radius:12px}
+.release2OpportunityTable th{background:#f7f9fd}
+.release2OpportunityTable td{vertical-align:middle}
+@media(max-width:700px){.release2Search{padding:20px 16px!important}.release2SearchIcon{display:none}.release2SearchBar{flex-wrap:wrap;padding:11px}.release2SearchBar input{width:calc(100% - 45px);flex:auto}.release2SearchBar button{width:100%}.release2QuickLinks{display:grid;grid-template-columns:1fr 1fr}.release2QuickLinks button{justify-content:space-between}.release2QuickLinks button:last-child{grid-column:1/-1}.release2OpportunityIntro{align-items:flex-start;flex-direction:column}.release2OpportunityTable{overflow:auto}}
