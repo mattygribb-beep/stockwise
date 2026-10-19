@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Source Stack Storefront Scout",
-  "version": "0.1.0",
-  "description": "Capture Amazon seller pages with checkpoints and best-seller labels.",
+  "version": "0.2.0",
+  "description": "Scan saved Amazon UK storefronts with checkpoints, bestsellers and product details.",
   "permissions": [
     "tabs",
     "storage",
