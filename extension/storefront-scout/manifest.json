@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Source Stack Storefront Scout",
+  "version": "0.1.0",
+  "description": "Capture Amazon seller pages with checkpoints and best-seller labels.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.amazon.co.uk/*",
+    "https://stockwise-c8lq9p38s-rubbahead.vercel.app/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.amazon.co.uk/*"
+      ],
+      "js": [
+        "capture.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
