@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Source Stack Storefront Scout",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Scan saved Amazon UK storefronts with checkpoints, bestsellers and product details.",
   "permissions": [
     "tabs",
@@ -10,7 +10,7 @@
   ],
   "host_permissions": [
     "https://www.amazon.co.uk/*",
-    "https://stockwise-c8lq9p38s-rubbahead.vercel.app/*"
+    "https://stockwise-rubbahead.vercel.app/*"
   ],
   "action": {
     "default_popup": "popup.html"
