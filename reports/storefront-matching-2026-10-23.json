@@ -1,0 +1,5142 @@
+{
+  "ok": true,
+  "amazonChecked": 3392,
+  "supplierOffers": 4495,
+  "strong": 63,
+  "review": 1,
+  "noCandidate": 3328,
+  "commercialSummary": {
+    "analyse": 54,
+    "marginal": 6,
+    "needsData": 4,
+    "reject": 0
+  },
+  "recoverySummary": {},
+  "reviewMatches": [
+    {
+      "asin": "B07MF3DY3C",
+      "title": "Mr. Clean Magic Eraser Original Cleaning Pads with Durafoam, Pack of 6",
+      "supplierOfferId": "mr-crilly-s-throat-cough-drops-peppermint-menthol-flavour-bag-90g",
+      "supplierProduct": "Mr",
+      "match": {
+        "score": 100,
+        "retrievalScore": 112,
+        "titleOverlap": 0,
+        "confidenceGap": 112,
+        "band": "REVIEW",
+        "reason": "family + simple identity + unit size + sell pack x6",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "amazonParsed": {
+        "brand": "Mr",
+        "brandSource": "fallback",
+        "family": "mr",
+        "variant": "",
+        "unitSize": "",
+        "caseQty": 1,
+        "consumerPackQty": 6,
+        "sizeConflict": "",
+        "canonicalKey": "mr|mr"
+      },
+      "supplierParsed": {
+        "brand": "Mr",
+        "brandSource": "fallback",
+        "family": "mr",
+        "variant": "",
+        "unitSize": "90g",
+        "caseQty": 18,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "mr|mr|90g"
+      },
+      "packConversion": {
+        "amazonPackQty": 6,
+        "supplierCaseQty": 18,
+        "sellableAmazonPacksPerCase": 3,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      }
+    }
+  ],
+  "highOverlapDiagnostics": {
+    "count": 0,
+    "rejectionBuckets": {},
+    "items": []
+  },
+  "matches": [
+    {
+      "asin": "B071KX5NR9",
+      "title": "Heinz Sweet Relish 375ml Bottle",
+      "amazonEan": "0013000001373",
+      "amazonPrice": 5.98,
+      "match": {
+        "score": 100,
+        "retrievalScore": 156,
+        "titleOverlap": 0,
+        "confidenceGap": 156,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "HEINZ001",
+      "supplierProduct": "Heinz Squeeze Sweet Relish 375ml",
+      "supplierEan": "0013000001373",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "HEINZ001",
+          "supplierProduct": "Heinz Squeeze Sweet Relish 375ml",
+          "supplierEan": "0013000001373",
+          "caseQty": 12,
+          "casePrice": 24.47,
+          "unitCost": 2.04
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 24.47,
+      "unitCost": 2.04,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 2.0391666666666666,
+        "amazonPackProductCost": 2.0391666666666666,
+        "amazonObservedPrice": 5.98,
+        "preAmazonFeeSpread": 3.940833333333334,
+        "grossProductROI": 193.2570494483041,
+        "grossProductMargin": 65.90022296544036,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Heinz",
+        "brandSource": "fallback",
+        "family": "sweet relish",
+        "variant": "Sweet Relish",
+        "unitSize": "375ml",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "heinz|sweet relish|sweet relish|375ml"
+      },
+      "supplierParsed": {
+        "brand": "Heinz",
+        "brandSource": "supplied",
+        "family": "sweet relish",
+        "variant": "Sweet Relish",
+        "unitSize": "375ml",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "heinz|sweet relish|sweet relish|375ml"
+      }
+    },
+    {
+      "asin": "B000SRHUNA",
+      "title": "Jello Cherry 85g",
+      "amazonEan": "043000200032",
+      "amazonPrice": 3.99,
+      "match": {
+        "score": 100,
+        "retrievalScore": 148,
+        "titleOverlap": 0,
+        "confidenceGap": 148,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "JELL016",
+      "supplierProduct": "Jell-O Cherry 85g",
+      "supplierEan": "0043000200032",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "JELL016",
+          "supplierProduct": "Jell-O Cherry 85g",
+          "supplierEan": "0043000200032",
+          "caseQty": 24,
+          "casePrice": 27.99,
+          "unitCost": 1.17
+        }
+      ],
+      "caseQty": 24,
+      "casePrice": 27.99,
+      "unitCost": 1.17,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.16625,
+        "amazonPackProductCost": 1.16625,
+        "amazonObservedPrice": 3.99,
+        "preAmazonFeeSpread": 2.8237500000000004,
+        "grossProductROI": 242.1221864951769,
+        "grossProductMargin": 70.77067669172934,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Jello",
+        "brandSource": "fallback",
+        "family": "cherry",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|cherry|85g"
+      },
+      "supplierParsed": {
+        "brand": "Jell O",
+        "brandSource": "supplied",
+        "family": "cherry",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 24,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|cherry|85g"
+      }
+    },
+    {
+      "asin": "B003ZZ8G76",
+      "title": "Jell-O Peach Gelatin Dessert 85g",
+      "amazonEan": "0043000200247",
+      "amazonPrice": 4.5,
+      "match": {
+        "score": 100,
+        "retrievalScore": 148,
+        "titleOverlap": 0,
+        "confidenceGap": 148,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "JELL039",
+      "supplierProduct": "Jell-O Peach 85g",
+      "supplierEan": "0043000200247",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "JELL039",
+          "supplierProduct": "Jell-O Peach 85g",
+          "supplierEan": "0043000200247",
+          "caseQty": 24,
+          "casePrice": 28.14,
+          "unitCost": 1.17
+        }
+      ],
+      "caseQty": 24,
+      "casePrice": 28.14,
+      "unitCost": 1.17,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.1725,
+        "amazonPackProductCost": 1.1725,
+        "amazonObservedPrice": 4.5,
+        "preAmazonFeeSpread": 3.3274999999999997,
+        "grossProductROI": 283.79530916844345,
+        "grossProductMargin": 73.94444444444443,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Jell-O",
+        "brandSource": "fallback",
+        "family": "peach",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|peach|85g"
+      },
+      "supplierParsed": {
+        "brand": "Jell O",
+        "brandSource": "supplied",
+        "family": "peach",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 24,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|peach|85g"
+      }
+    },
+    {
+      "asin": "B0041B8J7K",
+      "title": "JELL-O Black Cherry Gelatin Dessert 85g",
+      "amazonEan": "0043000200087",
+      "amazonPrice": 4.32,
+      "match": {
+        "score": 100,
+        "retrievalScore": 148,
+        "titleOverlap": 0,
+        "confidenceGap": 148,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "JELL009",
+      "supplierProduct": "Jell-O Black Cherry 85g",
+      "supplierEan": "0043000200087",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "JELL009",
+          "supplierProduct": "Jell-O Black Cherry 85g",
+          "supplierEan": "0043000200087",
+          "caseQty": 24,
+          "casePrice": 28.27,
+          "unitCost": 1.18
+        }
+      ],
+      "caseQty": 24,
+      "casePrice": 28.27,
+      "unitCost": 1.18,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.1779166666666667,
+        "amazonPackProductCost": 1.1779166666666667,
+        "amazonObservedPrice": 4.32,
+        "preAmazonFeeSpread": 3.142083333333334,
+        "grossProductROI": 266.74920410328974,
+        "grossProductMargin": 72.73341049382717,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "JELL-O",
+        "brandSource": "fallback",
+        "family": "black cherry",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|black cherry|85g"
+      },
+      "supplierParsed": {
+        "brand": "Jell O",
+        "brandSource": "supplied",
+        "family": "black cherry",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 24,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|black cherry|85g"
+      }
+    },
+    {
+      "asin": "B00535ZIY0",
+      "title": "Canada Candy Coffee Crisp Chocolate Bar 4 x 50g Bars. Imported from Canada.",
+      "amazonEan": "0059800094214",
+      "amazonPrice": 17.3,
+      "match": {
+        "score": 100,
+        "retrievalScore": 148,
+        "titleOverlap": 0,
+        "confidenceGap": 148,
+        "band": "STRONG",
+        "reason": "verified Amazon-supplier product relationship",
+        "identityResolution": "VERIFIED_PAIR",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "COFF002",
+      "supplierProduct": "Nestle Coffee Crisp 50g (CAN)",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "COFF002",
+          "supplierProduct": "Nestle Coffee Crisp 50g (CAN)",
+          "supplierEan": null,
+          "caseQty": 48,
+          "casePrice": 61.03,
+          "unitCost": 1.27
+        }
+      ],
+      "caseQty": 48,
+      "casePrice": 61.03,
+      "unitCost": 1.27,
+      "packConversion": {
+        "amazonPackQty": 4,
+        "supplierCaseQty": 48,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.2714583333333334,
+        "amazonPackProductCost": 5.085833333333333,
+        "amazonObservedPrice": 17.3,
+        "preAmazonFeeSpread": 12.214166666666667,
+        "grossProductROI": 240.16057676552518,
+        "grossProductMargin": 70.60211946050097,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Canada",
+        "brandSource": "fallback",
+        "family": "coffee crisp",
+        "variant": "chocolate",
+        "unitSize": "50g",
+        "caseQty": 1,
+        "consumerPackQty": 4,
+        "sizeConflict": "",
+        "canonicalKey": "canada|coffee crisp|chocolate|50g"
+      },
+      "supplierParsed": {
+        "brand": "Nestle",
+        "brandSource": "supplied",
+        "family": "coffee crisp",
+        "variant": "",
+        "unitSize": "50g",
+        "caseQty": 48,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "nestle|coffee crisp|50g"
+      }
+    },
+    {
+      "asin": "B005JD2YCU",
+      "title": "Jell-o grape 85 g",
+      "amazonEan": "0043000200100",
+      "amazonPrice": 3.69,
+      "match": {
+        "score": 100,
+        "retrievalScore": 148,
+        "titleOverlap": 0,
+        "confidenceGap": 148,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "JELL014",
+      "supplierProduct": "Jell-O Grape 85g",
+      "supplierEan": "0043000200100",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "JELL014",
+          "supplierProduct": "Jell-O Grape 85g",
+          "supplierEan": "0043000200100",
+          "caseQty": 24,
+          "casePrice": 28.25,
+          "unitCost": 1.18
+        }
+      ],
+      "caseQty": 24,
+      "casePrice": 28.25,
+      "unitCost": 1.18,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.1770833333333333,
+        "amazonPackProductCost": 1.1770833333333333,
+        "amazonObservedPrice": 3.69,
+        "preAmazonFeeSpread": 2.5129166666666665,
+        "grossProductROI": 213.4867256637168,
+        "grossProductMargin": 68.1007226738934,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Jell-o",
+        "brandSource": "fallback",
+        "family": "grape",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|grape|85g"
+      },
+      "supplierParsed": {
+        "brand": "Jell O",
+        "brandSource": "supplied",
+        "family": "grape",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 24,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|grape|85g"
+      }
+    },
+    {
+      "asin": "B07CX3GRXV",
+      "title": "Cinnamon Toast Crunch, Cereal, with Whole Grain 340g",
+      "amazonEan": "0016000122543",
+      "amazonPrice": 8.63,
+      "match": {
+        "score": 100,
+        "retrievalScore": 148,
+        "titleOverlap": 0,
+        "confidenceGap": 148,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Stateside Distribution",
+      "supplierOfferId": "8072236761228",
+      "supplierProduct": "Cinnamon Toast Crunch Cereal 12oz/340g",
+      "supplierEan": "0016000122543",
+      "supplierOptions": [
+        {
+          "supplier": "Stateside Distribution",
+          "supplierOfferId": "8072236761228",
+          "supplierProduct": "Cinnamon Toast Crunch Cereal 12oz/340g",
+          "supplierEan": "0016000122543",
+          "caseQty": 12,
+          "casePrice": 40.67,
+          "unitCost": 3.3892
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 40.67,
+      "unitCost": 3.3892,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 3.3891666666666667,
+        "amazonPackProductCost": 3.3891666666666667,
+        "amazonObservedPrice": 8.63,
+        "preAmazonFeeSpread": 5.240833333333335,
+        "grossProductROI": 154.63486599459065,
+        "grossProductMargin": 60.728080339899584,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Cinnamon",
+        "brandSource": "fallback",
+        "family": "toast crunch",
+        "variant": "",
+        "unitSize": "340g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "cinnamon|toast crunch|340g"
+      },
+      "supplierParsed": {
+        "brand": "Cinnamon",
+        "brandSource": "fallback",
+        "family": "toast crunch",
+        "variant": "",
+        "unitSize": "340g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "cinnamon|toast crunch|340g"
+      }
+    },
+    {
+      "asin": "B08KGQ6HZ6",
+      "title": "Nerds Big Chewy Candy, 120g",
+      "amazonEan": "0079200774479",
+      "amazonPrice": 4.96,
+      "match": {
+        "score": 100,
+        "retrievalScore": 148,
+        "titleOverlap": 0,
+        "confidenceGap": 148,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 2,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "NERD027",
+      "supplierProduct": "Nerds Big Chewy Theatre 120g",
+      "supplierEan": "0079200774479",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "NERD027",
+          "supplierProduct": "Nerds Big Chewy Theatre 120g",
+          "supplierEan": "0079200774479",
+          "caseQty": 12,
+          "casePrice": 14.57,
+          "unitCost": 1.21
+        },
+        {
+          "supplier": "Candy Cargo",
+          "supplierOfferId": "7234089877703",
+          "supplierProduct": "Nerds Big Chewy Theatre Box 12x120g",
+          "supplierEan": "0079200774479",
+          "caseQty": 12,
+          "casePrice": 17,
+          "unitCost": 1.4167
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 14.57,
+      "unitCost": 1.21,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.2141666666666666,
+        "amazonPackProductCost": 1.2141666666666666,
+        "amazonObservedPrice": 4.96,
+        "preAmazonFeeSpread": 3.7458333333333336,
+        "grossProductROI": 308.51063829787233,
+        "grossProductMargin": 75.52083333333334,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Nerds",
+        "brandSource": "known-title",
+        "family": "big",
+        "variant": "",
+        "unitSize": "120g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "nerds|big|120g"
+      },
+      "supplierParsed": {
+        "brand": "Nerds",
+        "brandSource": "alias",
+        "family": "big",
+        "variant": "",
+        "unitSize": "120g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "nerds|big|120g"
+      }
+    },
+    {
+      "asin": "B0004LZUJQ",
+      "title": "Kool Aid Black Cherry Drink Sachet 3.6 g",
+      "amazonEan": "043000955673",
+      "amazonPrice": 2.48,
+      "match": {
+        "score": 100,
+        "retrievalScore": 144,
+        "titleOverlap": 0,
+        "confidenceGap": 144,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "KAID012",
+      "supplierProduct": "Kool Aid Unsweetened Black Cherry 3.6g",
+      "supplierEan": "0043000955673",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "KAID012",
+          "supplierProduct": "Kool Aid Unsweetened Black Cherry 3.6g",
+          "supplierEan": "0043000955673",
+          "caseQty": 48,
+          "casePrice": 14.34,
+          "unitCost": 0.3
+        }
+      ],
+      "caseQty": 48,
+      "casePrice": 14.34,
+      "unitCost": 0.3,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 48,
+        "sellableAmazonPacksPerCase": 48,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 0.29875,
+        "amazonPackProductCost": 0.29875,
+        "amazonObservedPrice": 2.48,
+        "preAmazonFeeSpread": 2.18125,
+        "grossProductROI": 730.1255230125522,
+        "grossProductMargin": 87.95362903225806,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Kool-Aid",
+        "brandSource": "known-title",
+        "family": "black cherry",
+        "variant": "Black Cherry",
+        "unitSize": "3.6g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "kool aid|black cherry|black cherry|3.6g"
+      },
+      "supplierParsed": {
+        "brand": "Kool-Aid",
+        "brandSource": "alias",
+        "family": "unsweetened black",
+        "variant": "Black Cherry",
+        "unitSize": "3.6g",
+        "caseQty": 48,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "kool aid|unsweetened black|black cherry|3.6g"
+      }
+    },
+    {
+      "asin": "B0868XN5RL",
+      "title": "Jell-o, Gelatin Dessert, Orange (Pack of 2)",
+      "amazonEan": "0043000200049",
+      "amazonPrice": 5.5,
+      "match": {
+        "score": 100,
+        "retrievalScore": 142,
+        "titleOverlap": 0,
+        "confidenceGap": 142,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "JELL017",
+      "supplierProduct": "Jell-O Orange 85g",
+      "supplierEan": "0043000200049",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "JELL017",
+          "supplierProduct": "Jell-O Orange 85g",
+          "supplierEan": "0043000200049",
+          "caseQty": 24,
+          "casePrice": 28.03,
+          "unitCost": 1.17
+        }
+      ],
+      "caseQty": 24,
+      "casePrice": 28.03,
+      "unitCost": 1.17,
+      "packConversion": {
+        "amazonPackQty": 2,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.1679166666666667,
+        "amazonPackProductCost": 2.3358333333333334,
+        "amazonObservedPrice": 5.5,
+        "preAmazonFeeSpread": 3.1641666666666666,
+        "grossProductROI": 135.46200499464857,
+        "grossProductMargin": 57.53030303030303,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Jell-o,",
+        "brandSource": "fallback",
+        "family": "orange",
+        "variant": "",
+        "unitSize": "",
+        "caseQty": 1,
+        "consumerPackQty": 2,
+        "sizeConflict": "",
+        "canonicalKey": "jello|orange"
+      },
+      "supplierParsed": {
+        "brand": "Jell O",
+        "brandSource": "supplied",
+        "family": "orange",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 24,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|orange|85g"
+      }
+    },
+    {
+      "asin": "B0CCY8W571",
+      "title": "Buchanan's Sensational Iron Brew Pastilles140g x 1",
+      "amazonEan": null,
+      "amazonPrice": 4.66,
+      "match": {
+        "score": 100,
+        "retrievalScore": 142,
+        "titleOverlap": 0,
+        "confidenceGap": 142,
+        "band": "STRONG",
+        "reason": "verified Amazon-supplier product relationship",
+        "identityResolution": "VERIFIED_PAIR",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Wholesale Sweets",
+      "supplierOfferId": "buchanan-s-sensational-iron-brew-pastilles-bag-140g",
+      "supplierProduct": "Buchanan's Sensational Iron Brew Pastilles - 12 x 145g Bags",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Wholesale Sweets",
+          "supplierOfferId": "buchanan-s-sensational-iron-brew-pastilles-bag-140g",
+          "supplierProduct": "Buchanan's Sensational Iron Brew Pastilles - 12 x 145g Bags",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 16.6,
+          "unitCost": 1.3833
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 16.6,
+      "unitCost": 1.3833,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.3833333333333335,
+        "amazonPackProductCost": 1.3833333333333335,
+        "amazonObservedPrice": 4.66,
+        "preAmazonFeeSpread": 3.2766666666666664,
+        "grossProductROI": 236.86746987951804,
+        "grossProductMargin": 70.31473533619456,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Buchanan's",
+        "brandSource": "fallback",
+        "family": "sensational iron",
+        "variant": "brew pastilles140g x 1",
+        "unitSize": "140g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "buchanan s|sensational iron|brew pastilles140g x 1|140g"
+      },
+      "supplierParsed": {
+        "brand": "Buchanan's",
+        "brandSource": "supplied",
+        "family": "sensational iron",
+        "variant": "brew pastilles",
+        "unitSize": "145g",
+        "caseQty": 12,
+        "consumerPackQty": 12,
+        "sizeConflict": "",
+        "canonicalKey": "buchanan s|sensational iron|brew pastilles|145g"
+      }
+    },
+    {
+      "asin": "B0H2MGH8NW",
+      "title": "SONIC Ocean Water Singles to Go, Zero Sugar Drink Mix",
+      "amazonEan": "0072392306244",
+      "amazonPrice": 5.7,
+      "match": {
+        "score": 100,
+        "retrievalScore": 142,
+        "titleOverlap": 0,
+        "confidenceGap": 142,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "King's Candy",
+      "supplierOfferId": "7620606656721",
+      "supplierProduct": "Sonic Ocean Water Singles to Go (254.4g) (12 Pack)",
+      "supplierEan": "0072392306244",
+      "supplierOptions": [
+        {
+          "supplier": "King's Candy",
+          "supplierOfferId": "7620606656721",
+          "supplierProduct": "Sonic Ocean Water Singles to Go (254.4g) (12 Pack)",
+          "supplierEan": "0072392306244",
+          "caseQty": 12,
+          "casePrice": 29.99,
+          "unitCost": 2.4992
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 29.99,
+      "unitCost": 2.4992,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 2.4991666666666665,
+        "amazonPackProductCost": 2.4991666666666665,
+        "amazonObservedPrice": 5.7,
+        "preAmazonFeeSpread": 3.2008333333333336,
+        "grossProductROI": 128.07602534178062,
+        "grossProductMargin": 56.15497076023392,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "SONIC",
+        "brandSource": "fallback",
+        "family": "ocean water",
+        "variant": "singles to go zero sugar",
+        "unitSize": "",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "sonic|ocean water|singles to go zero sugar"
+      },
+      "supplierParsed": {
+        "brand": "Sonic",
+        "brandSource": "supplied",
+        "family": "ocean water",
+        "variant": "singles to go",
+        "unitSize": "254.4g",
+        "caseQty": 12,
+        "consumerPackQty": 12,
+        "sizeConflict": "",
+        "canonicalKey": "sonic|ocean water|singles to go|254.4g"
+      }
+    },
+    {
+      "asin": "B000PYB7U8",
+      "title": "Ice Breakers Sours, Sugar Free Mints, Watermelon, Green Apple, and Tangerine 42 g",
+      "amazonEan": "034000000982",
+      "amazonPrice": 4.02,
+      "match": {
+        "score": 100,
+        "retrievalScore": 136,
+        "titleOverlap": 0,
+        "confidenceGap": 136,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "ICEB002",
+      "supplierProduct": "Ice Breakers Sours 42g",
+      "supplierEan": "0034000000982",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "ICEB002",
+          "supplierProduct": "Ice Breakers Sours 42g",
+          "supplierEan": "0034000000982",
+          "caseQty": 8,
+          "casePrice": 9.56,
+          "unitCost": 1.2
+        }
+      ],
+      "caseQty": 8,
+      "casePrice": 9.56,
+      "unitCost": 1.2,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 8,
+        "sellableAmazonPacksPerCase": 8,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.195,
+        "amazonPackProductCost": 1.195,
+        "amazonObservedPrice": 4.02,
+        "preAmazonFeeSpread": 2.8249999999999993,
+        "grossProductROI": 236.40167364016727,
+        "grossProductMargin": 70.27363184079601,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Ice",
+        "brandSource": "fallback",
+        "family": "breakers sours",
+        "variant": "sugar free mints watermelon green apple and tangerine",
+        "unitSize": "42g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "ice|breakers sours|sugar free mints watermelon green apple and tangerine|42g"
+      },
+      "supplierParsed": {
+        "brand": "Ice Breakers",
+        "brandSource": "supplied",
+        "family": "sours",
+        "variant": "",
+        "unitSize": "42g",
+        "caseQty": 8,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "ice breakers|sours|42g"
+      }
+    },
+    {
+      "asin": "B00QAIWJGE",
+      "title": "Ice Breakers Duo Fruit & Cool Strawberry Sugarfree Mints 1 x 36g Tub",
+      "amazonEan": "0000003466506",
+      "amazonPrice": 3.65,
+      "match": {
+        "score": 100,
+        "retrievalScore": 136,
+        "titleOverlap": 0,
+        "confidenceGap": 136,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "ICEB012",
+      "supplierProduct": "Ice Breakers Duo Mints Strawberry 36g",
+      "supplierEan": "0000003466506",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "ICEB012",
+          "supplierProduct": "Ice Breakers Duo Mints Strawberry 36g",
+          "supplierEan": "0000003466506",
+          "caseQty": 8,
+          "casePrice": 9.79,
+          "unitCost": 1.22
+        }
+      ],
+      "caseQty": 8,
+      "casePrice": 9.79,
+      "unitCost": 1.22,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 8,
+        "sellableAmazonPacksPerCase": 8,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.22375,
+        "amazonPackProductCost": 1.22375,
+        "amazonObservedPrice": 3.65,
+        "preAmazonFeeSpread": 2.42625,
+        "grossProductROI": 198.26353421859042,
+        "grossProductMargin": 66.47260273972603,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Ice",
+        "brandSource": "fallback",
+        "family": "breakers duo",
+        "variant": "fruit and cool strawberry sugarfree mints 1 x",
+        "unitSize": "36g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "ice|breakers duo|fruit and cool strawberry sugarfree mints 1 x|36g"
+      },
+      "supplierParsed": {
+        "brand": "Ice Breakers",
+        "brandSource": "supplied",
+        "family": "duo mints",
+        "variant": "strawberry",
+        "unitSize": "36g",
+        "caseQty": 8,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "ice breakers|duo mints|strawberry|36g"
+      }
+    },
+    {
+      "asin": "B01EY6Y3TO",
+      "title": "Taco Bell Diablo Sauce 213g",
+      "amazonEan": "0021000060627",
+      "amazonPrice": 5.48,
+      "match": {
+        "score": 100,
+        "retrievalScore": 136,
+        "titleOverlap": 0,
+        "confidenceGap": 136,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "TACOB002",
+      "supplierProduct": "Taco Bell Diablo Sauce 213g",
+      "supplierEan": "0021000060627",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "TACOB002",
+          "supplierProduct": "Taco Bell Diablo Sauce 213g",
+          "supplierEan": "0021000060627",
+          "caseQty": 12,
+          "casePrice": 20.11,
+          "unitCost": 1.68
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 20.11,
+      "unitCost": 1.68,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.6758333333333333,
+        "amazonPackProductCost": 1.6758333333333333,
+        "amazonObservedPrice": 5.48,
+        "preAmazonFeeSpread": 3.804166666666667,
+        "grossProductROI": 227.00149179512687,
+        "grossProductMargin": 69.41909975669101,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Taco",
+        "brandSource": "fallback",
+        "family": "bell diablo",
+        "variant": "sauce",
+        "unitSize": "213g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "taco|bell diablo|sauce|213g"
+      },
+      "supplierParsed": {
+        "brand": "Taco Bell",
+        "brandSource": "supplied",
+        "family": "diablo sauce",
+        "variant": "Diablo",
+        "unitSize": "213g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "taco bell|diablo sauce|diablo|213g"
+      }
+    },
+    {
+      "asin": "B079SKCVJK",
+      "title": "Jelly Belly,Ice Cream Mix Bag, 70g",
+      "amazonEan": "0071570004309",
+      "amazonPrice": 4.33,
+      "match": {
+        "score": 100,
+        "retrievalScore": 136,
+        "titleOverlap": 0,
+        "confidenceGap": 136,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "JBEL033L",
+      "supplierProduct": "Jelly Belly Ice Cream Mix Jelly Beans 70g",
+      "supplierEan": "0071570004309",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "JBEL033L",
+          "supplierProduct": "Jelly Belly Ice Cream Mix Jelly Beans 70g",
+          "supplierEan": "0071570004309",
+          "caseQty": 12,
+          "casePrice": 15.41,
+          "unitCost": 1.28
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 15.41,
+      "unitCost": 1.28,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.2841666666666667,
+        "amazonPackProductCost": 1.2841666666666667,
+        "amazonObservedPrice": 4.33,
+        "preAmazonFeeSpread": 3.0458333333333334,
+        "grossProductROI": 237.18364698247888,
+        "grossProductMargin": 70.34257120862202,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Jelly",
+        "brandSource": "fallback",
+        "family": "belly ice",
+        "variant": "cream",
+        "unitSize": "70g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jelly|belly ice|cream|70g"
+      },
+      "supplierParsed": {
+        "brand": "Jelly Belly",
+        "brandSource": "supplied",
+        "family": "ice cream",
+        "variant": "beans",
+        "unitSize": "70g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jelly belly|ice cream|beans|70g"
+      }
+    },
+    {
+      "asin": "B086RVCG7B",
+      "title": "x 2 Box of HERSHEY'S Milk Duds Theatre Box 141g Original",
+      "amazonEan": null,
+      "amazonPrice": 9.99,
+      "match": {
+        "score": 100,
+        "retrievalScore": 136,
+        "titleOverlap": 0,
+        "confidenceGap": 136,
+        "band": "STRONG",
+        "reason": "verified Amazon-supplier product relationship",
+        "identityResolution": "VERIFIED_PAIR",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "DUDS001",
+      "supplierProduct": "Milk Duds Theatre 141g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "DUDS001",
+          "supplierProduct": "Milk Duds Theatre 141g",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 16.5,
+          "unitCost": 1.38
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 16.5,
+      "unitCost": 1.38,
+      "packConversion": {
+        "amazonPackQty": 2,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 6,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.375,
+        "amazonPackProductCost": 2.75,
+        "amazonObservedPrice": 9.99,
+        "preAmazonFeeSpread": 7.24,
+        "grossProductROI": 263.27272727272725,
+        "grossProductMargin": 72.47247247247248,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "HERSHEY'S",
+        "brandSource": "fallback",
+        "family": "milk duds",
+        "variant": "",
+        "unitSize": "141g",
+        "caseQty": 1,
+        "consumerPackQty": 2,
+        "sizeConflict": "",
+        "canonicalKey": "hershey|milk duds|141g"
+      },
+      "supplierParsed": {
+        "brand": "Milk Duds",
+        "brandSource": "supplied",
+        "family": "theatre",
+        "variant": "",
+        "unitSize": "141g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "milk duds|theatre|141g"
+      }
+    },
+    {
+      "asin": "B08NFBB83S",
+      "title": "Big Chewy NERDS Soft Crunchy Candy Large Box American Sweets 2 x 120g",
+      "amazonEan": null,
+      "amazonPrice": 8.46,
+      "match": {
+        "score": 100,
+        "retrievalScore": 136,
+        "titleOverlap": 0,
+        "confidenceGap": 136,
+        "band": "STRONG",
+        "reason": "verified Amazon-supplier product relationship",
+        "identityResolution": "VERIFIED_PAIR",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "NERD027",
+      "supplierProduct": "Nerds Big Chewy Theatre 120g",
+      "supplierEan": "0079200774479",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "NERD027",
+          "supplierProduct": "Nerds Big Chewy Theatre 120g",
+          "supplierEan": "0079200774479",
+          "caseQty": 12,
+          "casePrice": 14.57,
+          "unitCost": 1.21
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 14.57,
+      "unitCost": 1.21,
+      "packConversion": {
+        "amazonPackQty": 2,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 6,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.2141666666666666,
+        "amazonPackProductCost": 2.4283333333333332,
+        "amazonObservedPrice": 8.46,
+        "preAmazonFeeSpread": 6.031666666666668,
+        "grossProductROI": 248.3870967741936,
+        "grossProductMargin": 71.2962962962963,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Nerds",
+        "brandSource": "known-title",
+        "family": "big nerds",
+        "variant": "soft crunchy large american sweets 2 x",
+        "unitSize": "120g",
+        "caseQty": 1,
+        "consumerPackQty": 2,
+        "sizeConflict": "",
+        "canonicalKey": "nerds|big nerds|soft crunchy large american sweets 2 x|120g"
+      },
+      "supplierParsed": {
+        "brand": "Nerds",
+        "brandSource": "alias",
+        "family": "big",
+        "variant": "",
+        "unitSize": "120g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "nerds|big|120g"
+      }
+    },
+    {
+      "asin": "B005UBI9O8",
+      "title": "ICE BREAKERS Sugar Free Mints, Spearmint, 1.5 Ounce (Pack of 8)",
+      "amazonEan": "0034000721238",
+      "amazonPrice": 21.98,
+      "match": {
+        "score": 100,
+        "retrievalScore": 130,
+        "titleOverlap": 0,
+        "confidenceGap": 130,
+        "band": "STRONG",
+        "reason": "verified Amazon-supplier product relationship",
+        "identityResolution": "VERIFIED_PAIR",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "ICEB024",
+      "supplierProduct": "Ice Breakers Mints Spearmint 42g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "ICEB024",
+          "supplierProduct": "Ice Breakers Mints Spearmint 42g",
+          "supplierEan": null,
+          "caseQty": 8,
+          "casePrice": 9.84,
+          "unitCost": 1.23
+        }
+      ],
+      "caseQty": 8,
+      "casePrice": 9.84,
+      "unitCost": 1.23,
+      "packConversion": {
+        "amazonPackQty": 8,
+        "supplierCaseQty": 8,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.23,
+        "amazonPackProductCost": 9.84,
+        "amazonObservedPrice": 21.98,
+        "preAmazonFeeSpread": 12.14,
+        "grossProductROI": 123.37398373983741,
+        "grossProductMargin": 55.23202911737943,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "ICE",
+        "brandSource": "fallback",
+        "family": "breakers sugar",
+        "variant": "free mints spearmint 1.5 ounce",
+        "unitSize": "42.52g",
+        "caseQty": 1,
+        "consumerPackQty": 8,
+        "sizeConflict": "",
+        "canonicalKey": "ice|breakers sugar|free mints spearmint 1.5 ounce|42.52g"
+      },
+      "supplierParsed": {
+        "brand": "Ice Breakers",
+        "brandSource": "supplied",
+        "family": "mints spearmint",
+        "variant": "",
+        "unitSize": "42g",
+        "caseQty": 8,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "ice breakers|mints spearmint|42g"
+      }
+    },
+    {
+      "asin": "B00600N5UQ",
+      "title": "Harry Potter, Warner Brothers Milk Chocolate Frog With Collectible Wizard Trading Card",
+      "amazonEan": "0071567992329",
+      "amazonPrice": 6.28,
+      "match": {
+        "score": 100,
+        "retrievalScore": 130,
+        "titleOverlap": 0,
+        "confidenceGap": 130,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 2,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "JBEL064L",
+      "supplierProduct": "Harry Potter Chocolate Frog 15g",
+      "supplierEan": "0071567992329",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "JBEL064L",
+          "supplierProduct": "Harry Potter Chocolate Frog 15g",
+          "supplierEan": "0071567992329",
+          "caseQty": 24,
+          "casePrice": 67.2,
+          "unitCost": 2.8
+        },
+        {
+          "supplier": "Wholesale Sweets",
+          "supplierOfferId": "harry-potter-milk-chocolate-frogs-15g",
+          "supplierProduct": "Harry Potter Milk Chocolate Frogs 15g",
+          "supplierEan": "0071567992329",
+          "caseQty": 24,
+          "casePrice": 83.89,
+          "unitCost": 3.4954
+        }
+      ],
+      "caseQty": 24,
+      "casePrice": 67.2,
+      "unitCost": 2.8,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 2.8000000000000003,
+        "amazonPackProductCost": 2.8000000000000003,
+        "amazonObservedPrice": 6.28,
+        "preAmazonFeeSpread": 3.48,
+        "grossProductROI": 124.28571428571426,
+        "grossProductMargin": 55.4140127388535,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Harry",
+        "brandSource": "fallback",
+        "family": "potter warner",
+        "variant": "brothers milk chocolate frog collectible wizard trading card",
+        "unitSize": "",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "harry|potter warner|brothers milk chocolate frog collectible wizard trading card"
+      },
+      "supplierParsed": {
+        "brand": "Harry Potter",
+        "brandSource": "supplied",
+        "family": "chocolate frog",
+        "variant": "",
+        "unitSize": "15g",
+        "caseQty": 24,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "harry potter|chocolate frog|15g"
+      }
+    },
+    {
+      "asin": "B072KNM1PZ",
+      "title": "Trident Sugar Free Gum - Cinnamon 14 STICKS RED - 12 PACK",
+      "amazonEan": "0012546011471",
+      "amazonPrice": 19.89,
+      "match": {
+        "score": 100,
+        "retrievalScore": 130,
+        "titleOverlap": 0,
+        "confidenceGap": 130,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "TRID004",
+      "supplierProduct": "Trident Cinnamon 31g",
+      "supplierEan": "0012546011471",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "TRID004",
+          "supplierProduct": "Trident Cinnamon 31g",
+          "supplierEan": "0012546011471",
+          "caseQty": 12,
+          "casePrice": 7.63,
+          "unitCost": 0.64
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 7.63,
+      "unitCost": 0.64,
+      "packConversion": {
+        "amazonPackQty": 12,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 0.6358333333333334,
+        "amazonPackProductCost": 7.630000000000001,
+        "amazonObservedPrice": 19.89,
+        "preAmazonFeeSpread": 12.26,
+        "grossProductROI": 160.6815203145478,
+        "grossProductMargin": 61.639014580191045,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Trident",
+        "brandSource": "fallback",
+        "family": "sugar free",
+        "variant": "gum cinnamon 14 sticks red",
+        "unitSize": "",
+        "caseQty": 1,
+        "consumerPackQty": 12,
+        "sizeConflict": "",
+        "canonicalKey": "trident|sugar free|gum cinnamon 14 sticks red"
+      },
+      "supplierParsed": {
+        "brand": "Trident",
+        "brandSource": "supplied",
+        "family": "cinnamon",
+        "variant": "",
+        "unitSize": "31g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "trident|cinnamon|31g"
+      }
+    },
+    {
+      "asin": "B07TT6JC8S",
+      "title": "Bazooka Bubble Gum Original Nostalgia Mini-Wallet Pack - 6 Count (Pack of 12)",
+      "amazonEan": null,
+      "amazonPrice": 18.7,
+      "match": {
+        "score": 100,
+        "retrievalScore": 130,
+        "titleOverlap": 0,
+        "confidenceGap": 130,
+        "band": "STRONG",
+        "reason": "verified Amazon-supplier product relationship",
+        "identityResolution": "VERIFIED_PAIR",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "TOPP016",
+      "supplierProduct": "Topps Bazooka Throwback Mini Wallet 42g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "TOPP016",
+          "supplierProduct": "Topps Bazooka Throwback Mini Wallet 42g",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 6.93,
+          "unitCost": 0.58
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 6.93,
+      "unitCost": 0.58,
+      "packConversion": {
+        "amazonPackQty": 12,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 0.5775,
+        "amazonPackProductCost": 6.93,
+        "amazonObservedPrice": 18.7,
+        "preAmazonFeeSpread": 11.77,
+        "grossProductROI": 169.84126984126985,
+        "grossProductMargin": 62.94117647058823,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Bazooka",
+        "brandSource": "fallback",
+        "family": "bubble gum",
+        "variant": "nostalgia mini wallet count",
+        "unitSize": "",
+        "caseQty": 1,
+        "consumerPackQty": 12,
+        "sizeConflict": "",
+        "canonicalKey": "bazooka|bubble gum|nostalgia mini wallet count"
+      },
+      "supplierParsed": {
+        "brand": "Bazooka",
+        "brandSource": "supplied",
+        "family": "topps bazooka",
+        "variant": "throwback mini wallet",
+        "unitSize": "42g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "bazooka|topps bazooka|throwback mini wallet|42g"
+      }
+    },
+    {
+      "asin": "B08HR8VQ7G",
+      "title": "Nerds Gummy Clusters Chewy Candy, 5 Oz (141g) Bag",
+      "amazonEan": "0079200049065",
+      "amazonPrice": 5.33,
+      "match": {
+        "score": 100,
+        "retrievalScore": 130,
+        "titleOverlap": 0,
+        "confidenceGap": 130,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Candy Cargo",
+      "supplierOfferId": "7992659869895",
+      "supplierProduct": "Nerds Rainbow Medium Gummy Clusters Peg Bag 12x141g",
+      "supplierEan": "0079200049065",
+      "supplierOptions": [
+        {
+          "supplier": "Candy Cargo",
+          "supplierOfferId": "7992659869895",
+          "supplierProduct": "Nerds Rainbow Medium Gummy Clusters Peg Bag 12x141g",
+          "supplierEan": "0079200049065",
+          "caseQty": 12,
+          "casePrice": 26,
+          "unitCost": 2.1667
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 26,
+      "unitCost": 2.1667,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 2.1666666666666665,
+        "amazonPackProductCost": 2.1666666666666665,
+        "amazonObservedPrice": 5.33,
+        "preAmazonFeeSpread": 3.1633333333333336,
+        "grossProductROI": 146.00000000000003,
+        "grossProductMargin": 59.34959349593496,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Nerds",
+        "brandSource": "known-title",
+        "family": "clusters",
+        "variant": "",
+        "unitSize": "141.75g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "nerds|clusters|141.75g"
+      },
+      "supplierParsed": {
+        "brand": "Nerds",
+        "brandSource": "alias",
+        "family": "rainbow medium",
+        "variant": "Rainbow",
+        "unitSize": "141g",
+        "caseQty": 12,
+        "consumerPackQty": 12,
+        "sizeConflict": "",
+        "canonicalKey": "nerds|rainbow medium|rainbow|141g"
+      }
+    },
+    {
+      "asin": "B08T5WX4KH",
+      "title": "JELLY BELLY AMERICAN CLASSICS",
+      "amazonEan": "0071570014025",
+      "amazonPrice": 2.49,
+      "match": {
+        "score": 100,
+        "retrievalScore": 130,
+        "titleOverlap": 0,
+        "confidenceGap": 130,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 2,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "JBEL046L",
+      "supplierProduct": "Jelly Belly American Classics Jelly Beans 70g",
+      "supplierEan": "0071570014025",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "JBEL046L",
+          "supplierProduct": "Jelly Belly American Classics Jelly Beans 70g",
+          "supplierEan": "0071570014025",
+          "caseQty": 12,
+          "casePrice": 15.41,
+          "unitCost": 1.28
+        },
+        {
+          "supplier": "Wholesale Sweets",
+          "supplierOfferId": "jelly-belly-american-classics-jelly-beans-bag-70g",
+          "supplierProduct": "Jelly Belly American Classics Jelly Beans Bag 70g",
+          "supplierEan": "0071570014025",
+          "caseQty": 12,
+          "casePrice": 20.5,
+          "unitCost": 1.7083
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 15.41,
+      "unitCost": 1.28,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.2841666666666667,
+        "amazonPackProductCost": 1.2841666666666667,
+        "amazonObservedPrice": 2.49,
+        "preAmazonFeeSpread": 1.2058333333333335,
+        "grossProductROI": 93.90006489292668,
+        "grossProductMargin": 48.427041499330656,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "JELLY",
+        "brandSource": "fallback",
+        "family": "belly american",
+        "variant": "classics",
+        "unitSize": "",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jelly|belly american|classics"
+      },
+      "supplierParsed": {
+        "brand": "Jelly Belly",
+        "brandSource": "supplied",
+        "family": "american classics",
+        "variant": "beans",
+        "unitSize": "70g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jelly belly|american classics|beans|70g"
+      }
+    },
+    {
+      "asin": "B099PGQBLV",
+      "title": "Mike & Ike Mega Mix Sour Candy Large 28.8 Ounce Bag",
+      "amazonEan": "070970474637",
+      "amazonPrice": 15.44,
+      "match": {
+        "score": 100,
+        "retrievalScore": 130,
+        "titleOverlap": 0,
+        "confidenceGap": 130,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "MIKE046",
+      "supplierProduct": "Mike & Ike Mega Mix Sour! 816g",
+      "supplierEan": "0070970474637",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "MIKE046",
+          "supplierProduct": "Mike & Ike Mega Mix Sour! 816g",
+          "supplierEan": "0070970474637",
+          "caseQty": 6,
+          "casePrice": 35.99,
+          "unitCost": 6
+        }
+      ],
+      "caseQty": 6,
+      "casePrice": 35.99,
+      "unitCost": 6,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 6,
+        "sellableAmazonPacksPerCase": 6,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 5.998333333333334,
+        "amazonPackProductCost": 5.998333333333334,
+        "amazonObservedPrice": 15.44,
+        "preAmazonFeeSpread": 9.441666666666666,
+        "grossProductROI": 157.40483467629895,
+        "grossProductMargin": 61.15069084628671,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Mike",
+        "brandSource": "fallback",
+        "family": "and ike",
+        "variant": "mega sour large 28.8 ounce",
+        "unitSize": "816.47g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "mike|and ike|mega sour large 28.8 ounce|816.47g"
+      },
+      "supplierParsed": {
+        "brand": "Mike & Ike",
+        "brandSource": "supplied",
+        "family": "mega sour",
+        "variant": "",
+        "unitSize": "816g",
+        "caseQty": 6,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "mike and ike|mega sour|816g"
+      }
+    },
+    {
+      "asin": "B00RW65P5A",
+      "title": "Kraft Slow-Simmered Hickory Smoke Barbecue Sauce 496g",
+      "amazonEan": null,
+      "amazonPrice": 7.1,
+      "match": {
+        "score": 100,
+        "retrievalScore": 126,
+        "titleOverlap": 0,
+        "confidenceGap": 126,
+        "band": "STRONG",
+        "reason": "family + variant + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "KRAFT009",
+      "supplierProduct": "Kraft Hickory Smoke BBQ Sauce 496g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "KRAFT009",
+          "supplierProduct": "Kraft Hickory Smoke BBQ Sauce 496g",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 26.19,
+          "unitCost": 2.18
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 26.19,
+      "unitCost": 2.18,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 2.1825,
+        "amazonPackProductCost": 2.1825,
+        "amazonObservedPrice": 7.1,
+        "preAmazonFeeSpread": 4.9174999999999995,
+        "grossProductROI": 225.3150057273768,
+        "grossProductMargin": 69.2605633802817,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Kraft",
+        "brandSource": "fallback",
+        "family": "hickory smoke",
+        "variant": "Hickory Smoke",
+        "unitSize": "496g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "kraft|hickory smoke|hickory smoke|496g"
+      },
+      "supplierParsed": {
+        "brand": "Kraft",
+        "brandSource": "supplied",
+        "family": "hickory smoke",
+        "variant": "Hickory Smoke",
+        "unitSize": "496g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "kraft|hickory smoke|hickory smoke|496g"
+      }
+    },
+    {
+      "asin": "B017E1S9FK",
+      "title": "Cadbury Dairy Milk Caramello Koala Sharepack 12pk 180g",
+      "amazonEan": null,
+      "amazonPrice": 8.5,
+      "match": {
+        "score": 100,
+        "retrievalScore": 126,
+        "titleOverlap": 0,
+        "confidenceGap": 126,
+        "band": "STRONG",
+        "reason": "family + variant + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "CADB105",
+      "supplierProduct": "Cadbury' Dairy Milk Caramello AUS 180g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "CADB105",
+          "supplierProduct": "Cadbury' Dairy Milk Caramello AUS 180g",
+          "supplierEan": null,
+          "caseQty": 15,
+          "casePrice": 40.93,
+          "unitCost": 2.73
+        }
+      ],
+      "caseQty": 15,
+      "casePrice": 40.93,
+      "unitCost": 2.73,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 15,
+        "sellableAmazonPacksPerCase": 15,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 2.728666666666667,
+        "amazonPackProductCost": 2.728666666666667,
+        "amazonObservedPrice": 8.5,
+        "preAmazonFeeSpread": 5.771333333333333,
+        "grossProductROI": 211.5074517468849,
+        "grossProductMargin": 67.89803921568627,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Cadbury",
+        "brandSource": "fallback",
+        "family": "dairy milk",
+        "variant": "Caramello",
+        "unitSize": "180g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "cadbury|dairy milk|caramello|180g"
+      },
+      "supplierParsed": {
+        "brand": "Cadbury",
+        "brandSource": "supplied",
+        "family": "dairy milk",
+        "variant": "Caramello",
+        "unitSize": "180g",
+        "caseQty": 15,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "cadbury|dairy milk|caramello|180g"
+      }
+    },
+    {
+      "asin": "B0CJ5QYD8Y",
+      "title": "Buchanan's Dark Chocolate Fondant Peppermint Creams 120g (Pack of 3)",
+      "amazonEan": null,
+      "amazonPrice": 8.5,
+      "match": {
+        "score": 100,
+        "retrievalScore": 126,
+        "titleOverlap": 0,
+        "confidenceGap": 126,
+        "band": "STRONG",
+        "reason": "family + variant + unit size + sell pack x3",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Wholesale Sweets",
+      "supplierOfferId": "buchanan-s-dark-chocolate-fondant-peppermint-creams-bag-120g",
+      "supplierProduct": "Buchanan's Dark Chocolate Fondant Peppermint Creams - 12 x 120g Bags",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Wholesale Sweets",
+          "supplierOfferId": "buchanan-s-dark-chocolate-fondant-peppermint-creams-bag-120g",
+          "supplierProduct": "Buchanan's Dark Chocolate Fondant Peppermint Creams - 12 x 120g Bags",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 17.29,
+          "unitCost": 1.4408
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 17.29,
+      "unitCost": 1.4408,
+      "packConversion": {
+        "amazonPackQty": 3,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 4,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.4408333333333332,
+        "amazonPackProductCost": 4.3225,
+        "amazonObservedPrice": 8.5,
+        "preAmazonFeeSpread": 4.1775,
+        "grossProductROI": 96.64545980335456,
+        "grossProductMargin": 49.14705882352941,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Buchanan's",
+        "brandSource": "fallback",
+        "family": "dark chocolate",
+        "variant": "fondant peppermint creams",
+        "unitSize": "120g",
+        "caseQty": 1,
+        "consumerPackQty": 3,
+        "sizeConflict": "",
+        "canonicalKey": "buchanan s|dark chocolate|fondant peppermint creams|120g"
+      },
+      "supplierParsed": {
+        "brand": "Buchanan's",
+        "brandSource": "supplied",
+        "family": "dark chocolate",
+        "variant": "fondant peppermint creams",
+        "unitSize": "120g",
+        "caseQty": 12,
+        "consumerPackQty": 12,
+        "sizeConflict": "",
+        "canonicalKey": "buchanan s|dark chocolate|fondant peppermint creams|120g"
+      }
+    },
+    {
+      "asin": "B0CTCWGS89",
+      "title": "Baileys Birthday Cake Truffles 135g | Original Irish Cream White Chocolate Truffles with Vanilla Truffle Filling| Premium Chocolate Truffles | Perfect Birthday Sweets",
+      "amazonEan": null,
+      "amazonPrice": 9.79,
+      "match": {
+        "score": 100,
+        "retrievalScore": 126,
+        "titleOverlap": 0,
+        "confidenceGap": 126,
+        "band": "STRONG",
+        "reason": "family + variant + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "LIR005L",
+      "supplierProduct": "Baileys Birthday Cake Truffles 135g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "LIR005L",
+          "supplierProduct": "Baileys Birthday Cake Truffles 135g",
+          "supplierEan": null,
+          "caseQty": 8,
+          "casePrice": 30.6,
+          "unitCost": 3.83
+        }
+      ],
+      "caseQty": 8,
+      "casePrice": 30.6,
+      "unitCost": 3.83,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 8,
+        "sellableAmazonPacksPerCase": 8,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 3.825,
+        "amazonPackProductCost": 3.825,
+        "amazonObservedPrice": 9.79,
+        "preAmazonFeeSpread": 5.964999999999999,
+        "grossProductROI": 155.9477124183006,
+        "grossProductMargin": 60.92951991828396,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Baileys",
+        "brandSource": "fallback",
+        "family": "birthday cake",
+        "variant": "Birthday Cake",
+        "unitSize": "135g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "baileys|birthday cake|birthday cake|135g"
+      },
+      "supplierParsed": {
+        "brand": "Baileys",
+        "brandSource": "supplied",
+        "family": "birthday cake",
+        "variant": "Birthday Cake",
+        "unitSize": "135g",
+        "caseQty": 8,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "baileys|birthday cake|birthday cake|135g"
+      }
+    },
+    {
+      "asin": "B0H5M9WJR7",
+      "title": "Herr's Honey Cheese Flavoured Cheese Curls, Oven Baked with Real Cheese, 170g",
+      "amazonEan": null,
+      "amazonPrice": 6.71,
+      "match": {
+        "score": 100,
+        "retrievalScore": 126,
+        "titleOverlap": 0,
+        "confidenceGap": 126,
+        "band": "STRONG",
+        "reason": "family + variant + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "King's Candy",
+      "supplierOfferId": "7248963535057",
+      "supplierProduct": "Herr's Honey Cheese Flavoured Curls (170g) Box of 12 (12 x 170g)",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "King's Candy",
+          "supplierOfferId": "7248963535057",
+          "supplierProduct": "Herr's Honey Cheese Flavoured Curls (170g) Box of 12 (12 x 170g)",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 44.99,
+          "unitCost": 3.7492
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 44.99,
+      "unitCost": 3.7492,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 3.749166666666667,
+        "amazonPackProductCost": 3.749166666666667,
+        "amazonObservedPrice": 6.71,
+        "preAmazonFeeSpread": 2.960833333333333,
+        "grossProductROI": 78.97310513447431,
+        "grossProductMargin": 44.12568306010928,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Herr's",
+        "brandSource": "fallback",
+        "family": "honey cheese",
+        "variant": "Honey Cheese",
+        "unitSize": "170g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "herr s|honey cheese|honey cheese|170g"
+      },
+      "supplierParsed": {
+        "brand": "Herr's",
+        "brandSource": "supplied",
+        "family": "honey cheese",
+        "variant": "Honey Cheese",
+        "unitSize": "170g",
+        "caseQty": 12,
+        "consumerPackQty": 12,
+        "sizeConflict": "",
+        "canonicalKey": "herr s|honey cheese|honey cheese|170g"
+      }
+    },
+    {
+      "asin": "B077CYBL5P",
+      "title": "Kingsway: Yellow Paint Balls - 900g Bag",
+      "amazonEan": null,
+      "amazonPrice": 13.99,
+      "match": {
+        "score": 100,
+        "retrievalScore": 126,
+        "titleOverlap": 0,
+        "confidenceGap": 126,
+        "band": "STRONG",
+        "reason": "family + variant + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Wholesale Sweets",
+      "supplierOfferId": "yellow-paint-balls",
+      "supplierProduct": "Kingsway Yellow Paint Balls - 1 x 900g Bag",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Wholesale Sweets",
+          "supplierOfferId": "yellow-paint-balls",
+          "supplierProduct": "Kingsway Yellow Paint Balls - 1 x 900g Bag",
+          "supplierEan": null,
+          "caseQty": 1,
+          "casePrice": 5.89,
+          "unitCost": 5.89
+        }
+      ],
+      "caseQty": 1,
+      "casePrice": 5.89,
+      "unitCost": 5.89,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 1,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 5.89,
+        "amazonPackProductCost": 5.89,
+        "amazonObservedPrice": 13.99,
+        "preAmazonFeeSpread": 8.100000000000001,
+        "grossProductROI": 137.5212224108659,
+        "grossProductMargin": 57.89849892780558,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Kingsway:",
+        "brandSource": "fallback",
+        "family": "yellow paint",
+        "variant": "balls",
+        "unitSize": "900g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "kingsway|yellow paint|balls|900g"
+      },
+      "supplierParsed": {
+        "brand": "Kingsway",
+        "brandSource": "supplied",
+        "family": "yellow paint",
+        "variant": "balls",
+        "unitSize": "900g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "kingsway|yellow paint|balls|900g"
+      }
+    },
+    {
+      "asin": "B000RHY1YW",
+      "title": "Red Vines Original Red Twists Candy 141g",
+      "amazonEan": "041364002095",
+      "amazonPrice": 5.74,
+      "match": {
+        "score": 100,
+        "retrievalScore": 120,
+        "titleOverlap": 0,
+        "confidenceGap": 120,
+        "band": "STRONG",
+        "reason": "family + variant + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Wholesale Sweets",
+      "supplierOfferId": "red-vines-original-red-twists-142g",
+      "supplierProduct": "Red Vines Original Red Twists 142g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Wholesale Sweets",
+          "supplierOfferId": "red-vines-original-red-twists-142g",
+          "supplierProduct": "Red Vines Original Red Twists 142g",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 26.29,
+          "unitCost": 2.1908
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 26.29,
+      "unitCost": 2.1908,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 2.1908333333333334,
+        "amazonPackProductCost": 2.1908333333333334,
+        "amazonObservedPrice": 5.74,
+        "preAmazonFeeSpread": 3.549166666666667,
+        "grossProductROI": 162.0007607455306,
+        "grossProductMargin": 61.8321718931475,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Red",
+        "brandSource": "fallback",
+        "family": "vines red",
+        "variant": "twists",
+        "unitSize": "141g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "red|vines red|twists|141g"
+      },
+      "supplierParsed": {
+        "brand": "Red",
+        "brandSource": "fallback",
+        "family": "vines red",
+        "variant": "twists",
+        "unitSize": "142g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "red|vines red|twists|142g"
+      }
+    },
+    {
+      "asin": "B0012NLMP6",
+      "title": "Red Vines Original Red Twists Candy 141g",
+      "amazonEan": "041364002095",
+      "amazonPrice": 5.74,
+      "match": {
+        "score": 100,
+        "retrievalScore": 120,
+        "titleOverlap": 0,
+        "confidenceGap": 120,
+        "band": "STRONG",
+        "reason": "family + variant + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Wholesale Sweets",
+      "supplierOfferId": "red-vines-original-red-twists-142g",
+      "supplierProduct": "Red Vines Original Red Twists 142g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Wholesale Sweets",
+          "supplierOfferId": "red-vines-original-red-twists-142g",
+          "supplierProduct": "Red Vines Original Red Twists 142g",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 26.29,
+          "unitCost": 2.1908
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 26.29,
+      "unitCost": 2.1908,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 2.1908333333333334,
+        "amazonPackProductCost": 2.1908333333333334,
+        "amazonObservedPrice": 5.74,
+        "preAmazonFeeSpread": 3.549166666666667,
+        "grossProductROI": 162.0007607455306,
+        "grossProductMargin": 61.8321718931475,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Red",
+        "brandSource": "fallback",
+        "family": "vines red",
+        "variant": "twists",
+        "unitSize": "141g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "red|vines red|twists|141g"
+      },
+      "supplierParsed": {
+        "brand": "Red",
+        "brandSource": "fallback",
+        "family": "vines red",
+        "variant": "twists",
+        "unitSize": "142g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "red|vines red|twists|142g"
+      }
+    },
+    {
+      "asin": "B00KB5FDF6",
+      "title": "Red Vines Tray Original Red Twists 5 OZ (141g)",
+      "amazonEan": null,
+      "amazonPrice": 8.8,
+      "match": {
+        "score": 100,
+        "retrievalScore": 120,
+        "titleOverlap": 0,
+        "confidenceGap": 120,
+        "band": "STRONG",
+        "reason": "family + variant + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Wholesale Sweets",
+      "supplierOfferId": "red-vines-original-red-twists-142g",
+      "supplierProduct": "Red Vines Original Red Twists 142g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Wholesale Sweets",
+          "supplierOfferId": "red-vines-original-red-twists-142g",
+          "supplierProduct": "Red Vines Original Red Twists 142g",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 26.29,
+          "unitCost": 2.1908
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 26.29,
+      "unitCost": 2.1908,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 2.1908333333333334,
+        "amazonPackProductCost": 2.1908333333333334,
+        "amazonObservedPrice": 8.8,
+        "preAmazonFeeSpread": 6.609166666666667,
+        "grossProductROI": 301.673640167364,
+        "grossProductMargin": 75.10416666666666,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Red",
+        "brandSource": "fallback",
+        "family": "vines red",
+        "variant": "twists",
+        "unitSize": "141.75g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "red|vines red|twists|141.75g"
+      },
+      "supplierParsed": {
+        "brand": "Red",
+        "brandSource": "fallback",
+        "family": "vines red",
+        "variant": "twists",
+        "unitSize": "142g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "red|vines red|twists|142g"
+      }
+    },
+    {
+      "asin": "B00MULNNP6",
+      "title": "Red Vines Original Red Twists Candy 141g",
+      "amazonEan": null,
+      "amazonPrice": 5.74,
+      "match": {
+        "score": 100,
+        "retrievalScore": 120,
+        "titleOverlap": 0,
+        "confidenceGap": 120,
+        "band": "STRONG",
+        "reason": "family + variant + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Wholesale Sweets",
+      "supplierOfferId": "red-vines-original-red-twists-142g",
+      "supplierProduct": "Red Vines Original Red Twists 142g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Wholesale Sweets",
+          "supplierOfferId": "red-vines-original-red-twists-142g",
+          "supplierProduct": "Red Vines Original Red Twists 142g",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 26.29,
+          "unitCost": 2.1908
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 26.29,
+      "unitCost": 2.1908,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 2.1908333333333334,
+        "amazonPackProductCost": 2.1908333333333334,
+        "amazonObservedPrice": 5.74,
+        "preAmazonFeeSpread": 3.549166666666667,
+        "grossProductROI": 162.0007607455306,
+        "grossProductMargin": 61.8321718931475,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Red",
+        "brandSource": "fallback",
+        "family": "vines red",
+        "variant": "twists",
+        "unitSize": "141g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "red|vines red|twists|141g"
+      },
+      "supplierParsed": {
+        "brand": "Red",
+        "brandSource": "fallback",
+        "family": "vines red",
+        "variant": "twists",
+        "unitSize": "142g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "red|vines red|twists|142g"
+      }
+    },
+    {
+      "asin": "B0DCW1N9N8",
+      "title": "Nerds Gummy Clusters Very Berry 18.50 oz (524g)",
+      "amazonEan": null,
+      "amazonPrice": 14.99,
+      "match": {
+        "score": 100,
+        "retrievalScore": 120,
+        "titleOverlap": 0,
+        "confidenceGap": 120,
+        "band": "STRONG",
+        "reason": "family + variant + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "NERD058",
+      "supplierProduct": "Nerds Gummy Clusters Very Berry 524g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "NERD058",
+          "supplierProduct": "Nerds Gummy Clusters Very Berry 524g",
+          "supplierEan": null,
+          "caseQty": 5,
+          "casePrice": 33.44,
+          "unitCost": 6.69
+        }
+      ],
+      "caseQty": 5,
+      "casePrice": 33.44,
+      "unitCost": 6.69,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 5,
+        "sellableAmazonPacksPerCase": 5,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 6.688,
+        "amazonPackProductCost": 6.688,
+        "amazonObservedPrice": 14.99,
+        "preAmazonFeeSpread": 8.302,
+        "grossProductROI": 124.13277511961722,
+        "grossProductMargin": 55.38358905937291,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Nerds",
+        "brandSource": "known-title",
+        "family": "clusters very",
+        "variant": "Very Berry",
+        "unitSize": "524.47g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "nerds|clusters very|very berry|524.47g"
+      },
+      "supplierParsed": {
+        "brand": "Nerds",
+        "brandSource": "alias",
+        "family": "clusters very",
+        "variant": "Very Berry",
+        "unitSize": "524g",
+        "caseQty": 5,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "nerds|clusters very|very berry|524g"
+      }
+    },
+    {
+      "asin": "B0CTVHB9Z6",
+      "title": "Nerds Gummy Clusters Candy, Very Berry, Resealable 18.5 Ounce Big Bag",
+      "amazonEan": null,
+      "amazonPrice": 14.75,
+      "match": {
+        "score": 100,
+        "retrievalScore": 120,
+        "titleOverlap": 0,
+        "confidenceGap": 120,
+        "band": "STRONG",
+        "reason": "family + variant + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "NERD058",
+      "supplierProduct": "Nerds Gummy Clusters Very Berry 524g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "NERD058",
+          "supplierProduct": "Nerds Gummy Clusters Very Berry 524g",
+          "supplierEan": null,
+          "caseQty": 5,
+          "casePrice": 33.44,
+          "unitCost": 6.69
+        }
+      ],
+      "caseQty": 5,
+      "casePrice": 33.44,
+      "unitCost": 6.69,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 5,
+        "sellableAmazonPacksPerCase": 5,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 6.688,
+        "amazonPackProductCost": 6.688,
+        "amazonObservedPrice": 14.75,
+        "preAmazonFeeSpread": 8.062000000000001,
+        "grossProductROI": 120.54425837320576,
+        "grossProductMargin": 54.65762711864408,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Nerds",
+        "brandSource": "known-title",
+        "family": "clusters very",
+        "variant": "Very Berry",
+        "unitSize": "524.47g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "nerds|clusters very|very berry|524.47g"
+      },
+      "supplierParsed": {
+        "brand": "Nerds",
+        "brandSource": "alias",
+        "family": "clusters very",
+        "variant": "Very Berry",
+        "unitSize": "524g",
+        "caseQty": 5,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "nerds|clusters very|very berry|524g"
+      }
+    },
+    {
+      "asin": "B003TL9TK4",
+      "title": "Fanta Grape Soda Can 355 ml (Pack of 12)",
+      "amazonEan": null,
+      "amazonPrice": 16.28,
+      "match": {
+        "score": 100,
+        "retrievalScore": 118,
+        "titleOverlap": 0,
+        "confidenceGap": 118,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size + sell pack x12",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 2,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "FANT020",
+      "supplierProduct": "Fanta Grape Can 355ml",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Stateside Distribution",
+          "supplierOfferId": "8072236138636",
+          "supplierProduct": "Fanta Grape 12fl oz/355ml",
+          "supplierEan": "0049000014242",
+          "caseQty": 12,
+          "casePrice": 8.5,
+          "unitCost": 0.7083
+        },
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "FANT020",
+          "supplierProduct": "Fanta Grape Can 355ml",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 9.09,
+          "unitCost": 0.76
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 9.09,
+      "unitCost": 0.76,
+      "packConversion": {
+        "amazonPackQty": 12,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 0.7575,
+        "amazonPackProductCost": 9.09,
+        "amazonObservedPrice": 16.28,
+        "preAmazonFeeSpread": 7.190000000000001,
+        "grossProductROI": 79.09790979097912,
+        "grossProductMargin": 44.16461916461917,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Fanta",
+        "brandSource": "known-title",
+        "family": "grape",
+        "variant": "",
+        "unitSize": "355ml",
+        "caseQty": 1,
+        "consumerPackQty": 12,
+        "sizeConflict": "",
+        "canonicalKey": "fanta|grape|355ml"
+      },
+      "supplierParsed": {
+        "brand": "Fanta",
+        "brandSource": "alias",
+        "family": "grape",
+        "variant": "",
+        "unitSize": "355ml",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "fanta|grape|355ml"
+      }
+    },
+    {
+      "asin": "B01N5V16DM",
+      "title": "Fanta Grape Soda Can 355 ml (Pack of 12)",
+      "amazonEan": null,
+      "amazonPrice": 16.28,
+      "match": {
+        "score": 100,
+        "retrievalScore": 118,
+        "titleOverlap": 0,
+        "confidenceGap": 118,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size + sell pack x12",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 2,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "FANT020",
+      "supplierProduct": "Fanta Grape Can 355ml",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Stateside Distribution",
+          "supplierOfferId": "8072236138636",
+          "supplierProduct": "Fanta Grape 12fl oz/355ml",
+          "supplierEan": "0049000014242",
+          "caseQty": 12,
+          "casePrice": 8.5,
+          "unitCost": 0.7083
+        },
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "FANT020",
+          "supplierProduct": "Fanta Grape Can 355ml",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 9.09,
+          "unitCost": 0.76
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 9.09,
+      "unitCost": 0.76,
+      "packConversion": {
+        "amazonPackQty": 12,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 0.7575,
+        "amazonPackProductCost": 9.09,
+        "amazonObservedPrice": 16.28,
+        "preAmazonFeeSpread": 7.190000000000001,
+        "grossProductROI": 79.09790979097912,
+        "grossProductMargin": 44.16461916461917,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Fanta",
+        "brandSource": "known-title",
+        "family": "grape",
+        "variant": "",
+        "unitSize": "355ml",
+        "caseQty": 1,
+        "consumerPackQty": 12,
+        "sizeConflict": "",
+        "canonicalKey": "fanta|grape|355ml"
+      },
+      "supplierParsed": {
+        "brand": "Fanta",
+        "brandSource": "alias",
+        "family": "grape",
+        "variant": "",
+        "unitSize": "355ml",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "fanta|grape|355ml"
+      }
+    },
+    {
+      "asin": "B0C59FSFCL",
+      "title": "Warheads Wedgies Theatre Box 99g",
+      "amazonEan": "0032134285053",
+      "amazonPrice": 4.81,
+      "match": {
+        "score": 100,
+        "retrievalScore": 118,
+        "titleOverlap": 0,
+        "confidenceGap": 118,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 3,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "WARH091",
+      "supplierProduct": "Warheads Wedgies Theatre 99g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "WARH109",
+          "supplierProduct": "Warheads Wedgies 99g",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 10.76,
+          "unitCost": 0.9
+        },
+        {
+          "supplier": "Stateside Distribution",
+          "supplierOfferId": "8072246788236",
+          "supplierProduct": "Warheads Wedgies Theatre Box 3.5oz/99g",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 10.9,
+          "unitCost": 0.9083
+        },
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "WARH091",
+          "supplierProduct": "Warheads Wedgies Theatre 99g",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 11.51,
+          "unitCost": 0.96
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 11.51,
+      "unitCost": 0.96,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 0.9591666666666666,
+        "amazonPackProductCost": 0.9591666666666666,
+        "amazonObservedPrice": 4.81,
+        "preAmazonFeeSpread": 3.850833333333333,
+        "grossProductROI": 401.47697654213727,
+        "grossProductMargin": 80.05890505890505,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Warheads",
+        "brandSource": "fallback",
+        "family": "wedgies",
+        "variant": "",
+        "unitSize": "99g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "warheads|wedgies|99g"
+      },
+      "supplierParsed": {
+        "brand": "Warheads",
+        "brandSource": "supplied",
+        "family": "wedgies",
+        "variant": "",
+        "unitSize": "99g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "warheads|wedgies|99g"
+      }
+    },
+    {
+      "asin": "B0CBSLHB63",
+      "title": "Baileys Original Truffles 205g",
+      "amazonEan": null,
+      "amazonPrice": 8.98,
+      "match": {
+        "score": 100,
+        "retrievalScore": 118,
+        "titleOverlap": 0,
+        "confidenceGap": 118,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "LIR008L",
+      "supplierProduct": "Baileys Original Truffles 205g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "LIR008L",
+          "supplierProduct": "Baileys Original Truffles 205g",
+          "supplierEan": null,
+          "caseQty": 6,
+          "casePrice": 23.57,
+          "unitCost": 3.93
+        }
+      ],
+      "caseQty": 6,
+      "casePrice": 23.57,
+      "unitCost": 3.93,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 6,
+        "sellableAmazonPacksPerCase": 6,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 3.9283333333333332,
+        "amazonPackProductCost": 3.9283333333333332,
+        "amazonObservedPrice": 8.98,
+        "preAmazonFeeSpread": 5.051666666666668,
+        "grossProductROI": 128.5956724649979,
+        "grossProductMargin": 56.25463994060876,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Baileys",
+        "brandSource": "fallback",
+        "family": "truffles",
+        "variant": "",
+        "unitSize": "205g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "baileys|truffles|205g"
+      },
+      "supplierParsed": {
+        "brand": "Baileys",
+        "brandSource": "supplied",
+        "family": "truffles",
+        "variant": "",
+        "unitSize": "205g",
+        "caseQty": 6,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "baileys|truffles|205g"
+      }
+    },
+    {
+      "asin": "B003T3SA70",
+      "title": "Millions Jar Blackcurrant 2.27 Kg",
+      "amazonEan": null,
+      "amazonPrice": 38.99,
+      "match": {
+        "score": 100,
+        "retrievalScore": 118,
+        "titleOverlap": 0,
+        "confidenceGap": 118,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Wholesale Sweets",
+      "supplierOfferId": "millions-jar-blackcurrant",
+      "supplierProduct": "Millions Blackcurrant Flavour - 1 x 2.27kg Jar",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Wholesale Sweets",
+          "supplierOfferId": "millions-jar-blackcurrant",
+          "supplierProduct": "Millions Blackcurrant Flavour - 1 x 2.27kg Jar",
+          "supplierEan": null,
+          "caseQty": 1,
+          "casePrice": 7.99,
+          "unitCost": 7.99
+        }
+      ],
+      "caseQty": 1,
+      "casePrice": 7.99,
+      "unitCost": 7.99,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 1,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 7.99,
+        "amazonPackProductCost": 7.99,
+        "amazonObservedPrice": 38.99,
+        "preAmazonFeeSpread": 31,
+        "grossProductROI": 387.98498122653314,
+        "grossProductMargin": 79.50756604257502,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Millions",
+        "brandSource": "fallback",
+        "family": "blackcurrant",
+        "variant": "",
+        "unitSize": "2270g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "millions|blackcurrant|2270g"
+      },
+      "supplierParsed": {
+        "brand": "Millions",
+        "brandSource": "fallback",
+        "family": "blackcurrant",
+        "variant": "",
+        "unitSize": "2270g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "millions|blackcurrant|2270g"
+      }
+    },
+    {
+      "asin": "B003ZZAFY8",
+      "title": "Jell-O Lime Gelatin Dessert 85g",
+      "amazonEan": null,
+      "amazonPrice": 5.92,
+      "match": {
+        "score": 100,
+        "retrievalScore": 118,
+        "titleOverlap": 0,
+        "confidenceGap": 118,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "JELL018",
+      "supplierProduct": "Jell-O Lime 85g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "JELL018",
+          "supplierProduct": "Jell-O Lime 85g",
+          "supplierEan": null,
+          "caseQty": 24,
+          "casePrice": 28.28,
+          "unitCost": 1.18
+        }
+      ],
+      "caseQty": 24,
+      "casePrice": 28.28,
+      "unitCost": 1.18,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.1783333333333335,
+        "amazonPackProductCost": 1.1783333333333335,
+        "amazonObservedPrice": 5.92,
+        "preAmazonFeeSpread": 4.741666666666666,
+        "grossProductROI": 402.4045261669023,
+        "grossProductMargin": 80.09572072072072,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Jell-O",
+        "brandSource": "fallback",
+        "family": "lime",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|lime|85g"
+      },
+      "supplierParsed": {
+        "brand": "Jell O",
+        "brandSource": "supplied",
+        "family": "lime",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 24,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|lime|85g"
+      }
+    },
+    {
+      "asin": "B003ZZE3AA",
+      "title": "Jell-O Raspberry Gelatin 85g",
+      "amazonEan": null,
+      "amazonPrice": 6.04,
+      "match": {
+        "score": 100,
+        "retrievalScore": 118,
+        "titleOverlap": 0,
+        "confidenceGap": 118,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "JELL011",
+      "supplierProduct": "Jell-O Raspberry 85g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "JELL011",
+          "supplierProduct": "Jell-O Raspberry 85g",
+          "supplierEan": null,
+          "caseQty": 24,
+          "casePrice": 27.96,
+          "unitCost": 1.17
+        }
+      ],
+      "caseQty": 24,
+      "casePrice": 27.96,
+      "unitCost": 1.17,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.165,
+        "amazonPackProductCost": 1.165,
+        "amazonObservedPrice": 6.04,
+        "preAmazonFeeSpread": 4.875,
+        "grossProductROI": 418.4549356223176,
+        "grossProductMargin": 80.71192052980133,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Jell-O",
+        "brandSource": "fallback",
+        "family": "raspberry",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|raspberry|85g"
+      },
+      "supplierParsed": {
+        "brand": "Jell O",
+        "brandSource": "supplied",
+        "family": "raspberry",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 24,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|raspberry|85g"
+      }
+    },
+    {
+      "asin": "B004283KSA",
+      "title": "Jell-O Watermelon Gelatin Dessert 85g Box",
+      "amazonEan": null,
+      "amazonPrice": 3.99,
+      "match": {
+        "score": 100,
+        "retrievalScore": 118,
+        "titleOverlap": 0,
+        "confidenceGap": 118,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "JELL008",
+      "supplierProduct": "Jell-O Watermelon 85g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "JELL008",
+          "supplierProduct": "Jell-O Watermelon 85g",
+          "supplierEan": null,
+          "caseQty": 24,
+          "casePrice": 28.32,
+          "unitCost": 1.18
+        }
+      ],
+      "caseQty": 24,
+      "casePrice": 28.32,
+      "unitCost": 1.18,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.18,
+        "amazonPackProductCost": 1.18,
+        "amazonObservedPrice": 3.99,
+        "preAmazonFeeSpread": 2.8100000000000005,
+        "grossProductROI": 238.13559322033905,
+        "grossProductMargin": 70.42606516290728,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Jell-O",
+        "brandSource": "fallback",
+        "family": "watermelon",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|watermelon|85g"
+      },
+      "supplierParsed": {
+        "brand": "Jell O",
+        "brandSource": "supplied",
+        "family": "watermelon",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 24,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|watermelon|85g"
+      }
+    },
+    {
+      "asin": "B00AB3FI6W",
+      "title": "Jell-O Gelatin Dessert Raspberry 85 g",
+      "amazonEan": null,
+      "amazonPrice": 13.6,
+      "match": {
+        "score": 100,
+        "retrievalScore": 118,
+        "titleOverlap": 0,
+        "confidenceGap": 118,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "JELL011",
+      "supplierProduct": "Jell-O Raspberry 85g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "JELL011",
+          "supplierProduct": "Jell-O Raspberry 85g",
+          "supplierEan": null,
+          "caseQty": 24,
+          "casePrice": 27.96,
+          "unitCost": 1.17
+        }
+      ],
+      "caseQty": 24,
+      "casePrice": 27.96,
+      "unitCost": 1.17,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.165,
+        "amazonPackProductCost": 1.165,
+        "amazonObservedPrice": 13.6,
+        "preAmazonFeeSpread": 12.434999999999999,
+        "grossProductROI": 1067.3819742489268,
+        "grossProductMargin": 91.43382352941177,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Jell-O",
+        "brandSource": "fallback",
+        "family": "raspberry",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|raspberry|85g"
+      },
+      "supplierParsed": {
+        "brand": "Jell O",
+        "brandSource": "supplied",
+        "family": "raspberry",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 24,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|raspberry|85g"
+      }
+    },
+    {
+      "asin": "B08HQL7NCM",
+      "title": "Nerds Gummy Clusters Candy 85g (Pack of 3)",
+      "amazonEan": null,
+      "amazonPrice": 13.99,
+      "match": {
+        "score": 100,
+        "retrievalScore": 118,
+        "titleOverlap": 0,
+        "confidenceGap": 118,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size + sell pack x3",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "NERD023",
+      "supplierProduct": "Nerds Gummy Clusters Theatre 85g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "NERD023",
+          "supplierProduct": "Nerds Gummy Clusters Theatre 85g",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 14.75,
+          "unitCost": 1.23
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 14.75,
+      "unitCost": 1.23,
+      "packConversion": {
+        "amazonPackQty": 3,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 4,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.2291666666666667,
+        "amazonPackProductCost": 3.6875,
+        "amazonObservedPrice": 13.99,
+        "preAmazonFeeSpread": 10.3025,
+        "grossProductROI": 279.3898305084746,
+        "grossProductMargin": 73.64188706218727,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Nerds",
+        "brandSource": "known-title",
+        "family": "clusters",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 1,
+        "consumerPackQty": 3,
+        "sizeConflict": "",
+        "canonicalKey": "nerds|clusters|85g"
+      },
+      "supplierParsed": {
+        "brand": "Nerds",
+        "brandSource": "alias",
+        "family": "clusters",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "nerds|clusters|85g"
+      }
+    },
+    {
+      "asin": "B0FTPY8RLZ",
+      "title": "REESE'S PIECES PEG BAG 136g 4.8 OZ",
+      "amazonEan": null,
+      "amazonPrice": 8.99,
+      "match": {
+        "score": 100,
+        "retrievalScore": 118,
+        "titleOverlap": 0,
+        "confidenceGap": 118,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "REES165",
+      "supplierProduct": "Reese' Pieces Peg Bag 136g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "REES165",
+          "supplierProduct": "Reese' Pieces Peg Bag 136g",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 20.3,
+          "unitCost": 1.69
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 20.3,
+      "unitCost": 1.69,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.6916666666666667,
+        "amazonPackProductCost": 1.6916666666666667,
+        "amazonObservedPrice": 8.99,
+        "preAmazonFeeSpread": 7.298333333333334,
+        "grossProductROI": 431.4285714285715,
+        "grossProductMargin": 81.18279569892474,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "REESE'S",
+        "brandSource": "fallback",
+        "family": "pieces",
+        "variant": "",
+        "unitSize": "136g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "reese|pieces|136g"
+      },
+      "supplierParsed": {
+        "brand": "Reeses",
+        "brandSource": "supplied",
+        "family": "pieces",
+        "variant": "",
+        "unitSize": "136g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "reese|pieces|136g"
+      }
+    },
+    {
+      "asin": "B01N6WJZP1",
+      "title": "Pringles Pizza Potato Crisps, 5.5 oz",
+      "amazonEan": "0038000138638",
+      "amazonPrice": 6.44,
+      "match": {
+        "score": 100,
+        "retrievalScore": 112,
+        "titleOverlap": 0,
+        "confidenceGap": 112,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "PRIN060",
+      "supplierProduct": "Pringles Pizza 156g (CAN)",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "PRIN060",
+          "supplierProduct": "Pringles Pizza 156g (CAN)",
+          "supplierEan": null,
+          "caseQty": 14,
+          "casePrice": 31.53,
+          "unitCost": 2.25
+        }
+      ],
+      "caseQty": 14,
+      "casePrice": 31.53,
+      "unitCost": 2.25,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 14,
+        "sellableAmazonPacksPerCase": 14,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 2.2521428571428572,
+        "amazonPackProductCost": 2.2521428571428572,
+        "amazonObservedPrice": 6.44,
+        "preAmazonFeeSpread": 4.187857142857143,
+        "grossProductROI": 185.9498889946083,
+        "grossProductMargin": 65.02883762200533,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Pringles",
+        "brandSource": "fallback",
+        "family": "pizza",
+        "variant": "",
+        "unitSize": "155.92g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "pringles|pizza|155.92g"
+      },
+      "supplierParsed": {
+        "brand": "Pringles",
+        "brandSource": "supplied",
+        "family": "pizza",
+        "variant": "",
+        "unitSize": "156g",
+        "caseQty": 14,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "pringles|pizza|156g"
+      }
+    },
+    {
+      "asin": "B09R9MRLY5",
+      "title": "Hi-Chew Bag Fantasy Mix 3 oz",
+      "amazonEan": "0850017589209",
+      "amazonPrice": 5.52,
+      "match": {
+        "score": 100,
+        "retrievalScore": 112,
+        "titleOverlap": 0,
+        "confidenceGap": 112,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "HCHE043",
+      "supplierProduct": "Hi-Chew Fantasy Mix Peg Bag 85g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "HCHE043",
+          "supplierProduct": "Hi-Chew Fantasy Mix Peg Bag 85g",
+          "supplierEan": null,
+          "caseQty": 6,
+          "casePrice": 10.77,
+          "unitCost": 1.8
+        }
+      ],
+      "caseQty": 6,
+      "casePrice": 10.77,
+      "unitCost": 1.8,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 6,
+        "sellableAmazonPacksPerCase": 6,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.795,
+        "amazonPackProductCost": 1.795,
+        "amazonObservedPrice": 5.52,
+        "preAmazonFeeSpread": 3.7249999999999996,
+        "grossProductROI": 207.52089136490247,
+        "grossProductMargin": 67.48188405797102,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Hi-Chew",
+        "brandSource": "known-title",
+        "family": "fantasy",
+        "variant": "",
+        "unitSize": "85.05g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "hi chew|fantasy|85.05g"
+      },
+      "supplierParsed": {
+        "brand": "Hi-Chew",
+        "brandSource": "alias",
+        "family": "fantasy",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 6,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "hi chew|fantasy|85g"
+      }
+    },
+    {
+      "asin": "B000FD0A7U",
+      "title": "Airheads Blue Raspberry 0.55oz (16g) Pack of 36",
+      "amazonEan": null,
+      "amazonPrice": 16.5,
+      "match": {
+        "score": 100,
+        "retrievalScore": 112,
+        "titleOverlap": 0,
+        "confidenceGap": 112,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size + sell pack x36",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "AIRH009",
+      "supplierProduct": "Airheads Blue Raspberry 15g",
+      "supplierEan": "5056600218746",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "AIRH009",
+          "supplierProduct": "Airheads Blue Raspberry 15g",
+          "supplierEan": "5056600218746",
+          "caseQty": 36,
+          "casePrice": 6.16,
+          "unitCost": 0.17
+        }
+      ],
+      "caseQty": 36,
+      "casePrice": 6.16,
+      "unitCost": 0.17,
+      "packConversion": {
+        "amazonPackQty": 36,
+        "supplierCaseQty": 36,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 0.1711111111111111,
+        "amazonPackProductCost": 6.16,
+        "amazonObservedPrice": 16.5,
+        "preAmazonFeeSpread": 10.34,
+        "grossProductROI": 167.85714285714286,
+        "grossProductMargin": 62.66666666666667,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Airheads",
+        "brandSource": "fallback",
+        "family": "blue raspberry",
+        "variant": "",
+        "unitSize": "15.59g",
+        "caseQty": 1,
+        "consumerPackQty": 36,
+        "sizeConflict": "",
+        "canonicalKey": "airheads|blue raspberry|15.59g"
+      },
+      "supplierParsed": {
+        "brand": "Airheads",
+        "brandSource": "supplied",
+        "family": "blue raspberry",
+        "variant": "",
+        "unitSize": "15g",
+        "caseQty": 36,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "airheads|blue raspberry|15g"
+      }
+    },
+    {
+      "asin": "B000SR5OIS",
+      "title": "Jell-O Lime Gelatin Dessert 3 OZ (85g)",
+      "amazonEan": null,
+      "amazonPrice": 4.33,
+      "match": {
+        "score": 100,
+        "retrievalScore": 112,
+        "titleOverlap": 0,
+        "confidenceGap": 112,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "JELL018",
+      "supplierProduct": "Jell-O Lime 85g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "JELL018",
+          "supplierProduct": "Jell-O Lime 85g",
+          "supplierEan": null,
+          "caseQty": 24,
+          "casePrice": 28.28,
+          "unitCost": 1.18
+        }
+      ],
+      "caseQty": 24,
+      "casePrice": 28.28,
+      "unitCost": 1.18,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.1783333333333335,
+        "amazonPackProductCost": 1.1783333333333335,
+        "amazonObservedPrice": 4.33,
+        "preAmazonFeeSpread": 3.1516666666666664,
+        "grossProductROI": 267.46817538896744,
+        "grossProductMargin": 72.78675904541954,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Jell-O",
+        "brandSource": "fallback",
+        "family": "lime",
+        "variant": "",
+        "unitSize": "85.05g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|lime|85.05g"
+      },
+      "supplierParsed": {
+        "brand": "Jell O",
+        "brandSource": "supplied",
+        "family": "lime",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 24,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|lime|85g"
+      }
+    },
+    {
+      "asin": "B08NQ11PD2",
+      "title": "6 x NERDS Grape & Strawberry Theatre Box 141g",
+      "amazonEan": "0079200616007",
+      "amazonPrice": 17.84,
+      "match": {
+        "score": 100,
+        "retrievalScore": 156,
+        "titleOverlap": 0,
+        "confidenceGap": 36,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 1
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Candy Cargo",
+      "supplierOfferId": "7234089746631",
+      "supplierProduct": "Nerds Grape&strawberry 12x141g*big",
+      "supplierEan": "0079200616007",
+      "supplierOptions": [
+        {
+          "supplier": "Candy Cargo",
+          "supplierOfferId": "7234089746631",
+          "supplierProduct": "Nerds Grape&strawberry 12x141g*big",
+          "supplierEan": "0079200616007",
+          "caseQty": 12,
+          "casePrice": 16,
+          "unitCost": 1.3333
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 16,
+      "unitCost": 1.3333,
+      "packConversion": {
+        "amazonPackQty": 6,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 2,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.3333333333333333,
+        "amazonPackProductCost": 8,
+        "amazonObservedPrice": 17.84,
+        "preAmazonFeeSpread": 9.84,
+        "grossProductROI": 123,
+        "grossProductMargin": 55.15695067264574,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Nerds",
+        "brandSource": "known-title",
+        "family": "grape and",
+        "variant": "Grape & Strawberry",
+        "unitSize": "141g",
+        "caseQty": 1,
+        "consumerPackQty": 6,
+        "sizeConflict": "",
+        "canonicalKey": "nerds|grape and|grape and strawberry|141g"
+      },
+      "supplierParsed": {
+        "brand": "Nerds",
+        "brandSource": "alias",
+        "family": "grape and",
+        "variant": "Grape & Strawberry",
+        "unitSize": "141g",
+        "caseQty": 12,
+        "consumerPackQty": 12,
+        "sizeConflict": "",
+        "canonicalKey": "nerds|grape and|grape and strawberry|141g"
+      }
+    },
+    {
+      "asin": "B075ZRMZSG",
+      "title": "Air Heads Watermelon With Micro Candies Sugarfree Chewing Gum 14 Stick Pack Box Of 12",
+      "amazonEan": null,
+      "amazonPrice": 19.99,
+      "match": {
+        "score": 100,
+        "retrievalScore": 130,
+        "titleOverlap": 0,
+        "confidenceGap": 130,
+        "band": "STRONG",
+        "reason": "verified Amazon-supplier product relationship",
+        "identityResolution": "VERIFIED_PAIR",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "MARGINAL",
+        "reason": "20-50% product ROI before Amazon fees; fees likely decide it"
+      },
+      "supplier": "Candy Cargo",
+      "supplierOfferId": "7234085093575",
+      "supplierProduct": "Airheads Watermelon Chewing Gum 12x34g (1.185oz)",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Candy Cargo",
+          "supplierOfferId": "7234085093575",
+          "supplierProduct": "Airheads Watermelon Chewing Gum 12x34g (1.185oz)",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 15,
+          "unitCost": 1.25
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 15,
+      "unitCost": 1.25,
+      "packConversion": {
+        "amazonPackQty": 12,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.25,
+        "amazonPackProductCost": 15,
+        "amazonObservedPrice": 19.99,
+        "preAmazonFeeSpread": 4.989999999999998,
+        "grossProductROI": 33.26666666666666,
+        "grossProductMargin": 24.962481240620306,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Air",
+        "brandSource": "fallback",
+        "family": "airheads watermelon",
+        "variant": "micro candies sugarfree chewing gum 14 stick",
+        "unitSize": "",
+        "caseQty": 1,
+        "consumerPackQty": 12,
+        "sizeConflict": "",
+        "canonicalKey": "air|airheads watermelon|micro candies sugarfree chewing gum 14 stick"
+      },
+      "supplierParsed": {
+        "brand": "Airheads",
+        "brandSource": "supplied",
+        "family": "watermelon chewing",
+        "variant": "gum 12x34g",
+        "unitSize": "33.59g",
+        "caseQty": 12,
+        "consumerPackQty": 12,
+        "sizeConflict": "",
+        "canonicalKey": "airheads|watermelon chewing|gum 12x34g|33.59g"
+      }
+    },
+    {
+      "asin": "B0CXJ8W4Z9",
+      "title": "Guinness Mini Caramels Milk Chocolate Pouch 102g - 2024 New Packaging Perfect for Gifting",
+      "amazonEan": null,
+      "amazonPrice": 3,
+      "match": {
+        "score": 100,
+        "retrievalScore": 126,
+        "titleOverlap": 0,
+        "confidenceGap": 126,
+        "band": "STRONG",
+        "reason": "family + variant + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 2,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "MARGINAL",
+        "reason": "20-50% product ROI before Amazon fees; fees likely decide it"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "LIR015L",
+      "supplierProduct": "Guinness Mini Caramels 102g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "LIR015L",
+          "supplierProduct": "Guinness Mini Caramels 102g",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 25.92,
+          "unitCost": 2.16
+        },
+        {
+          "supplier": "Wholesale Sweets",
+          "supplierOfferId": "guinness-mini-caramels-pouch-102-g",
+          "supplierProduct": "Guinness Mini Caramels - 12 x 102g Pouches",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 36.29,
+          "unitCost": 3.0242
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 25.92,
+      "unitCost": 2.16,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 2.16,
+        "amazonPackProductCost": 2.16,
+        "amazonObservedPrice": 3,
+        "preAmazonFeeSpread": 0.8399999999999999,
+        "grossProductROI": 38.88888888888888,
+        "grossProductMargin": 27.999999999999996,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Guinness",
+        "brandSource": "fallback",
+        "family": "mini caramels",
+        "variant": "Mini Caramels",
+        "unitSize": "102g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "guinness|mini caramels|mini caramels|102g"
+      },
+      "supplierParsed": {
+        "brand": "Guinness",
+        "brandSource": "supplied",
+        "family": "mini caramels",
+        "variant": "Mini Caramels",
+        "unitSize": "102g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "guinness|mini caramels|mini caramels|102g"
+      }
+    },
+    {
+      "asin": "B002E2N43C",
+      "title": "Millions Jar Strawberry 2.27 Kg",
+      "amazonEan": null,
+      "amazonPrice": 38.99,
+      "match": {
+        "score": 100,
+        "retrievalScore": 118,
+        "titleOverlap": 0,
+        "confidenceGap": 118,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "MARGINAL",
+        "reason": "20-50% product ROI before Amazon fees; fees likely decide it"
+      },
+      "supplier": "Wholesale Sweets",
+      "supplierOfferId": "millions-jar-strawberry",
+      "supplierProduct": "Millions Strawberry Flavour - 1 x 2.27kg Jar",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Wholesale Sweets",
+          "supplierOfferId": "millions-jar-strawberry",
+          "supplierProduct": "Millions Strawberry Flavour - 1 x 2.27kg Jar",
+          "supplierEan": null,
+          "caseQty": 1,
+          "casePrice": 26.89,
+          "unitCost": 26.89
+        }
+      ],
+      "caseQty": 1,
+      "casePrice": 26.89,
+      "unitCost": 26.89,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 1,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 26.89,
+        "amazonPackProductCost": 26.89,
+        "amazonObservedPrice": 38.99,
+        "preAmazonFeeSpread": 12.100000000000001,
+        "grossProductROI": 44.99814057270361,
+        "grossProductMargin": 31.033598358553476,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Millions",
+        "brandSource": "fallback",
+        "family": "strawberry",
+        "variant": "",
+        "unitSize": "2270g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "millions|strawberry|2270g"
+      },
+      "supplierParsed": {
+        "brand": "Millions",
+        "brandSource": "supplied",
+        "family": "strawberry",
+        "variant": "",
+        "unitSize": "2270g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "millions|strawberry|2270g"
+      }
+    },
+    {
+      "asin": "B003T3QKA4",
+      "title": "Millions Jar Bubblegum Flavour 2.27 Kg",
+      "amazonEan": null,
+      "amazonPrice": 38.99,
+      "match": {
+        "score": 100,
+        "retrievalScore": 118,
+        "titleOverlap": 0,
+        "confidenceGap": 118,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "MARGINAL",
+        "reason": "20-50% product ROI before Amazon fees; fees likely decide it"
+      },
+      "supplier": "Wholesale Sweets",
+      "supplierOfferId": "millions-jar-bubblegum",
+      "supplierProduct": "Millions Bubblegum Jar 2.27kg",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Wholesale Sweets",
+          "supplierOfferId": "millions-jar-bubblegum",
+          "supplierProduct": "Millions Bubblegum Jar 2.27kg",
+          "supplierEan": null,
+          "caseQty": 1,
+          "casePrice": 26.89,
+          "unitCost": 26.89
+        }
+      ],
+      "caseQty": 1,
+      "casePrice": 26.89,
+      "unitCost": 26.89,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 1,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 26.89,
+        "amazonPackProductCost": 26.89,
+        "amazonObservedPrice": 38.99,
+        "preAmazonFeeSpread": 12.100000000000001,
+        "grossProductROI": 44.99814057270361,
+        "grossProductMargin": 31.033598358553476,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Millions",
+        "brandSource": "fallback",
+        "family": "bubblegum",
+        "variant": "",
+        "unitSize": "2270g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "millions|bubblegum|2270g"
+      },
+      "supplierParsed": {
+        "brand": "Millions",
+        "brandSource": "supplied",
+        "family": "bubblegum",
+        "variant": "",
+        "unitSize": "2270g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "millions|bubblegum|2270g"
+      }
+    },
+    {
+      "asin": "B012ZTDBXG",
+      "title": "Millions Raspberry 2.27kg Jar",
+      "amazonEan": null,
+      "amazonPrice": 38.99,
+      "match": {
+        "score": 100,
+        "retrievalScore": 118,
+        "titleOverlap": 0,
+        "confidenceGap": 118,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "MARGINAL",
+        "reason": "20-50% product ROI before Amazon fees; fees likely decide it"
+      },
+      "supplier": "Wholesale Sweets",
+      "supplierOfferId": "raspberry-millions-jar-2-27kg",
+      "supplierProduct": "Millions Raspberry - 1 x 2.27kg Jar",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Wholesale Sweets",
+          "supplierOfferId": "raspberry-millions-jar-2-27kg",
+          "supplierProduct": "Millions Raspberry - 1 x 2.27kg Jar",
+          "supplierEan": null,
+          "caseQty": 1,
+          "casePrice": 26.89,
+          "unitCost": 26.89
+        }
+      ],
+      "caseQty": 1,
+      "casePrice": 26.89,
+      "unitCost": 26.89,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 1,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 26.89,
+        "amazonPackProductCost": 26.89,
+        "amazonObservedPrice": 38.99,
+        "preAmazonFeeSpread": 12.100000000000001,
+        "grossProductROI": 44.99814057270361,
+        "grossProductMargin": 31.033598358553476,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Millions",
+        "brandSource": "fallback",
+        "family": "raspberry",
+        "variant": "",
+        "unitSize": "2270g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "millions|raspberry|2270g"
+      },
+      "supplierParsed": {
+        "brand": "Millions",
+        "brandSource": "fallback",
+        "family": "raspberry",
+        "variant": "",
+        "unitSize": "2270g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "millions|raspberry|2270g"
+      }
+    },
+    {
+      "asin": "B01LTIQ3V6",
+      "title": "Millions Jar Cola 2.27 Kg",
+      "amazonEan": null,
+      "amazonPrice": 38.99,
+      "match": {
+        "score": 100,
+        "retrievalScore": 118,
+        "titleOverlap": 0,
+        "confidenceGap": 118,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "MARGINAL",
+        "reason": "20-50% product ROI before Amazon fees; fees likely decide it"
+      },
+      "supplier": "Wholesale Sweets",
+      "supplierOfferId": "millions-jar-cola",
+      "supplierProduct": "Millions Cola Jar 2.27kg",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Wholesale Sweets",
+          "supplierOfferId": "millions-jar-cola",
+          "supplierProduct": "Millions Cola Jar 2.27kg",
+          "supplierEan": null,
+          "caseQty": 1,
+          "casePrice": 26.89,
+          "unitCost": 26.89
+        }
+      ],
+      "caseQty": 1,
+      "casePrice": 26.89,
+      "unitCost": 26.89,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 1,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 26.89,
+        "amazonPackProductCost": 26.89,
+        "amazonObservedPrice": 38.99,
+        "preAmazonFeeSpread": 12.100000000000001,
+        "grossProductROI": 44.99814057270361,
+        "grossProductMargin": 31.033598358553476,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Millions",
+        "brandSource": "fallback",
+        "family": "cola",
+        "variant": "",
+        "unitSize": "2270g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "millions|cola|2270g"
+      },
+      "supplierParsed": {
+        "brand": "Millions",
+        "brandSource": "supplied",
+        "family": "cola",
+        "variant": "",
+        "unitSize": "2270g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "millions|cola|2270g"
+      }
+    },
+    {
+      "asin": "B002B66UIC",
+      "title": "Jell-O Orange Gelatin Dessert Mix, 3 oz Box",
+      "amazonEan": "0043000200049",
+      "amazonPrice": null,
+      "match": {
+        "score": 100,
+        "retrievalScore": 142,
+        "titleOverlap": 0,
+        "confidenceGap": 142,
+        "band": "STRONG",
+        "reason": "exact product barcode",
+        "identityResolution": "EXACT_BARCODE",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "NEEDS_DATA",
+        "reason": "Supplier cost or Amazon price missing"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "JELL017",
+      "supplierProduct": "Jell-O Orange 85g",
+      "supplierEan": "0043000200049",
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "JELL017",
+          "supplierProduct": "Jell-O Orange 85g",
+          "supplierEan": "0043000200049",
+          "caseQty": 24,
+          "casePrice": 28.03,
+          "unitCost": 1.17
+        }
+      ],
+      "caseQty": 24,
+      "casePrice": 28.03,
+      "unitCost": 1.17,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.1679166666666667,
+        "amazonPackProductCost": 1.1679166666666667,
+        "amazonObservedPrice": null,
+        "preAmazonFeeSpread": null,
+        "grossProductROI": null,
+        "grossProductMargin": null,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Jell-O",
+        "brandSource": "fallback",
+        "family": "orange",
+        "variant": "",
+        "unitSize": "85.05g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|orange|85.05g"
+      },
+      "supplierParsed": {
+        "brand": "Jell O",
+        "brandSource": "supplied",
+        "family": "orange",
+        "variant": "",
+        "unitSize": "85g",
+        "caseQty": 24,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "jello|orange|85g"
+      }
+    },
+    {
+      "asin": "B004I8EUBA",
+      "title": "HEINZ CHILI SAUCE 1 x 340g BOTTLE AMERICAN IMPORT",
+      "amazonEan": "013000001120",
+      "amazonPrice": 7.84,
+      "match": {
+        "score": 100,
+        "retrievalScore": 126,
+        "titleOverlap": 0,
+        "confidenceGap": 126,
+        "band": "STRONG",
+        "reason": "family + variant + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "NEEDS_DATA",
+        "reason": "Supplier cost or Amazon price missing"
+      },
+      "supplier": "Americatessen",
+      "supplierOfferId": "HEINZ-61050-12",
+      "supplierProduct": "Heinz Chili Sauce (340g)",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Americatessen",
+          "supplierOfferId": "HEINZ-61050-12",
+          "supplierProduct": "Heinz Chili Sauce (340g)",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 0,
+          "unitCost": 0
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 0,
+      "unitCost": 0,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": null,
+        "amazonPackProductCost": null,
+        "amazonObservedPrice": 7.84,
+        "preAmazonFeeSpread": null,
+        "grossProductROI": null,
+        "grossProductMargin": null,
+        "costKnown": false,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "HEINZ",
+        "brandSource": "fallback",
+        "family": "chili sauce",
+        "variant": "Chili Sauce",
+        "unitSize": "340g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "heinz|chili sauce|chili sauce|340g"
+      },
+      "supplierParsed": {
+        "brand": "Heinz",
+        "brandSource": "fallback",
+        "family": "chili sauce",
+        "variant": "Chili Sauce",
+        "unitSize": "340g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "heinz|chili sauce|chili sauce|340g"
+      }
+    },
+    {
+      "asin": "B0075OLAAI",
+      "title": "Ritz Bits Peanut Butter 3oz (85g)",
+      "amazonEan": null,
+      "amazonPrice": null,
+      "match": {
+        "score": 100,
+        "retrievalScore": 120,
+        "titleOverlap": 0,
+        "confidenceGap": 120,
+        "band": "STRONG",
+        "reason": "family + variant + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "NEEDS_DATA",
+        "reason": "Supplier cost or Amazon price missing"
+      },
+      "supplier": "Sweet & Glory",
+      "supplierOfferId": "RITZ001",
+      "supplierProduct": "Ritz Bits Peanut Butter 85g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Sweet & Glory",
+          "supplierOfferId": "RITZ001",
+          "supplierProduct": "Ritz Bits Peanut Butter 85g",
+          "supplierEan": null,
+          "caseQty": 12,
+          "casePrice": 15.29,
+          "unitCost": 1.27
+        }
+      ],
+      "caseQty": 12,
+      "casePrice": 15.29,
+      "unitCost": 1.27,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 1.2741666666666667,
+        "amazonPackProductCost": 1.2741666666666667,
+        "amazonObservedPrice": null,
+        "preAmazonFeeSpread": null,
+        "grossProductROI": null,
+        "grossProductMargin": null,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Ritz",
+        "brandSource": "fallback",
+        "family": "bits peanut",
+        "variant": "butter",
+        "unitSize": "85.05g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "ritz|bits peanut|butter|85.05g"
+      },
+      "supplierParsed": {
+        "brand": "Ritz",
+        "brandSource": "supplied",
+        "family": "bits peanut",
+        "variant": "butter",
+        "unitSize": "85g",
+        "caseQty": 12,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "ritz|bits peanut|butter|85g"
+      }
+    },
+    {
+      "asin": "B07D9YFFGY",
+      "title": "GENERAL MILLS Cheerios Original Cereal 350 GR - Canada",
+      "amazonEan": null,
+      "amazonPrice": 7.49,
+      "match": {
+        "score": 100,
+        "retrievalScore": 118,
+        "titleOverlap": 0,
+        "confidenceGap": 118,
+        "band": "STRONG",
+        "reason": "family + simple identity + unit size",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "NEEDS_DATA",
+        "reason": "Supplier cost or Amazon price missing"
+      },
+      "supplier": "Americatessen",
+      "supplierOfferId": "CHEERIO-40512-14",
+      "supplierProduct": "General Mills Cheerios 350g",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Americatessen",
+          "supplierOfferId": "CHEERIO-40512-14",
+          "supplierProduct": "General Mills Cheerios 350g",
+          "supplierEan": null,
+          "caseQty": 14,
+          "casePrice": 0,
+          "unitCost": 0
+        }
+      ],
+      "caseQty": 14,
+      "casePrice": 0,
+      "unitCost": 0,
+      "packConversion": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 14,
+        "sellableAmazonPacksPerCase": 14,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": null,
+        "amazonPackProductCost": null,
+        "amazonObservedPrice": 7.49,
+        "preAmazonFeeSpread": null,
+        "grossProductROI": null,
+        "grossProductMargin": null,
+        "costKnown": false,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "GENERAL",
+        "brandSource": "fallback",
+        "family": "mills cheerios",
+        "variant": "",
+        "unitSize": "350g",
+        "caseQty": 1,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "general|mills cheerios|350g"
+      },
+      "supplierParsed": {
+        "brand": "General",
+        "brandSource": "fallback",
+        "family": "mills cheerios",
+        "variant": "",
+        "unitSize": "350g",
+        "caseQty": 14,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "general|mills cheerios|350g"
+      }
+    },
+    {
+      "asin": "B07MF3DY3C",
+      "title": "Mr. Clean Magic Eraser Original Cleaning Pads with Durafoam, Pack of 6",
+      "amazonEan": null,
+      "amazonPrice": 17.39,
+      "match": {
+        "score": 100,
+        "retrievalScore": 112,
+        "titleOverlap": 0,
+        "confidenceGap": 112,
+        "band": "REVIEW",
+        "reason": "family + simple identity + unit size + sell pack x6",
+        "identityResolution": "PARSED",
+        "matchingSupplierOffers": 1,
+        "competingProductIdentities": 0
+      },
+      "commercial": {
+        "decision": "ANALYSE",
+        "reason": "Positive product-cost headroom; run full Amazon fee/ROI analysis"
+      },
+      "supplier": "Wholesale Sweets",
+      "supplierOfferId": "mr-crilly-s-throat-cough-drops-peppermint-menthol-flavour-bag-90g",
+      "supplierProduct": "Mr",
+      "supplierEan": null,
+      "supplierOptions": [
+        {
+          "supplier": "Wholesale Sweets",
+          "supplierOfferId": "mr-crilly-s-throat-cough-drops-peppermint-menthol-flavour-bag-90g",
+          "supplierProduct": "Mr",
+          "supplierEan": null,
+          "caseQty": 18,
+          "casePrice": 12.49,
+          "unitCost": 0.6939
+        }
+      ],
+      "caseQty": 18,
+      "casePrice": 12.49,
+      "unitCost": 0.6939,
+      "packConversion": {
+        "amazonPackQty": 6,
+        "supplierCaseQty": 18,
+        "sellableAmazonPacksPerCase": 3,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "economics": {
+        "physicalUnitCost": 0.6938888888888889,
+        "amazonPackProductCost": 4.163333333333333,
+        "amazonObservedPrice": 17.39,
+        "preAmazonFeeSpread": 13.226666666666667,
+        "grossProductROI": 317.69415532425944,
+        "grossProductMargin": 76.05903776116541,
+        "costKnown": true,
+        "feesIncluded": false
+      },
+      "amazonParsed": {
+        "brand": "Mr",
+        "brandSource": "fallback",
+        "family": "mr",
+        "variant": "",
+        "unitSize": "",
+        "caseQty": 1,
+        "consumerPackQty": 6,
+        "sizeConflict": "",
+        "canonicalKey": "mr|mr"
+      },
+      "supplierParsed": {
+        "brand": "Mr",
+        "brandSource": "fallback",
+        "family": "mr",
+        "variant": "",
+        "unitSize": "90g",
+        "caseQty": 18,
+        "consumerPackQty": 1,
+        "sizeConflict": "",
+        "canonicalKey": "mr|mr|90g"
+      }
+    }
+  ],
+  "snapshotDate": "2026-10-23",
+  "offlineFullReplay": true,
+  "scope": "Dated offline replay against isolated branch after discovery import; not live market prices",
+  "pagination": null
+}

@@ -1,0 +1,373 @@
+{
+  "snapshotDate": "2026-10-23",
+  "scope": "Production scanned storefront catalogue, before new public-page recovery",
+  "note": "Shared identifiers and names are review signals, not approval to merge sell packs. Name normalization removes punctuation and changes case only.",
+  "summary": {
+    "rows": 3588,
+    "uniqueAsins": 3172,
+    "repeatedAsinRows": 767,
+    "repeatedAsinGroups": 351,
+    "sharedBarcodeGroups": 13,
+    "extraAsinOccurrences": 416,
+    "uniqueAsinsWithCodes": 827,
+    "sameNameDifferentAsinGroups": 4,
+    "sameSellerAsinDuplicateGroups": 0,
+    "sameAsinConflictingNormalizedCodes": 0,
+    "barcodeGroupsWithValidCheckDigits": 13
+  },
+  "asinExamples": [
+    {
+      "asin": "B000VDZ4BQ",
+      "rows": 4,
+      "title": "Vlasic Kosher Dill Spears 710ml (Pack of 1)",
+      "sellers": 4
+    },
+    {
+      "asin": "B008XIYRN2",
+      "rows": 4,
+      "title": "Pepperidge Farm Goldfish Baked Snack Crackers Cheddar - 187g - 2 Pack",
+      "sellers": 4
+    },
+    {
+      "asin": "B0004N0CY2",
+      "rows": 3,
+      "title": "Smucker's Goober Peanut Butter & Strawberry Jelly Stripes - 18 oz Glass Jar",
+      "sellers": 3
+    },
+    {
+      "asin": "B0005XP1E2",
+      "rows": 3,
+      "title": "Grandma's Grandma's Original Molasses All Natural, Unsulphured - 12Oz",
+      "sellers": 3
+    },
+    {
+      "asin": "B0005ZVGJO",
+      "rows": 3,
+      "title": "Welch's Grape Jelly Large 566g Squeezable Welch's",
+      "sellers": 3
+    },
+    {
+      "asin": "B000LLIUXM",
+      "rows": 3,
+      "title": "Brianna'S Dijon Honey Mustard Dressing, Pack of 3",
+      "sellers": 3
+    },
+    {
+      "asin": "B000RYCIPY",
+      "rows": 3,
+      "title": "Pillsbury Funfetti Vanilla Frosting with Candy Bits 442g (15.06 OZ)",
+      "sellers": 3
+    },
+    {
+      "asin": "B000SR5TJM",
+      "rows": 3,
+      "title": "Lawry's, Original Seasoned Salt - Seasoning Salt, No MSG, Spice Shaker - 8 oz, Beef, Pork, and Chicken Seasoning Salt",
+      "sellers": 3
+    },
+    {
+      "asin": "B000UENHBU",
+      "rows": 3,
+      "title": "Tostitos Salsa con Queso Medium",
+      "sellers": 3
+    },
+    {
+      "asin": "B0012NLMP6",
+      "rows": 3,
+      "title": "Red Vines Original Red Twists Candy 141g",
+      "sellers": 3
+    }
+  ],
+  "nameExamples": [
+    {
+      "name": "flying goose hoi sin sauce 455 ml",
+      "rows": 3,
+      "asins": 2,
+      "asin_list": [
+        "B003WP0G3Q",
+        "B00710V7CC"
+      ]
+    },
+    {
+      "name": "general mills cinnamon chex gluten free cereal 343g 12oz 1 pack",
+      "rows": 2,
+      "asins": 2,
+      "asin_list": [
+        "B00KHKBGLA",
+        "B08527G5FM"
+      ]
+    },
+    {
+      "name": "preema almond flavouring essence 28ml",
+      "rows": 2,
+      "asins": 2,
+      "asin_list": [
+        "B0074K4YL0",
+        "B01LZ7IU37"
+      ]
+    },
+    {
+      "name": "thai taste red curry paste in tub 400g",
+      "rows": 2,
+      "asins": 2,
+      "asin_list": [
+        "B008PDDNBW",
+        "B08L4M9N89"
+      ]
+    }
+  ],
+  "barcodeGroups": [
+    {
+      "code": "0013409352311",
+      "asins": 2,
+      "sellers": 1,
+      "products": [
+        {
+          "asin": "B0014P6S6K",
+          "pack": null,
+          "size": "792 g",
+          "title": "Sweet Baby Ray's Original Barbecue Sauce - 28 oz."
+        },
+        {
+          "asin": "B004B9QK64",
+          "pack": null,
+          "size": "794 g",
+          "title": "Sweet Baby Ray's Barbecue BBQ Sauce 28oz 794g"
+        }
+      ]
+    },
+    {
+      "code": "0014100085393",
+      "asins": 2,
+      "sellers": 1,
+      "products": [
+        {
+          "asin": "B004SCSE2M",
+          "pack": null,
+          "size": "187 g",
+          "title": "Pepperidge Farm Goldfish, Colors, 6.6-Ounce Package by Pepperidge Farm"
+        },
+        {
+          "asin": "B00KRMHRJI",
+          "pack": null,
+          "size": "187 g",
+          "title": "Pepperidge Farm Goldfish Baked Snack Crackers Colors: 6 Packs of 6.6 Oz"
+        }
+      ]
+    },
+    {
+      "code": "0014100085478",
+      "asins": 3,
+      "sellers": 4,
+      "products": [
+        {
+          "asin": "B004P7V8R8",
+          "pack": null,
+          "size": "187 g",
+          "title": "Pepperidge Farm Goldfish, Cheddar, 6.6 Ounce (Pack of 8)"
+        },
+        {
+          "asin": "B0051OQ2NE",
+          "pack": null,
+          "size": "1.19 kg",
+          "title": "Pepperidge Farm Goldfish, Cheddar, 6.6-Ounce Bag (Pack of 6)"
+        },
+        {
+          "asin": "B008XIYRN2",
+          "pack": null,
+          "size": "187 g",
+          "title": "Pepperidge Farm Goldfish Baked Snack Crackers Cheddar - 187g - 2 Pack"
+        }
+      ]
+    },
+    {
+      "code": "0031200016058",
+      "asins": 2,
+      "sellers": 2,
+      "products": [
+        {
+          "asin": "B0030HPB1S",
+          "pack": null,
+          "size": "396 g",
+          "title": "Ocean Spray Jellied Cranberry Sauce 397g"
+        },
+        {
+          "asin": "B00KPWE2TS",
+          "pack": null,
+          "size": "1.19 kg",
+          "title": "Ocean Spray Jellied Cranberry Sauce, 14 Oz, 3 Pk"
+        }
+      ]
+    },
+    {
+      "code": "0039000045049",
+      "asins": 2,
+      "sellers": 1,
+      "products": [
+        {
+          "asin": "B00J3Z2MZO",
+          "pack": null,
+          "size": "425 g",
+          "title": "Libbys 100% Pure Pumpkin Pie Filling 425 g (Pack of 4)"
+        },
+        {
+          "asin": "B014308GMG",
+          "pack": null,
+          "size": "0.28 g",
+          "title": "Libby's 100% Pure Pumpkin 425g 3 Pack"
+        }
+      ]
+    },
+    {
+      "code": "0041449300115",
+      "asins": 2,
+      "sellers": 2,
+      "products": [
+        {
+          "asin": "B000QCPNZY",
+          "pack": null,
+          "size": "476 g",
+          "title": "Krusteaz Honey Cornbread and Muffin Mix, Made with Real Honey, 15 oz Box"
+        },
+        {
+          "asin": "B01AR8EOVK",
+          "pack": null,
+          "size": "425 g",
+          "title": "Krusteaz Honey Cornbread & Muffin Mix, 15 Ounce (Pack of 3) by Krusteaz"
+        }
+      ]
+    },
+    {
+      "code": "0043000200025",
+      "asins": 2,
+      "sellers": 1,
+      "products": [
+        {
+          "asin": "B00AB3FI6W",
+          "pack": null,
+          "size": "95.2 g",
+          "title": "Jell-O Gelatin Dessert Raspberry 85 g"
+        },
+        {
+          "asin": "B00JD9XP8S",
+          "pack": null,
+          "size": "510 g",
+          "title": "Jell-O Gelatin Dessert, Raspberry, 3Ounce Boxes (Pack of 6)"
+        }
+      ]
+    },
+    {
+      "code": "0043000276785",
+      "asins": 2,
+      "sellers": 1,
+      "products": [
+        {
+          "asin": "B001EQ4H1M",
+          "pack": null,
+          "size": "390 g",
+          "title": "Baker's Angel Flake Sweetened Coconut 396 g"
+        },
+        {
+          "asin": "B081J463V3",
+          "pack": null,
+          "size": "794 g",
+          "title": "Baker's Angel Flake Sweetened Coconut (Pack of 2)"
+        }
+      ]
+    },
+    {
+      "code": "0050000303021",
+      "asins": 2,
+      "sellers": 2,
+      "products": [
+        {
+          "asin": "B004B8QL1E",
+          "pack": null,
+          "size": "1 kg",
+          "title": "Coffeemate Original Canister, 35.3-Ounce (Pack of 3) by Coffee-mate [Foods]"
+        },
+        {
+          "asin": "B00MB2WJTU",
+          "pack": null,
+          "size": "998 g",
+          "title": "Coffee Mate The Original Powder Coffee Creamer, 35.3 oz"
+        }
+      ]
+    },
+    {
+      "code": "0050000351701",
+      "asins": 2,
+      "sellers": 2,
+      "products": [
+        {
+          "asin": "B00006IDJU",
+          "pack": null,
+          "size": "39 g",
+          "title": "Coffee-Mate French Vanilla Creamer 50 Portions 39 g"
+        },
+        {
+          "asin": "B00DZYHLKU",
+          "pack": null,
+          "size": "10.8 g",
+          "title": "NES35170BX - Coffee-mate French Vanilla Creamer by NESTLE"
+        }
+      ]
+    },
+    {
+      "code": "0050000600120",
+      "asins": 2,
+      "sellers": 1,
+      "products": [
+        {
+          "asin": "B00514FM1W",
+          "pack": null,
+          "size": "367 g",
+          "title": "Nestle Carnation Malted Milk Original Flavour 368g Tub"
+        },
+        {
+          "asin": "B01MCZGBCQ",
+          "pack": null,
+          "size": "367 g",
+          "title": "Carnation Original Malt Milk 370ml"
+        }
+      ]
+    },
+    {
+      "code": "0071570001827",
+      "asins": 2,
+      "sellers": 2,
+      "products": [
+        {
+          "asin": "B073JT6NM1",
+          "pack": null,
+          "size": "155 cm x 70 cm",
+          "title": "Jelly Belly|Harry Potter Chocolate Frog 15g"
+        },
+        {
+          "asin": "B08LHDWZTP",
+          "pack": null,
+          "size": "Mini",
+          "title": "Harry Potter Chocolate Frog Unisex Candy Standard, see description,"
+        }
+      ]
+    },
+    {
+      "code": "0615357122284",
+      "asins": 2,
+      "sellers": 1,
+      "products": [
+        {
+          "asin": "B01DO018TY",
+          "pack": null,
+          "size": "50 g",
+          "title": "Taylors of Harrogate Lapsang Souchong Tea 20 Wrapped & Tagged Tea Bags"
+        },
+        {
+          "asin": "B07Z1P8CY1",
+          "pack": null,
+          "size": "50 g",
+          "title": "Taylors of Harrogate Lapsang Souchong Tea 20 Wrapped & Tagged Tea Bags (Pack of 3)"
+        }
+      ]
+    }
+  ]
+}
