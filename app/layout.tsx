@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
+import './workspace.css'
 
 export const metadata: Metadata = {
   title: 'Source Stack — Find it. Source it. Know the numbers.',
@@ -16,7 +17,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
-  colorScheme: 'dark',
+  colorScheme: 'light',
   themeColor: '#0b1320'
 }
 export default function RootLayout({children}:{children:React.ReactNode}) {
