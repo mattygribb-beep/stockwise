@@ -1,0 +1,2532 @@
+{
+  "snapshotDate": "2026-10-23",
+  "status": "ESTIMATED_SNAPSHOT",
+  "isLiveMarketData": false,
+  "feeModel": {
+    "version": "AMAZON_UK_RATE_CARD_2026_07_01",
+    "sourceUrl": "https://m.media-amazon.com/images/G/02/sell/images/260630-FBA-Rate-Card-EN1.pdf",
+    "isLiveQuote": false,
+    "scope": "UK domestic Grocery and Gourmet; UK-established Professional seller",
+    "feeVatScenarioRate": 0.2
+  },
+  "counts": {
+    "listings": 43,
+    "activeLinkedListings": 30,
+    "activePricedListings": 28,
+    "costAndHistoricalSellPrice": 8,
+    "missingSellPrice": 20,
+    "missingCasePrice": 2,
+    "inactiveOnly": 5,
+    "noSupplierLink": 8,
+    "confirmedBuy": 0
+  },
+  "basis": "Screen all 43 ASINs. Use case price / complete Amazon sales per case; leftovers carry zero recovery in the cash-cost scenario. Select the lowest of stored candidate, screenshot and storefront selling-price observations as a downside scenario, never as a current Buy Box quote. Show 0% and 20% additional supplier-tax scenarios; these do not establish the supplier's tax treatment or the seller's VAT registration.",
+  "codeDefaultRules": {
+    "roiPercent": 30,
+    "profitPerSale": 2,
+    "marginPercent": 15,
+    "totalOpportunityProfit": 25,
+    "maxCapital": 500,
+    "firstPurchaseCapital": 250,
+    "firstPurchaseSalesUnits": 24
+  },
+  "notes": [
+    "Code defaults may differ from browser-saved personal settings.",
+    "The £25 total-profit check below assumes one supplier case. It is not a permanent £25-per-case rule; a multi-case opportunity must be evaluated separately.",
+    "All netProfit and roi fields remain null until fees, tax, prep, transport, current prices and selling eligibility have sufficient evidence.",
+    "Amazon fee SP-API configuration checked: NOT_CONFIGURED. Saved market checks: 0.",
+    "Seven of the eight cost-and-price candidates lack sufficient confirmed full-sell-unit dimensions/weight for a fee total. The eighth has a catalogue-derived single-bag scenario, not a measured or live quote."
+  ],
+  "additionalSupplierObservations": [
+    {
+      "offerRowId": 424,
+      "sourceUrl": "https://sweetandglory.com/brands/i-m/jell-o-wholesale-uk",
+      "retrievedDate": "2026-10-23",
+      "casePriceExVat": 27.83,
+      "caseQty": 24,
+      "stockCases": 11,
+      "expiry": "2028-07-04",
+      "note": "New page price differs from stored £28.03; baseline calculations retain the stored higher price. No supplier sync or barcode change performed."
+    }
+  ],
+  "example": {
+    "asin": "B08HR8VQ7G",
+    "price": 5.19,
+    "dimensionsCm": [
+      17.1,
+      13.6,
+      6.1
+    ],
+    "weightG": 142,
+    "provenance": "Stored Amazon detail facts; not physically measured; complete parcel weight may differ.",
+    "estimatedFeesExVat": 3.03,
+    "estimatedFeesWith20PercentFeeVat": 3.64,
+    "supplierCostIf20PercentVatAdded": 2.6,
+    "remainderBeforePrepDeliveryStorage": -1.05
+  },
+  "rows": [
+    {
+      "asin": "B0DKNZRGS1",
+      "name": "(Halal) Amos Peelerz Gummy Grape Peg Bag 65g",
+      "amazonPackQty": 1,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Stateside Distribution",
+          "offerId": 1,
+          "active": true,
+          "quotedCasePrice": 8.99,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-22T23:13:55.067847+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://statesidedistribution.com/products/halal-amos-peelerz-gummy-grape-peg-bag-65g-pack-of-12",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 8.99,
+              "cogs": 0.7491666666666666,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 10.788,
+              "cogs": 0.899,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B000WG86GW",
+      "name": "7up Cherry 12fl oz/355ml",
+      "amazonPackQty": 1,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Stateside Distribution",
+          "offerId": 5,
+          "active": true,
+          "quotedCasePrice": 7.99,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-22T23:13:55.067847+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://statesidedistribution.com/products/7up-cherry-12fl-oz-355ml-pack-of-12",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 7.99,
+              "cogs": 0.6658333333333334,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 9.588,
+              "cogs": 0.7989999999999999,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B0D6GYKDJL",
+      "name": "7up Tropical 12fl oz/355ml",
+      "amazonPackQty": 1,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Stateside Distribution",
+          "offerId": 6,
+          "active": true,
+          "quotedCasePrice": 7.99,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-22T23:13:55.067847+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://statesidedistribution.com/products/7up-tropical-12fl-oz-355ml-pack-of-12",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 7.99,
+              "cogs": 0.6658333333333334,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 9.588,
+              "cogs": 0.7989999999999999,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B000WGDJFU",
+      "name": "A&W Root Beer Float 12fl oz/355ml",
+      "amazonPackQty": 1,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Stateside Distribution",
+          "offerId": 7,
+          "active": true,
+          "quotedCasePrice": 7.99,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-22T23:13:55.067847+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://statesidedistribution.com/products/a-w-root-beer-float-12fl-oz-355ml-pack-of-12",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 7.99,
+              "cogs": 0.6658333333333334,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 9.588,
+              "cogs": 0.7989999999999999,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B0CSKRMPZX",
+      "name": "Airheads Blue Raspberry 36 Pack",
+      "amazonPackQty": 36,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Sweet & Glory",
+          "offerId": 201,
+          "active": true,
+          "quotedCasePrice": 6.16,
+          "supplierCaseQty": 36,
+          "amazonSellPackQty": 36,
+          "salesPerCase": 1,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-18T15:31:38.267081+00:00",
+          "expiry": "31/03/2028",
+          "stockQty": 573,
+          "url": "https://sweetandglory.com/brands/a-b/airheads-wholesale-uk",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 6.16,
+              "cogs": 6.16,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 7.3919999999999995,
+              "cogs": 7.3919999999999995,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B0CSKRKCNX",
+      "name": "Airheads Cherry 36 Pack",
+      "amazonPackQty": 36,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Sweet & Glory",
+          "offerId": 202,
+          "active": true,
+          "quotedCasePrice": 6.97,
+          "supplierCaseQty": 36,
+          "amazonSellPackQty": 36,
+          "salesPerCase": 1,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-18T15:31:38.267081+00:00",
+          "expiry": "31/01/2028",
+          "stockQty": 190,
+          "url": "https://sweetandglory.com/brands/a-b/airheads-wholesale-uk",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 6.97,
+              "cogs": 6.97,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 8.363999999999999,
+              "cogs": 8.363999999999999,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B0CSLD75JQ",
+      "name": "Airheads Watermelon 36 Pack",
+      "amazonPackQty": 36,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Candy Cargo",
+          "offerId": 9886,
+          "active": true,
+          "quotedCasePrice": 8.5,
+          "supplierCaseQty": 36,
+          "amazonSellPackQty": 36,
+          "salesPerCase": 1,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-18T15:32:52.23818+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://candycargo.co.uk/products/airheads-watermelon-36x16g-0-55oz",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 8.5,
+              "cogs": 8.5,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 10.2,
+              "cogs": 10.2,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B0CSKRHBNX",
+      "name": "Airheads White Mystery 36 Pack",
+      "amazonPackQty": 36,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Sweet & Glory",
+          "offerId": 65,
+          "active": true,
+          "quotedCasePrice": 6.99,
+          "supplierCaseQty": 36,
+          "amazonSellPackQty": 36,
+          "salesPerCase": 1,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-18T15:31:38.267081+00:00",
+          "expiry": "31/12/2027",
+          "stockQty": 439,
+          "url": "https://sweetandglory.com/brands/a-b/airheads-wholesale-uk",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 6.99,
+              "cogs": 6.99,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 8.388,
+              "cogs": 8.388,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B0GX27XDW1",
+      "name": "Candy Paradise Fluffiez Blue Raspberry Foam Gummy 100g",
+      "amazonPackQty": 1,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Stateside Distribution",
+          "offerId": 21,
+          "active": true,
+          "quotedCasePrice": 7.5,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-22T23:13:55.067847+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://statesidedistribution.com/products/candy-paradise-fluffiez-blue-raspberry-foam-gummy-100g-pack-of-12",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 7.5,
+              "cogs": 0.625,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 9,
+              "cogs": 0.75,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B0G1X4JDYW",
+      "name": "Candy Paradise Fondant Burst Gummy 72g",
+      "amazonPackQty": 1,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Stateside Distribution",
+          "offerId": 25,
+          "active": true,
+          "quotedCasePrice": 7.5,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-22T23:13:55.067847+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://statesidedistribution.com/products/candy-paradise-fondant-burst-gummy-72g-pack-of-12",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 7.5,
+              "cogs": 0.625,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 9,
+              "cogs": 0.75,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B0FLX3DPQ9",
+      "name": "Candy Paradise Joyful Fruits Liquid Filled Gummy 10g - Jar of 50",
+      "amazonPackQty": 1,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Stateside Distribution",
+          "offerId": 26,
+          "active": true,
+          "quotedCasePrice": 4.5,
+          "supplierCaseQty": 1,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 1,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-22T23:13:55.067847+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://statesidedistribution.com/products/candy-paradise-joyful-fruits-liquid-filled-gummy-10g-jar-of-50",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 4.5,
+              "cogs": 4.5,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 5.3999999999999995,
+              "cogs": 5.3999999999999995,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": "Clarify atomic unit: jar of 50 versus individual sweet",
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B01LWXK6QL",
+      "name": "Cheetos Crunchy Flamin Hot 226g",
+      "amazonPackQty": 3,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "King's Candy",
+          "offerId": 3329,
+          "active": true,
+          "quotedCasePrice": 39.99,
+          "supplierCaseQty": 10,
+          "amazonSellPackQty": 3,
+          "salesPerCase": 3,
+          "leftover": 1,
+          "supplierCheckedAt": "2026-10-18T15:32:00.129857+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://americancandyuk.co.uk/products/cheetos-crunchy-flamin-hot-box-of-20-20-x-226g",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 39.99,
+              "cogs": 13.33,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 47.988,
+              "cogs": 15.996,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        },
+        {
+          "supplier": "Candy Cargo",
+          "offerId": 9998,
+          "active": true,
+          "quotedCasePrice": 33,
+          "supplierCaseQty": 10,
+          "amazonSellPackQty": 3,
+          "salesPerCase": 3,
+          "leftover": 1,
+          "supplierCheckedAt": "2026-10-18T15:32:52.23818+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://candycargo.co.uk/products/cheetos-crunchy-flamin-hot-10x226-8g",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 33,
+              "cogs": 11,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 39.6,
+              "cogs": 13.200000000000001,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B0937KFZL8",
+      "name": "Cheetos Crunchy Flamin Hot 226g",
+      "amazonPackQty": 2,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "King's Candy",
+          "offerId": 3329,
+          "active": true,
+          "quotedCasePrice": 39.99,
+          "supplierCaseQty": 10,
+          "amazonSellPackQty": 2,
+          "salesPerCase": 5,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-18T15:32:00.129857+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://americancandyuk.co.uk/products/cheetos-crunchy-flamin-hot-box-of-20-20-x-226g",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 39.99,
+              "cogs": 7.998,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 47.988,
+              "cogs": 9.5976,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        },
+        {
+          "supplier": "Candy Cargo",
+          "offerId": 9998,
+          "active": true,
+          "quotedCasePrice": 33,
+          "supplierCaseQty": 10,
+          "amazonSellPackQty": 2,
+          "salesPerCase": 5,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-18T15:32:52.23818+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://candycargo.co.uk/products/cheetos-crunchy-flamin-hot-10x226-8g",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 33,
+              "cogs": 6.6,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 39.6,
+              "cogs": 7.92,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B0B99L73ZF",
+      "name": "Cheetos Crunchy Original 226g",
+      "amazonPackQty": 3,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "King's Candy",
+          "offerId": 3331,
+          "active": true,
+          "quotedCasePrice": 44.99,
+          "supplierCaseQty": 10,
+          "amazonSellPackQty": 3,
+          "salesPerCase": 3,
+          "leftover": 1,
+          "supplierCheckedAt": "2026-10-18T15:32:00.129857+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://americancandyuk.co.uk/products/cheetos-crunchy-original-226g-box-of-10-10-x-226g",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 44.99,
+              "cogs": 14.996666666666668,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 53.988,
+              "cogs": 17.996,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        },
+        {
+          "supplier": "Candy Cargo",
+          "offerId": 9993,
+          "active": true,
+          "quotedCasePrice": 33,
+          "supplierCaseQty": 10,
+          "amazonSellPackQty": 3,
+          "salesPerCase": 3,
+          "leftover": 1,
+          "supplierCheckedAt": "2026-10-18T15:32:52.23818+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://candycargo.co.uk/products/cheetos-crunchy-10x226-8g",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 33,
+              "cogs": 11,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 39.6,
+              "cogs": 13.200000000000001,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B07CX3GRXV",
+      "name": "Cinnamon Toast Crunch Cereal 340g",
+      "amazonPackQty": 1,
+      "category": "SCENARIO_AVAILABLE",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 8.63,
+          "seen": "2026-09-30T17:22:22.12035+00:00"
+        },
+        {
+          "type": "seller storefront A1FPOQ0X0CHT30",
+          "price": 11.64,
+          "seen": "2026-10-22T15:03:49.831994+00:00"
+        }
+      ],
+      "priceLow": 8.63,
+      "priceHigh": 11.64,
+      "offers": [
+        {
+          "supplier": "Stateside Distribution",
+          "offerId": 41,
+          "active": true,
+          "quotedCasePrice": 40.67,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-22T23:13:55.067847+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://statesidedistribution.com/products/cinnamon-toast-crunch-breakfast-cereal-12oz-340g-pack-of-12",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 40.67,
+              "cogs": 3.3891666666666667,
+              "spreadBeforeOtherCosts": 5.240833333333335,
+              "caseSpreadBeforeOtherCosts": 62.890000000000015,
+              "requiredProfitPerSale": 2.0833333333333335,
+              "maxOtherCostsMeetingDefaultRules": 3.157500000000001,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 48.804,
+              "cogs": 4.067,
+              "spreadBeforeOtherCosts": 4.563000000000001,
+              "caseSpreadBeforeOtherCosts": 54.75600000000001,
+              "requiredProfitPerSale": 2.0833333333333335,
+              "maxOtherCostsMeetingDefaultRules": 2.479666666666667,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B07QCFG13J",
+      "name": "Cookie Crisp Cereal 10.6oz/300g",
+      "amazonPackQty": 1,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Stateside Distribution",
+          "offerId": 43,
+          "active": true,
+          "quotedCasePrice": 40.67,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-22T23:13:55.067847+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://statesidedistribution.com/products/cookie-crisp-cereal-10-6oz-300g-pack-of-12",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 40.67,
+              "cogs": 3.3891666666666667,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 48.804,
+              "cogs": 4.067,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B0DJCHDGNX",
+      "name": "Dr Pepper Blackberry 12fl oz/355ml",
+      "amazonPackQty": 1,
+      "category": "INACTIVE_ONLY",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Stateside Distribution",
+          "offerId": 46,
+          "active": false,
+          "quotedCasePrice": 7.99,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-01T21:59:22.884425+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://statesidedistribution.com/products/dr-pepper-blackberry-12fl-oz-355ml-pack-of-12",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 7.99,
+              "cogs": 0.6658333333333334,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 9.588,
+              "cogs": 0.7989999999999999,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B084WPYLML",
+      "name": "Dr Pepper Cream Soda 12floz/355ml",
+      "amazonPackQty": 1,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Stateside Distribution",
+          "offerId": 47,
+          "active": true,
+          "quotedCasePrice": 7.99,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-22T23:13:55.067847+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://statesidedistribution.com/products/dr-pepper-cream-soda-12floz-355ml-pack-of-12",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 7.99,
+              "cogs": 0.6658333333333334,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 9.588,
+              "cogs": 0.7989999999999999,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B01M11JB1F",
+      "name": "Fanta Berry 12fl oz 355ml pack-of-12",
+      "amazonPackQty": 1,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Stateside Distribution",
+          "offerId": 52,
+          "active": true,
+          "quotedCasePrice": 8.5,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-22T23:13:55.067847+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://statesidedistribution.com/products/fanta-berry-12fl-oz-355ml-pack-of-12",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 8.5,
+              "cogs": 0.7083333333333334,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 10.2,
+              "cogs": 0.85,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": "Stored pack=1 conflicts with pack-of-12 title",
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B003TL9TK4",
+      "name": "Fanta Grape Soda Can 12 Pack",
+      "amazonPackQty": 12,
+      "category": "SCENARIO_AVAILABLE",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 16.28,
+          "seen": "2026-09-30T17:21:13.617792+00:00"
+        }
+      ],
+      "priceLow": 16.28,
+      "priceHigh": 16.28,
+      "offers": [
+        {
+          "supplier": "Stateside Distribution",
+          "offerId": 53,
+          "active": true,
+          "quotedCasePrice": 8.5,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 12,
+          "salesPerCase": 1,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-22T23:13:55.067847+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://statesidedistribution.com/products/fanta-grape-flavoured-soda-355ml-pack-of-12",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 8.5,
+              "cogs": 8.5,
+              "spreadBeforeOtherCosts": 7.780000000000001,
+              "caseSpreadBeforeOtherCosts": 7.780000000000001,
+              "requiredProfitPerSale": 25,
+              "maxOtherCostsMeetingDefaultRules": -17.22,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 10.2,
+              "cogs": 10.2,
+              "spreadBeforeOtherCosts": 6.080000000000002,
+              "caseSpreadBeforeOtherCosts": 6.080000000000002,
+              "requiredProfitPerSale": 25,
+              "maxOtherCostsMeetingDefaultRules": -18.919999999999998,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        },
+        {
+          "supplier": "Candy Cargo",
+          "offerId": 10093,
+          "active": true,
+          "quotedCasePrice": 7.99,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 12,
+          "salesPerCase": 1,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-18T15:32:52.23818+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://candycargo.co.uk/products/fanta-grape-soda-can-12x355ml",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 7.99,
+              "cogs": 7.99,
+              "spreadBeforeOtherCosts": 8.290000000000001,
+              "caseSpreadBeforeOtherCosts": 8.290000000000001,
+              "requiredProfitPerSale": 25,
+              "maxOtherCostsMeetingDefaultRules": -16.71,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 9.588,
+              "cogs": 9.588,
+              "spreadBeforeOtherCosts": 6.692000000000002,
+              "caseSpreadBeforeOtherCosts": 6.692000000000002,
+              "requiredProfitPerSale": 25,
+              "maxOtherCostsMeetingDefaultRules": -18.308,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B01EHD67QG",
+      "name": "Fluff Marshmallow Spread 213g",
+      "amazonPackQty": 1,
+      "category": "MISSING_CASE_PRICE",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 4.31,
+          "seen": "2026-09-30T17:21:48.328447+00:00"
+        },
+        {
+          "type": "seller storefront A2F9IL191GVM3E",
+          "price": 4.67,
+          "seen": "2026-10-22T12:56:43.969861+00:00"
+        },
+        {
+          "type": "seller storefront AWJV3WH2WNVEW",
+          "price": 4.18,
+          "seen": "2026-10-22T16:22:55.92676+00:00"
+        }
+      ],
+      "priceLow": 4.18,
+      "priceHigh": 4.67,
+      "offers": [
+        {
+          "supplier": "Wholesale Sweets",
+          "offerId": 5377,
+          "active": false,
+          "quotedCasePrice": 27.39,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-09-29T14:06:38.186083+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://www.wholesalesweets.co.uk/marshmallow-fluff-213g",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 27.39,
+              "cogs": 2.2825,
+              "spreadBeforeOtherCosts": 1.8974999999999995,
+              "caseSpreadBeforeOtherCosts": 22.769999999999996,
+              "requiredProfitPerSale": 2.0833333333333335,
+              "maxOtherCostsMeetingDefaultRules": -0.18583333333333396,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 32.868,
+              "cogs": 2.7390000000000003,
+              "spreadBeforeOtherCosts": 1.4409999999999994,
+              "caseSpreadBeforeOtherCosts": 17.291999999999994,
+              "requiredProfitPerSale": 2.0833333333333335,
+              "maxOtherCostsMeetingDefaultRules": -0.6423333333333341,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        },
+        {
+          "supplier": "Americatessen",
+          "offerId": 10997,
+          "active": true,
+          "quotedCasePrice": 0,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-18T15:32:56.247461+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://www.americatessen.com/american-grocery-supplier-american-wholesalers-uk",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": null,
+              "cogs": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": null,
+              "cogs": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B0842XQYND",
+      "name": "Hi-Chew Chewy Sweet & Sour Watermelon Candy 1.76oz/50g",
+      "amazonPackQty": 1,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Stateside Distribution",
+          "offerId": 850,
+          "active": true,
+          "quotedCasePrice": 11.25,
+          "supplierCaseQty": 15,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 15,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-22T23:13:55.067847+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://statesidedistribution.com/products/v",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 11.25,
+              "cogs": 0.75,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 13.5,
+              "cogs": 0.9,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B01KKGPNMS",
+      "name": "Hi-Chew Tropical Mix 3.53oz/100g",
+      "amazonPackQty": 1,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Stateside Distribution",
+          "offerId": 853,
+          "active": true,
+          "quotedCasePrice": 7.99,
+          "supplierCaseQty": 6,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 6,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-22T23:13:55.067847+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://statesidedistribution.com/products/hi-chew-tropical-mix-3-53oz-100g-pack-of-6",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 7.99,
+              "cogs": 1.3316666666666668,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 9.588,
+              "cogs": 1.5979999999999999,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B000QJS9Y4",
+      "name": "Hidden Valley Original Ranch Dressing 473ml",
+      "amazonPackQty": 1,
+      "category": "NO_SUPPLIER_LINK",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 6.89,
+          "seen": "2026-09-30T17:21:13.617792+00:00"
+        }
+      ],
+      "priceLow": 6.89,
+      "priceHigh": 6.89,
+      "offers": [],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B088TWXSXP",
+      "name": "Hostess Twinkies Cakes with Creamy Filling - 6 Cakes",
+      "amazonPackQty": 6,
+      "category": "NO_SUPPLIER_LINK",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 4.99,
+          "seen": "2026-09-30T17:22:22.12035+00:00"
+        },
+        {
+          "type": "seller storefront A226DZC4BCEHGM",
+          "price": 9.96,
+          "seen": "2026-10-22T16:03:30.087677+00:00"
+        },
+        {
+          "type": "seller storefront A2F9IL191GVM3E",
+          "price": 6.37,
+          "seen": "2026-10-22T12:56:50.55932+00:00"
+        },
+        {
+          "type": "seller storefront A3O9PD21F5A9NN",
+          "price": 6.9,
+          "seen": "2026-10-22T16:05:53.292352+00:00"
+        }
+      ],
+      "priceLow": 4.99,
+      "priceHigh": 9.96,
+      "offers": [],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B00CGNGQXE",
+      "name": "Jell-O Berry Blue Gelatin Dessert 85g",
+      "amazonPackQty": 2,
+      "category": "INACTIVE_ONLY",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 6.73,
+          "seen": "2026-09-30T17:21:48.328447+00:00"
+        },
+        {
+          "type": "seller storefront A2GRC0NKNVNZQE",
+          "price": 9.95,
+          "seen": "2026-10-22T14:41:31.856623+00:00"
+        }
+      ],
+      "priceLow": 6.73,
+      "priceHigh": 9.95,
+      "offers": [
+        {
+          "supplier": "Sweet & Glory",
+          "offerId": 418,
+          "active": false,
+          "quotedCasePrice": 27.93,
+          "supplierCaseQty": 24,
+          "amazonSellPackQty": 2,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-09-30T21:56:40.006508+00:00",
+          "expiry": "29/06/2028",
+          "stockQty": 22,
+          "url": "https://sweetandglory.com/brands/i-m/jell-o-wholesale-uk",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 27.93,
+              "cogs": 2.3275,
+              "spreadBeforeOtherCosts": 4.4025,
+              "caseSpreadBeforeOtherCosts": 52.83,
+              "requiredProfitPerSale": 2.0833333333333335,
+              "maxOtherCostsMeetingDefaultRules": 2.3191666666666664,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 33.516,
+              "cogs": 2.7929999999999997,
+              "spreadBeforeOtherCosts": 3.9370000000000007,
+              "caseSpreadBeforeOtherCosts": 47.24400000000001,
+              "requiredProfitPerSale": 2.0833333333333335,
+              "maxOtherCostsMeetingDefaultRules": 1.8536666666666672,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B0868XN5RL",
+      "name": "Jell-O Orange Gelatin Dessert 85g",
+      "amazonPackQty": 2,
+      "category": "SCENARIO_AVAILABLE",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 5.5,
+          "seen": "2026-09-30T17:22:22.12035+00:00"
+        },
+        {
+          "type": "manual screenshot 2026-10-21",
+          "price": 6,
+          "seen": "2026-10-21"
+        }
+      ],
+      "priceLow": 5.5,
+      "priceHigh": 6,
+      "offers": [
+        {
+          "supplier": "Sweet & Glory",
+          "offerId": 424,
+          "active": true,
+          "quotedCasePrice": 28.03,
+          "supplierCaseQty": 24,
+          "amazonSellPackQty": 2,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-18T15:31:38.267081+00:00",
+          "expiry": "04/07/2028",
+          "stockQty": 11,
+          "url": "https://sweetandglory.com/brands/i-m/jell-o-wholesale-uk",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 28.03,
+              "cogs": 2.3358333333333334,
+              "spreadBeforeOtherCosts": 3.1641666666666666,
+              "caseSpreadBeforeOtherCosts": 37.97,
+              "requiredProfitPerSale": 2.0833333333333335,
+              "maxOtherCostsMeetingDefaultRules": 1.080833333333333,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 33.636,
+              "cogs": 2.8030000000000004,
+              "spreadBeforeOtherCosts": 2.6969999999999996,
+              "caseSpreadBeforeOtherCosts": 32.364,
+              "requiredProfitPerSale": 2.0833333333333335,
+              "maxOtherCostsMeetingDefaultRules": 0.6136666666666661,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B08T5WX4KH",
+      "name": "Jelly Belly American Classics Jelly Beans 70g",
+      "amazonPackQty": 1,
+      "category": "SCENARIO_AVAILABLE",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 2.49,
+          "seen": "2026-09-30T17:22:57.805101+00:00"
+        },
+        {
+          "type": "manual screenshot 2026-10-21",
+          "price": 4.41,
+          "seen": "2026-10-21"
+        }
+      ],
+      "priceLow": 2.49,
+      "priceHigh": 4.41,
+      "offers": [
+        {
+          "supplier": "Sweet & Glory",
+          "offerId": 429,
+          "active": true,
+          "quotedCasePrice": 15.41,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-18T15:31:38.267081+00:00",
+          "expiry": "18/11/2027",
+          "stockQty": 7,
+          "url": "https://sweetandglory.com/brands/i-m/jelly-belly-wholesale-uk",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 15.41,
+              "cogs": 1.2841666666666667,
+              "spreadBeforeOtherCosts": 1.2058333333333335,
+              "caseSpreadBeforeOtherCosts": 14.470000000000002,
+              "requiredProfitPerSale": 2.0833333333333335,
+              "maxOtherCostsMeetingDefaultRules": -0.8775,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 18.492,
+              "cogs": 1.5410000000000001,
+              "spreadBeforeOtherCosts": 0.9490000000000001,
+              "caseSpreadBeforeOtherCosts": 11.388000000000002,
+              "requiredProfitPerSale": 2.0833333333333335,
+              "maxOtherCostsMeetingDefaultRules": -1.1343333333333334,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B0BTHXVGSX",
+      "name": "Lucky Charms 300g",
+      "amazonPackQty": 1,
+      "category": "INACTIVE_ONLY",
+      "prices": [
+        {
+          "type": "seller storefront A2F9IL191GVM3E",
+          "price": 6.89,
+          "seen": "2026-10-22T12:57:06.086518+00:00"
+        },
+        {
+          "type": "seller storefront A3O9PD21F5A9NN",
+          "price": 6.7,
+          "seen": "2026-10-22T16:05:37.225805+00:00"
+        }
+      ],
+      "priceLow": 6.7,
+      "priceHigh": 6.89,
+      "offers": [
+        {
+          "supplier": "Stateside Distribution",
+          "offerId": 865,
+          "active": false,
+          "quotedCasePrice": 40.67,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-09-29T14:21:53.468014+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://statesidedistribution.com/products/lucky-charms-cereal-10-5oz-297-7g-pack-of-12",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 40.67,
+              "cogs": 3.3891666666666667,
+              "spreadBeforeOtherCosts": 3.3108333333333335,
+              "caseSpreadBeforeOtherCosts": 39.730000000000004,
+              "requiredProfitPerSale": 2.0833333333333335,
+              "maxOtherCostsMeetingDefaultRules": 1.2275,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 48.804,
+              "cogs": 4.067,
+              "spreadBeforeOtherCosts": 2.633,
+              "caseSpreadBeforeOtherCosts": 31.596,
+              "requiredProfitPerSale": 2.0833333333333335,
+              "maxOtherCostsMeetingDefaultRules": 0.5496666666666665,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B0DJP8P3DF",
+      "name": "Lucky Charms 300g",
+      "amazonPackQty": 1,
+      "category": "INACTIVE_ONLY",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 6.52,
+          "seen": "2026-09-30T17:22:57.805101+00:00"
+        },
+        {
+          "type": "seller storefront A2F9IL191GVM3E",
+          "price": 6.69,
+          "seen": "2026-10-22T12:56:49.375975+00:00"
+        },
+        {
+          "type": "seller storefront AWJV3WH2WNVEW",
+          "price": 6.7,
+          "seen": "2026-10-22T16:23:14.399221+00:00"
+        }
+      ],
+      "priceLow": 6.52,
+      "priceHigh": 6.7,
+      "offers": [
+        {
+          "supplier": "Stateside Distribution",
+          "offerId": 865,
+          "active": false,
+          "quotedCasePrice": 40.67,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-09-29T14:21:53.468014+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://statesidedistribution.com/products/lucky-charms-cereal-10-5oz-297-7g-pack-of-12",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 40.67,
+              "cogs": 3.3891666666666667,
+              "spreadBeforeOtherCosts": 3.130833333333333,
+              "caseSpreadBeforeOtherCosts": 37.56999999999999,
+              "requiredProfitPerSale": 2.0833333333333335,
+              "maxOtherCostsMeetingDefaultRules": 1.0474999999999994,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 48.804,
+              "cogs": 4.067,
+              "spreadBeforeOtherCosts": 2.4529999999999994,
+              "caseSpreadBeforeOtherCosts": 29.435999999999993,
+              "requiredProfitPerSale": 2.0833333333333335,
+              "maxOtherCostsMeetingDefaultRules": 0.3696666666666659,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B099PGQBLV",
+      "name": "Mike & Ike Mega Mix Sour! 816g",
+      "amazonPackQty": 1,
+      "category": "SCENARIO_AVAILABLE",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 15.44,
+          "seen": "2026-09-30T17:22:57.805101+00:00"
+        }
+      ],
+      "priceLow": 15.44,
+      "priceHigh": 15.44,
+      "offers": [
+        {
+          "supplier": "Sweet & Glory",
+          "offerId": 140,
+          "active": true,
+          "quotedCasePrice": 35.99,
+          "supplierCaseQty": 6,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 6,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-18T15:31:38.267081+00:00",
+          "expiry": "31/08/2027",
+          "stockQty": 9,
+          "url": "https://sweetandglory.com/brands/i-m/mike-and-ike-wholesale-uk",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 35.99,
+              "cogs": 5.998333333333334,
+              "spreadBeforeOtherCosts": 9.441666666666666,
+              "caseSpreadBeforeOtherCosts": 56.65,
+              "requiredProfitPerSale": 4.166666666666667,
+              "maxOtherCostsMeetingDefaultRules": 5.2749999999999995,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 43.188,
+              "cogs": 7.198,
+              "spreadBeforeOtherCosts": 8.241999999999999,
+              "caseSpreadBeforeOtherCosts": 49.452,
+              "requiredProfitPerSale": 4.166666666666667,
+              "maxOtherCostsMeetingDefaultRules": 4.075333333333332,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B087QLHJ4S",
+      "name": "Mitani Classic Chicken Salt 200g",
+      "amazonPackQty": 1,
+      "category": "NO_SUPPLIER_LINK",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 5.97,
+          "seen": "2026-09-30T17:22:22.12035+00:00"
+        },
+        {
+          "type": "seller storefront A2F9IL191GVM3E",
+          "price": 6.19,
+          "seen": "2026-10-22T12:56:44.369783+00:00"
+        },
+        {
+          "type": "seller storefront A38Z8Q6NGM1ZUV",
+          "price": 6.3,
+          "seen": "2026-10-22T22:15:56.795266+00:00"
+        },
+        {
+          "type": "seller storefront AWJV3WH2WNVEW",
+          "price": 6.02,
+          "seen": "2026-10-22T16:23:05.965206+00:00"
+        }
+      ],
+      "priceLow": 5.97,
+      "priceHigh": 6.3,
+      "offers": [],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B08NQ11PD2",
+      "name": "Nerds Grape & Strawberry Theatre Box 141g",
+      "amazonPackQty": 6,
+      "category": "SCENARIO_AVAILABLE",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 17.84,
+          "seen": "2026-09-30T17:22:57.805101+00:00"
+        },
+        {
+          "type": "manual screenshot 2026-10-21",
+          "price": 14.99,
+          "seen": "2026-10-21"
+        }
+      ],
+      "priceLow": 14.99,
+      "priceHigh": 17.84,
+      "offers": [
+        {
+          "supplier": "Candy Cargo",
+          "offerId": 10579,
+          "active": true,
+          "quotedCasePrice": 16,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 6,
+          "salesPerCase": 2,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-18T15:32:52.23818+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://candycargo.co.uk/products/nerds-grape-strawberry-12x141g-big",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 16,
+              "cogs": 8,
+              "spreadBeforeOtherCosts": 6.99,
+              "caseSpreadBeforeOtherCosts": 13.98,
+              "requiredProfitPerSale": 12.5,
+              "maxOtherCostsMeetingDefaultRules": -5.51,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 19.2,
+              "cogs": 9.6,
+              "spreadBeforeOtherCosts": 5.390000000000001,
+              "caseSpreadBeforeOtherCosts": 10.780000000000001,
+              "requiredProfitPerSale": 12.5,
+              "maxOtherCostsMeetingDefaultRules": -7.109999999999999,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B08HR8VQ7G",
+      "name": "Nerds Gummy Clusters Rainbow 141g",
+      "amazonPackQty": 1,
+      "category": "SCENARIO_AVAILABLE",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 5.33,
+          "seen": "2026-09-30T17:22:22.12035+00:00"
+        },
+        {
+          "type": "manual screenshot 2026-10-21",
+          "price": 5.19,
+          "seen": "2026-10-21"
+        },
+        {
+          "type": "seller storefront A1FPOQ0X0CHT30",
+          "price": 6.66,
+          "seen": "2026-10-22T15:03:31.675503+00:00"
+        },
+        {
+          "type": "seller storefront AWJV3WH2WNVEW",
+          "price": 5.71,
+          "seen": "2026-10-22T16:24:54.258195+00:00"
+        }
+      ],
+      "priceLow": 5.19,
+      "priceHigh": 6.66,
+      "offers": [
+        {
+          "supplier": "Candy Cargo",
+          "offerId": 10583,
+          "active": true,
+          "quotedCasePrice": 26,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-18T15:32:52.23818+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://candycargo.co.uk/products/nerds-rainbow-medium-gummy-clusters-peg-bag-12x141g",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 26,
+              "cogs": 2.1666666666666665,
+              "spreadBeforeOtherCosts": 3.023333333333334,
+              "caseSpreadBeforeOtherCosts": 36.28000000000001,
+              "requiredProfitPerSale": 2.0833333333333335,
+              "maxOtherCostsMeetingDefaultRules": 0.9400000000000004,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 31.2,
+              "cogs": 2.6,
+              "spreadBeforeOtherCosts": 2.5900000000000003,
+              "caseSpreadBeforeOtherCosts": 31.080000000000005,
+              "requiredProfitPerSale": 2.0833333333333335,
+              "maxOtherCostsMeetingDefaultRules": 0.5066666666666668,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": {
+        "status": "CATALOGUE_DIMENSION_SCENARIO",
+        "feesExVat": 3.03,
+        "feesIf20PercentFeeVat": 3.64,
+        "source": {
+          "asin": "B08HR8VQ7G",
+          "price": 5.19,
+          "dimensionsCm": [
+            17.1,
+            13.6,
+            6.1
+          ],
+          "weightG": 142,
+          "provenance": "Stored Amazon detail facts; not physically measured; complete parcel weight may differ.",
+          "estimatedFeesExVat": 3.03,
+          "estimatedFeesWith20PercentFeeVat": 3.64,
+          "supplierCostIf20PercentVatAdded": 2.6,
+          "remainderBeforePrepDeliveryStorage": -1.05
+        },
+        "isLiveQuote": false
+      }
+    },
+    {
+      "asin": "B0088HQX08",
+      "name": "Pantainorasingh Shrimp Paste 100g",
+      "amazonPackQty": 1,
+      "category": "NO_SUPPLIER_LINK",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 3.99,
+          "seen": "2026-09-30T17:21:13.617792+00:00"
+        },
+        {
+          "type": "seller storefront A3O9PD21F5A9NN",
+          "price": 4.5,
+          "seen": "2026-10-22T16:05:17.938572+00:00"
+        }
+      ],
+      "priceLow": 3.99,
+      "priceHigh": 4.5,
+      "offers": [],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B00K28S8QS",
+      "name": "Pepperidge Farm Goldfish Cheddar 6.6oz - Pack of 3",
+      "amazonPackQty": 3,
+      "category": "NO_SUPPLIER_LINK",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 11.89,
+          "seen": "2026-09-30T17:21:48.328447+00:00"
+        },
+        {
+          "type": "seller storefront A1FPOQ0X0CHT30",
+          "price": 14.68,
+          "seen": "2026-10-22T15:03:19.617294+00:00"
+        },
+        {
+          "type": "seller storefront A2GRC0NKNVNZQE",
+          "price": 18.5,
+          "seen": "2026-10-22T14:41:30.983128+00:00"
+        },
+        {
+          "type": "seller storefront A3O9PD21F5A9NN",
+          "price": 14.99,
+          "seen": "2026-10-22T16:05:28.342278+00:00"
+        }
+      ],
+      "priceLow": 11.89,
+      "priceHigh": 18.5,
+      "offers": [],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B0012NLMP6",
+      "name": "Red Vines Original Red Twists Candy 141g",
+      "amazonPackQty": 1,
+      "category": "NO_SUPPLIER_LINK",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 5.74,
+          "seen": "2026-09-30T17:21:13.617792+00:00"
+        },
+        {
+          "type": "seller storefront A1BTXEEXK8JSEO",
+          "price": 5.49,
+          "seen": "2026-10-22T15:59:14.081318+00:00"
+        },
+        {
+          "type": "seller storefront A226DZC4BCEHGM",
+          "price": 5.74,
+          "seen": "2026-10-22T16:03:29.149287+00:00"
+        }
+      ],
+      "priceLow": 5.49,
+      "priceHigh": 5.74,
+      "offers": [],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B07KRLKR73",
+      "name": "Reese's Puffs 326g",
+      "amazonPackQty": 1,
+      "category": "MISSING_CASE_PRICE",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 6.54,
+          "seen": "2026-09-30T17:22:22.12035+00:00"
+        },
+        {
+          "type": "seller storefront AWJV3WH2WNVEW",
+          "price": 6.41,
+          "seen": "2026-10-22T16:25:30.208302+00:00"
+        }
+      ],
+      "priceLow": 6.41,
+      "priceHigh": 6.54,
+      "offers": [
+        {
+          "supplier": "Americatessen",
+          "offerId": 10990,
+          "active": true,
+          "quotedCasePrice": 0,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 1,
+          "salesPerCase": 12,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-18T15:32:56.247461+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://www.americatessen.com/american-breakfast-supplier-american-wholesalers-uk",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": null,
+              "cogs": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": null,
+              "cogs": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B00DB7VGY8",
+      "name": "Tic Tac Fresh Mint 18g",
+      "amazonPackQty": 12,
+      "category": "INACTIVE_ONLY",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Wholesale Sweets",
+          "offerId": 6135,
+          "active": false,
+          "quotedCasePrice": 17.29,
+          "supplierCaseQty": 24,
+          "amazonSellPackQty": 12,
+          "salesPerCase": 2,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-14T22:31:01.636077+00:00",
+          "expiry": "",
+          "stockQty": null,
+          "url": "https://www.wholesalesweets.co.uk/tic-tac-fresh-mint-18g",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 17.29,
+              "cogs": 8.645,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 20.747999999999998,
+              "cogs": 10.373999999999999,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B0GNNLXRT8",
+      "name": "Toxic Waste Nuclear Sludge Blue Raspberry Chew Bar 50 x 20g",
+      "amazonPackQty": 50,
+      "category": "MISSING_SELL_PRICE",
+      "prices": [],
+      "priceLow": null,
+      "priceHigh": null,
+      "offers": [
+        {
+          "supplier": "Sweet & Glory",
+          "offerId": 691,
+          "active": true,
+          "quotedCasePrice": 6.8,
+          "supplierCaseQty": 50,
+          "amazonSellPackQty": 50,
+          "salesPerCase": 1,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-18T15:31:38.267081+00:00",
+          "expiry": "31/05/2028",
+          "stockQty": 11,
+          "url": "https://sweetandglory.com/brands/t-z/toxic-waste-wholesale-uk",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 6.8,
+              "cogs": 6.8,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 8.16,
+              "cogs": 8.16,
+              "spreadBeforeOtherCosts": null,
+              "caseSpreadBeforeOtherCosts": null,
+              "requiredProfitPerSale": null,
+              "maxOtherCostsMeetingDefaultRules": null,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B072KNM1PZ",
+      "name": "Trident Cinnamon Sugar Free Gum 14 Sticks",
+      "amazonPackQty": 12,
+      "category": "SCENARIO_AVAILABLE",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 19.89,
+          "seen": "2026-09-30T17:22:22.12035+00:00"
+        },
+        {
+          "type": "seller storefront A2L8Z4LF1SP15L",
+          "price": 19.99,
+          "seen": "2026-10-22T21:52:37.220014+00:00"
+        },
+        {
+          "type": "seller storefront AGPUVTKGKK3YU",
+          "price": 19.9,
+          "seen": "2026-10-22T21:37:33.109298+00:00"
+        }
+      ],
+      "priceLow": 19.89,
+      "priceHigh": 19.99,
+      "offers": [
+        {
+          "supplier": "Sweet & Glory",
+          "offerId": 156,
+          "active": true,
+          "quotedCasePrice": 7.63,
+          "supplierCaseQty": 12,
+          "amazonSellPackQty": 12,
+          "salesPerCase": 1,
+          "leftover": 0,
+          "supplierCheckedAt": "2026-10-18T15:31:38.267081+00:00",
+          "expiry": "16/09/2027",
+          "stockQty": 195,
+          "url": "https://sweetandglory.com/brands/t-z/trident-wholesale-uk",
+          "scenarios": [
+            {
+              "scenarioVatRate": 0,
+              "caseCash": 7.63,
+              "cogs": 7.63,
+              "spreadBeforeOtherCosts": 12.260000000000002,
+              "caseSpreadBeforeOtherCosts": 12.260000000000002,
+              "requiredProfitPerSale": 25,
+              "maxOtherCostsMeetingDefaultRules": -12.739999999999998,
+              "netProfit": null,
+              "roi": null
+            },
+            {
+              "scenarioVatRate": 0.2,
+              "caseCash": 9.155999999999999,
+              "cogs": 9.155999999999999,
+              "spreadBeforeOtherCosts": 10.734000000000002,
+              "caseSpreadBeforeOtherCosts": 10.734000000000002,
+              "requiredProfitPerSale": 25,
+              "maxOtherCostsMeetingDefaultRules": -14.265999999999998,
+              "netProfit": null,
+              "roi": null
+            }
+          ]
+        }
+      ],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": "Verify 14 sticks in supplier packet; 31g versus 25.5g/0.9oz",
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B005GTC5ZI",
+      "name": "Trung Nguyen Vietnamese Coffee Gourmet Blend 500g",
+      "amazonPackQty": 1,
+      "category": "NO_SUPPLIER_LINK",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 8.4,
+          "seen": "2026-09-30T17:21:13.617792+00:00"
+        }
+      ],
+      "priceLow": 8.4,
+      "priceHigh": 8.4,
+      "offers": [],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    },
+    {
+      "asin": "B00CR3RV3C",
+      "name": "Zheng Feng Five Spice Powder 100g",
+      "amazonPackQty": 1,
+      "category": "NO_SUPPLIER_LINK",
+      "prices": [
+        {
+          "type": "candidate observation",
+          "price": 2.43,
+          "seen": "2026-09-30T17:21:48.328447+00:00"
+        }
+      ],
+      "priceLow": 2.43,
+      "priceHigh": 2.43,
+      "offers": [],
+      "netProfit": null,
+      "roi": null,
+      "decision": "NEEDS_EVIDENCE",
+      "packWarning": null,
+      "interimFeeEstimate": null
+    }
+  ]
+}
+
