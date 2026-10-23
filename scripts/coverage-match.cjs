@@ -1,0 +1,8 @@
+// Offline, read-only replay of the production matcher against a dated DB export.
+const fs=require('node:fs'),vm=require('node:vm'),ts=require('typescript');
+const data=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
+function load(file,requireFn){const exports={};vm.runInNewContext(ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText,{exports,URL,Request,require:requireFn});return exports;}
+const parser=load('lib/product-parser.ts',()=>{throw Error('Unexpected parser import')});
+const sql=async(strings,...values)=>{const q=strings.join('?');if(q.includes('count(*)'))return [{total:data.amazon.length}];if(q.includes('FROM supplier_offers'))return data.offers;if(q.includes('FROM amazon_catalogue_candidates'))return data.amazon;if(q.includes('FROM master_product_identities'))return data.masters;if(q.includes('product_brand_aliases'))return data.ba;if(q.includes('product_variant_aliases'))return data.va;if(q.includes('product_noise_terms'))return data.nt;throw Error(q)};
+const route=load('app/api/amazon-catalogue-match/route.ts',name=>{if(name==='next/server')return {NextResponse:{json:body=>body}};if(name.endsWith('/db'))return {getSql:()=>sql};if(name.endsWith('/product-parser'))return parser;throw Error(name)});
+route.GET(new Request('https://source-stack.test/api?limit=100')).then(result=>{result.snapshotDate='2026-10-23';result.offlineFullReplay=true;fs.writeFileSync(process.argv[3],JSON.stringify(result,null,2));console.log(JSON.stringify({checked:result.amazonChecked,strong:result.strong,review:result.review,noCandidate:result.noCandidate,commercialSummary:result.commercialSummary}));});
