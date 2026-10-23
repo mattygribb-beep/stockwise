@@ -1,13 +1,13 @@
 'use client'
 import {useEffect,useRef,useState} from 'react'
-import {BrowserMultiFormatOneDReader,IBrowserCodeReaderControls} from '@zxing/browser'
+import {BrowserMultiFormatOneDReader,IScannerControls} from '@zxing/browser'
 import {BarcodeFormat,DecodeHintType} from '@zxing/library'
 type Scan={barcode:string;quantity:number;name:string;brand?:string;size?:string;asin?:string;source?:string;status?:string;scannedAt:string}
 type Mode='unique'|'count'
 const esc=(v:any)=>'"'+String(v??'').replace(/"/g,'""')+'"'
 export default function MobileBarcode(){
  const [rows,setRows]=useState<Scan[]>([]),[manual,setManual]=useState(''),[running,setRunning]=useState(false),[msg,setMsg]=useState('Ready to scan'),[mode,setMode]=useState<Mode>('unique'),[flash,setFlash]=useState(false),[torch,setTorch]=useState(false),[torchOK,setTorchOK]=useState(false),[zoomOK,setZoomOK]=useState(false),[zoom,setZoom]=useState(1)
- const video=useRef<HTMLVideoElement>(null),controls=useRef<IBrowserCodeReaderControls|null>(null),rowsRef=useRef<Scan[]>([]),modeRef=useRef<Mode>('unique'),last=useRef<{code:string,time:number}>({code:'',time:0}),track=useRef<MediaStreamTrack|null>(null),wantedRunning=useRef(false),restarting=useRef(false)
+ const video=useRef<HTMLVideoElement>(null),controls=useRef<IScannerControls|null>(null),rowsRef=useRef<Scan[]>([]),modeRef=useRef<Mode>('unique'),last=useRef<{code:string,time:number}>({code:'',time:0}),track=useRef<MediaStreamTrack|null>(null),wantedRunning=useRef(false),restarting=useRef(false)
  const persist=(next:Scan[])=>{rowsRef.current=next;setRows(next);localStorage.setItem('source-stack-warehouse-scans',JSON.stringify(next))}
  useEffect(()=>{try{const saved=JSON.parse(localStorage.getItem('source-stack-warehouse-scans')||'[]');rowsRef.current=saved;setRows(saved);const m=(localStorage.getItem('source-stack-scan-mode') as Mode)||'unique';modeRef.current=m;setMode(m)}catch{};const wake=()=>{if(document.visibilityState==='visible'&&wantedRunning.current&&!track.current){setMsg('Resuming scanner…');restarting.current=false;void start()}};document.addEventListener('visibilitychange',wake);return()=>{document.removeEventListener('visibilitychange',wake);wantedRunning.current=false;controls.current?.stop()}},[])
  const feedback=()=>{setFlash(true);setTimeout(()=>setFlash(false),120);navigator.vibrate?.(35);try{const A=(window.AudioContext||(window as any).webkitAudioContext);const a=new A(),o=a.createOscillator(),g=a.createGain();o.frequency.value=1050;g.gain.value=.045;o.connect(g);g.connect(a.destination);o.start();o.stop(a.currentTime+.055)}catch{}}

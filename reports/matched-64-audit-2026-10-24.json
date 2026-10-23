@@ -1,0 +1,5284 @@
+{
+  "audit_date_uk": "2026-10-24",
+  "database_read_at": "2026-10-23T23:09:28.824646+00:00",
+  "cohort_snapshot": "2026-10-23",
+  "scope": "Fixed 64-ASIN cohort from prior replay; current stored evidence audit, no new live price or supplier verification. No database writes.",
+  "summary": {
+    "cohort": 64,
+    "verified_asins": 9,
+    "verified_selected_supplier_pairs": 7,
+    "with_saved_details": 33,
+    "without_saved_details": 31,
+    "with_valid_amazon_code": 37,
+    "without_valid_amazon_code": 27,
+    "with_valid_supplier_code": 23,
+    "barcode_agrees": 21,
+    "with_recorded_amazon_price": 62,
+    "missing_supplier_cost": 2,
+    "with_positive_recorded_supplier_stock": 43,
+    "states": {
+      "IDENTITY_REVIEW": 54,
+      "VERIFIED_PAIR_NEEDS_COMMERCIAL_EVIDENCE": 7,
+      "HOLD_MISSING_SUPPLIER_PRICE": 2,
+      "HOLD_TRUNCATED_SUPPLIER_IDENTITY": 1
+    },
+    "buy_ready": 0,
+    "saved_market_checks_in_database": 0,
+    "confirmed_complete_packaged_measurements": 0
+  },
+  "rows": [
+    {
+      "asin": "B071KX5NR9",
+      "title": "Heinz Sweet Relish 375ml Bottle",
+      "amazon_url": "https://www.amazon.co.uk/dp/B071KX5NR9",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "HEINZ001",
+      "supplier_product": "Heinz Squeeze Sweet Relish 375ml",
+      "supplier_url": "https://sweetandglory.com/brands/f-h/heinz-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 24.47,
+      "unit_cost": 2.04,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 65,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "13/11/2027",
+      "amazon_recorded_price": 5.98,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:22.12035+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [
+        {
+          "seller_id": "A2F9IL191GVM3E",
+          "price": 5.44,
+          "record_last_seen_at": "2026-10-22T12:57:17.271927+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00013000001373",
+          "source": "candidate",
+          "field": "ean"
+        },
+        {
+          "code": "00013000001373",
+          "source": "candidate",
+          "field": "upc"
+        },
+        {
+          "code": "00013000001373",
+          "source": "candidate",
+          "field": "gtin"
+        },
+        {
+          "code": "00013000001373",
+          "source": "details:A2F9IL191GVM3E",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": "00013000001373",
+      "barcode_agrees": true,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A2F9IL191GVM3E",
+          "status": "captured",
+          "captured_at": "2026-10-22T13:15:50.734407+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B071KX5NR9",
+          "captured_title": "Heinz Sweet Relish 375ml Bottle",
+          "structured_size": "443 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "375 ml (Pack of 1)",
+            "Container Type": "Jar",
+            "Number of Items": "1",
+            "Package Size Name": "Pack of 1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A2F9IL191GVM3E",
+          "facts": {
+            "Item Weight": "443 g",
+            "Item Package Weight": "0.46 Kilograms"
+          },
+          "captured_at": "2026-10-22T13:15:50.734407+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B000SRHUNA",
+      "title": "Jello Cherry 85g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B000SRHUNA",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "JELL016",
+      "supplier_product": "Jell-O Cherry 85g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/jell-o-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 24,
+      "case_price": 27.99,
+      "unit_cost": 1.17,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 5,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "24/05/2028",
+      "amazon_recorded_price": 3.99,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:13.617792+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [
+        {
+          "code": "00043000200032",
+          "source": "candidate",
+          "field": "upc"
+        },
+        {
+          "code": "00043000200032",
+          "source": "candidate",
+          "field": "gtin"
+        }
+      ],
+      "valid_supplier_code": "00043000200032",
+      "barcode_agrees": true,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B003ZZ8G76",
+      "title": "Jell-O Peach Gelatin Dessert 85g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B003ZZ8G76",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "JELL039",
+      "supplier_product": "Jell-O Peach 85g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/jell-o-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 24,
+      "case_price": 28.14,
+      "unit_cost": 1.17,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 8,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "12/03/2028",
+      "amazon_recorded_price": 4.5,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:13.617792+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [
+        {
+          "code": "00043000200247",
+          "source": "candidate",
+          "field": "ean"
+        }
+      ],
+      "valid_supplier_code": "00043000200247",
+      "barcode_agrees": true,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B0041B8J7K",
+      "title": "JELL-O Black Cherry Gelatin Dessert 85g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B0041B8J7K",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "JELL009",
+      "supplier_product": "Jell-O Black Cherry 85g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/jell-o-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 24,
+      "case_price": 28.27,
+      "unit_cost": 1.18,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 11,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "03/03/2028",
+      "amazon_recorded_price": 4.32,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:13.617792+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [
+        {
+          "code": "00043000200087",
+          "source": "candidate",
+          "field": "ean"
+        }
+      ],
+      "valid_supplier_code": "00043000200087",
+      "barcode_agrees": true,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B00535ZIY0",
+      "title": "Canada Candy Coffee Crisp Chocolate Bar 4 x 50g Bars. Imported from Canada.",
+      "amazon_url": "https://www.amazon.co.uk/dp/B00535ZIY0",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "COFF002",
+      "supplier_product": "Nestle Coffee Crisp 50g (CAN)",
+      "supplier_url": "https://sweetandglory.com/brands/n-p/nestle-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 48,
+      "case_price": 61.03,
+      "unit_cost": 1.27,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 3,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "30/04/2027",
+      "amazon_recorded_price": 17.3,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:13.617792+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [
+        {
+          "code": "00059800094214",
+          "source": "candidate",
+          "field": "ean"
+        }
+      ],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 4,
+        "supplierCaseQty": 48,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B005JD2YCU",
+      "title": "Jell-o grape 85 g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B005JD2YCU",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "JELL014",
+      "supplier_product": "Jell-O Grape 85g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/jell-o-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 24,
+      "case_price": 28.25,
+      "unit_cost": 1.18,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 11,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "07/05/2028",
+      "amazon_recorded_price": 3.69,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:13.617792+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [
+        {
+          "seller_id": "AWJV3WH2WNVEW",
+          "price": 4.39,
+          "record_last_seen_at": "2026-10-22T16:27:30.340019+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00043000200100",
+          "source": "candidate",
+          "field": "ean"
+        },
+        {
+          "code": "00043000200100",
+          "source": "details:AWJV3WH2WNVEW",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": "00043000200100",
+      "barcode_agrees": true,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "AWJV3WH2WNVEW",
+          "status": "captured",
+          "captured_at": "2026-10-22T21:12:45.581798+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B005JD2YCU",
+          "captured_title": "Jell-o grape 85 g",
+          "structured_size": "86.2 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "85 g (Pack of 1)",
+            "Number of Items": "1",
+            "Package Size Name": "85 g"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "AWJV3WH2WNVEW",
+          "facts": {
+            "Item Weight": "86.2 g",
+            "Item Package Weight": "0.1 Kilograms"
+          },
+          "captured_at": "2026-10-22T21:12:45.581798+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B07CX3GRXV",
+      "title": "Cinnamon Toast Crunch, Cereal, with Whole Grain 340g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B07CX3GRXV",
+      "state": "VERIFIED_PAIR_NEEDS_COMMERCIAL_EVIDENCE",
+      "asin_identity_verified": true,
+      "selected_supplier_pair_verified": true,
+      "original_parser_band": "STRONG",
+      "supplier": "Stateside Distribution",
+      "supplier_offer_id": "8072236761228",
+      "supplier_product": "Cinnamon Toast Crunch Cereal 12oz/340g",
+      "supplier_url": "https://statesidedistribution.com/products/cinnamon-toast-crunch-breakfast-cereal-12oz-340g-pack-of-12",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 40.67,
+      "unit_cost": 3.3892,
+      "supplier_cost_observed_at": "2026-10-22T23:13:55.067847+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 8.63,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:22.12035+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [
+        {
+          "seller_id": "A1FPOQ0X0CHT30",
+          "price": 11.64,
+          "record_last_seen_at": "2026-10-22T15:03:49.831994+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00016000122543",
+          "source": "candidate",
+          "field": "ean"
+        },
+        {
+          "code": "00016000122543",
+          "source": "manual evidence",
+          "field": "amazon_upc"
+        },
+        {
+          "code": "00016000122543",
+          "source": "details:A1FPOQ0X0CHT30",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": "00016000122543",
+      "barcode_agrees": true,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A1FPOQ0X0CHT30",
+          "status": "captured",
+          "captured_at": "2026-10-22T15:27:08.455078+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B07CX3GRXV",
+          "captured_title": "CINNAMON TOAST CRUNCH Cereal, 354g",
+          "structured_size": "340 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "340 g (Pack of 1)",
+            "Container Type": "Box",
+            "Number of Items": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A1FPOQ0X0CHT30",
+          "facts": {
+            "Item Weight": "340 g",
+            "Item Package Weight": "0.41 Kilograms"
+          },
+          "captured_at": "2026-10-22T15:27:08.455078+00:00"
+        }
+      ],
+      "verified_listing_packs": [
+        {
+          "pack_qty": 1,
+          "unit_size": "340g"
+        }
+      ],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "New storefront capture title says 354g, while saved identity and supplier say 340g. Shared barcode is insufficient: verify the current physical pack before buying.",
+      "specific_actions": [
+        "CONFIRM_SUPPLIER_STOCK",
+        "RESOLVE_SPECIFIC_CAUTION"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B08KGQ6HZ6",
+      "title": "Nerds Big Chewy Candy, 120g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B08KGQ6HZ6",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "NERD027",
+      "supplier_product": "Nerds Big Chewy Theatre 120g",
+      "supplier_url": "https://sweetandglory.com/brands/n-p/nerds-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 14.57,
+      "unit_cost": 1.21,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 288,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "10/06/2027",
+      "amazon_recorded_price": 4.96,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:22.12035+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [
+        {
+          "seller_id": "AGPUVTKGKK3YU",
+          "price": 4.94,
+          "record_last_seen_at": "2026-10-22T21:37:41.06384+00:00"
+        },
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "price": 4.85,
+          "record_last_seen_at": "2026-10-22T16:00:31.959324+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00079200774479",
+          "source": "candidate",
+          "field": "ean"
+        },
+        {
+          "code": "00079200774479",
+          "source": "details:AGPUVTKGKK3YU",
+          "field": "upc"
+        },
+        {
+          "code": "00079200774479",
+          "source": "details:A1BTXEEXK8JSEO",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": "00079200774479",
+      "barcode_agrees": true,
+      "detail_capture_count": 2,
+      "details": [
+        {
+          "seller_id": "AGPUVTKGKK3YU",
+          "status": "captured",
+          "captured_at": "2026-10-22T21:47:47.461972+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B08KGQ6HZ6",
+          "captured_title": "Nerds Big Chewy Candy, 120g",
+          "structured_size": "120 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "8.3 cm (W) x 2.4 cm (L) x 14.4 cm (H)",
+            "Container Type": "Box",
+            "Number of Items": "1",
+            "Package Size Name": "Theater Box",
+            "Item Package Quantity": "1"
+          }
+        },
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "status": "partial",
+          "captured_at": "2026-10-22T21:47:47.461972+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B08KGQ6HZ6",
+          "captured_title": "Nerds Big Chewy Candy, 120g",
+          "structured_size": "120 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "8.3 cm (W) x 2.4 cm (L) x 14.4 cm (H)",
+            "Container Type": "Box",
+            "Number of Items": "1",
+            "Package Size Name": "Theater Box",
+            "Item Package Quantity": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "AGPUVTKGKK3YU",
+          "facts": {
+            "Item Weight": "120 g",
+            "Item Package Weight": "0.14 Kilograms"
+          },
+          "captured_at": "2026-10-22T21:47:47.461972+00:00"
+        },
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "facts": {
+            "Item Weight": "120 g",
+            "Item Package Weight": "0.14 Kilograms"
+          },
+          "captured_at": "2026-10-22T21:47:47.461972+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B0004LZUJQ",
+      "title": "Kool Aid Black Cherry Drink Sachet 3.6 g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B0004LZUJQ",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "KAID012",
+      "supplier_product": "Kool Aid Unsweetened Black Cherry 3.6g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/kool-aid-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 48,
+      "case_price": 14.34,
+      "unit_cost": 0.3,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 61,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "20/06/2028",
+      "amazon_recorded_price": 2.48,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:13.617792+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [
+        {
+          "seller_id": "AGPUVTKGKK3YU",
+          "price": 2.47,
+          "record_last_seen_at": "2026-10-22T21:37:48.362839+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00043000955673",
+          "source": "candidate",
+          "field": "upc"
+        },
+        {
+          "code": "00043000955673",
+          "source": "candidate",
+          "field": "gtin"
+        },
+        {
+          "code": "00043000955673",
+          "source": "details:AGPUVTKGKK3YU",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": "00043000955673",
+      "barcode_agrees": true,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "AGPUVTKGKK3YU",
+          "status": "captured",
+          "captured_at": "2026-10-22T21:49:02.103864+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B0004LZUJQ",
+          "captured_title": "Kool Aid Black Cherry Drink Sachet 3.6 g",
+          "structured_size": "3.68 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Container Type": "Pouch",
+            "Number of Items": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "AGPUVTKGKK3YU",
+          "facts": {
+            "Item Weight": "3.68 g",
+            "Item Package Weight": "0.02 Kilograms"
+          },
+          "captured_at": "2026-10-22T21:49:02.103864+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 48,
+        "sellableAmazonPacksPerCase": 48,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B0868XN5RL",
+      "title": "Jell-o, Gelatin Dessert, Orange (Pack of 2)",
+      "amazon_url": "https://www.amazon.co.uk/dp/B0868XN5RL",
+      "state": "VERIFIED_PAIR_NEEDS_COMMERCIAL_EVIDENCE",
+      "asin_identity_verified": true,
+      "selected_supplier_pair_verified": true,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "JELL017",
+      "supplier_product": "Jell-O Orange 85g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/jell-o-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 24,
+      "case_price": 28.03,
+      "unit_cost": 1.17,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 11,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "04/07/2028",
+      "amazon_recorded_price": 5.5,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:22.12035+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [
+        {
+          "code": "00043000200049",
+          "source": "candidate",
+          "field": "ean"
+        },
+        {
+          "code": "00043000200049",
+          "source": "manual evidence",
+          "field": "amazon_upc"
+        }
+      ],
+      "valid_supplier_code": "00043000200049",
+      "barcode_agrees": true,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [
+        {
+          "pack_qty": 2,
+          "unit_size": "85g"
+        }
+      ],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 2,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "Preserve verified Amazon 2 x 85g sell pack; supplier case is 24 individual units.",
+      "specific_actions": [
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "RESOLVE_SPECIFIC_CAUTION"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B0CCY8W571",
+      "title": "Buchanan's Sensational Iron Brew Pastilles140g x 1",
+      "amazon_url": "https://www.amazon.co.uk/dp/B0CCY8W571",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Wholesale Sweets",
+      "supplier_offer_id": "buchanan-s-sensational-iron-brew-pastilles-bag-140g",
+      "supplier_product": "Buchanan's Sensational Iron Brew Pastilles - 12 x 145g Bags",
+      "supplier_url": "https://www.wholesalesweets.co.uk/buchanan-s-sensational-iron-brew-pastilles-bag-140g",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 16.6,
+      "unit_cost": 1.3833,
+      "supplier_cost_observed_at": "2026-10-18T15:30:22.866045+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 4.66,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:57.805101+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "Amazon title 140g versus supplier 145g: confirm physical revision; do not approve from parser tolerance.",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "CONFIRM_SUPPLIER_STOCK",
+        "RESOLVE_SPECIFIC_CAUTION"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B0H2MGH8NW",
+      "title": "SONIC Ocean Water Singles to Go, Zero Sugar Drink Mix",
+      "amazon_url": "https://www.amazon.co.uk/dp/B0H2MGH8NW",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "King's Candy",
+      "supplier_offer_id": "7620606656721",
+      "supplier_product": "Sonic Ocean Water Singles to Go (254.4g) (12 Pack)",
+      "supplier_url": "https://americancandyuk.co.uk/products/sonic-ocean-water-singles-to-go-254-4g-12-pack",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 29.99,
+      "unit_cost": 2.4992,
+      "supplier_cost_observed_at": "2026-10-18T15:32:00.129857+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 5.7,
+      "amazon_record_last_seen_at": "2026-09-30T17:23:13.535497+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [
+        {
+          "code": "00072392306244",
+          "source": "candidate",
+          "field": "ean"
+        }
+      ],
+      "valid_supplier_code": "00072392306244",
+      "barcode_agrees": true,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "Confirm whether supplier 254.4g denotes a case total and establish sachets/boxes per Amazon sale.",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "VERIFY_AMAZON_SELL_PACK",
+        "CONFIRM_SUPPLIER_STOCK",
+        "RESOLVE_SPECIFIC_CAUTION"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B000PYB7U8",
+      "title": "Ice Breakers Sours, Sugar Free Mints, Watermelon, Green Apple, and Tangerine 42 g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B000PYB7U8",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "ICEB002",
+      "supplier_product": "Ice Breakers Sours 42g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/ice-breakers-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 8,
+      "case_price": 9.56,
+      "unit_cost": 1.2,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 255,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "31/01/2028",
+      "amazon_recorded_price": 4.02,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:13.617792+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [
+        {
+          "seller_id": "AGPUVTKGKK3YU",
+          "price": 4.39,
+          "record_last_seen_at": "2026-10-22T21:36:57.419671+00:00"
+        },
+        {
+          "seller_id": "A2L8Z4LF1SP15L",
+          "price": 4.49,
+          "record_last_seen_at": "2026-10-22T21:52:29.297887+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00034000000982",
+          "source": "candidate",
+          "field": "upc"
+        },
+        {
+          "code": "00034000000982",
+          "source": "details:AGPUVTKGKK3YU",
+          "field": "upc"
+        },
+        {
+          "code": "00034000000982",
+          "source": "details:A2L8Z4LF1SP15L",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": "00034000000982",
+      "barcode_agrees": true,
+      "detail_capture_count": 2,
+      "details": [
+        {
+          "seller_id": "AGPUVTKGKK3YU",
+          "status": "captured",
+          "captured_at": "2026-10-22T21:41:41.589267+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B000PYB7U8",
+          "captured_title": "Ice Breakers Sours, Sugar Free Mints, Watermelon, Green Apple, and Tangerine 42 g",
+          "structured_size": "45.4 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "Small",
+            "Container Type": "Packet",
+            "Number of Items": "1",
+            "Package Size Name": "1.5 Ounce",
+            "Package Type Name": "Portable container",
+            "Item Package Quantity": "1"
+          }
+        },
+        {
+          "seller_id": "A2L8Z4LF1SP15L",
+          "status": "captured",
+          "captured_at": "2026-10-22T21:54:15.118823+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B000PYB7U8",
+          "captured_title": "Ice Breakers Sours, Sugar Free Mints, Watermelon, Green Apple, and Tangerine 42 g",
+          "structured_size": "45.4 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "Small",
+            "Container Type": "Packet",
+            "Number of Items": "1",
+            "Package Size Name": "1.5 Ounce",
+            "Package Type Name": "Portable container",
+            "Item Package Quantity": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "AGPUVTKGKK3YU",
+          "facts": {
+            "Item Weight": "45.4 g",
+            "Item Package Weight": "0.05 Kilograms"
+          },
+          "captured_at": "2026-10-22T21:41:41.589267+00:00"
+        },
+        {
+          "seller_id": "A2L8Z4LF1SP15L",
+          "facts": {
+            "Item Weight": "45.4 g",
+            "Item Package Weight": "0.05 Kilograms"
+          },
+          "captured_at": "2026-10-22T21:54:15.118823+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 8,
+        "sellableAmazonPacksPerCase": 8,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B00QAIWJGE",
+      "title": "Ice Breakers Duo Fruit & Cool Strawberry Sugarfree Mints 1 x 36g Tub",
+      "amazon_url": "https://www.amazon.co.uk/dp/B00QAIWJGE",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "ICEB012",
+      "supplier_product": "Ice Breakers Duo Mints Strawberry 36g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/ice-breakers-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 8,
+      "case_price": 9.79,
+      "unit_cost": 1.22,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 216,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "31/08/2028",
+      "amazon_recorded_price": 3.65,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:48.328447+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [
+        {
+          "seller_id": "AGPUVTKGKK3YU",
+          "price": 4.28,
+          "record_last_seen_at": "2026-10-22T21:37:21.355265+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00000003466506",
+          "source": "candidate",
+          "field": "ean"
+        }
+      ],
+      "valid_supplier_code": "00000003466506",
+      "barcode_agrees": true,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "AGPUVTKGKK3YU",
+          "status": "captured",
+          "captured_at": "2026-10-22T21:44:51.332886+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B00QAIWJGE",
+          "captured_title": "Ice Breakers Duo Fruit & Cool Strawberry Sugarfree Mints 1 x 36g Tub",
+          "structured_size": "36 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "7.493 x 1.905 x 7.493 centimetri",
+            "Container Type": "Tub",
+            "Number of Items": "1",
+            "Package Size Name": "Single Tub",
+            "Item Package Quantity": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "AGPUVTKGKK3YU",
+          "facts": {
+            "Item Weight": "36 g",
+            "Item Package Weight": "0.05 Kilograms"
+          },
+          "captured_at": "2026-10-22T21:44:51.332886+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 8,
+        "sellableAmazonPacksPerCase": 8,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B01EY6Y3TO",
+      "title": "Taco Bell Diablo Sauce 213g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B01EY6Y3TO",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "TACOB002",
+      "supplier_product": "Taco Bell Diablo Sauce 213g",
+      "supplier_url": "https://sweetandglory.com/brands/t-z/taco-bell-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 20.11,
+      "unit_cost": 1.68,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 1,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "17/01/2027",
+      "amazon_recorded_price": 5.48,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:48.328447+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [
+        {
+          "code": "00021000060627",
+          "source": "candidate",
+          "field": "ean"
+        }
+      ],
+      "valid_supplier_code": "00021000060627",
+      "barcode_agrees": true,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B079SKCVJK",
+      "title": "Jelly Belly,Ice Cream Mix Bag, 70g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B079SKCVJK",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "JBEL033L",
+      "supplier_product": "Jelly Belly Ice Cream Mix Jelly Beans 70g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/jelly-belly-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 15.41,
+      "unit_cost": 1.28,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 5,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "14/11/2027",
+      "amazon_recorded_price": 4.33,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:22.12035+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [
+        {
+          "seller_id": "A3TNQVR08YJ3AW",
+          "price": null,
+          "record_last_seen_at": "2026-10-22T11:39:41.191653+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00071570004309",
+          "source": "candidate",
+          "field": "ean"
+        },
+        {
+          "code": "00071570004309",
+          "source": "details:A3TNQVR08YJ3AW",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": "00071570004309",
+      "barcode_agrees": true,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A3TNQVR08YJ3AW",
+          "status": "captured",
+          "captured_at": "2026-10-22T12:10:06.05896+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B079SKCVJK",
+          "captured_title": "Jelly Belly,Ice Cream Mix Bag, 70g",
+          "structured_size": "70 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "70 g (Pack of 1)",
+            "Container Type": "Bag",
+            "Number of Items": "1",
+            "Package Size Name": "70g",
+            "Item Package Quantity": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A3TNQVR08YJ3AW",
+          "facts": {
+            "Item Weight": "70 g",
+            "Item Package Weight": "0.07 Kilograms"
+          },
+          "captured_at": "2026-10-22T12:10:06.05896+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B086RVCG7B",
+      "title": "x 2 Box of HERSHEY'S Milk Duds Theatre Box 141g Original",
+      "amazon_url": "https://www.amazon.co.uk/dp/B086RVCG7B",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "DUDS001",
+      "supplier_product": "Milk Duds Theatre 141g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/milk-duds-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 16.5,
+      "unit_cost": 1.38,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 261,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "30/06/2027",
+      "amazon_recorded_price": 9.99,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:22.12035+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "price": 9.99,
+          "record_last_seen_at": "2026-10-22T16:00:43.471148+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00010700021526",
+          "source": "details:A1BTXEEXK8JSEO",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "status": "partial",
+          "captured_at": "2026-10-23T21:38:26.184299+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B086RVCG7B",
+          "captured_title": "x 2 Box of HERSHEY'S Milk Duds Theatre Box 141g Original",
+          "structured_size": null,
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "141g",
+            "Container Type": "Box",
+            "Package Size Name": "2 Pack",
+            "Package Type Name": "Multipack",
+            "Item Package Quantity": "2"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "facts": {
+            "Item Package Weight": "0.31 Kilograms"
+          },
+          "captured_at": "2026-10-23T21:38:26.184299+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 2,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 6,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B08NFBB83S",
+      "title": "Big Chewy NERDS Soft Crunchy Candy Large Box American Sweets 2 x 120g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B08NFBB83S",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "NERD027",
+      "supplier_product": "Nerds Big Chewy Theatre 120g",
+      "supplier_url": "https://sweetandglory.com/brands/n-p/nerds-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 14.57,
+      "unit_cost": 1.21,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 288,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "10/06/2027",
+      "amazon_recorded_price": 8.46,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:57.805101+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "price": 8.18,
+          "record_last_seen_at": "2026-10-22T16:00:49.058037+00:00"
+        }
+      ],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": "00079200774479",
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "status": "partial",
+          "captured_at": "2026-10-23T21:38:30.304803+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B08NFBB83S",
+          "captured_title": "Big Chewy NERDS Soft Crunchy Candy Large Box American Sweets 2 x 120g",
+          "structured_size": null,
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "120 g (Pack of 2)",
+            "Container Type": "Box",
+            "Number of Items": "2",
+            "Package Size Name": "Big",
+            "Item Package Quantity": "2"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "facts": {
+            "Item Weight": "120 Grams",
+            "Item Package Weight": "0.27 Kilograms"
+          },
+          "captured_at": "2026-10-23T21:38:30.304803+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 2,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 6,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B005UBI9O8",
+      "title": "ICE BREAKERS Sugar Free Mints, Spearmint, 1.5 Ounce (Pack of 8)",
+      "amazon_url": "https://www.amazon.co.uk/dp/B005UBI9O8",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "ICEB024",
+      "supplier_product": "Ice Breakers Mints Spearmint 42g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/ice-breakers-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 8,
+      "case_price": 9.84,
+      "unit_cost": 1.23,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 52,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "31/05/2028",
+      "amazon_recorded_price": 21.98,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:13.617792+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [
+        {
+          "code": "00034000721238",
+          "source": "candidate",
+          "field": "ean"
+        }
+      ],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 8,
+        "supplierCaseQty": 8,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B00600N5UQ",
+      "title": "Harry Potter, Warner Brothers Milk Chocolate Frog With Collectible Wizard Trading Card",
+      "amazon_url": "https://www.amazon.co.uk/dp/B00600N5UQ",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "JBEL064L",
+      "supplier_product": "Harry Potter Chocolate Frog 15g",
+      "supplier_url": "https://sweetandglory.com/brands/f-h/harry-potter-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 24,
+      "case_price": 67.2,
+      "unit_cost": 2.8,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 5,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "28/10/2027",
+      "amazon_recorded_price": 6.28,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:13.617792+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [
+        {
+          "code": "00071567992329",
+          "source": "candidate",
+          "field": "ean"
+        }
+      ],
+      "valid_supplier_code": "00071567992329",
+      "barcode_agrees": true,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B072KNM1PZ",
+      "title": "Trident Sugar Free Gum - Cinnamon 14 STICKS RED - 12 PACK",
+      "amazon_url": "https://www.amazon.co.uk/dp/B072KNM1PZ",
+      "state": "VERIFIED_PAIR_NEEDS_COMMERCIAL_EVIDENCE",
+      "asin_identity_verified": true,
+      "selected_supplier_pair_verified": true,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "TRID004",
+      "supplier_product": "Trident Cinnamon 31g",
+      "supplier_url": "https://sweetandglory.com/brands/t-z/trident-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 7.63,
+      "unit_cost": 0.64,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 195,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "16/09/2027",
+      "amazon_recorded_price": 19.89,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:22.12035+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [
+        {
+          "seller_id": "AGPUVTKGKK3YU",
+          "price": 19.9,
+          "record_last_seen_at": "2026-10-22T21:37:33.109298+00:00"
+        },
+        {
+          "seller_id": "A2L8Z4LF1SP15L",
+          "price": 19.99,
+          "record_last_seen_at": "2026-10-22T21:52:37.220014+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00012546011471",
+          "source": "candidate",
+          "field": "ean"
+        },
+        {
+          "code": "00012546011471",
+          "source": "manual evidence",
+          "field": "amazon_upc"
+        },
+        {
+          "code": "00012546011471",
+          "source": "details:AGPUVTKGKK3YU",
+          "field": "upc"
+        },
+        {
+          "code": "00012546011471",
+          "source": "details:A2L8Z4LF1SP15L",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": "00012546011471",
+      "barcode_agrees": true,
+      "detail_capture_count": 2,
+      "details": [
+        {
+          "seller_id": "AGPUVTKGKK3YU",
+          "status": "captured",
+          "captured_at": "2026-10-22T21:45:40.343262+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B072KNM1PZ",
+          "captured_title": "Trident Sugar Free Gum - Cinnamon 14 STICKS RED - 12 PACK",
+          "structured_size": "25.5 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "14 count (Pack of 12)",
+            "Container Type": "Packet",
+            "Package Size Name": "12 Pack",
+            "Item Package Quantity": "1"
+          }
+        },
+        {
+          "seller_id": "A2L8Z4LF1SP15L",
+          "status": "captured",
+          "captured_at": "2026-10-22T21:55:14.617481+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B072KNM1PZ",
+          "captured_title": "Trident Sugar Free Gum - Cinnamon 14 STICKS RED - 12 PACK",
+          "structured_size": "25.5 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "14 count (Pack of 12)",
+            "Container Type": "Packet",
+            "Package Size Name": "12 Pack",
+            "Item Package Quantity": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "AGPUVTKGKK3YU",
+          "facts": {
+            "Item Weight": "25.5 g",
+            "Item Package Weight": "0.03 Kilograms"
+          },
+          "captured_at": "2026-10-22T21:45:40.343262+00:00"
+        },
+        {
+          "seller_id": "A2L8Z4LF1SP15L",
+          "facts": {
+            "Item Weight": "25.5 g",
+            "Item Package Weight": "0.03 Kilograms"
+          },
+          "captured_at": "2026-10-22T21:55:14.617481+00:00"
+        }
+      ],
+      "verified_listing_packs": [
+        {
+          "pack_qty": 12,
+          "unit_size": "14 sticks"
+        }
+      ],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 12,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "Preserved manual caution: supplier 31g versus Amazon 0.9oz; confirm 14 sticks per packet and 12 packets per sale.",
+      "specific_actions": [
+        "RESOLVE_SPECIFIC_CAUTION"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B07TT6JC8S",
+      "title": "Bazooka Bubble Gum Original Nostalgia Mini-Wallet Pack - 6 Count (Pack of 12)",
+      "amazon_url": "https://www.amazon.co.uk/dp/B07TT6JC8S",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "TOPP016",
+      "supplier_product": "Topps Bazooka Throwback Mini Wallet 42g",
+      "supplier_url": "https://sweetandglory.com/brands/a-b/bazooka-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 6.93,
+      "unit_cost": 0.58,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 4,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "03/05/2028",
+      "amazon_recorded_price": 18.7,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:22.12035+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 12,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "Confirm 6 pieces per mini-wallet, 12 wallets per Amazon sale and supplier case contents.",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "RESOLVE_SPECIFIC_CAUTION"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B08HR8VQ7G",
+      "title": "Nerds Gummy Clusters Chewy Candy, 5 Oz (141g) Bag",
+      "amazon_url": "https://www.amazon.co.uk/dp/B08HR8VQ7G",
+      "state": "VERIFIED_PAIR_NEEDS_COMMERCIAL_EVIDENCE",
+      "asin_identity_verified": true,
+      "selected_supplier_pair_verified": true,
+      "original_parser_band": "STRONG",
+      "supplier": "Candy Cargo",
+      "supplier_offer_id": "7992659869895",
+      "supplier_product": "Nerds Rainbow Medium Gummy Clusters Peg Bag 12x141g",
+      "supplier_url": "https://candycargo.co.uk/products/nerds-rainbow-medium-gummy-clusters-peg-bag-12x141g",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 26,
+      "unit_cost": 2.1667,
+      "supplier_cost_observed_at": "2026-10-18T15:32:52.23818+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 5.33,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:22.12035+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [
+        {
+          "seller_id": "A1FPOQ0X0CHT30",
+          "price": 6.66,
+          "record_last_seen_at": "2026-10-22T15:03:31.675503+00:00"
+        },
+        {
+          "seller_id": "AWJV3WH2WNVEW",
+          "price": 5.71,
+          "record_last_seen_at": "2026-10-22T16:24:54.258195+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00079200049065",
+          "source": "candidate",
+          "field": "ean"
+        },
+        {
+          "code": "00079200049065",
+          "source": "manual evidence",
+          "field": "amazon_upc"
+        },
+        {
+          "code": "00079200049065",
+          "source": "details:A1FPOQ0X0CHT30",
+          "field": "upc"
+        },
+        {
+          "code": "00079200049065",
+          "source": "details:AWJV3WH2WNVEW",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": "00079200049065",
+      "barcode_agrees": true,
+      "detail_capture_count": 2,
+      "details": [
+        {
+          "seller_id": "A1FPOQ0X0CHT30",
+          "status": "captured",
+          "captured_at": "2026-10-22T15:22:39.8889+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B08HR8VQ7G",
+          "captured_title": "Nerds Gummy Clusters Chewy Candy, 5 Oz (141g) Bag",
+          "structured_size": "142 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "13.6 cm x 6.1 cm x 17.1 cm",
+            "Container Type": "Bag",
+            "Number of Items": "1",
+            "Package Size Name": "5 ounce bag",
+            "Item Package Quantity": "1"
+          }
+        },
+        {
+          "seller_id": "AWJV3WH2WNVEW",
+          "status": "captured",
+          "captured_at": "2026-10-22T18:50:49.029924+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B08HR8VQ7G",
+          "captured_title": "Nerds Gummy Clusters Chewy Candy, 5 Oz (141g) Bag",
+          "structured_size": "142 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "13.6 cm x 6.1 cm x 17.1 cm",
+            "Container Type": "Bag",
+            "Number of Items": "1",
+            "Package Size Name": "5 ounce bag",
+            "Item Package Quantity": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A1FPOQ0X0CHT30",
+          "facts": {
+            "Item Weight": "142 g",
+            "Item Package Weight": "0.14 Kilograms"
+          },
+          "captured_at": "2026-10-22T15:22:39.8889+00:00"
+        },
+        {
+          "seller_id": "AWJV3WH2WNVEW",
+          "facts": {
+            "Item Weight": "142 g",
+            "Item Package Weight": "0.14 Kilograms"
+          },
+          "captured_at": "2026-10-22T18:50:49.029924+00:00"
+        }
+      ],
+      "verified_listing_packs": [
+        {
+          "pack_qty": 1,
+          "unit_size": "141g"
+        }
+      ],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "Previous fee scenario was negative at £5.19; keep BUY blocked pending complete refreshed economics.",
+      "specific_actions": [
+        "CONFIRM_SUPPLIER_STOCK",
+        "RESOLVE_SPECIFIC_CAUTION"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B08T5WX4KH",
+      "title": "JELLY BELLY AMERICAN CLASSICS",
+      "amazon_url": "https://www.amazon.co.uk/dp/B08T5WX4KH",
+      "state": "VERIFIED_PAIR_NEEDS_COMMERCIAL_EVIDENCE",
+      "asin_identity_verified": true,
+      "selected_supplier_pair_verified": true,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "JBEL046L",
+      "supplier_product": "Jelly Belly American Classics Jelly Beans 70g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/jelly-belly-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 15.41,
+      "unit_cost": 1.28,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 7,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "18/11/2027",
+      "amazon_recorded_price": 2.49,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:57.805101+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [
+        {
+          "code": "00071570014025",
+          "source": "candidate",
+          "field": "ean"
+        },
+        {
+          "code": "00071570014025",
+          "source": "manual evidence",
+          "field": "amazon_upc"
+        }
+      ],
+      "valid_supplier_code": "00071570014025",
+      "barcode_agrees": true,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [
+        {
+          "pack_qty": 1,
+          "unit_size": "70g"
+        }
+      ],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "Historical Amazon prices disagree across saved evidence; refresh same-ASIN sell price.",
+      "specific_actions": [
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "RESOLVE_SPECIFIC_CAUTION"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B099PGQBLV",
+      "title": "Mike & Ike Mega Mix Sour Candy Large 28.8 Ounce Bag",
+      "amazon_url": "https://www.amazon.co.uk/dp/B099PGQBLV",
+      "state": "VERIFIED_PAIR_NEEDS_COMMERCIAL_EVIDENCE",
+      "asin_identity_verified": true,
+      "selected_supplier_pair_verified": true,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "MIKE046",
+      "supplier_product": "Mike & Ike Mega Mix Sour! 816g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/mike-and-ike-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 6,
+      "case_price": 35.99,
+      "unit_cost": 6,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 9,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "31/08/2027",
+      "amazon_recorded_price": 15.44,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:57.805101+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [
+        {
+          "code": "00070970474637",
+          "source": "candidate",
+          "field": "upc"
+        },
+        {
+          "code": "00070970474637",
+          "source": "candidate",
+          "field": "gtin"
+        },
+        {
+          "code": "00070970474637",
+          "source": "manual evidence",
+          "field": "amazon_upc"
+        }
+      ],
+      "valid_supplier_code": "00070970474637",
+      "barcode_agrees": true,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [
+        {
+          "pack_qty": 1,
+          "unit_size": "816g"
+        }
+      ],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 6,
+        "sellableAmazonPacksPerCase": 6,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "CAPTURE_AMAZON_PRODUCT_DETAILS"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B00RW65P5A",
+      "title": "Kraft Slow-Simmered Hickory Smoke Barbecue Sauce 496g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B00RW65P5A",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "KRAFT009",
+      "supplier_product": "Kraft Hickory Smoke BBQ Sauce 496g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/kraft-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 26.19,
+      "unit_cost": 2.18,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 1,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "16/06/2027",
+      "amazon_recorded_price": 7.1,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:48.328447+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B017E1S9FK",
+      "title": "Cadbury Dairy Milk Caramello Koala Sharepack 12pk 180g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B017E1S9FK",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "CADB105",
+      "supplier_product": "Cadbury' Dairy Milk Caramello AUS 180g",
+      "supplier_url": "https://sweetandglory.com/brands/c-e/cadburys-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 15,
+      "case_price": 40.93,
+      "unit_cost": 2.73,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 2,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "02/04/2027",
+      "amazon_recorded_price": 8.5,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:48.328447+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 15,
+        "sellableAmazonPacksPerCase": 15,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B0CJ5QYD8Y",
+      "title": "Buchanan's Dark Chocolate Fondant Peppermint Creams 120g (Pack of 3)",
+      "amazon_url": "https://www.amazon.co.uk/dp/B0CJ5QYD8Y",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Wholesale Sweets",
+      "supplier_offer_id": "buchanan-s-dark-chocolate-fondant-peppermint-creams-bag-120g",
+      "supplier_product": "Buchanan's Dark Chocolate Fondant Peppermint Creams - 12 x 120g Bags",
+      "supplier_url": "https://www.wholesalesweets.co.uk/buchanan-s-dark-chocolate-fondant-peppermint-creams-bag-120g",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 17.29,
+      "unit_cost": 1.4408,
+      "supplier_cost_observed_at": "2026-10-18T15:30:22.866045+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 8.5,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:57.805101+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 3,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 4,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "CONFIRM_SUPPLIER_STOCK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B0CTCWGS89",
+      "title": "Baileys Birthday Cake Truffles 135g | Original Irish Cream White Chocolate Truffles with Vanilla Truffle Filling| Premium Chocolate Truffles | Perfect Birthday Sweets",
+      "amazon_url": "https://www.amazon.co.uk/dp/B0CTCWGS89",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "LIR005L",
+      "supplier_product": "Baileys Birthday Cake Truffles 135g",
+      "supplier_url": "https://sweetandglory.com/brands/a-b/baileys-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 8,
+      "case_price": 30.6,
+      "unit_cost": 3.83,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 4,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "30/06/2027",
+      "amazon_recorded_price": 9.79,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:57.805101+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 8,
+        "sellableAmazonPacksPerCase": 8,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B0H5M9WJR7",
+      "title": "Herr's Honey Cheese Flavoured Cheese Curls, Oven Baked with Real Cheese, 170g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B0H5M9WJR7",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "King's Candy",
+      "supplier_offer_id": "7248963535057",
+      "supplier_product": "Herr's Honey Cheese Flavoured Curls (170g) Box of 12 (12 x 170g)",
+      "supplier_url": "https://americancandyuk.co.uk/products/herrs-honey-cheese-flavoured-curls-184g-box-of-12-12-x-184g",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 44.99,
+      "unit_cost": 3.7492,
+      "supplier_cost_observed_at": "2026-10-18T15:32:00.129857+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 6.71,
+      "amazon_record_last_seen_at": "2026-09-30T17:23:13.535497+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "CONFIRM_SUPPLIER_STOCK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B077CYBL5P",
+      "title": "Kingsway: Yellow Paint Balls - 900g Bag",
+      "amazon_url": "https://www.amazon.co.uk/dp/B077CYBL5P",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Wholesale Sweets",
+      "supplier_offer_id": "yellow-paint-balls",
+      "supplier_product": "Kingsway Yellow Paint Balls - 1 x 900g Bag",
+      "supplier_url": "https://www.wholesalesweets.co.uk/yellow-paint-balls",
+      "supplier_active": true,
+      "case_qty": 1,
+      "case_price": 5.89,
+      "unit_cost": 5.89,
+      "supplier_cost_observed_at": "2026-10-18T15:30:22.866045+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 13.99,
+      "amazon_record_last_seen_at": "2026-10-22T16:02:08.279661+00:00",
+      "price_observed_at_explicit": "2026-10-22T16:02:08.279661+00:00",
+      "storefront_prices": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "price": 13.99,
+          "record_last_seen_at": "2026-10-22T16:02:08.279661+00:00"
+        }
+      ],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 1,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "CONFIRM_SUPPLIER_STOCK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B000RHY1YW",
+      "title": "Red Vines Original Red Twists Candy 141g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B000RHY1YW",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Wholesale Sweets",
+      "supplier_offer_id": "red-vines-original-red-twists-142g",
+      "supplier_product": "Red Vines Original Red Twists 142g",
+      "supplier_url": "https://www.wholesalesweets.co.uk/red-vines-original-red-twists-142g",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 26.29,
+      "unit_cost": 2.1908,
+      "supplier_cost_observed_at": "2026-10-18T15:30:22.866045+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 5.74,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:13.617792+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [
+        {
+          "code": "00041364002095",
+          "source": "candidate",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "Compare Red Vines 141g/142g labels and tray packaging; multiple ASIN neighbours must remain separate.",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "CONFIRM_SUPPLIER_STOCK",
+        "RESOLVE_SPECIFIC_CAUTION"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B0012NLMP6",
+      "title": "Red Vines Original Red Twists Candy 141g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B0012NLMP6",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": true,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Wholesale Sweets",
+      "supplier_offer_id": "red-vines-original-red-twists-142g",
+      "supplier_product": "Red Vines Original Red Twists 142g",
+      "supplier_url": "https://www.wholesalesweets.co.uk/red-vines-original-red-twists-142g",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 26.29,
+      "unit_cost": 2.1908,
+      "supplier_cost_observed_at": "2026-10-18T15:30:22.866045+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 5.74,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:13.617792+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [
+        {
+          "seller_id": "A3TNQVR08YJ3AW",
+          "price": null,
+          "record_last_seen_at": "2026-10-22T11:38:52.146032+00:00"
+        },
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "price": 5.49,
+          "record_last_seen_at": "2026-10-22T15:59:14.081318+00:00"
+        },
+        {
+          "seller_id": "A226DZC4BCEHGM",
+          "price": 5.74,
+          "record_last_seen_at": "2026-10-22T16:03:29.149287+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00041364002095",
+          "source": "candidate",
+          "field": "upc"
+        },
+        {
+          "code": "00041364002095",
+          "source": "details:A3TNQVR08YJ3AW",
+          "field": "upc"
+        },
+        {
+          "code": "00041364002095",
+          "source": "details:A226DZC4BCEHGM",
+          "field": "upc"
+        },
+        {
+          "code": "00041364002095",
+          "source": "details:A1BTXEEXK8JSEO",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 3,
+      "details": [
+        {
+          "seller_id": "A3TNQVR08YJ3AW",
+          "status": "captured",
+          "captured_at": "2026-10-22T11:43:15.049518+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B0012NLMP6",
+          "captured_title": "Red Vines Original Red Twists Candy 141g",
+          "structured_size": "142 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "141 g (Pack of 1)",
+            "Container Type": "Packet",
+            "Number of Items": "1",
+            "Package Size Name": "5oz Tray",
+            "Package Type Name": "Tray",
+            "Item Package Quantity": "1"
+          }
+        },
+        {
+          "seller_id": "A226DZC4BCEHGM",
+          "status": "captured",
+          "captured_at": "2026-10-22T16:03:51.008653+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B0012NLMP6",
+          "captured_title": "Red Vines Original Red Twists Candy 141g",
+          "structured_size": "142 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "141 g (Pack of 1)",
+            "Container Type": "Packet",
+            "Number of Items": "1",
+            "Package Size Name": "5oz Tray",
+            "Package Type Name": "Tray",
+            "Item Package Quantity": "1"
+          }
+        },
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "status": "partial",
+          "captured_at": "2026-10-22T16:03:51.008653+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B0012NLMP6",
+          "captured_title": "Red Vines Original Red Twists Candy 141g",
+          "structured_size": "142 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "141 g (Pack of 1)",
+            "Container Type": "Packet",
+            "Number of Items": "1",
+            "Package Size Name": "5oz Tray",
+            "Package Type Name": "Tray",
+            "Item Package Quantity": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A3TNQVR08YJ3AW",
+          "facts": {
+            "Item Weight": "142 g",
+            "Item Package Weight": "0.18 Kilograms"
+          },
+          "captured_at": "2026-10-22T11:43:15.049518+00:00"
+        },
+        {
+          "seller_id": "A226DZC4BCEHGM",
+          "facts": {
+            "Item Weight": "142 g",
+            "Item Package Weight": "0.18 Kilograms"
+          },
+          "captured_at": "2026-10-22T16:03:51.008653+00:00"
+        },
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "facts": {
+            "Item Weight": "142 g",
+            "Item Package Weight": "0.18 Kilograms"
+          },
+          "captured_at": "2026-10-22T16:03:51.008653+00:00"
+        }
+      ],
+      "verified_listing_packs": [
+        {
+          "pack_qty": 1,
+          "unit_size": "141g"
+        }
+      ],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "ASIN identity is verified, but this suggested supplier offer is not its verified supplier link. Compare Red Vines 141g/142g labels and tray packaging; multiple ASIN neighbours must remain separate.",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "CONFIRM_SUPPLIER_STOCK",
+        "RESOLVE_SPECIFIC_CAUTION"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B00KB5FDF6",
+      "title": "Red Vines Tray Original Red Twists 5 OZ (141g)",
+      "amazon_url": "https://www.amazon.co.uk/dp/B00KB5FDF6",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Wholesale Sweets",
+      "supplier_offer_id": "red-vines-original-red-twists-142g",
+      "supplier_product": "Red Vines Original Red Twists 142g",
+      "supplier_url": "https://www.wholesalesweets.co.uk/red-vines-original-red-twists-142g",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 26.29,
+      "unit_cost": 2.1908,
+      "supplier_cost_observed_at": "2026-10-18T15:30:22.866045+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 8.8,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:48.328447+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "Compare Red Vines 141g/142g labels and tray packaging; multiple ASIN neighbours must remain separate.",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "CONFIRM_SUPPLIER_STOCK",
+        "RESOLVE_SPECIFIC_CAUTION"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B00MULNNP6",
+      "title": "Red Vines Original Red Twists Candy 141g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B00MULNNP6",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Wholesale Sweets",
+      "supplier_offer_id": "red-vines-original-red-twists-142g",
+      "supplier_product": "Red Vines Original Red Twists 142g",
+      "supplier_url": "https://www.wholesalesweets.co.uk/red-vines-original-red-twists-142g",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 26.29,
+      "unit_cost": 2.1908,
+      "supplier_cost_observed_at": "2026-10-18T15:30:22.866045+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 5.74,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:48.328447+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "Compare Red Vines 141g/142g labels and tray packaging; multiple ASIN neighbours must remain separate.",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "CONFIRM_SUPPLIER_STOCK",
+        "RESOLVE_SPECIFIC_CAUTION"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B0DCW1N9N8",
+      "title": "Nerds Gummy Clusters Very Berry 18.50 oz (524g)",
+      "amazon_url": "https://www.amazon.co.uk/dp/B0DCW1N9N8",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "NERD058",
+      "supplier_product": "Nerds Gummy Clusters Very Berry 524g",
+      "supplier_url": "https://sweetandglory.com/brands/n-p/nerds-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 5,
+      "case_price": 33.44,
+      "unit_cost": 6.69,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 3,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "05/05/2027",
+      "amazon_recorded_price": 14.99,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:57.805101+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 5,
+        "sellableAmazonPacksPerCase": 5,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B0CTVHB9Z6",
+      "title": "Nerds Gummy Clusters Candy, Very Berry, Resealable 18.5 Ounce Big Bag",
+      "amazon_url": "https://www.amazon.co.uk/dp/B0CTVHB9Z6",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "NERD058",
+      "supplier_product": "Nerds Gummy Clusters Very Berry 524g",
+      "supplier_url": "https://sweetandglory.com/brands/n-p/nerds-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 5,
+      "case_price": 33.44,
+      "unit_cost": 6.69,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 3,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "05/05/2027",
+      "amazon_recorded_price": 14.75,
+      "amazon_record_last_seen_at": "2026-10-22T22:16:47.57377+00:00",
+      "price_observed_at_explicit": "2026-10-22T22:16:47.57377+00:00",
+      "storefront_prices": [
+        {
+          "seller_id": "A38Z8Q6NGM1ZUV",
+          "price": 14.75,
+          "record_last_seen_at": "2026-10-22T22:16:47.57377+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00079200082277",
+          "source": "details:A38Z8Q6NGM1ZUV",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A38Z8Q6NGM1ZUV",
+          "status": "captured",
+          "captured_at": "2026-10-22T22:27:27.580134+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B0CTVHB9Z6",
+          "captured_title": "Nerds Gummy Clusters Candy, Very Berry, Resealable 18.5 Ounce Big Bag",
+          "structured_size": "524 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "18.5 Ounce (Pack of 1)",
+            "Container Type": "Bag",
+            "Number of Items": "1",
+            "Package Size Name": "18.5 oz",
+            "Item Package Quantity": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A38Z8Q6NGM1ZUV",
+          "facts": {
+            "Item Weight": "524 g",
+            "Item Package Weight": "0.53 Kilograms"
+          },
+          "captured_at": "2026-10-22T22:27:27.580134+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 5,
+        "sellableAmazonPacksPerCase": 5,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B003TL9TK4",
+      "title": "Fanta Grape Soda Can 355 ml (Pack of 12)",
+      "amazon_url": "https://www.amazon.co.uk/dp/B003TL9TK4",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": true,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "FANT020",
+      "supplier_product": "Fanta Grape Can 355ml",
+      "supplier_url": "https://sweetandglory.com/brands/f-h/fanta-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 9.09,
+      "unit_cost": 0.76,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 108,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "01/03/2027",
+      "amazon_recorded_price": 16.28,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:13.617792+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [
+        {
+          "pack_qty": 12,
+          "unit_size": "355ml"
+        }
+      ],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 12,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "ASIN identity is verified, but this suggested supplier offer is not its verified supplier link.",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "RESOLVE_SPECIFIC_CAUTION"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B01N5V16DM",
+      "title": "Fanta Grape Soda Can 355 ml (Pack of 12)",
+      "amazon_url": "https://www.amazon.co.uk/dp/B01N5V16DM",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "FANT020",
+      "supplier_product": "Fanta Grape Can 355ml",
+      "supplier_url": "https://sweetandglory.com/brands/f-h/fanta-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 9.09,
+      "unit_cost": 0.76,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 108,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "01/03/2027",
+      "amazon_recorded_price": 16.28,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:48.328447+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 12,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B0C59FSFCL",
+      "title": "Warheads Wedgies Theatre Box 99g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B0C59FSFCL",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "WARH091",
+      "supplier_product": "Warheads Wedgies Theatre 99g",
+      "supplier_url": "https://sweetandglory.com/brands/t-z/warheads-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 11.51,
+      "unit_cost": 0.96,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 32,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "30/09/2027",
+      "amazon_recorded_price": 4.81,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:57.805101+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "price": 5.99,
+          "record_last_seen_at": "2026-10-22T16:00:27.326477+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00032134285053",
+          "source": "candidate",
+          "field": "ean"
+        },
+        {
+          "code": "00032134285053",
+          "source": "details:A1BTXEEXK8JSEO",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "status": "partial",
+          "captured_at": "2026-10-23T21:38:46.621191+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B0C59FSFCL",
+          "captured_title": "Warheads Wedgies Theatre Box 99g",
+          "structured_size": null,
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "10.5 cm x 2.9 cm x 15.2 cm",
+            "Container Type": "Packet",
+            "Number of Items": "3",
+            "Package Size Name": "Theatre Box",
+            "Item Package Quantity": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "facts": {
+            "Item Weight": "99 Grams",
+            "Item Package Weight": "0.12 Kilograms"
+          },
+          "captured_at": "2026-10-23T21:38:46.621191+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B0CBSLHB63",
+      "title": "Baileys Original Truffles 205g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B0CBSLHB63",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "LIR008L",
+      "supplier_product": "Baileys Original Truffles 205g",
+      "supplier_url": "https://sweetandglory.com/brands/a-b/baileys-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 6,
+      "case_price": 23.57,
+      "unit_cost": 3.93,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 17,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "31/07/2027",
+      "amazon_recorded_price": 8.98,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:57.805101+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 6,
+        "sellableAmazonPacksPerCase": 6,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B003T3SA70",
+      "title": "Millions Jar Blackcurrant 2.27 Kg",
+      "amazon_url": "https://www.amazon.co.uk/dp/B003T3SA70",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Wholesale Sweets",
+      "supplier_offer_id": "millions-jar-blackcurrant",
+      "supplier_product": "Millions Blackcurrant Flavour - 1 x 2.27kg Jar",
+      "supplier_url": "https://www.wholesalesweets.co.uk/millions-jar-blackcurrant",
+      "supplier_active": true,
+      "case_qty": 1,
+      "case_price": 7.99,
+      "unit_cost": 7.99,
+      "supplier_cost_observed_at": "2026-10-18T15:30:22.866045+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 38.99,
+      "amazon_record_last_seen_at": "2026-10-22T16:00:48.897183+00:00",
+      "price_observed_at_explicit": "2026-10-22T16:00:48.897183+00:00",
+      "storefront_prices": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "price": 38.99,
+          "record_last_seen_at": "2026-10-22T16:00:48.897183+00:00"
+        }
+      ],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "status": "partial",
+          "captured_at": "2026-10-23T21:35:53.829849+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B003T3SA70",
+          "captured_title": "Millions Jar Blackcurrant 2.27 Kg",
+          "structured_size": null,
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "2.27 kg (Pack of 1)",
+            "Container Type": "Jar",
+            "Number of Items": "1",
+            "Package Size Name": "2.27 kg",
+            "Item Package Quantity": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "facts": {
+            "Item Weight": "2.27 Kilograms",
+            "Item Package Weight": "2.42 kg"
+          },
+          "captured_at": "2026-10-23T21:35:53.829849+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 1,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "CONFIRM_SUPPLIER_STOCK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B003ZZAFY8",
+      "title": "Jell-O Lime Gelatin Dessert 85g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B003ZZAFY8",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "JELL018",
+      "supplier_product": "Jell-O Lime 85g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/jell-o-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 24,
+      "case_price": 28.28,
+      "unit_cost": 1.18,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 3,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "07/03/2028",
+      "amazon_recorded_price": 5.92,
+      "amazon_record_last_seen_at": "2026-10-22T15:04:31.245617+00:00",
+      "price_observed_at_explicit": "2026-10-22T15:04:31.245617+00:00",
+      "storefront_prices": [
+        {
+          "seller_id": "A1FPOQ0X0CHT30",
+          "price": 5.92,
+          "record_last_seen_at": "2026-10-22T15:04:31.245617+00:00"
+        }
+      ],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A1FPOQ0X0CHT30",
+          "status": "captured",
+          "captured_at": "2026-10-22T15:43:13.208347+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B003ZZAFY8",
+          "captured_title": "Jell-O Lime Gelatin Dessert 85g",
+          "structured_size": "",
+          "structured_pack_qty": null,
+          "pack_facts": {}
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A1FPOQ0X0CHT30",
+          "facts": {},
+          "captured_at": "2026-10-22T15:43:13.208347+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B003ZZE3AA",
+      "title": "Jell-O Raspberry Gelatin 85g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B003ZZE3AA",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "JELL011",
+      "supplier_product": "Jell-O Raspberry 85g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/jell-o-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 24,
+      "case_price": 27.96,
+      "unit_cost": 1.17,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 7,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "24/04/2028",
+      "amazon_recorded_price": 6.04,
+      "amazon_record_last_seen_at": "2026-10-22T16:30:56.095671+00:00",
+      "price_observed_at_explicit": "2026-10-22T16:30:56.095671+00:00",
+      "storefront_prices": [
+        {
+          "seller_id": "AWJV3WH2WNVEW",
+          "price": 6.04,
+          "record_last_seen_at": "2026-10-22T16:30:56.095671+00:00"
+        }
+      ],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "AWJV3WH2WNVEW",
+          "status": "captured",
+          "captured_at": "2026-10-22T21:32:26.057024+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B003ZZE3AA",
+          "captured_title": "Jell-O Raspberry Gelatin 85g",
+          "structured_size": "0.28 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "85 g (Pack of 1)",
+            "Container Type": "Packet",
+            "Number of Items": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "AWJV3WH2WNVEW",
+          "facts": {
+            "Item Weight": "0.28 g",
+            "Item Package Weight": "0.09 Kilograms"
+          },
+          "captured_at": "2026-10-22T21:32:26.057024+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "Captured size 0.28g conflicts with the 85g title; treat this as suspect extraction data and confirm the unit label.",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "RESOLVE_SPECIFIC_CAUTION"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B004283KSA",
+      "title": "Jell-O Watermelon Gelatin Dessert 85g Box",
+      "amazon_url": "https://www.amazon.co.uk/dp/B004283KSA",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "JELL008",
+      "supplier_product": "Jell-O Watermelon 85g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/jell-o-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 24,
+      "case_price": 28.32,
+      "unit_cost": 1.18,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 5,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "08/03/2028",
+      "amazon_recorded_price": 3.99,
+      "amazon_record_last_seen_at": "2026-10-22T16:29:09.237897+00:00",
+      "price_observed_at_explicit": "2026-10-22T16:29:09.237897+00:00",
+      "storefront_prices": [
+        {
+          "seller_id": "AWJV3WH2WNVEW",
+          "price": 3.99,
+          "record_last_seen_at": "2026-10-22T16:29:09.237897+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00043000200292",
+          "source": "details:AWJV3WH2WNVEW",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "AWJV3WH2WNVEW",
+          "status": "captured",
+          "captured_at": "2026-10-22T21:20:07.65639+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B004283KSA",
+          "captured_title": "Jell-O Watermelon Gelatin Dessert 85g Box",
+          "structured_size": "85 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "85 g (Pack of 1)",
+            "Container Type": "Box",
+            "Number of Items": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "AWJV3WH2WNVEW",
+          "facts": {
+            "Item Weight": "85 g",
+            "Item Package Weight": "0.1 Kilograms"
+          },
+          "captured_at": "2026-10-22T21:20:07.65639+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B00AB3FI6W",
+      "title": "Jell-O Gelatin Dessert Raspberry 85 g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B00AB3FI6W",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "JELL011",
+      "supplier_product": "Jell-O Raspberry 85g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/jell-o-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 24,
+      "case_price": 27.96,
+      "unit_cost": 1.17,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 7,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "24/04/2028",
+      "amazon_recorded_price": 13.6,
+      "amazon_record_last_seen_at": "2026-10-22T14:42:03.315438+00:00",
+      "price_observed_at_explicit": "2026-10-22T14:42:03.315438+00:00",
+      "storefront_prices": [
+        {
+          "seller_id": "A2GRC0NKNVNZQE",
+          "price": 13.6,
+          "record_last_seen_at": "2026-10-22T14:42:03.315438+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00043000200025",
+          "source": "details:A2GRC0NKNVNZQE",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A2GRC0NKNVNZQE",
+          "status": "captured",
+          "captured_at": "2026-10-22T14:51:37.046289+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B00AB3FI6W",
+          "captured_title": "Jell-O Gelatin Dessert Raspberry 85 g",
+          "structured_size": "95.2 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "85 g (Pack of 1)",
+            "Container Type": "Pouch",
+            "Number of Items": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A2GRC0NKNVNZQE",
+          "facts": {
+            "Item Weight": "95.2 g",
+            "Item Package Weight": "0.39 Kilograms"
+          },
+          "captured_at": "2026-10-22T14:51:37.046289+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B08HQL7NCM",
+      "title": "Nerds Gummy Clusters Candy 85g (Pack of 3)",
+      "amazon_url": "https://www.amazon.co.uk/dp/B08HQL7NCM",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "NERD023",
+      "supplier_product": "Nerds Gummy Clusters Theatre 85g",
+      "supplier_url": "https://sweetandglory.com/brands/n-p/nerds-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 14.75,
+      "unit_cost": 1.23,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 183,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "27/05/2027",
+      "amazon_recorded_price": 13.99,
+      "amazon_record_last_seen_at": "2026-10-22T16:02:17.646988+00:00",
+      "price_observed_at_explicit": "2026-10-22T16:02:17.646988+00:00",
+      "storefront_prices": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "price": 13.99,
+          "record_last_seen_at": "2026-10-22T16:02:17.646988+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00079200051228",
+          "source": "details:A1BTXEEXK8JSEO",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "status": "partial",
+          "captured_at": "2026-10-23T21:38:30.409795+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B08HQL7NCM",
+          "captured_title": "Nerds Gummy Clusters Candy 85g (Pack of 3)",
+          "structured_size": null,
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "85 g (Pack of 3)",
+            "Container Type": "Packet",
+            "Number of Items": "3",
+            "Package Size Name": "Pack of 3",
+            "Item Package Quantity": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "facts": {
+            "Item Weight": "3 Ounces",
+            "Item Package Weight": "0.32 Kilograms"
+          },
+          "captured_at": "2026-10-23T21:38:30.409795+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 3,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 4,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B0FTPY8RLZ",
+      "title": "REESE'S PIECES PEG BAG 136g 4.8 OZ",
+      "amazon_url": "https://www.amazon.co.uk/dp/B0FTPY8RLZ",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "REES165",
+      "supplier_product": "Reese' Pieces Peg Bag 136g",
+      "supplier_url": "https://sweetandglory.com/brands/q-s/reeses-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 20.3,
+      "unit_cost": 1.69,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 35,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "30/09/2027",
+      "amazon_recorded_price": 8.99,
+      "amazon_record_last_seen_at": "2026-10-22T15:03:43.100381+00:00",
+      "price_observed_at_explicit": "2026-10-22T15:03:43.100381+00:00",
+      "storefront_prices": [
+        {
+          "seller_id": "A1FPOQ0X0CHT30",
+          "price": 8.99,
+          "record_last_seen_at": "2026-10-22T15:03:43.100381+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00034000116430",
+          "source": "details:A1FPOQ0X0CHT30",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A1FPOQ0X0CHT30",
+          "status": "captured",
+          "captured_at": "2026-10-22T15:24:57.452883+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B0FTPY8RLZ",
+          "captured_title": "REESE'S PIECES PEG BAG 136g 4.8 OZ",
+          "structured_size": "Full Size",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "Full Size",
+            "Container Type": "Bag",
+            "Number of Items": "1",
+            "Package Size Name": "Peg Bag",
+            "Package Type Name": "Individually Wrapped",
+            "Item Package Quantity": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A1FPOQ0X0CHT30",
+          "facts": {
+            "Item Weight": "136 g",
+            "Item Dimensions": "14 x 3.5 x 19 centimetres",
+            "Item Package Weight": "0.14 Kilograms"
+          },
+          "captured_at": "2026-10-22T15:24:57.452883+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B01N6WJZP1",
+      "title": "Pringles Pizza Potato Crisps, 5.5 oz",
+      "amazon_url": "https://www.amazon.co.uk/dp/B01N6WJZP1",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "PRIN060",
+      "supplier_product": "Pringles Pizza 156g (CAN)",
+      "supplier_url": "https://sweetandglory.com/brands/n-p/pringles-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 14,
+      "case_price": 31.53,
+      "unit_cost": 2.25,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 21,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "27/05/2027",
+      "amazon_recorded_price": 6.44,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:22.12035+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [
+        {
+          "seller_id": "AWJV3WH2WNVEW",
+          "price": 6.06,
+          "record_last_seen_at": "2026-10-22T16:29:25.610243+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00038000138638",
+          "source": "candidate",
+          "field": "ean"
+        },
+        {
+          "code": "00038000138638",
+          "source": "details:AWJV3WH2WNVEW",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "AWJV3WH2WNVEW",
+          "status": "captured",
+          "captured_at": "2026-10-22T21:22:19.271295+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B01N6WJZP1",
+          "captured_title": "Pringles Pizza Potato Crisps, 5.5 oz",
+          "structured_size": "154 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "158 g (Pack of 1)",
+            "Container Type": "Can",
+            "Number of Items": "1",
+            "Package Size Name": "5.5 Ounce",
+            "Package Type Name": "Tin"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "AWJV3WH2WNVEW",
+          "facts": {
+            "Item Weight": "154 g",
+            "Item Dimensions": "7.9 x 7.9 x 23.3 centimetres",
+            "Item Package Weight": "0.2 Kilograms"
+          },
+          "captured_at": "2026-10-22T21:22:19.271295+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 14,
+        "sellableAmazonPacksPerCase": 14,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B09R9MRLY5",
+      "title": "Hi-Chew Bag Fantasy Mix 3 oz",
+      "amazon_url": "https://www.amazon.co.uk/dp/B09R9MRLY5",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "HCHE043",
+      "supplier_product": "Hi-Chew Fantasy Mix Peg Bag 85g",
+      "supplier_url": "https://sweetandglory.com/brands/f-h/hi-chew-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 6,
+      "case_price": 10.77,
+      "unit_cost": 1.8,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 4,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "16/01/2028",
+      "amazon_recorded_price": 5.52,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:57.805101+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [
+        {
+          "seller_id": "A3TNQVR08YJ3AW",
+          "price": null,
+          "record_last_seen_at": "2026-10-22T11:39:30.178457+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00850017589209",
+          "source": "candidate",
+          "field": "ean"
+        },
+        {
+          "code": "00850017589209",
+          "source": "details:A3TNQVR08YJ3AW",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A3TNQVR08YJ3AW",
+          "status": "captured",
+          "captured_at": "2026-10-22T12:08:34.323063+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B09R9MRLY5",
+          "captured_title": "Hi-Chew Bag Fantasy Mix 3 oz",
+          "structured_size": "84.9 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "3 Ounce (Pack of 1)",
+            "Container Type": "Bag",
+            "Number of Items": "1",
+            "Package Size Name": "3 oz",
+            "Item Package Quantity": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A3TNQVR08YJ3AW",
+          "facts": {
+            "Item Weight": "84.9 g",
+            "Item Package Weight": "0.09 Kilograms"
+          },
+          "captured_at": "2026-10-22T12:08:34.323063+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 6,
+        "sellableAmazonPacksPerCase": 6,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B000FD0A7U",
+      "title": "Airheads Blue Raspberry 0.55oz (16g) Pack of 36",
+      "amazon_url": "https://www.amazon.co.uk/dp/B000FD0A7U",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "AIRH009",
+      "supplier_product": "Airheads Blue Raspberry 15g",
+      "supplier_url": "https://sweetandglory.com/brands/a-b/airheads-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 36,
+      "case_price": 6.16,
+      "unit_cost": 0.17,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 573,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "31/03/2028",
+      "amazon_recorded_price": 16.5,
+      "amazon_record_last_seen_at": "2026-10-22T14:41:41.730521+00:00",
+      "price_observed_at_explicit": "2026-10-22T14:41:41.730521+00:00",
+      "storefront_prices": [
+        {
+          "seller_id": "A2GRC0NKNVNZQE",
+          "price": 16.5,
+          "record_last_seen_at": "2026-10-22T14:41:41.730521+00:00"
+        }
+      ],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": "05056600218746",
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A2GRC0NKNVNZQE",
+          "status": "captured",
+          "captured_at": "2026-10-22T14:45:32.522661+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B000FD0A7U",
+          "captured_title": "Airheads Blue Raspberry 0.55oz (16g) Pack of 36",
+          "structured_size": "249 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "15.6 g (Pack of 1)",
+            "Container Type": "Bag",
+            "Number of Items": "1",
+            "Package Size Name": "Box",
+            "Package Type Name": "Pack",
+            "Item Package Quantity": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A2GRC0NKNVNZQE",
+          "facts": {
+            "Item Weight": "249 g",
+            "Item Package Weight": "0.62 Kilograms"
+          },
+          "captured_at": "2026-10-22T14:45:32.522661+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 36,
+        "supplierCaseQty": 36,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "Amazon title 16g versus supplier 15g: confirm actual unit label and 36-unit sell pack.",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "RESOLVE_SPECIFIC_CAUTION"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B000SR5OIS",
+      "title": "Jell-O Lime Gelatin Dessert 3 OZ (85g)",
+      "amazon_url": "https://www.amazon.co.uk/dp/B000SR5OIS",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "JELL018",
+      "supplier_product": "Jell-O Lime 85g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/jell-o-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 24,
+      "case_price": 28.28,
+      "unit_cost": 1.18,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 3,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "07/03/2028",
+      "amazon_recorded_price": 4.33,
+      "amazon_record_last_seen_at": "2026-10-22T16:24:54.96715+00:00",
+      "price_observed_at_explicit": "2026-10-22T16:24:54.96715+00:00",
+      "storefront_prices": [
+        {
+          "seller_id": "A1FPOQ0X0CHT30",
+          "price": 5.53,
+          "record_last_seen_at": "2026-10-22T15:03:31.274332+00:00"
+        },
+        {
+          "seller_id": "AWJV3WH2WNVEW",
+          "price": 4.33,
+          "record_last_seen_at": "2026-10-22T16:24:54.96715+00:00"
+        }
+      ],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 2,
+      "details": [
+        {
+          "seller_id": "A1FPOQ0X0CHT30",
+          "status": "captured",
+          "captured_at": "2026-10-22T15:21:58.841836+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B000SR5OIS",
+          "captured_title": "Jell-O Lime Gelatin Dessert 3 OZ (85g)",
+          "structured_size": "",
+          "structured_pack_qty": null,
+          "pack_facts": {}
+        },
+        {
+          "seller_id": "AWJV3WH2WNVEW",
+          "status": "captured",
+          "captured_at": "2026-10-22T18:51:34.983838+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B000SR5OIS",
+          "captured_title": "Jell-O Lime Gelatin Dessert 3 OZ (85g)",
+          "structured_size": "",
+          "structured_pack_qty": null,
+          "pack_facts": {}
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A1FPOQ0X0CHT30",
+          "facts": {},
+          "captured_at": "2026-10-22T15:21:58.841836+00:00"
+        },
+        {
+          "seller_id": "AWJV3WH2WNVEW",
+          "facts": {},
+          "captured_at": "2026-10-22T18:51:34.983838+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B08NQ11PD2",
+      "title": "6 x NERDS Grape & Strawberry Theatre Box 141g",
+      "amazon_url": "https://www.amazon.co.uk/dp/B08NQ11PD2",
+      "state": "VERIFIED_PAIR_NEEDS_COMMERCIAL_EVIDENCE",
+      "asin_identity_verified": true,
+      "selected_supplier_pair_verified": true,
+      "original_parser_band": "STRONG",
+      "supplier": "Candy Cargo",
+      "supplier_offer_id": "7234089746631",
+      "supplier_product": "Nerds Grape&strawberry 12x141g*big",
+      "supplier_url": "https://candycargo.co.uk/products/nerds-grape-strawberry-12x141g-big",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 16,
+      "unit_cost": 1.3333,
+      "supplier_cost_observed_at": "2026-10-18T15:32:52.23818+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 17.84,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:57.805101+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [
+        {
+          "code": "00079200616007",
+          "source": "candidate",
+          "field": "ean"
+        },
+        {
+          "code": "00079200616007",
+          "source": "manual evidence",
+          "field": "amazon_catalogue_ean"
+        }
+      ],
+      "valid_supplier_code": "00079200616007",
+      "barcode_agrees": true,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [
+        {
+          "pack_qty": 6,
+          "unit_size": "141g"
+        }
+      ],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 6,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 2,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "Preserve verified Amazon 6-pack; supplier case of 12 yields two sell packs, not 12 sales.",
+      "specific_actions": [
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CONFIRM_SUPPLIER_STOCK",
+        "RESOLVE_SPECIFIC_CAUTION"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B075ZRMZSG",
+      "title": "Air Heads Watermelon With Micro Candies Sugarfree Chewing Gum 14 Stick Pack Box Of 12",
+      "amazon_url": "https://www.amazon.co.uk/dp/B075ZRMZSG",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Candy Cargo",
+      "supplier_offer_id": "7234085093575",
+      "supplier_product": "Airheads Watermelon Chewing Gum 12x34g (1.185oz)",
+      "supplier_url": "https://candycargo.co.uk/products/airheads-watermelon-chewing-gum-12x34g-1-185oz",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 15,
+      "unit_cost": 1.25,
+      "supplier_cost_observed_at": "2026-10-18T15:32:52.23818+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 19.99,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:22.12035+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 12,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "CONFIRM_SUPPLIER_STOCK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B0CXJ8W4Z9",
+      "title": "Guinness Mini Caramels Milk Chocolate Pouch 102g - 2024 New Packaging Perfect for Gifting",
+      "amazon_url": "https://www.amazon.co.uk/dp/B0CXJ8W4Z9",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "LIR015L",
+      "supplier_product": "Guinness Mini Caramels 102g",
+      "supplier_url": "https://sweetandglory.com/brands/f-h/guinness-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 25.92,
+      "unit_cost": 2.16,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 36,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "31/07/2027",
+      "amazon_recorded_price": 3,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:57.805101+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [
+        {
+          "seller_id": "AGPUVTKGKK3YU",
+          "price": 4.94,
+          "record_last_seen_at": "2026-10-22T21:37:55.387121+00:00"
+        },
+        {
+          "seller_id": "A2L8Z4LF1SP15L",
+          "price": 6.99,
+          "record_last_seen_at": "2026-10-22T21:52:50.918253+00:00"
+        }
+      ],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 2,
+      "details": [
+        {
+          "seller_id": "AGPUVTKGKK3YU",
+          "status": "captured",
+          "captured_at": "2026-10-22T21:50:08.68985+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B0CXJ8W4Z9",
+          "captured_title": "Guinness Mini Caramels Milk Chocolate Pouch 102g - 2024 New Packaging Perfect for Gifting",
+          "structured_size": "Small Pouch (102g)",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "Small Pouch (102g)",
+            "Container Type": "Pouch",
+            "Package Size Name": "Small Pouch (102g)"
+          }
+        },
+        {
+          "seller_id": "A2L8Z4LF1SP15L",
+          "status": "captured",
+          "captured_at": "2026-10-22T21:56:09.984772+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B0CXJ8W4Z9",
+          "captured_title": "Guinness Mini Caramels Milk Chocolate Pouch 102g - 2024 New Packaging Perfect for Gifting",
+          "structured_size": "Small Pouch (102g)",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "Small Pouch (102g)",
+            "Container Type": "Pouch",
+            "Package Size Name": "Small Pouch (102g)"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "AGPUVTKGKK3YU",
+          "facts": {
+            "Item Weight": "102 g",
+            "Item Package Weight": "0.11 Kilograms"
+          },
+          "captured_at": "2026-10-22T21:50:08.68985+00:00"
+        },
+        {
+          "seller_id": "A2L8Z4LF1SP15L",
+          "facts": {
+            "Item Weight": "102 g",
+            "Item Package Weight": "0.11 Kilograms"
+          },
+          "captured_at": "2026-10-22T21:56:09.984772+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B002E2N43C",
+      "title": "Millions Jar Strawberry 2.27 Kg",
+      "amazon_url": "https://www.amazon.co.uk/dp/B002E2N43C",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Wholesale Sweets",
+      "supplier_offer_id": "millions-jar-strawberry",
+      "supplier_product": "Millions Strawberry Flavour - 1 x 2.27kg Jar",
+      "supplier_url": "https://www.wholesalesweets.co.uk/millions-jar-strawberry",
+      "supplier_active": true,
+      "case_qty": 1,
+      "case_price": 26.89,
+      "unit_cost": 26.89,
+      "supplier_cost_observed_at": "2026-10-18T15:30:22.866045+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 38.99,
+      "amazon_record_last_seen_at": "2026-10-22T16:00:20.67403+00:00",
+      "price_observed_at_explicit": "2026-10-22T16:00:20.67403+00:00",
+      "storefront_prices": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "price": 38.99,
+          "record_last_seen_at": "2026-10-22T16:00:20.67403+00:00"
+        }
+      ],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "status": "partial",
+          "captured_at": "2026-10-23T21:35:41.091686+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B002E2N43C",
+          "captured_title": "Millions Jar Strawberry 2.27 Kg",
+          "structured_size": null,
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "2.27 kg (Pack of 1)",
+            "Container Type": "Jar",
+            "Number of Items": "1",
+            "Package Size Name": "2.27 kg",
+            "Item Package Quantity": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "facts": {
+            "Item Weight": "2.27 Kilograms",
+            "Item Package Weight": "2.39 Kilograms"
+          },
+          "captured_at": "2026-10-23T21:35:41.091686+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 1,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "CONFIRM_SUPPLIER_STOCK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B003T3QKA4",
+      "title": "Millions Jar Bubblegum Flavour 2.27 Kg",
+      "amazon_url": "https://www.amazon.co.uk/dp/B003T3QKA4",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Wholesale Sweets",
+      "supplier_offer_id": "millions-jar-bubblegum",
+      "supplier_product": "Millions Bubblegum Jar 2.27kg",
+      "supplier_url": "https://www.wholesalesweets.co.uk/millions-jar-bubblegum",
+      "supplier_active": true,
+      "case_qty": 1,
+      "case_price": 26.89,
+      "unit_cost": 26.89,
+      "supplier_cost_observed_at": "2026-10-18T15:30:22.866045+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 38.99,
+      "amazon_record_last_seen_at": "2026-10-22T16:00:32.926637+00:00",
+      "price_observed_at_explicit": "2026-10-22T16:00:32.926637+00:00",
+      "storefront_prices": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "price": 38.99,
+          "record_last_seen_at": "2026-10-22T16:00:32.926637+00:00"
+        }
+      ],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "status": "partial",
+          "captured_at": "2026-10-23T21:35:53.686536+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B003T3QKA4",
+          "captured_title": "Millions Jar Bubblegum Flavour 2.27 Kg",
+          "structured_size": null,
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "2.27 kg (Pack of 1)",
+            "Container Type": "Jar",
+            "Number of Items": "1",
+            "Package Size Name": "2.27 kg",
+            "Item Package Quantity": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "facts": {
+            "Item Weight": "2.27 Kilograms",
+            "Item Package Weight": "2.37 Kilograms"
+          },
+          "captured_at": "2026-10-23T21:35:53.686536+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 1,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "CONFIRM_SUPPLIER_STOCK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B012ZTDBXG",
+      "title": "Millions Raspberry 2.27kg Jar",
+      "amazon_url": "https://www.amazon.co.uk/dp/B012ZTDBXG",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Wholesale Sweets",
+      "supplier_offer_id": "raspberry-millions-jar-2-27kg",
+      "supplier_product": "Millions Raspberry - 1 x 2.27kg Jar",
+      "supplier_url": "https://www.wholesalesweets.co.uk/raspberry-millions-jar-2-27kg",
+      "supplier_active": true,
+      "case_qty": 1,
+      "case_price": 26.89,
+      "unit_cost": 26.89,
+      "supplier_cost_observed_at": "2026-10-18T15:30:22.866045+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 38.99,
+      "amazon_record_last_seen_at": "2026-10-22T16:00:44.108794+00:00",
+      "price_observed_at_explicit": "2026-10-22T16:00:44.108794+00:00",
+      "storefront_prices": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "price": 38.99,
+          "record_last_seen_at": "2026-10-22T16:00:44.108794+00:00"
+        }
+      ],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "status": "partial",
+          "captured_at": "2026-10-23T21:37:00.4407+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B012ZTDBXG",
+          "captured_title": "Millions Raspberry 2.27kg Jar",
+          "structured_size": null,
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "2.27kg",
+            "Container Type": "Jar",
+            "Number of Items": "1",
+            "Item Package Quantity": "23"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "facts": {
+            "Item Weight": "2.27 Kilograms",
+            "Item Package Weight": "2.27 Kilograms"
+          },
+          "captured_at": "2026-10-23T21:37:00.4407+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 1,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "CONFIRM_SUPPLIER_STOCK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B01LTIQ3V6",
+      "title": "Millions Jar Cola 2.27 Kg",
+      "amazon_url": "https://www.amazon.co.uk/dp/B01LTIQ3V6",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Wholesale Sweets",
+      "supplier_offer_id": "millions-jar-cola",
+      "supplier_product": "Millions Cola Jar 2.27kg",
+      "supplier_url": "https://www.wholesalesweets.co.uk/millions-jar-cola",
+      "supplier_active": true,
+      "case_qty": 1,
+      "case_price": 26.89,
+      "unit_cost": 26.89,
+      "supplier_cost_observed_at": "2026-10-18T15:30:22.866045+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 38.99,
+      "amazon_record_last_seen_at": "2026-10-22T16:00:31.878829+00:00",
+      "price_observed_at_explicit": "2026-10-22T16:00:31.878829+00:00",
+      "storefront_prices": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "price": 38.99,
+          "record_last_seen_at": "2026-10-22T16:00:31.878829+00:00"
+        }
+      ],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "status": "partial",
+          "captured_at": "2026-10-23T21:37:16.121093+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B01LTIQ3V6",
+          "captured_title": "Millions Jar Cola 2.27 Kg",
+          "structured_size": null,
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "2.27 kg (Pack of 1)",
+            "Container Type": "Jar",
+            "Number of Items": "1",
+            "Package Size Name": "2.27 kg",
+            "Item Package Quantity": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A1BTXEEXK8JSEO",
+          "facts": {
+            "Item Weight": "2.27 Kilograms",
+            "Item Package Weight": "2.4 Kilograms"
+          },
+          "captured_at": "2026-10-23T21:37:16.121093+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 1,
+        "sellableAmazonPacksPerCase": 1,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "CONFIRM_SUPPLIER_STOCK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B002B66UIC",
+      "title": "Jell-O Orange Gelatin Dessert Mix, 3 oz Box",
+      "amazon_url": "https://www.amazon.co.uk/dp/B002B66UIC",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "JELL017",
+      "supplier_product": "Jell-O Orange 85g",
+      "supplier_url": "https://sweetandglory.com/brands/i-m/jell-o-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 24,
+      "case_price": 28.03,
+      "unit_cost": 1.17,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 11,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "04/07/2028",
+      "amazon_recorded_price": null,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:13.617792+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [
+        {
+          "code": "00043000200049",
+          "source": "candidate",
+          "field": "ean"
+        }
+      ],
+      "valid_supplier_code": "00043000200049",
+      "barcode_agrees": true,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 24,
+        "sellableAmazonPacksPerCase": 24,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "VERIFY_AMAZON_SELL_PACK",
+        "CAPTURE_AMAZON_PRICE"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B004I8EUBA",
+      "title": "HEINZ CHILI SAUCE 1 x 340g BOTTLE AMERICAN IMPORT",
+      "amazon_url": "https://www.amazon.co.uk/dp/B004I8EUBA",
+      "state": "HOLD_MISSING_SUPPLIER_PRICE",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Americatessen",
+      "supplier_offer_id": "HEINZ-61050-12",
+      "supplier_product": "Heinz Chili Sauce (340g)",
+      "supplier_url": "https://www.americatessen.com/american-grocery-supplier-american-wholesalers-uk",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 0,
+      "unit_cost": 0,
+      "supplier_cost_observed_at": "2026-10-18T15:32:56.247461+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IDENTITY ONLY · SIGN IN FOR PRICE",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 7.84,
+      "amazon_record_last_seen_at": "2026-09-30T17:21:13.617792+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [
+        {
+          "code": "00013000001120",
+          "source": "candidate",
+          "field": "ean"
+        }
+      ],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "OBTAIN_SUPPLIER_PRICE",
+        "CONFIRM_SUPPLIER_STOCK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B0075OLAAI",
+      "title": "Ritz Bits Peanut Butter 3oz (85g)",
+      "amazon_url": "https://www.amazon.co.uk/dp/B0075OLAAI",
+      "state": "IDENTITY_REVIEW",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Sweet & Glory",
+      "supplier_offer_id": "RITZ001",
+      "supplier_product": "Ritz Bits Peanut Butter 85g",
+      "supplier_url": "https://sweetandglory.com/brands/q-s/ritz-wholesale-uk",
+      "supplier_active": true,
+      "case_qty": 12,
+      "case_price": 15.29,
+      "unit_cost": 1.27,
+      "supplier_cost_observed_at": "2026-10-18T15:31:38.267081+00:00",
+      "supplier_recorded_stock_qty": 5,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "28/02/2027",
+      "amazon_recorded_price": null,
+      "amazon_record_last_seen_at": "2026-10-22T11:39:46.643608+00:00",
+      "price_observed_at_explicit": "2026-10-22T11:39:46.643608+00:00",
+      "storefront_prices": [
+        {
+          "seller_id": "A3TNQVR08YJ3AW",
+          "price": null,
+          "record_last_seen_at": "2026-10-22T11:39:46.643608+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00044000006785",
+          "source": "details:A3TNQVR08YJ3AW",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A3TNQVR08YJ3AW",
+          "status": "captured",
+          "captured_at": "2026-10-22T12:10:53.194459+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B0075OLAAI",
+          "captured_title": "Ritz Bits Peanut Butter 3oz (85g)",
+          "structured_size": "0.28 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Size": "85 g (Pack of 1)",
+            "Container Type": "Cup",
+            "Number of Items": "1",
+            "Package Size Name": "Single Unit / Small Set"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A3TNQVR08YJ3AW",
+          "facts": {
+            "Item Weight": "0.28 g",
+            "Item Package Weight": "0.08 Kilograms"
+          },
+          "captured_at": "2026-10-22T12:10:53.194459+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 12,
+        "sellableAmazonPacksPerCase": 12,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "Captured size 0.28g conflicts with the 85g title; treat this as suspect extraction data and confirm the unit label.",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "CAPTURE_AMAZON_PRICE",
+        "RESOLVE_SPECIFIC_CAUTION"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B07D9YFFGY",
+      "title": "GENERAL MILLS Cheerios Original Cereal 350 GR - Canada",
+      "amazon_url": "https://www.amazon.co.uk/dp/B07D9YFFGY",
+      "state": "HOLD_MISSING_SUPPLIER_PRICE",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "STRONG",
+      "supplier": "Americatessen",
+      "supplier_offer_id": "CHEERIO-40512-14",
+      "supplier_product": "General Mills Cheerios 350g",
+      "supplier_url": "https://www.americatessen.com/american-breakfast-supplier-american-wholesalers-uk",
+      "supplier_active": true,
+      "case_qty": 14,
+      "case_price": 0,
+      "unit_cost": 0,
+      "supplier_cost_observed_at": "2026-10-18T15:32:56.247461+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IDENTITY ONLY · SIGN IN FOR PRICE",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 7.49,
+      "amazon_record_last_seen_at": "2026-09-30T17:22:22.12035+00:00",
+      "price_observed_at_explicit": null,
+      "storefront_prices": [],
+      "valid_amazon_codes": [],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 0,
+      "details": [],
+      "measurement_evidence": [],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 1,
+        "supplierCaseQty": 14,
+        "sellableAmazonPacksPerCase": 14,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_AMAZON_PRODUCT_DETAILS",
+        "CAPTURE_VALID_AMAZON_BARCODE",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "OBTAIN_SUPPLIER_PRICE",
+        "CONFIRM_SUPPLIER_STOCK"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    },
+    {
+      "asin": "B07MF3DY3C",
+      "title": "Mr. Clean Magic Eraser Original Cleaning Pads with Durafoam, Pack of 6",
+      "amazon_url": "https://www.amazon.co.uk/dp/B07MF3DY3C",
+      "state": "HOLD_TRUNCATED_SUPPLIER_IDENTITY",
+      "asin_identity_verified": false,
+      "selected_supplier_pair_verified": false,
+      "original_parser_band": "REVIEW",
+      "supplier": "Wholesale Sweets",
+      "supplier_offer_id": "mr-crilly-s-throat-cough-drops-peppermint-menthol-flavour-bag-90g",
+      "supplier_product": "Mr",
+      "supplier_url": "https://www.wholesalesweets.co.uk/mr-crilly-s-throat-cough-drops-peppermint-menthol-flavour-bag-90g",
+      "supplier_active": true,
+      "case_qty": 18,
+      "case_price": 12.49,
+      "unit_cost": 0.6939,
+      "supplier_cost_observed_at": "2026-10-18T15:30:22.866045+00:00",
+      "supplier_recorded_stock_qty": null,
+      "supplier_recorded_stock_status": "IN STOCK",
+      "supplier_recorded_expiry": "",
+      "amazon_recorded_price": 17.39,
+      "amazon_record_last_seen_at": "2026-10-22T12:57:45.058215+00:00",
+      "price_observed_at_explicit": "2026-10-22T12:57:45.058215+00:00",
+      "storefront_prices": [
+        {
+          "seller_id": "A2F9IL191GVM3E",
+          "price": 17.39,
+          "record_last_seen_at": "2026-10-22T12:57:45.058215+00:00"
+        }
+      ],
+      "valid_amazon_codes": [
+        {
+          "code": "00037000790099",
+          "source": "details:A2F9IL191GVM3E",
+          "field": "upc"
+        }
+      ],
+      "valid_supplier_code": null,
+      "barcode_agrees": false,
+      "detail_capture_count": 1,
+      "details": [
+        {
+          "seller_id": "A2F9IL191GVM3E",
+          "status": "captured",
+          "captured_at": "2026-10-22T13:34:08.393263+00:00",
+          "source_url": "https://www.amazon.co.uk/dp/B07MF3DY3C",
+          "captured_title": "Mr. Clean Magic Eraser Original Cleaning Pads with Durafoam, Pack of 6",
+          "structured_size": "4.54 g",
+          "structured_pack_qty": null,
+          "pack_facts": {
+            "Number of Items": "6",
+            "Package Quantity": "1"
+          }
+        }
+      ],
+      "measurement_evidence": [
+        {
+          "seller_id": "A2F9IL191GVM3E",
+          "facts": {
+            "Item Weight": "4.54 g"
+          },
+          "captured_at": "2026-10-22T13:34:08.393263+00:00"
+        }
+      ],
+      "verified_listing_packs": [],
+      "parser_pack_conversion_unverified": {
+        "amazonPackQty": 6,
+        "supplierCaseQty": 18,
+        "sellableAmazonPacksPerCase": 3,
+        "remainderPhysicalUnits": 0,
+        "exactCaseConversion": true
+      },
+      "specific_caution": "Supplier title is truncated to Mr. Product identity and six-pad Amazon pack cannot be established.",
+      "specific_actions": [
+        "VERIFY_SELECTED_SUPPLIER_IDENTITY",
+        "CAPTURE_VALID_SUPPLIER_BARCODE",
+        "VERIFY_AMAZON_SELL_PACK",
+        "CONFIRM_SUPPLIER_STOCK",
+        "RESOLVE_SPECIFIC_CAUTION"
+      ],
+      "common_actions": [
+        "REFRESH_AMAZON_PRICE_AND_AVAILABILITY",
+        "REFRESH_SUPPLIER_COST_STOCK_AND_EXPIRY",
+        "VERIFY_PACKAGED_DIMENSIONS_AND_WEIGHT",
+        "CONFIRM_PRODUCT_AND_FEE_VAT_TREATMENT",
+        "CALCULATE_FBA_PREP_INBOUND_AND_RETURNS_COSTS",
+        "CHECK_DEMAND_COMPETITION_AND_SELLING_ELIGIBILITY"
+      ],
+      "buy_ready": false,
+      "net_profit": null
+    }
+  ]
+}
