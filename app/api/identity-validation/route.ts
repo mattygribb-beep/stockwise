@@ -22,13 +22,13 @@ export async function GET(req:Request){
       SELECT s.slug,s.name supplier,o.supplier_product_id::text offer_id,o.product,o.brand,o.size,o.case_qty,o.case_price,o.unit_cost,o.ean,o.is_active,
        pio.identity_id,pio.match_status,row_number() over(partition by s.slug order by md5(o.supplier_product_id::text || ${seed})) rn
       FROM supplier_offers o JOIN suppliers s ON s.id=o.supplier_id
-      LEFT JOIN product_identity_offers pio ON pio.supplier=s.name AND pio.supplier_offer_id=o.supplier_product_id::text AND pio.match_status='confirmed'
+      LEFT JOIN product_identity_offers pio ON pio.supplier=s.name AND pio.supplier_offer_id=o.supplier_product_id::text AND pio.match_status IN ('confirmed','verified')
       WHERE o.is_active=true AND s.slug=ANY(${SLUGS})
      ) SELECT * FROM ranked WHERE rn<=25 ORDER BY md5(offer_id || ${seed}) LIMIT ${limit}`
    : await sql`SELECT s.slug,s.name supplier,o.supplier_product_id::text offer_id,o.product,o.brand,o.size,o.case_qty,o.case_price,o.unit_cost,o.ean,o.is_active,
       pio.identity_id,pio.match_status
      FROM supplier_offers o JOIN suppliers s ON s.id=o.supplier_id
-     LEFT JOIN product_identity_offers pio ON pio.supplier=s.name AND pio.supplier_offer_id=o.supplier_product_id::text AND pio.match_status='confirmed'
+     LEFT JOIN product_identity_offers pio ON pio.supplier=s.name AND pio.supplier_offer_id=o.supplier_product_id::text AND pio.match_status IN ('confirmed','verified')
      WHERE o.is_active=true
      ORDER BY md5(s.slug || ':' || o.supplier_product_id::text || ${seed})
      LIMIT ${limit}`
