@@ -1,0 +1,673 @@
+{
+  "date": "2026-10-24",
+  "policy": "Discovery only; quotes separate from approved costs; no identity approvals; old offers never deactivated by these pulls.",
+  "suppliers": [
+    {
+      "supplier": "Appleton Sweets",
+      "slug": "appleton-sweets",
+      "observedAt": "2026-10-24T15:30:11.323Z",
+      "offers": 183,
+      "publicQuotes": 183,
+      "validBarcodes": 174,
+      "explicitCaseCounts": 123,
+      "complete": true,
+      "scope": "Selected public catalogue",
+      "pages": [
+        {
+          "page": 1,
+          "url": "https://www.appletonsweets.co.uk/collections/wholesale-american-sweets/products.json?limit=250&page=1",
+          "products": 183
+        }
+      ],
+      "sample": [
+        {
+          "supplierProductId": "5688752439461-36355304620197",
+          "product": "Airheads Blue Raspberry Chewing Gum - 12 Count",
+          "rawTitle": "Airheads Blue Raspberry Chewing Gum - 12 Count",
+          "brand": "Perfetti Van Melle",
+          "supplierSku": "346787",
+          "size": "",
+          "caseQty": 12,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "073390020965",
+          "status": "OUT OF STOCK",
+          "stockQty": null,
+          "expiry": "",
+          "url": "https://www.appletonsweets.co.uk/products/airheads-blue-rasp-gum-12-count?variant=36355304620197",
+          "source": "Appleton Sweets public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:30:11.323Z",
+              "quotedPrice": 14.49,
+              "vatBasis": "exclusive",
+              "priceAccess": "public quote",
+              "caseQtyConfirmed": true,
+              "commercialHold": true,
+              "scope": "selected public catalogue",
+              "barcodeScope": "Supplier trade variant; retail-unit versus outer-case scope requires review",
+              "barcodeSource": "https://www.appletonsweets.co.uk/products/airheads-blue-rasp-gum-12-count.js"
+            }
+          ]
+        },
+        {
+          "supplierProductId": "5688710529189-36355202777253",
+          "product": "Airheads Candy Theatre Boxes - 12 Count",
+          "rawTitle": "Airheads Candy Theatre Boxes - 12 Count",
+          "brand": "Perfetti Van Melle",
+          "supplierSku": "998453",
+          "size": "",
+          "caseQty": 12,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "00073390610418",
+          "status": "IN STOCK",
+          "stockQty": null,
+          "expiry": "",
+          "url": "https://www.appletonsweets.co.uk/products/airheads-theater-boxes-12-count?variant=36355202777253",
+          "source": "Appleton Sweets public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:30:11.323Z",
+              "quotedPrice": 14.99,
+              "vatBasis": "exclusive",
+              "priceAccess": "public quote",
+              "caseQtyConfirmed": true,
+              "commercialHold": true,
+              "scope": "selected public catalogue",
+              "barcodeScope": "Supplier trade variant; retail-unit versus outer-case scope requires review",
+              "barcodeSource": "https://www.appletonsweets.co.uk/products/airheads-theater-boxes-12-count.js"
+            }
+          ]
+        },
+        {
+          "supplierProductId": "6570975166629-39367945584805",
+          "product": "Airheads Cherry - 36 Count",
+          "rawTitle": "Airheads Cherry - 36 Count",
+          "brand": "Perfetti Van Melle",
+          "supplierSku": "678890",
+          "size": "",
+          "caseQty": 36,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "073390001155",
+          "status": "IN STOCK",
+          "stockQty": null,
+          "expiry": "",
+          "url": "https://www.appletonsweets.co.uk/products/airheads-blue-raspberry-36-count?variant=39367945584805",
+          "source": "Appleton Sweets public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:30:11.323Z",
+              "quotedPrice": 7.99,
+              "vatBasis": "exclusive",
+              "priceAccess": "public quote",
+              "caseQtyConfirmed": true,
+              "commercialHold": true,
+              "scope": "selected public catalogue",
+              "barcodeScope": "Supplier trade variant; retail-unit versus outer-case scope requires review",
+              "barcodeSource": "https://www.appletonsweets.co.uk/products/airheads-blue-raspberry-36-count.js"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "supplier": "Candy Theatre",
+      "slug": "candy-theatre",
+      "observedAt": "2026-10-24T15:30:35.862Z",
+      "offers": 545,
+      "publicQuotes": 545,
+      "validBarcodes": 0,
+      "explicitCaseCounts": 421,
+      "complete": true,
+      "scope": "Selected public catalogue",
+      "pages": [
+        {
+          "page": 1,
+          "url": "https://www.candytheatre.com/products.json?limit=250&page=1",
+          "products": 250
+        },
+        {
+          "page": 2,
+          "url": "https://www.candytheatre.com/products.json?limit=250&page=2",
+          "products": 250
+        },
+        {
+          "page": 3,
+          "url": "https://www.candytheatre.com/products.json?limit=250&page=3",
+          "products": 45
+        }
+      ],
+      "sample": [
+        {
+          "supplierProductId": "10817397522597-50641688887461",
+          "product": "Trolli Halal Peach Rings Bags - 100g x 12",
+          "rawTitle": "Trolli Halal Peach Rings Bags - 100g x 12",
+          "brand": "",
+          "supplierSku": "",
+          "size": "100g",
+          "caseQty": 12,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "",
+          "status": "IN STOCK",
+          "stockQty": null,
+          "expiry": "",
+          "url": "https://www.candytheatre.com/products/trolli-halal-peach-rings-bags-100g-case-x-12?variant=50641688887461",
+          "source": "Candy Theatre public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:30:35.862Z",
+              "quotedPrice": 6.99,
+              "vatBasis": "unknown",
+              "priceAccess": "public quote",
+              "caseQtyConfirmed": true,
+              "commercialHold": true,
+              "scope": "selected public catalogue"
+            }
+          ]
+        },
+        {
+          "supplierProductId": "10817397227685-50641684463781",
+          "product": "Trolli Pop Eye Bags - 75g x 21",
+          "rawTitle": "Trolli Pop Eye Bags - 75g x 21",
+          "brand": "",
+          "supplierSku": "",
+          "size": "75g",
+          "caseQty": 21,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "",
+          "status": "IN STOCK",
+          "stockQty": null,
+          "expiry": "",
+          "url": "https://www.candytheatre.com/products/trolli-pop-eye-bags-75g-case-x-21?variant=50641684463781",
+          "source": "Candy Theatre public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:30:35.862Z",
+              "quotedPrice": 21.99,
+              "vatBasis": "unknown",
+              "priceAccess": "public quote",
+              "caseQtyConfirmed": true,
+              "commercialHold": true,
+              "scope": "selected public catalogue"
+            }
+          ]
+        },
+        {
+          "supplierProductId": "10817396801701-50641677320357",
+          "product": "Trolli Sour Glowworms - 100g x 12",
+          "rawTitle": "Trolli Sour Glowworms - 100g x 12",
+          "brand": "",
+          "supplierSku": "",
+          "size": "100g",
+          "caseQty": 12,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "",
+          "status": "IN STOCK",
+          "stockQty": null,
+          "expiry": "",
+          "url": "https://www.candytheatre.com/products/trolli-sour-glowworms-100g-case-x-12?variant=50641677320357",
+          "source": "Candy Theatre public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:30:35.862Z",
+              "quotedPrice": 6.99,
+              "vatBasis": "unknown",
+              "priceAccess": "public quote",
+              "caseQtyConfirmed": true,
+              "commercialHold": true,
+              "scope": "selected public catalogue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "supplier": "Hollywood Candy Wholesale",
+      "slug": "hollywood-candy",
+      "observedAt": "2026-10-24T15:31:11.154Z",
+      "offers": 30,
+      "publicQuotes": 0,
+      "validBarcodes": 0,
+      "explicitCaseCounts": 20,
+      "complete": false,
+      "scope": "Pilot: first 3 pages only",
+      "pages": [
+        {
+          "page": 1,
+          "url": "https://www.hollywoodcandywholesale.co.uk/shop",
+          "products": 10
+        },
+        {
+          "page": 2,
+          "url": "https://www.hollywoodcandywholesale.co.uk/shop/page/2",
+          "products": 10
+        },
+        {
+          "page": 3,
+          "url": "https://www.hollywoodcandywholesale.co.uk/shop/page/3",
+          "products": 10
+        }
+      ],
+      "sample": [
+        {
+          "supplierProductId": "5136",
+          "product": "Nandos Sauces Xtra Xtra Hot 6x50g",
+          "rawTitle": "Nandos Sauces Xtra Xtra Hot 6x50g",
+          "brand": "",
+          "supplierSku": "",
+          "size": "50g",
+          "caseQty": 6,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "",
+          "status": "AVAILABILITY UNKNOWN",
+          "stockQty": null,
+          "expiry": "",
+          "url": "https://www.hollywoodcandywholesale.co.uk/shop/nsxxh-nandos-sauces-xtra-xtra-hot-6x50g-5136",
+          "source": "Hollywood Candy Wholesale public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:31:11.154Z",
+              "quotedPrice": null,
+              "vatBasis": "unknown",
+              "priceAccess": "account required / not exposed",
+              "caseQtyConfirmed": true,
+              "commercialHold": true,
+              "scope": "pilot: first 3 catalogue pages"
+            }
+          ]
+        },
+        {
+          "supplierProductId": "5133",
+          "product": "Nandos Sauces Prego 6x250g",
+          "rawTitle": "Nandos Sauces Prego 6x250g",
+          "brand": "",
+          "supplierSku": "",
+          "size": "250g",
+          "caseQty": 6,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "",
+          "status": "AVAILABILITY UNKNOWN",
+          "stockQty": null,
+          "expiry": "",
+          "url": "https://www.hollywoodcandywholesale.co.uk/shop/nsp-nandos-sauces-prego-6x250g-5133",
+          "source": "Hollywood Candy Wholesale public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:31:11.154Z",
+              "quotedPrice": null,
+              "vatBasis": "unknown",
+              "priceAccess": "account required / not exposed",
+              "caseQtyConfirmed": true,
+              "commercialHold": true,
+              "scope": "pilot: first 3 catalogue pages"
+            }
+          ]
+        },
+        {
+          "supplierProductId": "5128",
+          "product": "Nandos Sauce Hot 6x250g",
+          "rawTitle": "Nandos Sauce Hot 6x250g",
+          "brand": "",
+          "supplierSku": "",
+          "size": "250g",
+          "caseQty": 6,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "",
+          "status": "AVAILABILITY UNKNOWN",
+          "stockQty": null,
+          "expiry": "",
+          "url": "https://www.hollywoodcandywholesale.co.uk/shop/nsh-nandos-sauce-hot-6x250g-5128",
+          "source": "Hollywood Candy Wholesale public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:31:11.154Z",
+              "quotedPrice": null,
+              "vatBasis": "unknown",
+              "priceAccess": "account required / not exposed",
+              "caseQtyConfirmed": true,
+              "commercialHold": true,
+              "scope": "pilot: first 3 catalogue pages"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "supplier": "The Kandy King",
+      "slug": "kandy-king",
+      "observedAt": "2026-10-24T15:30:29.061Z",
+      "offers": 437,
+      "publicQuotes": 0,
+      "validBarcodes": 0,
+      "explicitCaseCounts": 437,
+      "complete": true,
+      "scope": "Selected public catalogue",
+      "pages": [
+        {
+          "page": 1,
+          "url": "https://www.thekandyking.co.uk/wholesale-american-candy/",
+          "products": 50
+        },
+        {
+          "page": 2,
+          "url": "https://www.thekandyking.co.uk/wholesale-american-candy/page/2/",
+          "products": 50
+        },
+        {
+          "page": 3,
+          "url": "https://www.thekandyking.co.uk/wholesale-american-candy/page/3/",
+          "products": 50
+        },
+        {
+          "page": 4,
+          "url": "https://www.thekandyking.co.uk/wholesale-american-candy/page/4/",
+          "products": 50
+        },
+        {
+          "page": 5,
+          "url": "https://www.thekandyking.co.uk/wholesale-american-candy/page/5/",
+          "products": 50
+        },
+        {
+          "page": 6,
+          "url": "https://www.thekandyking.co.uk/wholesale-american-candy/page/6/",
+          "products": 50
+        },
+        {
+          "page": 7,
+          "url": "https://www.thekandyking.co.uk/wholesale-american-candy/page/7/",
+          "products": 50
+        },
+        {
+          "page": 8,
+          "url": "https://www.thekandyking.co.uk/wholesale-american-candy/page/8/",
+          "products": 50
+        },
+        {
+          "page": 9,
+          "url": "https://www.thekandyking.co.uk/wholesale-american-candy/page/9/",
+          "products": 37
+        }
+      ],
+      "sample": [
+        {
+          "supplierProductId": "207470",
+          "product": "Airheads Mystery Fruity Bites Original Flavour Peg Bags USA (12x170g)",
+          "rawTitle": "Airheads Mystery Fruity Bites Original Flavour Peg Bags USA (12x170g)",
+          "brand": "",
+          "supplierSku": "",
+          "size": "170g",
+          "caseQty": 12,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "",
+          "status": "IN STOCK",
+          "stockQty": 34,
+          "expiry": "05/2027",
+          "url": "https://www.thekandyking.co.uk/airheads-mystery-fruity-bites-original-flavour-peg-bags-usa-12x170g/",
+          "source": "The Kandy King public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:30:29.061Z",
+              "quotedPrice": null,
+              "vatBasis": "unknown",
+              "priceAccess": "account required / not exposed",
+              "caseQtyConfirmed": true,
+              "commercialHold": true,
+              "scope": "selected public catalogue"
+            }
+          ]
+        },
+        {
+          "supplierProductId": "7129",
+          "product": "Airheads Watermelon (36 x 15g)",
+          "rawTitle": "Airheads Watermelon (36 x 15g)",
+          "brand": "",
+          "supplierSku": "",
+          "size": "15g",
+          "caseQty": 36,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "",
+          "status": "IN STOCK",
+          "stockQty": 11,
+          "expiry": "11/2027",
+          "url": "https://www.thekandyking.co.uk/airheads-watermelon-15g/",
+          "source": "The Kandy King public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:30:29.061Z",
+              "quotedPrice": null,
+              "vatBasis": "unknown",
+              "priceAccess": "account required / not exposed",
+              "caseQtyConfirmed": true,
+              "commercialHold": true,
+              "scope": "selected public catalogue"
+            }
+          ]
+        },
+        {
+          "supplierProductId": "158830",
+          "product": "Airheads Xtreme Sourful Rainbow Berry Peg bags USA (12x170g)",
+          "rawTitle": "Airheads Xtreme Sourful Rainbow Berry Peg bags USA (12x170g)",
+          "brand": "",
+          "supplierSku": "",
+          "size": "170g",
+          "caseQty": 12,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "",
+          "status": "IN STOCK",
+          "stockQty": 5,
+          "expiry": "01/2027",
+          "url": "https://www.thekandyking.co.uk/airheads-xtreme-sourful-rainbow-berry-pegbeg-usa-12x170g/",
+          "source": "The Kandy King public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:30:29.061Z",
+              "quotedPrice": null,
+              "vatBasis": "unknown",
+              "priceAccess": "account required / not exposed",
+              "caseQtyConfirmed": true,
+              "commercialHold": true,
+              "scope": "selected public catalogue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "supplier": "Sweets & Treats Wholesale",
+      "slug": "sweets-treats",
+      "observedAt": "2026-10-24T15:30:42.248Z",
+      "offers": 130,
+      "publicQuotes": 130,
+      "validBarcodes": 0,
+      "explicitCaseCounts": 126,
+      "complete": true,
+      "scope": "Selected public catalogue",
+      "pages": [
+        {
+          "page": 1,
+          "url": "https://www.sweetsandtreatswholesale.co.uk/wholesale-american-sweets.html?p=1",
+          "products": 12
+        },
+        {
+          "page": 2,
+          "url": "https://www.sweetsandtreatswholesale.co.uk/wholesale-american-sweets.html?p=2",
+          "products": 12
+        },
+        {
+          "page": 3,
+          "url": "https://www.sweetsandtreatswholesale.co.uk/wholesale-american-sweets.html?p=3",
+          "products": 12
+        },
+        {
+          "page": 4,
+          "url": "https://www.sweetsandtreatswholesale.co.uk/wholesale-american-sweets.html?p=4",
+          "products": 12
+        },
+        {
+          "page": 5,
+          "url": "https://www.sweetsandtreatswholesale.co.uk/wholesale-american-sweets.html?p=5",
+          "products": 12
+        },
+        {
+          "page": 6,
+          "url": "https://www.sweetsandtreatswholesale.co.uk/wholesale-american-sweets.html?p=6",
+          "products": 12
+        },
+        {
+          "page": 7,
+          "url": "https://www.sweetsandtreatswholesale.co.uk/wholesale-american-sweets.html?p=7",
+          "products": 12
+        },
+        {
+          "page": 8,
+          "url": "https://www.sweetsandtreatswholesale.co.uk/wholesale-american-sweets.html?p=8",
+          "products": 12
+        },
+        {
+          "page": 9,
+          "url": "https://www.sweetsandtreatswholesale.co.uk/wholesale-american-sweets.html?p=9",
+          "products": 12
+        },
+        {
+          "page": 10,
+          "url": "https://www.sweetsandtreatswholesale.co.uk/wholesale-american-sweets.html?p=10",
+          "products": 12
+        },
+        {
+          "page": 11,
+          "url": "https://www.sweetsandtreatswholesale.co.uk/wholesale-american-sweets.html?p=11",
+          "products": 10
+        }
+      ],
+      "sample": [
+        {
+          "supplierProductId": "2338",
+          "product": "Airheads Bites - Paradise Blends x 18",
+          "rawTitle": "Airheads Bites - Paradise Blends x 18",
+          "brand": "",
+          "supplierSku": "WA00301",
+          "size": "",
+          "caseQty": 18,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "",
+          "status": "IN STOCK",
+          "stockQty": 1,
+          "expiry": "",
+          "url": "https://www.sweetsandtreatswholesale.co.uk/airheads-bites-paradise-blends-x-18.html",
+          "source": "Sweets & Treats Wholesale public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:30:42.248Z",
+              "quotedPrice": 19.73,
+              "vatBasis": "unknown",
+              "priceAccess": "public quote",
+              "caseQtyConfirmed": true,
+              "commercialHold": true,
+              "scope": "selected public catalogue"
+            }
+          ]
+        },
+        {
+          "supplierProductId": "2337",
+          "product": "Airheads Bites x 18",
+          "rawTitle": "Airheads Bites x 18",
+          "brand": "",
+          "supplierSku": "WA00300",
+          "size": "",
+          "caseQty": 18,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "",
+          "status": "IN STOCK",
+          "stockQty": 1,
+          "expiry": "",
+          "url": "https://www.sweetsandtreatswholesale.co.uk/airheads-bites-x-18.html",
+          "source": "Sweets & Treats Wholesale public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:30:42.248Z",
+              "quotedPrice": 19.73,
+              "vatBasis": "unknown",
+              "priceAccess": "public quote",
+              "caseQtyConfirmed": true,
+              "commercialHold": true,
+              "scope": "selected public catalogue"
+            }
+          ]
+        },
+        {
+          "supplierProductId": "2058",
+          "product": "Airheads Gum Paradise Blends x 12",
+          "rawTitle": "Airheads Gum Paradise Blends x 12",
+          "brand": "",
+          "supplierSku": "WA00273",
+          "size": "",
+          "caseQty": 12,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "",
+          "status": "IN STOCK",
+          "stockQty": 2,
+          "expiry": "",
+          "url": "https://www.sweetsandtreatswholesale.co.uk/airheads-gum-paradise-blends-x-12.html",
+          "source": "Sweets & Treats Wholesale public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:30:42.248Z",
+              "quotedPrice": 13.02,
+              "vatBasis": "unknown",
+              "priceAccess": "public quote",
+              "caseQtyConfirmed": true,
+              "commercialHold": true,
+              "scope": "selected public catalogue"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "bonBons": "Access challenge: no product catalogue imported"
+}

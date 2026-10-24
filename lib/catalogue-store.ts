@@ -7,7 +7,7 @@ export type SupplierOffer={
  url?:string;source?:string;sourcePage?:number;tags?:any[]
 }
 
-export async function saveSupplierCatalogue(slug:string,offers:SupplierOffer[],metadata:any={}){
+export async function saveSupplierCatalogue(slug:string,offers:SupplierOffer[],metadata:any={},options:{deactivateMissing?:boolean}={}){
  const cleanedOffers=offers.map(o=>({...o,rawTitle:o.rawTitle||o.product,product:cleanProductTitle(o.product)})).filter(o=>!isNonProductTitle(o.product))
  if(!cleanedOffers.length) throw new Error('Refusing to replace saved catalogue with zero product offers')
  const sql=getSql()
@@ -30,7 +30,7 @@ export async function saveSupplierCatalogue(slug:string,offers:SupplierOffer[],m
   await sql`INSERT INTO supplier_offer_snapshots(sync_run_id,supplier_id,supplier_product_id,supplier_sku,product,brand,size,country_origin,case_qty,case_price,unit_cost,ean,stock_qty,expiry,status,product_url)
    SELECT ${runId},${supplierId},x.supplier_product_id,x.supplier_sku,x.product,x.brand,x.size,x.country_origin,x.case_qty,x.case_price,x.unit_cost,x.ean,x.stock_qty,x.expiry,x.status,x.product_url
    FROM jsonb_to_recordset(${payload}::jsonb) AS x(supplier_product_id text,supplier_sku text,product text,raw_title text,brand text,size text,country_origin text,case_qty int,case_price numeric,unit_cost numeric,ean text,stock_qty int,expiry text,status text,product_url text)`
-  await sql`UPDATE supplier_offers SET is_active=false WHERE supplier_id=${supplierId} AND last_sync_run_id IS DISTINCT FROM ${runId}`
+  if(options.deactivateMissing!==false) await sql`UPDATE supplier_offers SET is_active=false WHERE supplier_id=${supplierId} AND last_sync_run_id IS DISTINCT FROM ${runId}`
   await sql`UPDATE supplier_sync_runs SET status='success',offer_count=${cleanedOffers.length},completed_at=now() WHERE id=${runId}`
   return {runId,count:cleanedOffers.length}
  }catch(e:any){
