@@ -1,0 +1,11 @@
+# Product Identity loading
+
+Product Identity previously waited for the full identity-suggestions request, then saved identities, then all 20 supplier catalogue responses before displaying any products. It also rendered every matching catalogue row at once.
+
+The work queue now loads independently from suggestions and saved verification metadata. A dedicated read-only endpoint returns only names, identifiers and the fields used by the identity editor. Its SQL retains the same master/manual barcode and ASIN precedence and active supplier registry scope as the existing catalogue API.
+
+The first request returns 100 products. The remaining catalogue loads in a background continuation request, while the first page is already usable. Client-side search covers all loaded products and shows a loading notice until the full catalogue arrives. The table renders at most 100 product rows at a time, with Previous/Next controls. A browser-session cache makes return visits immediate while fresh data loads; it does not replace the database or persist between browser sessions. A Buyer handoff is applied once, so background refreshes cannot reopen the editor and overwrite the draft.
+
+The existing strict suggestion scoring algorithm and 2,000-offer scan limit are unchanged. Independent database reads run in parallel, and canonical products / aliases are prepared once per offer and master identity instead of once per comparison pair. No identity links or supplier data are modified by these loading changes.
+
+Validation: loader tests cover independent completion, failures, aborts and partial catalogue delivery. A controlled read-only comparison of the original and optimised suggestion routes used the same database-query results and returned deeply identical JSON: 2,000 unlinked offers, 24 strong suggestions and zero review suggestions. The measured replay took 105,232 ms before and 6,779 ms after. The baseline includes the initial database fetch; the optimised replay reused those query results. These measurements establish output parity and a large reduction in repeated parsing work, not a precise production speed multiplier or guaranteed browser latency. The previous live suggestions endpoint was separately measured at 83,210 ms.
