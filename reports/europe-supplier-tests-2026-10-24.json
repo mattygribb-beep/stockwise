@@ -1,0 +1,331 @@
+{
+  "date": "2026-10-24",
+  "databaseOffersSaved": false,
+  "note": "Read-only collector tests. User will run the full saved sync. Retail quotes do not establish wholesale price or case quantity.",
+  "suppliers": [
+    {
+      "supplier": "Epicerie Corner",
+      "slug": "epicerie-corner",
+      "observedAt": "2026-10-24T15:57:12.282Z",
+      "scopeUrl": "https://epiceriecorner.co.uk/collections/biscuits/products.json?limit=250&page=1",
+      "listings": 168,
+      "publicQuotes": 168,
+      "validBarcodes": 135,
+      "caseCountsConfirmed": 0,
+      "barcodePages": 168,
+      "barcodeErrors": 0,
+      "samples": [
+        {
+          "supplierProductId": "6984679751844-41070577844388",
+          "product": "Cat's Tongue Biscuits 200g",
+          "rawTitle": "Cat's Tongue Biscuits 200g",
+          "brand": "",
+          "supplierSku": "FCBO600094",
+          "size": "200g",
+          "caseQty": 1,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "3258561020372",
+          "status": "IN STOCK",
+          "stockQty": null,
+          "expiry": "",
+          "url": "https://epiceriecorner.co.uk/products/biscuits-langue-chat-p-tit-deli-200g?variant=41070577844388",
+          "source": "Epicerie Corner public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:57:12.282Z",
+              "quotedPrice": 2.49,
+              "vatBasis": "unknown",
+              "priceAccess": "public quote",
+              "caseQtyConfirmed": false,
+              "commercialHold": true,
+              "scope": "selected public catalogue",
+              "catalogueScope": "/collections/biscuits/products.json",
+              "quoteType": "public-retail",
+              "barcodeScope": "Supplier trade variant; retail-unit versus outer-case scope requires review",
+              "barcodeSource": "https://epiceriecorner.co.uk/products/biscuits-langue-chat-p-tit-deli-200g.js"
+            }
+          ]
+        },
+        {
+          "supplierProductId": "6984677687460-41070574633124",
+          "product": "St Michel Galettes 130g",
+          "rawTitle": "St Michel Galettes 130g",
+          "brand": "St Michel",
+          "supplierSku": "FCBO60018",
+          "size": "130g",
+          "caseQty": 1,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "3023470001015",
+          "status": "IN STOCK",
+          "stockQty": null,
+          "expiry": "",
+          "url": "https://epiceriecorner.co.uk/products/biscuits-galettes-st-michel-130g?variant=41070574633124",
+          "source": "Epicerie Corner public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:57:12.282Z",
+              "quotedPrice": 1.79,
+              "vatBasis": "unknown",
+              "priceAccess": "public quote",
+              "caseQtyConfirmed": false,
+              "commercialHold": true,
+              "scope": "selected public catalogue",
+              "catalogueScope": "/collections/biscuits/products.json",
+              "quoteType": "public-retail",
+              "barcodeScope": "Supplier trade variant; retail-unit versus outer-case scope requires review",
+              "barcodeSource": "https://epiceriecorner.co.uk/products/biscuits-galettes-st-michel-130g.js"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "supplier": "Delicatezza",
+      "slug": "delicatezza",
+      "observedAt": "2026-10-24T15:57:27.755Z",
+      "scopeUrl": "https://www.delicatezza.co.uk/collections/biscuits-delicatezza/products.json?limit=250&page=1",
+      "listings": 124,
+      "publicQuotes": 124,
+      "validBarcodes": 107,
+      "caseCountsConfirmed": 0,
+      "barcodePages": 124,
+      "barcodeErrors": 0,
+      "samples": [
+        {
+          "supplierProductId": "274669357-12370850185313",
+          "product": "Balocco Cream Wafer (45g)",
+          "rawTitle": "Balocco Cream Wafer (45g)",
+          "brand": "Balocco",
+          "supplierSku": "CC-BL013-WH",
+          "size": "45g",
+          "caseQty": 1,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "80028093",
+          "status": "IN STOCK",
+          "stockQty": null,
+          "expiry": "",
+          "url": "https://www.delicatezza.co.uk/products/balocco-cream-wafer-45g-delicatezza?variant=12370850185313",
+          "source": "Delicatezza public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:57:27.755Z",
+              "quotedPrice": 0.44,
+              "vatBasis": "unknown",
+              "priceAccess": "public quote",
+              "caseQtyConfirmed": false,
+              "commercialHold": true,
+              "scope": "Public retail catalogue only; wholesale and special-order listings excluded",
+              "catalogueScope": "/collections/biscuits-delicatezza/products.json",
+              "quoteType": "public-retail",
+              "barcodeScope": "Supplier trade variant; retail-unit versus outer-case scope requires review",
+              "barcodeSource": "https://www.delicatezza.co.uk/products/balocco-cream-wafer-45g-delicatezza.js"
+            }
+          ]
+        },
+        {
+          "supplierProductId": "150712571-344573487",
+          "product": "Mulino Bianco Cuor di Mela (200g)",
+          "rawTitle": "Mulino Bianco Cuor di Mela (200g)",
+          "brand": "Mulino Bianco",
+          "supplierSku": "CC-MB130-WH",
+          "size": "200g",
+          "caseQty": 1,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "8076809530286",
+          "status": "IN STOCK",
+          "stockQty": null,
+          "expiry": "",
+          "url": "https://www.delicatezza.co.uk/products/mulino-bianco-cuor-di-mela-200g-delicatezza?variant=344573487",
+          "source": "Delicatezza public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:57:27.755Z",
+              "quotedPrice": 2.46,
+              "vatBasis": "unknown",
+              "priceAccess": "public quote",
+              "caseQtyConfirmed": false,
+              "commercialHold": true,
+              "scope": "Public retail catalogue only; wholesale and special-order listings excluded",
+              "catalogueScope": "/collections/biscuits-delicatezza/products.json",
+              "quoteType": "public-retail",
+              "barcodeScope": "Supplier trade variant; retail-unit versus outer-case scope requires review",
+              "barcodeSource": "https://www.delicatezza.co.uk/products/mulino-bianco-cuor-di-mela-200g-delicatezza.js"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "supplier": "The Catering Mart",
+      "slug": "catering-mart",
+      "observedAt": "2026-10-24T15:57:41.144Z",
+      "scopeUrl": "https://thecateringmart.com/collections/wholesale-biscuits/products.json?limit=250&page=1",
+      "listings": 129,
+      "publicQuotes": 129,
+      "validBarcodes": 106,
+      "caseCountsConfirmed": 90,
+      "barcodePages": 129,
+      "barcodeErrors": 0,
+      "samples": [
+        {
+          "supplierProductId": "9268276822231-48629890351319",
+          "product": "Italian Almond Cantucci Biscuits 1kg | 125 Individually Wrapped Biscotti",
+          "rawTitle": "Italian Almond Cantucci Biscuits 1kg | 125 Individually Wrapped Biscotti",
+          "brand": "",
+          "supplierSku": "TCM_M7X4H9D1T5P",
+          "size": "1kg",
+          "caseQty": 1,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "8023696008114",
+          "status": "IN STOCK",
+          "stockQty": null,
+          "expiry": "",
+          "url": "https://thecateringmart.com/products/italian-almond-cantucci-biscuits-1kg-125-pieces?variant=48629890351319",
+          "source": "The Catering Mart public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:57:41.144Z",
+              "quotedPrice": 34.98,
+              "vatBasis": "unknown",
+              "priceAccess": "public quote",
+              "caseQtyConfirmed": false,
+              "commercialHold": true,
+              "scope": "selected public catalogue",
+              "catalogueScope": "/collections/wholesale-biscuits/products.json",
+              "quoteType": "public-catalogue",
+              "barcodeScope": "Supplier trade variant; retail-unit versus outer-case scope requires review",
+              "barcodeSource": "https://thecateringmart.com/products/italian-almond-cantucci-biscuits-1kg-125-pieces.js"
+            }
+          ]
+        },
+        {
+          "supplierProductId": "9224470462679-48422614040791",
+          "product": "Regal Bakery Original Crunchy Tea Rusk 200g",
+          "rawTitle": "Regal Bakery Original Crunchy Tea Rusk 200g",
+          "brand": "",
+          "supplierSku": "TCM_W8K4F7N5Z1",
+          "size": "200g",
+          "caseQty": 1,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "",
+          "status": "IN STOCK",
+          "stockQty": null,
+          "expiry": "",
+          "url": "https://thecateringmart.com/products/regal-bakery-original-crunchy-tea-rusk-200g?variant=48422614040791",
+          "source": "The Catering Mart public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:57:41.144Z",
+              "quotedPrice": 2.5,
+              "vatBasis": "unknown",
+              "priceAccess": "public quote",
+              "caseQtyConfirmed": false,
+              "commercialHold": true,
+              "scope": "selected public catalogue",
+              "catalogueScope": "/collections/wholesale-biscuits/products.json",
+              "quoteType": "public-catalogue",
+              "barcodeScope": "Supplier trade variant; retail-unit versus outer-case scope requires review",
+              "barcodeSource": "https://thecateringmart.com/products/regal-bakery-original-crunchy-tea-rusk-200g.js"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "supplier": "Auguste Noel",
+      "slug": "auguste-noel",
+      "observedAt": "2026-10-24T15:57:56.294Z",
+      "scopeUrl": "https://www.augustenoel.co.uk/Catalogue/WORLD-FOODS/French",
+      "listings": 88,
+      "publicQuotes": 0,
+      "validBarcodes": 0,
+      "caseCountsConfirmed": 85,
+      "barcodePages": 0,
+      "barcodeErrors": 0,
+      "samples": [
+        {
+          "supplierProductId": "11101",
+          "product": "Lorina - Organic Pink Lemonade (12x750ml)",
+          "rawTitle": "Lorina - Organic Pink Lemonade (12x750ml)",
+          "brand": "",
+          "supplierSku": "11101",
+          "size": "750ml",
+          "caseQty": 12,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "",
+          "status": "AVAILABILITY UNKNOWN",
+          "stockQty": null,
+          "expiry": "",
+          "url": "https://www.augustenoel.co.uk/Catalogue/BEVERAGES/Sparkling/Lorina-Pink-Lemonade-6x750ml",
+          "source": "Auguste Noel public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:57:56.294Z",
+              "quotedPrice": null,
+              "vatBasis": "unknown",
+              "priceAccess": "account required / not exposed",
+              "caseQtyConfirmed": true,
+              "commercialHold": true,
+              "scope": "French category",
+              "catalogueScope": "/Catalogue/WORLD-FOODS/French",
+              "quoteType": "public-quote"
+            }
+          ]
+        },
+        {
+          "supplierProductId": "15492",
+          "product": "Belin - Croustilles Emmental (24x138g)",
+          "rawTitle": "Belin - Croustilles Emmental (24x138g)",
+          "brand": "",
+          "supplierSku": "15492",
+          "size": "138g",
+          "caseQty": 24,
+          "casePrice": 0,
+          "unitCost": 0,
+          "ean": "",
+          "status": "AVAILABILITY UNKNOWN",
+          "stockQty": null,
+          "expiry": "",
+          "url": "https://www.augustenoel.co.uk/Catalogue/SNACKING/Crisps/Belin-Croustilles-Emmental-24x138g-15492",
+          "source": "Auguste Noel public catalogue \u00b7 discovery only",
+          "sourcePage": 1,
+          "tags": [
+            {
+              "type": "catalogue-evidence",
+              "observedAt": "2026-10-24T15:57:56.294Z",
+              "quotedPrice": null,
+              "vatBasis": "unknown",
+              "priceAccess": "account required / not exposed",
+              "caseQtyConfirmed": true,
+              "commercialHold": true,
+              "scope": "French category",
+              "catalogueScope": "/Catalogue/WORLD-FOODS/French",
+              "quoteType": "public-quote"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

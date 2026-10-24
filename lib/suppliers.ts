@@ -26,6 +26,10 @@ export const CATALOGUE_SUPPLIERS: SupplierConfig[] = [
   {slug:"candy-theatre",name:"Candy Theatre",priceBasis:'unknown',vatBasis:"unknown",capabilities:['catalogue','identity-only'],discoveryOnly:true,syncPath:'/api/suppliers/public-imports?supplier=candy-theatre'},
   {slug:"sweets-treats",name:"Sweets & Treats Wholesale",priceBasis:'unknown',vatBasis:"unknown",capabilities:['catalogue','identity-only'],discoveryOnly:true,syncPath:'/api/suppliers/public-imports?supplier=sweets-treats'},
   {slug:"bon-bons",name:"Bon Bon\u2019s Wholesale",priceBasis:'unknown',vatBasis:"unknown",capabilities:['catalogue','identity-only'],discoveryOnly:true},
+  {slug:'epicerie-corner',name:'Epicerie Corner',priceBasis:'unknown',vatBasis:'unknown',capabilities:['catalogue','identity-only'],discoveryOnly:true,syncPath:'/api/suppliers/public-imports?supplier=epicerie-corner'},
+  {slug:'delicatezza',name:'Delicatezza',priceBasis:'unknown',vatBasis:'unknown',capabilities:['catalogue','identity-only'],discoveryOnly:true,syncPath:'/api/suppliers/public-imports?supplier=delicatezza'},
+  {slug:'catering-mart',name:'The Catering Mart',priceBasis:'unknown',vatBasis:'unknown',capabilities:['catalogue','identity-only'],discoveryOnly:true,syncPath:'/api/suppliers/public-imports?supplier=catering-mart'},
+  {slug:'auguste-noel',name:'Auguste Noel',priceBasis:'unknown',vatBasis:'unknown',capabilities:['catalogue','identity-only'],discoveryOnly:true,syncPath:'/api/suppliers/public-imports?supplier=auguste-noel'},
 ]
 
 export const CATALOGUE_SLUGS = CATALOGUE_SUPPLIERS.map(s=>s.slug)
