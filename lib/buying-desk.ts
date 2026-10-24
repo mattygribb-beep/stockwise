@@ -28,7 +28,7 @@ export function evidenceIssues(input:DeskInput,now=new Date()){
  return issues
 }
 export function assessBuy(input:DeskInput,rules:BuyingRules,availableCash:number,now=new Date()){
- const missing=evidenceIssues(input,now)
+ const evidenceMissing=evidenceIssues(input,now),missing:string[]=[]
  if(input.sourceActive===false)missing.push('Supplier offer or Amazon listing is no longer active; refresh the source')
  for(const [key,label] of [['caseQty','Supplier units per case'],['packQty','Units per Amazon sale'],['cases','Number of cases']] as const)if(!whole(input[key]))missing.push(label+': enter a positive whole number')
  for(const [key,label] of [['casePrice','Case price'],['sellPrice','Selling price'],['amazonFees','Full Amazon fees per sale']] as const)if(!positive(input[key]))missing.push(label+': enter a checked positive amount')
@@ -56,6 +56,7 @@ export function assessBuy(input:DeskInput,rules:BuyingRules,availableCash:number
  const roi=landed>0?totalProfit/landed*100:0,margin=profit/sell*100
  const metrics={sales,leftover,stock,landed,cogs,profit,totalProfit,cashRequired,roi,margin,breakEven:cogs+Number(input.amazonFees)+operating,stressProfit:(sell*.9-cogs-Number(input.amazonFees)-operating)*sales}
  if(!Object.values(metrics).every(Number.isFinite))return {decision:'NEEDS CHECKS' as const,missing:['Amounts exceed the supported calculation range'],metrics:null}
+ if(evidenceMissing.length)return {decision:'NEEDS CHECKS' as const,missing:evidenceMissing,metrics}
  const reasons:string[]=[]
  if(!Number.isFinite(availableCash)||availableCash<0||cashRequired>availableCash)reasons.push('Order and fulfilment cash exceed your budget after the reserve')
  if(landed>rules.maxCapital)reasons.push('Landed stock exceeds your maximum capital per product')
