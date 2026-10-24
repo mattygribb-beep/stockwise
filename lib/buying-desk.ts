@@ -34,7 +34,7 @@ export function assessBuy(input:DeskInput,rules:BuyingRules,availableCash:number
  for(const [key,label] of [['casePrice','Case price'],['sellPrice','Selling price'],['amazonFees','Full Amazon fees per sale']] as const)if(!positive(input[key]))missing.push(label+': enter a checked positive amount')
  for(const [key,label] of [['delivery','Total supplier delivery'],['prep','Prep and packaging per sale'],['other','Other costs and allowances per sale']] as const)if(!numeric(input[key]))missing.push(label+': enter an amount, including zero if confirmed')
  if(input.mode==='FBM'&&!numeric(input.postage))missing.push('Postage per sale: enter a checked amount')
- if(input.mode==='FBA')for(const key of ['weightG','lengthCm','widthCm','heightCm'] as const)if(!positive(input[key]||''))missing.push('FBA fee quote: add the complete packaged sell-unit '+key)
+ if(input.mode==='FBA')for(const key of ['weightG','lengthCm','widthCm','heightCm'] as const)if(!positive(input[key]||''))missing.push('FBA fee quote: add the complete packaged sell-unit '+({weightG:'weight in grams',lengthCm:'length in centimetres',widthCm:'width in centimetres',heightCm:'height in centimetres'}[key]))
  if(!['FBA','FBM'].includes(input.mode))missing.push('Choose FBA or FBM')
  if(input.sellerVat!=='not_registered')missing.push(input.sellerVat==='registered'?'VAT-registered seller: net VAT analysis is required; this desk currently models cash costs for non-registered sellers':'Confirm seller VAT status')
  if(Object.values(rules).some(n=>!Number.isFinite(n)||n<0))missing.push('Buying rules must contain finite, non-negative limits')
