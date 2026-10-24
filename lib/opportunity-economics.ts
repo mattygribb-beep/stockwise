@@ -10,10 +10,12 @@ export function calculateEconomics(i:EconomicsInput){
  const breakEven=cogs+costs
  return {caseQty,amazonPackQty:pack,yield:yieldCount,leftover,unitCost,cogs,sellPrice:sell,costs,profit,roi,margin,caseProfit,capitalRequired:caseCost,breakEven}
 }
-export function buyingDecision(e:ReturnType<typeof calculateEconomics>,rules:any,evidence:{identityVerified:boolean;demandChecked:boolean;competitionChecked:boolean},context:{budgetAvailable?:number;existingCapitalOnProduct?:number}={}){
+export function buyingDecision(e:ReturnType<typeof calculateEconomics>,rules:any,evidence:{identityVerified:boolean;demandChecked:boolean;competitionChecked:boolean;feesKnown?:boolean;purchaseChecksComplete?:boolean},context:{budgetAvailable?:number;existingCapitalOnProduct?:number}={}){
  const reasons:string[]=[]
  if(!evidence.identityVerified)reasons.push('Verify the exact Amazon product and pack')
  if(!e.sellPrice)reasons.push('Add a checked selling price')
+ if(!evidence.feesKnown)reasons.push('Add checked Amazon fees')
+ if(evidence.purchaseChecksComplete!==true)reasons.push('Complete VAT, eligibility, expiry and budget checks in Buying Desk')
  if(!evidence.demandChecked)reasons.push('Check demand')
  if(!evidence.competitionChecked)reasons.push('Check competition')
  if(e.amazonPackQty>e.caseQty)reasons.push('Amazon sell pack is larger than the supplier case')
