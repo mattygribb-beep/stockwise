@@ -1,5 +1,21 @@
 # Buying Desk
 
+## Compact assistant update — 24 October 2026
+
+The default interface is now an automatic planning summary rather than the detailed evidence-entry form. Saved supplier/ASIN relationships and barcodes, quantities, prices, stock and expiry fill automatically. Known packaged measurements are reused; item weight is never substituted for packaged weight. The old detailed review records remain in their original browser storage key.
+
+Each product immediately shows modelled landed stock cost, profit per sale/order and upfront cash, even while market/account evidence is incomplete. These are explicitly estimates; missing checks still prevent purchase approval. The shortlist is a planning basket and can contain unverified or financially unattractive products for comparison.
+
+Cost assumptions are saved once in Profile: VAT status, Individual/Professional plan allocation, packaging, FBM postage and other allowance. Sweet & Glory's published ex-VAT case basis and £7.10 ex-VAT starting mainland parcel tariff prefill a scenario with 20% product/fee VAT. Product VAT and parcel weight/checkout conditions remain assumptions until confirmed. These defaults are not verified costs for every product.
+
+The public-research endpoint accepts only cohort ASINs and reads the fixed Amazon UK product URL and an allowlisted Sweet & Glory brand page. It parses only the exact supplier SKU and exact primary ASIN. Lowest advertised Amazon offers are labelled as observations, not confirmed delivered Buy Box prices. Failed or blocked requests preserve previous successful observations and their original dates. It performs no database writes, follows no redirects and does not solve access challenges. Other suppliers use the existing Sync all route.
+
+Public prices do not establish demand, competition, account eligibility or a complete account-specific fee quote. Those final confirmations are grouped under a collapsed Before ordering section; dates/references are recorded automatically. Google is offered as an exact-ASIN research link; the application does not claim to call a Google Search API.
+
+Public source references checked 24 October 2026: https://sweetandglory.com/delivery ; https://sell.amazon.co.uk/pricing ; https://sellercentral.amazon.co.uk/help/hub/reference/external/GMVQXVHHG8Q8KN7L ; https://www.royalmail.com/current-postage-prices .
+
+The sections below describe the underlying strict purchase evaluator. The compact UI exposes previews before its evidence gates pass.
+
 The ten-product validation cohort connects saved supplier offers and Amazon listings to a manual evidence check, an order cost model and a combined budget check. It does not buy stock or declare an identity match commercially approved.
 
 ## Cost model
