@@ -35,7 +35,7 @@ export default function MatchReview(){
   return matchesQuery&&matchesFilter&&matchesGap
  })
  return <div className="reviewWorkspace">
-  <div className="reviewHeading"><div className="title"><small>PRODUCT VERIFICATION</small><h1>Match review<span className="headingCount">64</span></h1><p>A clear next step for every product. Verify the evidence before committing capital.</p></div><span className="snapshotStamp">Audit · 24 Oct 2026</span></div>
+  <div className="reviewHeading"><div className="title"><small>PRODUCT VERIFICATION</small><h1>Match Review <span className="headingCount">64</span></h1><p>A clear next step for every product. Verify the evidence before committing capital.</p></div><span className="snapshotStamp">Audit · 24 Oct 2026</span></div>
   <div className="reviewMetrics">
    {[['7','Verified supplier pairs','Identity linked; commercial checks remain'],['54','Need identity review','Confirm product, packaging and sell pack'],['3','On hold','Missing supplier price or product details'],['0','Ready to buy','Complete the evidence before deciding']].map(([value,label,help])=><div className="reviewMetric" key={label}><span>{label}</span><strong>{value}</strong><small>{help}</small></div>)}
   </div>
