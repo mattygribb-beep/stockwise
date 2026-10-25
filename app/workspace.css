@@ -54,5 +54,5 @@ button,input,select,textarea{font-family:inherit}button{transition:background .1
 .buyingResults .catalogueTable table{min-width:0;width:100%;table-layout:auto}.buyingResults .catalogueTable th{white-space:normal}.buyingResults .catalogueTable td:first-child{min-width:210px}.buyingResults .catalogueTable td{padding:12px 9px}
 
 /* Keep Buyer search compact and remove the shared primary-button top offset. */
-.page .finnSearchRow{width:100%;max-width:720px;grid-template-columns:minmax(0,1fr) 150px;align-items:stretch;gap:10px}.page .finnSearchRow input{height:46px;min-height:46px}.page .finnSearchRow .primary{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:46px;min-height:46px;margin:0;padding:0 16px}
+.page .finnSearchRow+.quick{margin-top:12px}.page .finnSearchRow{width:100%;max-width:720px;grid-template-columns:minmax(0,1fr) 150px;align-items:stretch;gap:10px}.page .finnSearchRow input{height:46px;min-height:46px}.page .finnSearchRow .primary{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:46px;min-height:46px;margin:0;padding:0 16px}
 @media(max-width:700px){.page .finnSearchRow{grid-template-columns:minmax(0,1fr)}.page .finnSearchRow .primary{width:100%}}
