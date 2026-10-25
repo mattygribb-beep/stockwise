@@ -16,7 +16,7 @@ import {runSupplierSyncQueue,canSyncSupplier,SupplierSyncResult} from '../lib/su
 import {supplierData} from '../lib/supplier-directory'
 import {CATALOGUE_SUPPLIERS,CATALOGUE_SLUGS,catalogueSupplierByName} from '../lib/suppliers'
 const BuyingDesk=dynamic(()=>import('./buying-desk'),{loading:()=> <section role="status">Loading Buying Desk…</section>})
-const MatchReview=dynamic(()=>import('./match-review'),{loading:()=> <section role="status" className="emptyState">Loading the review checklist…</section>})
+const MatchReview=dynamic(()=>import('./match-review'),{loading:()=> <section role="status" className="emptyState">Loading the review queue…</section>})
 type Row={id:string;product:string;ean:string;supplier:string;buy:number;sell:number;qty:number;status:string;decision:string;actualSell?:number;asin?:string;identityStatus?:string;finnStatus?:string}
 const seed:Row[]=[
 {id:'1',product:"Reese's Pieces Theatre Box 113g",ean:'034000470772',supplier:'American Fizz',buy:1.95,sell:5.99,qty:24,status:'Completed',decision:'BUY',actualSell:5.75},

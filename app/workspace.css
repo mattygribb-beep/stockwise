@@ -56,3 +56,15 @@ button,input,select,textarea{font-family:inherit}button{transition:background .1
 /* Keep Buyer search compact and remove the shared primary-button top offset. */
 .page .finnSearchRow+.quick{margin-top:12px}.page .finnSearchRow{width:100%;max-width:720px;grid-template-columns:minmax(0,1fr) 150px;align-items:stretch;gap:10px}.page .finnSearchRow input{height:46px;min-height:46px}.page .finnSearchRow .primary{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:46px;min-height:46px;margin:0;padding:0 16px}
 @media(max-width:700px){.page .finnSearchRow{grid-template-columns:minmax(0,1fr)}.page .finnSearchRow .primary{width:100%}}
+
+/* A single practical identity question replaces the long commercial checklist. */
+.manualReviewQuestion{margin:14px 0;padding:12px 14px;background:#f6f8fb;border:1px solid #e5e9f0;border-radius:10px}
+.manualReviewQuestion strong{font-size:12px;color:#526279}
+.manualReviewQuestion p{margin:5px 0 0;font-size:14px;line-height:1.6;color:#243348}
+.reviewTabs button span{margin-left:5px;font-size:11px;opacity:.75}
+.reviewLinks{flex-wrap:wrap}
+.labelledFacts{margin-top:12px;border-top:1px solid #e5e9f0;padding-top:12px}
+.labelledFacts summary{cursor:pointer;font-size:13px;font-weight:600;color:#364a64}
+.labelledFacts dl{margin-top:10px}
+.reviewMore{display:flex;justify-content:center;padding:20px}
+@media(max-width:700px){.reviewFilters{align-items:stretch}.reviewTabs{flex-wrap:wrap}.manualReviewQuestion p{font-size:13px}.reviewProductBottom{gap:12px;flex-wrap:wrap}.reviewProductBottom .reviewLinks a{min-height:44px;display:inline-flex;align-items:center}.reviewFilters select{min-height:44px;max-width:100%}}
