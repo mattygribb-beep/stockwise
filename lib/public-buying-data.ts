@@ -1,5 +1,5 @@
 // Public observations only. A successful fetch is not a Buy Box or eligibility check.
-export type PublicObservation={status:'found'|'unavailable'|'blocked';checkedAt:string;url:string;price?:number;caseQty?:number;stock?:number;expiry?:string;vatBasis?:'ex';note:string}
+export type PublicObservation={status:'found'|'unavailable'|'blocked';identityConflict?:boolean;checkedAt:string;url:string;price?:number;caseQty?:number;stock?:number;expiry?:string;vatBasis?:'ex';note:string}
 const text=(s:string)=>s.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,' ').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,' ').replace(/<[^>]*>/g,' ').replace(/&pound;|&#163;/g,'£').replace(/&nbsp;|&#160;/g,' ').replace(/&amp;/g,'&').replace(/\s+/g,' ').trim()
 const blocked=(html:string)=>/validateCaptcha|Robot Check|automated access|verify you are human|unusual traffic|cf-chl-|checking your browser/i.test(html)
 const amount=(s:string)=>{const n=Number(s.replace(/,/g,''));return Number.isFinite(n)&&n>0&&n<100000?n:null}
@@ -14,13 +14,18 @@ export function parseSupplierObservation(html:string,sku:string,url:string,check
  if(!price||!Number.isInteger(qty)||qty<1||!stock)return {status:'unavailable',url,checkedAt,note:'Could not reliably read this SKU’s price and pack; saved data retained'}
  return {status:'found',url,checkedAt,price,caseQty:qty,stock:Number(stock[1].replace(/,/g,'')),expiry,vatBasis:'ex',note:'Exact SKU from the public supplier catalogue; checkout terms still apply'}
 }
-export function parseAmazonObservation(html:string,asin:string,url:string,checkedAt:string):PublicObservation{
+export function parseAmazonObservation(html:string,asin:string,url:string,checkedAt:string,expectedPack?:number):PublicObservation{
  if(blocked(html))return {status:'blocked',url,checkedAt,note:'Amazon requires browser verification; no new price captured'}
  const escaped=asin.replace(/[^A-Z0-9]/g,''),canonical=html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)/i)?.[1]
  const primaryInput=html.match(/<input\b[^>]*\bname=["']ASIN["'][^>]*>/i)?.[0]||''
  const canonicalMatch=!!canonical&&new RegExp('/(?:dp|gp/product)/'+escaped+'(?:[/?#]|$)','i').test(canonical)
  const inputMatch=new RegExp('value=["\']'+escaped+'["\']','i').test(primaryInput)
  if((canonical&&!canonicalMatch)||(!canonicalMatch&&!inputMatch))return {status:'unavailable',url,checkedAt,note:'Exact primary ASIN could not be confirmed on the returned page'}
+ if(expectedPack!==undefined){
+  const title=text(html.match(/<span\b[^>]*id=["']productTitle["'][^>]*>([\s\S]*?)<\/span>/i)?.[1]||'')
+  const n=title.toLowerCase().replace(/-/g,' ').match(/\b(?:pack|case|set|bundle)\s+of\s+(\d+)\b/)||title.match(/\b(\d+)\s*[x×]\s*\d+(?:\.\d+)?\s*(?:g|kg|ml|l|oz)\b/i)||title.match(/^\s*(\d+)\s*[x×]\s+[a-z]/i)||title.match(/^\s*x\s*(\d+)\s+/i)||title.match(/\b(\d+)\s+packs?\b/i)
+  if(!title||(n?Number(n[1])!==expectedPack:expectedPack!==1))return {status:'unavailable',url,checkedAt,identityConflict:!!title,note:'Live Amazon title does not confirm the saved sell pack; price not updated'}
+ }
  // Only standard one-time offer blocks. Never recommendations, ads, subscription prices or arbitrary £ amounts.
  const blocks=[...html.matchAll(/<(?:div|span)\b[^>]*id=["'](?:corePrice_feature_div|corePriceDisplay_desktop_feature_div|corePriceDisplay_mobile_feature_div)["'][^>]*>([\s\S]{0,18000}?)(?=<div[^>]+id=["'][^"']+_feature_div["']|$)/gi)]
  for(const m of blocks){const block=m[1];if(/subscribe|subscription|snsPrice/i.test(block))continue

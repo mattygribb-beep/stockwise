@@ -20,15 +20,16 @@ export function budgetShortlist(products:AssistantProduct[],records:Record<strin
    const operating=Number(review.input.prep)+Number(review.input.other)+(review.input.mode==='FBM'?Number(review.input.postage):0),net=Number(review.input.sellPrice)-Number(review.input.amazonFees)-operating
    const maxLanded=Math.min(m.sales*(net-rules.profit),m.sales*(Number(review.input.sellPrice)*(1-rules.margin/100)-Number(review.input.amazonFees)-operating),m.sales*net/(1+rules.roi/100),m.sales*net-rules.totalProfit,available-operating*m.sales,rules.maxCapital,rules.firstCapital)
    const maxCasePrice=Math.max(0,Math.floor((maxLanded-Number(review.input.delivery))/cases/vat*100)/100)
-   const affordable=valid&&m.cashRequired<=available,financialPass=affordable&&m.profit>0&&m.profit>=rules.profit&&m.totalProfit>=rules.totalProfit&&m.roi>=rules.roi&&m.margin>=rules.margin&&m.landed<=rules.firstCapital&&m.landed<=rules.maxCapital&&m.sales<=rules.firstUnits
+   const minimumMet=!p.offer?.minimumOrderQuoted||Number(review.input.casePrice)*cases>=p.offer.minimumOrderQuoted
+   const affordable=valid&&m.cashRequired<=available,financialPass=minimumMet&&affordable&&m.profit>0&&m.profit>=rules.profit&&m.totalProfit>=rules.totalProfit&&m.roi>=rules.roi&&m.margin>=rules.margin&&m.landed<=rules.firstCapital&&m.landed<=rules.maxCapital&&m.sales<=rules.firstUnits
    const current=fresh(review.priceDate,3,now)&&fresh(review.supplier?.checkedAt||p.offer?.seenAt,7,now)
-   const reasons=[!affordable?'Exceeds cash after reserve':null,!financialPass?'Does not meet your buying targets':null,!p.identityConfirmed?'Exact product and pack need review':null,!current?'Refresh saved prices':null,!futureExpiry(review.expiry,now)?'Confirm a future expiry date':null].filter(Boolean) as string[]
+   const reasons=[!minimumMet?'Supplier minimum order is not met':null,!affordable?'Exceeds cash after reserve':null,!financialPass?'Does not meet your buying targets':null,review.input.evidence.identity?.status!=='pass'?'Exact product and pack need review':null,!current?'Refresh saved prices':null,!futureExpiry(review.expiry,now)?'Confirm a future expiry date':null].filter(Boolean) as string[]
    variants.push({p,key,cases,review,affordable,financialPass,current,maxCasePrice,reasons})
   }
   variants.sort((a,b)=>Number(b.financialPass)-Number(a.financialPass)||(b.review.metrics!.totalProfit-a.review.metrics!.totalProfit)||a.cases-b.cases)
   if(variants[0])options.push(variants[0])
  }
- options.sort((a,b)=>Number(b.financialPass&&b.current&&b.p.identityConfirmed&&futureExpiry(b.review.expiry,now))-Number(a.financialPass&&a.current&&a.p.identityConfirmed&&futureExpiry(a.review.expiry,now))||Number(b.affordable)-Number(a.affordable)||(b.review.metrics!.totalProfit-a.review.metrics!.totalProfit)||a.key.localeCompare(b.key))
+ options.sort((a,b)=>Number(b.financialPass&&b.current&&b.review.input.evidence.identity?.status==='pass'&&futureExpiry(b.review.expiry,now))-Number(a.financialPass&&a.current&&a.review.input.evidence.identity?.status==='pass'&&futureExpiry(a.review.expiry,now))||Number(b.affordable)-Number(a.affordable)||(b.review.metrics!.totalProfit-a.review.metrics!.totalProfit)||a.key.localeCompare(b.key))
  const seen=new Set<string>(),alternatives=options.filter(x=>{if(seen.has(x.p.asin))return false;seen.add(x.p.asin);return true})
- return {valid,available,options:alternatives,top:alternatives.slice(0,3),missing,passing:alternatives.filter(x=>x.financialPass&&x.current&&x.p.identityConfirmed&&futureExpiry(x.review.expiry,now))}
+ return {valid,available,options:alternatives,top:alternatives.slice(0,3),missing,passing:alternatives.filter(x=>x.financialPass&&x.current&&x.review.input.evidence.identity?.status==='pass'&&futureExpiry(x.review.expiry,now))}
 }
