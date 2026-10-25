@@ -16,7 +16,8 @@ export function futureExpiry(value:string|null|undefined,now:Date){
 export function assistantReview(p:AssistantProduct,r:AssistantRecord,costs:CostAssumptions,rules:BuyingRules,available:number,now=new Date()){
  const valid=(o?:PublicObservation)=>o?.status==='found'&&Number.isFinite(Date.parse(o.checkedAt))&&Date.parse(o.checkedAt)<=now.getTime()
  const ordered=(rows:(PublicObservation|undefined)[],kind:'price'|'package'|'check'='check')=>rows.filter(valid).sort((a,b)=>Date.parse((kind==='price'?b!.priceCheckedAt:kind==='package'?b!.packageCheckedAt:undefined)||b!.checkedAt)-Date.parse((kind==='price'?a!.priceCheckedAt:kind==='package'?a!.packageCheckedAt:undefined)||a!.checkedAt)) as PublicObservation[]
- const sourceAmazon=[r.observations?.amazon,r.research?.amazon,p.publicResearch?.observations?.amazon],sourceSupplier=[r.observations?.supplier,r.research?.supplier,p.publicResearch?.observations?.supplier]
+ const sameIdentity=!p.identitySignature||r.identitySignature===p.identitySignature,local=sameIdentity?r:{}
+ const sourceAmazon=[local.observations?.amazon,local.research?.amazon,p.publicResearch?.observations?.amazon],sourceSupplier=[local.observations?.supplier,local.research?.supplier,p.publicResearch?.observations?.supplier]
  const priced=ordered(sourceAmazon.filter(o=>positive(o?.price)),'price')[0],packaged=ordered(sourceAmazon.filter(o=>o?.packaged),'package')[0]
  const supplier=ordered(sourceSupplier)[0]||null,amazon=priced||packaged||null
  const supplierNewer=!!supplier&&Date.parse(supplier.priceCheckedAt||supplier.checkedAt)>=Date.parse(p.offer?.seenAt||'1970-01-01'),amazonNewer=!!priced&&Date.parse(priced.priceCheckedAt||priced.checkedAt)>=Date.parse(p.amazon?.seenAt||'1970-01-01')
@@ -39,9 +40,9 @@ export function assistantReview(p:AssistantProduct,r:AssistantRecord,costs:CostA
  }
  const manualFeeApplies=r.overrides?.amazonFees!==undefined&&(r.feeMode||(r.mode==='FBA'?'FBA':'FBM'))===mode
  if(manualFeeApplies){input.amazonFees=r.overrides!.amazonFees!;if(mode==='FBA'&&positive(input.amazonFees))input.fbaFeeQuoted=true;feeExplanation='Your entered complete Amazon fee quote for '+mode+'; confirm referral, fulfilment, VAT, surcharges and selling-plan costs are included'}
- const latestResearch=[r.research,p.publicResearch?.research].filter(Boolean).sort((a,b)=>Date.parse(b!.checkedAt)-Date.parse(a!.checkedAt))[0]
+ const latestResearch=[local.research,p.publicResearch?.research].filter(Boolean).sort((a,b)=>Date.parse(b!.checkedAt)-Date.parse(a!.checkedAt))[0]
  const savedIdentityConfirmed=p.identityConfirmed&&!latestResearch?.amazon.identityConflict
- const signature=JSON.stringify([input,expiry,savedIdentityConfirmed,costs,amazon?.checkedAt,supplier?.checkedAt]),confirmed=r.confirmations?.signature===signature?r.confirmations:null
+ const signature=JSON.stringify([p.identitySignature,input,expiry,savedIdentityConfirmed,costs,amazon?.checkedAt,supplier?.checkedAt]),confirmed=r.confirmations?.signature===signature?r.confirmations:null
  const identityConfirmed=(savedIdentityConfirmed||confirmed?.identity)&&!latestResearch?.amazon.identityConflict
  const day=(confirmed?.checkedAt||now.toISOString()).slice(0,10),evidence:Partial<Record<EvidenceKey,Evidence>>={}
  const pass=(key:EvidenceKey,source:string,date=day)=>{evidence[key]={status:'pass',source,checkedAt:date}}
