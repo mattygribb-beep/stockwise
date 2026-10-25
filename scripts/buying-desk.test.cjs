@@ -39,12 +39,9 @@ test('duplicates, empty basket, negative reserve and invalid buying rules do not
 test('legacy workspace cannot approve a purchase without the complete Buying Desk checks',()=>{
  const e=legacy.calculateEconomics({caseQty:12,caseCost:12,amazonPackQty:1,sellPrice:20,feesPerSale:0});const r=legacy.buyingDecision(e,rules,{identityVerified:true,demandChecked:true,competitionChecked:true});assert.equal(r.ready,false);assert.equal(r.decision,'CONSIDER');assert.ok(r.reasons.includes('Add checked Amazon fees'))
 });
-test('live-data route returns exactly ten paired candidates and excludes inactive/hidden records in its query',async()=>{
- const {BUYING_COHORT}=load('lib/buying-cohort.ts');assert.equal(BUYING_COHORT.length,10);assert.equal(new Set(BUYING_COHORT.map(x=>x.asin)).size,10);
- const queries=[];const sql=async(strings,...values)=>{const q=strings.join('?');queries.push(q);if(q.includes('amazon_catalogue_candidates'))return BUYING_COHORT.map(x=>({asin:x.asin,title:x.asin,observed_price:'9.99'}));return BUYING_COHORT.map(x=>({supplier:x.supplier,supplier_product_id:x.offerId,product:x.offerId,case_qty:12,case_price:'10',stock_qty:4}))};
- const route=load('app/api/buying-desk/route.ts',name=>name==='next/server'?{NextResponse:{json:x=>x}}:name.endsWith('/db')?{getSql:()=>sql}:{BUYING_COHORT});
- const r=await route.GET();assert.equal(r.ok,true);assert.equal(r.products.length,10);assert.ok(r.products.every(x=>x.available));assert.ok(queries.every(q=>!q.includes('INSERT')));assert.ok(queries[0].includes("match_status<>'hidden'"));assert.ok(queries[1].includes('o.is_active=true'))
+test('live-data route exposes the dynamic verified pool and coverage',async()=>{
+ const products=[{asin:'B000SRHUNA',offerId:'NEW'}],coverage={relationships:35,products:1},route=load('app/api/buying-desk/route.ts',name=>name==='next/server'?{NextResponse:{json:x=>x}}:{loadBuyingPool:async()=>({products,coverage,blocked:[]})});const r=await route.GET();assert.equal(r.ok,true);assert.equal(r.products[0].offerId,'NEW');assert.equal(r.coverage.relationships,35)
 });
 test('database failure produces a visible API error rather than an empty successful basket',async()=>{
- const route=load('app/api/buying-desk/route.ts',name=>name==='next/server'?{NextResponse:{json:(x,o)=>({...x,status:o?.status})}}:name.endsWith('/db')?{getSql:()=>()=>{throw Error('DB unavailable')}}:{BUYING_COHORT:[]});const r=await route.GET();assert.equal(r.ok,false);assert.equal(r.status,500)
+ const route=load('app/api/buying-desk/route.ts',name=>name==='next/server'?{NextResponse:{json:(x,o)=>({...x,status:o?.status})}}:{loadBuyingPool:async()=>{throw Error('DB unavailable')}});const r=await route.GET();assert.equal(r.ok,false);assert.equal(r.status,500)
 });
