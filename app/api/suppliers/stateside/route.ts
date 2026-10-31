@@ -23,19 +23,19 @@ function offerFromProduct(p:any){
 
 export async function GET(){
  try{
-  const offers:any[]=[];let page=1;let scanned=0
+  const offers:any[]=[];let page=1;let scanned=0;let complete=false;const seenPages=new Set<string>()
   while(page<=10){
    const r=await fetch(BASE+'/collections/all/products.json?limit=250&page='+page,{cache:'no-store',headers:HEADERS})
    if(!r.ok)throw new Error('Stateside catalogue API returned '+r.status+' on page '+page)
-   const products=(await r.json()).products||[]
+   const body=await r.json();if(!Array.isArray(body.products))throw new Error('Supplier catalogue response is missing products');const products=body.products;const signature=products.map((p:any)=>p.id).join(',');if(products.length&&seenPages.has(signature))throw new Error('Supplier repeated a catalogue page; saved catalogue kept');seenPages.add(signature)
    scanned+=products.length
    offers.push(...products.map(offerFromProduct).filter(Boolean))
-   if(products.length<250)break
+   if(products.length<250){complete=true;break}
    page++
   }
   const unique=[...new Map(offers.map((x:any)=>[x.supplierProductId,x])).values()].sort((a:any,b:any)=>a.product.localeCompare(b.product))
   if(unique.length<80)throw new Error('Stateside returned only '+unique.length+' in-stock products; previous saved catalogue kept')
-  await saveSupplierCatalogue('stateside',unique,{scannedProducts:scanned,cataloguePages:page,method:'Shopify collection JSON'})
+  await saveSupplierCatalogue('stateside',unique,{scannedProducts:scanned,cataloguePages:page,method:'Shopify collection JSON'},{coverage:{complete,scope:'catalogue',pagesFetched:Math.min(page,10),termination:complete?'short-page':undefined}})
   return NextResponse.json({ok:true,supplier:'Stateside Distribution',scannedProducts:scanned,inStock:unique.length,cataloguePages:page,offers:unique})
  }catch(e:any){return NextResponse.json({ok:false,error:e?.message||'Catalogue sync failed'},{status:500})}
 }

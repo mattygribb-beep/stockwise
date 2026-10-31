@@ -17,7 +17,7 @@ export async function syncOneSupplier(supplier:SupplierConfig,request:typeof fet
   const savedResponse=await request('/api/suppliers/catalogue?supplier='+encodeURIComponent(supplier.slug),{cache:'no-store'})
   const saved=await readJson(savedResponse)
   if(!savedResponse.ok||!saved.ok||!Array.isArray(saved.offers)||!saved.offers.length)throw new Error('Saved catalogue could not be loaded.')
-  return {slug:supplier.slug,name:supplier.name,state:'success',count:saved.offers.length,offers:saved.offers,lastSync:saved.lastSync||new Date().toISOString()}
+  return {slug:supplier.slug,name:supplier.name,state:'success',count:saved.offers.length,offers:saved.offers,lastSync:saved.lastSync||new Date().toISOString(),...(saved.sync?.missingRetained>0?{message:String(saved.sync.missingRetained)+' unseen products retained with their original check dates. '+(saved.sync.protectionReason||'Review supplier changes before buying.')}:{} )}
  }catch{
   return {slug:supplier.slug,name:supplier.name,state:'reload-needed',count:data.offerCount||data.offers?.length,message:'Sync saved. Reload the catalogue to view it; no repeat sync is needed.'}
  }

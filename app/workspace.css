@@ -68,3 +68,5 @@ button,input,select,textarea{font-family:inherit}button{transition:background .1
 .labelledFacts dl{margin-top:10px}
 .reviewMore{display:flex;justify-content:center;padding:20px}
 @media(max-width:700px){.reviewFilters{align-items:stretch}.reviewTabs{flex-wrap:wrap}.manualReviewQuestion p{font-size:13px}.reviewProductBottom{gap:12px;flex-wrap:wrap}.reviewProductBottom .reviewLinks a{min-height:44px;display:inline-flex;align-items:center}.reviewFilters select{min-height:44px;max-width:100%}}
+/* The header avatar provides profile access on phones; the desktop account row must stay hidden. */
+@media(max-width:700px){.shell button.profileAccess{display:none}}
