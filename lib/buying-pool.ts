@@ -7,6 +7,8 @@ export {packagedFacts} from './package-facts'
 import type {AssistantProduct} from './buying-assistant'
 const code=(v:unknown)=>String(v||'').replace(/\D/g,'').replace(/^0+/,'')
 const key=(supplier:string,id:unknown)=>supplier+'|'+String(id)
+// Match JavaScript trim() when selecting the three package fields in SQL.
+const packageKeyWhitespace=" \t\n\r\u000b\f\u00a0\u1680\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u2028\u2029\u202f\u205f\u3000\ufeff"
 const whole=(v:unknown)=>Number.isInteger(Number(v))&&Number(v)>0
 export function explicitSellPack(title:string):number|null{
  const t=String(title||'').toLowerCase().replace(/-/g,' ')
@@ -51,12 +53,12 @@ export function buildBuyingPool(data:{amazon:any[];offers:any[];links:any[];deta
 export async function loadBuyingPool(sql=getSql(),selection?:{asin:string;supplier?:string;offerId?:string}){
  const selectedAsin=selection?.asin||null,selectedSupplier=selection?.supplier||null,selectedOffer=selection?.offerId||null
  const [amazon,offers,links,details,scout,observations,ba,va,nt]=await Promise.all([
-  sql`SELECT * FROM amazon_catalogue_candidates WHERE (${selectedAsin}::text IS NULL OR asin=${selectedAsin})`,
+  sql`SELECT asin,title,observed_price,last_seen_at,match_status,matched_supplier_offer_id,ean,upc,gtin,jsonb_strip_nulls(jsonb_build_object('amazon_sell_pack_qty',match_evidence->'amazon_sell_pack_qty','caution',match_evidence->'caution')) AS match_evidence FROM amazon_catalogue_candidates WHERE (${selectedAsin}::text IS NULL OR asin=${selectedAsin})`,
   sql`SELECT o.id,o.supplier_product_id,o.supplier_sku,o.product,o.brand,o.size,o.case_qty,o.case_price,o.ean,o.stock_qty,o.status,o.expiry,o.product_url,o.last_seen_at,o.tags,s.name supplier,pi.asin manual_asin,pi.ean manual_ean,l.match_status link_status FROM supplier_offers o JOIN suppliers s ON s.id=o.supplier_id LEFT JOIN product_identities pi ON pi.supplier=s.name AND pi.supplier_offer_id=o.supplier_product_id::text LEFT JOIN product_identity_offers l ON l.supplier=s.name AND l.supplier_offer_id=o.supplier_product_id::text WHERE o.is_active=true AND (${selectedSupplier}::text IS NULL OR s.name=${selectedSupplier}) AND (${selectedOffer}::text IS NULL OR o.supplier_product_id::text=${selectedOffer})`,
   sql`SELECT l.supplier,l.supplier_offer_id,a.asin,a.title,a.pack_qty FROM product_identity_offers l JOIN amazon_product_listings a ON a.identity_id=l.identity_id WHERE l.match_status IN ('confirmed','verified') AND a.status='verified' AND a.marketplace='UK' AND (${selectedAsin}::text IS NULL OR a.asin=${selectedAsin}) AND (${selectedSupplier}::text IS NULL OR l.supplier=${selectedSupplier}) AND (${selectedOffer}::text IS NULL OR l.supplier_offer_id=${selectedOffer})`,
-  sql`SELECT DISTINCT ON (asin) asin,title,raw_facts FROM storefront_product_details WHERE (${selectedAsin}::text IS NULL OR asin=${selectedAsin}) ORDER BY asin,last_scanned_at DESC`,
+  sql`SELECT DISTINCT ON (asin) asin,title,(SELECT COALESCE(jsonb_object_agg(f.key,f.value),'{}'::jsonb) FROM jsonb_each(CASE WHEN jsonb_typeof(raw_facts->'facts')='object' THEN raw_facts->'facts' WHEN raw_facts->'facts' IS NULL OR raw_facts->'facts' IN ('null'::jsonb,'false'::jsonb,'0'::jsonb,'""'::jsonb) THEN CASE WHEN jsonb_typeof(raw_facts)='object' THEN raw_facts ELSE '{}'::jsonb END ELSE '{}'::jsonb END) f WHERE lower(btrim(f.key,${packageKeyWhitespace})) IN ('item package weight','package dimensions','item package dimensions')) AS raw_facts FROM storefront_product_details WHERE (${selectedAsin}::text IS NULL OR asin=${selectedAsin}) ORDER BY asin,last_scanned_at DESC,CASE WHEN detail_status='captured' THEN 0 ELSE 1 END,seller_id`,
   sql`SELECT DISTINCT ON (asin) asin,title,observed_price,last_seen_at FROM storefront_scout_catalogue WHERE observed_price>0 AND (${selectedAsin}::text IS NULL OR asin=${selectedAsin}) ORDER BY asin,last_seen_at DESC`,
-  sql`SELECT * FROM buying_public_observations WHERE (${selectedAsin}::text IS NULL OR asin=${selectedAsin}) AND (${selectedSupplier}::text IS NULL OR supplier=${selectedSupplier}) AND (${selectedOffer}::text IS NULL OR supplier_offer_id=${selectedOffer})`,
+  sql`SELECT asin,supplier,supplier_offer_id,identity_signature,latest_attempt,amazon,supplier_observation FROM buying_public_observations WHERE (${selectedAsin}::text IS NULL OR asin=${selectedAsin}) AND (${selectedSupplier}::text IS NULL OR supplier=${selectedSupplier}) AND (${selectedOffer}::text IS NULL OR supplier_offer_id=${selectedOffer})`,
   sql`SELECT canonical_brand,alias FROM product_brand_aliases`,sql`SELECT brand,canonical_variant,alias FROM product_variant_aliases`,sql`SELECT term FROM product_noise_terms`
  ])
  return buildBuyingPool({amazon,offers,links,details,scout,observations,knowledge:{brandAliases:ba,variantAliases:va,noiseTerms:nt}})

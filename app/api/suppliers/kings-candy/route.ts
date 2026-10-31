@@ -8,13 +8,13 @@ const size=(s:string)=>{const a=[...String(s).matchAll(/(\d+(?:\.\d+)?)\s*(g|kg|
 const origin=(p:any)=>{const text=String(p.body_html||'').replace(/<[^>]+>/g,' ');const m=text.match(/Country\s+of\s+Origin\s*:?\s*(?:Made\s+in\s+)?([A-Za-z ]{2,40}?)(?=\s{2,}|Ingredients|Allergen|Nutrition|$)/i);if(m)return m[1].trim();const t=String(p.title||'');if(/\(Canada\)|\(CAN\)/i.test(t))return 'Canada';if(/\(China\)|\(Chinese\)/i.test(t))return 'China';if(/Mexican/i.test(t))return 'Mexico';return ''}
 const qty=(s:string)=>{const patterns=[/\b(?:case|box)\s+of\s+(\d+)/i,/\((\d+)\s*x\s*[^)]+\)/i,/\b(\d+)\s*pack\b/i,/\b(\d+)\s*x\s*\d/i];for(const p of patterns){const m=s.match(p);if(m)return +m[1]}return 1}
 export async function GET(){try{
- const offers:any[]=[];let page=1,scanned=0
- while(page<=30){const r=await fetch(BASE+START+'/products.json?limit=250&page='+page,{cache:'no-store',headers:H});if(!r.ok)throw new Error("King's Candy catalogue API returned "+r.status);const ps=(await r.json()).products||[];scanned+=ps.length
+ const offers:any[]=[];let page=1,scanned=0,complete=false;const seenPages=new Set<string>()
+ while(page<=30){const r=await fetch(BASE+START+'/products.json?limit=250&page='+page,{cache:'no-store',headers:H});if(!r.ok)throw new Error("King's Candy catalogue API returned "+r.status);const body=await r.json();if(!Array.isArray(body.products))throw new Error('Supplier catalogue response is missing products');const ps=body.products;const signature=ps.map((p:any)=>p.id).join(',');if(ps.length&&seenPages.has(signature))throw new Error('Supplier repeated a catalogue page; saved catalogue kept');seenPages.add(signature);scanned+=ps.length
   for(const p of ps){const v=(p.variants||[]).find((x:any)=>x.available!==false);if(!v)continue;const raw=String(p.title||'').trim(),q=qty(raw),price=n(v.price);if(!raw||!price)continue
    offers.push({id:'kings-candy-'+p.id,supplier:"King's Candy",supplierProductId:String(p.id),supplierSku:v.sku||'',product:raw,rawTitle:raw,brand:p.vendor||'',size:size(raw),countryOrigin:origin(p),caseQty:q,casePrice:price,unitCost:price/q,ean:v.barcode||'',status:'IN STOCK',url:BASE+'/products/'+p.handle,source:"King's Candy Shopify wholesale collection",sourcePage:page,checked:new Date().toISOString()})}
-  if(ps.length<250)break;page++}
+  if(ps.length<250){complete=true;break};page++}
  const unique=[...new Map(offers.map((x:any)=>[x.supplierProductId,x])).values()].sort((a:any,b:any)=>a.product.localeCompare(b.product))
  if(unique.length<30)throw new Error("King's Candy returned only "+unique.length+" in-stock wholesale offers; saved catalogue kept")
- await saveSupplierCatalogue('kings-candy',unique,{cataloguePages:page,scannedProducts:scanned,method:'Shopify collection JSON'})
+ await saveSupplierCatalogue('kings-candy',unique,{cataloguePages:page,scannedProducts:scanned,method:'Shopify collection JSON'},{coverage:{complete,scope:'catalogue',pagesFetched:Math.min(page,30),termination:complete?'short-page':undefined}})
  return NextResponse.json({ok:true,supplier:"King's Candy",cataloguePages:page,scannedProducts:scanned,inStock:unique.length,offers:unique})
 }catch(e:any){return NextResponse.json({ok:false,error:e?.message||"King's Candy sync failed"},{status:500})}}

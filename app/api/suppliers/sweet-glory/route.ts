@@ -63,13 +63,13 @@ export async function GET(){
   const pagePaths:string[]=[]
   for(let i=0;i<brands.length;i+=15){
    const batch=brands.slice(i,i+15)
-   const pages=await Promise.all(batch.map(async path=>{const r=await fetch(BASE+path,{cache:'no-store',headers:HEADERS});if(!r.ok)return [path];return pageLinks(await r.text(),path)}))
+   const pages=await Promise.all(batch.map(async path=>{const r=await fetch(BASE+path,{cache:'no-store',headers:HEADERS});if(!r.ok)throw new Error('Brand catalogue request failed ('+r.status+'): '+path);return pageLinks(await r.text(),path)}))
    pages.forEach(x=>pagePaths.push(...x))
   }
   const offers:any[]=[]
   for(let i=0;i<pagePaths.length;i+=15){
    const batch=pagePaths.slice(i,i+15)
-   const pages=await Promise.all(batch.map(async path=>{const r=await fetch(BASE+path,{cache:'no-store',headers:HEADERS});return r.ok?parseProducts(await r.text(),path):[]}))
+   const pages=await Promise.all(batch.map(async path=>{const r=await fetch(BASE+path,{cache:'no-store',headers:HEADERS});if(!r.ok)throw new Error('Catalogue page failed ('+r.status+'): '+path);const parsed=parseProducts(await r.text(),path);if(!parsed.length)throw new Error('No products parsed from '+path+'; saved catalogue kept');return parsed}))
    pages.forEach(x=>offers.push(...x))
   }
   const unique=[...new Map(offers.map(x=>[x.supplierSku,x])).values()].sort((a:any,b:any)=>a.product.localeCompare(b.product))

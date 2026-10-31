@@ -6,7 +6,7 @@ export default function SupplierSyncProgress({results,busy,stopping,onStop,onRet
  if(!results.length)return null
  const count=(state:string)=>results.filter(row=>row.state===state).length
  const active=results.find(row=>row.state==='running'),done=results.filter(row=>row.state!=='queued'&&row.state!=='running').length
- const failed=results.filter(row=>row.state==='failed'||row.state==='reload-needed')
+ const failed=results.filter(row=>row.state==='failed'||row.state==='reload-needed'||row.state==='success'&&!!row.message)
  const labels:Record<string,string>={queued:'Waiting',running:'Syncing',success:'Updated',failed:'Failed',skipped:'Manual access',stopped:'Not started','reload-needed':'Saved · reload needed'}
  return <section className="supplierSyncPanel" aria-label="Supplier sync progress" aria-busy={busy}>
   <div className="supplierSyncHead"><div><span className="syncEyebrow">CATALOGUE REFRESH</span><h2>{busy?'Updating your suppliers':count('stopped')?'Sync stopped':'Sync complete'}</h2><p role="status" aria-live="polite">{done} of {results.length} suppliers processed</p></div><div className="syncPanelActions">{busy?<button className="secondaryAction" disabled={stopping} onClick={onStop}>{stopping?'Stopping after current…':'Stop after current'}</button>:(count('failed')+count('stopped')>0)&&<button className="secondaryAction" onClick={onRetry}>Retry unfinished</button>}</div></div>

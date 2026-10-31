@@ -6,7 +6,7 @@ const clean=(s:string)=>s.replace(/<script[\s\S]*?<\/script>/gi,' ').replace(/<s
 export async function GET(){try{
  const urls=['/all','/american-confectionery-american-wholesalers-uk','/american-breakfast-supplier-american-wholesalers-uk','/american-grocery-supplier-american-wholesalers-uk']
  const offers:any[]=[]
- for(const path of urls){const r=await fetch(BASE+path,{cache:'no-store',headers:{'User-Agent':'Mozilla/5.0 (compatible; FlipLead/1.0)','Accept':'text/html,application/xhtml+xml'}});if(!r.ok)continue;const txt=clean(await r.text())
+ for(const path of urls){const r=await fetch(BASE+path,{cache:'no-store',headers:{'User-Agent':'Mozilla/5.0 (compatible; FlipLead/1.0)','Accept':'text/html,application/xhtml+xml'}});if(!r.ok)throw new Error('Supplier page failed ('+r.status+'); saved catalogue kept');const txt=clean(await r.text())
  const re=/(.{3,180}?)\s+Code:\s*([A-Z0-9&.-]+-\d{4,6}-\d{2})\s+Please sign in \/ sign up for pricing\s+Availability:\s*(.{0,300}?)\s+View Details/gi
  for(const m of txt.matchAll(re)){let name=m[1].trim().replace(/^\d+\s+/,'');const sku=m[2];const q=Number((sku.match(/-(\d{2})$/)||[])[1])||0;const size=(name.match(/(\d+(?:\.\d+)?\s?(?:g|kg|ml|oz|ct))/i)||[])[1]||'';if(!name||name.length>180)continue;offers.push({supplierProductId:sku,supplierSku:sku,product:name,rawTitle:name,size,caseQty:q,casePrice:0,unitCost:0,ean:'',status:'IDENTITY ONLY · SIGN IN FOR PRICE',url:BASE+path,source:'Americatessen public catalogue'})}}
  const unique=[...new Map(offers.map(x=>[x.supplierProductId,x])).values()]
